@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "test": "jest --passWithNoTests",
+    "test:watch": "jest --watchAll --passWithNoTests"
   },
   "dependencies": {
     "clsx": "^2.1.1",
