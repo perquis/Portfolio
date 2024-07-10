@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { ComponentProps, FC } from "react";
+import type { ComponentProps, FC } from "react";
 
 interface ITitle {
   level: Level;
@@ -10,12 +10,12 @@ export const Title: FC<ITitle & ComponentProps<"h1">> = ({ level: Tag, className
     <Tag
       className={clsx(
         "font-bold text-zinc-950 dark:text-white",
-        Tag === "h1" && "text-6xl",
-        Tag === "h2" && "text-5xl",
-        Tag === "h3" && "text-4xl",
-        Tag === "h4" && "text-3xl",
-        Tag === "h5" && "text-2xl",
-        Tag === "h6" && "text-xl",
+        Tag === "h1" && "text-4xl lg:text-5xl xl:text-6xl",
+        Tag === "h2" && "text-3xl lg:text-4xl xl:text-5xl",
+        Tag === "h3" && "text-2xl lg:text-3xl xl:text-4xl",
+        Tag === "h4" && "text-xl lg:text-2xl xl:text-3xl",
+        Tag === "h5" && "text-lg lg:text-xl xl:text-2xl",
+        Tag === "h6" && "text-base lg:text-lg xl:text-xl",
         className,
       )}
       {...props}
