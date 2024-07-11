@@ -11,7 +11,8 @@
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watchAll --passWithNoTests",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "format": "prettier --write ./src"
   },
   "dependencies": {
     "@jest/globals": "^29.7.0",
