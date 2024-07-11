@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 
 import { Title } from "@/shared/ui/title/title";
 
-describe("Title", () => {
+describe("Title component", () => {
   it("renders a title component with text", () => {
     const txt = "Hello World!";
 
