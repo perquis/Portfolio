@@ -7,8 +7,6 @@ const meta = {
   title: "Text/Paragraph",
   component: Paragraph,
   parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: "centered",
     docs: {
       description: {
         component:
