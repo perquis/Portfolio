@@ -2,10 +2,10 @@ import clsx from "clsx";
 import type { ComponentProps, FC } from "react";
 
 interface ITitle {
-  level: Level;
+  level?: Level;
 }
 
-export const Title: FC<ITitle & ComponentProps<"h1">> = ({ level: Tag, className, children, ...props }) => {
+export const Title: FC<ITitle & ComponentProps<"h1">> = ({ level: Tag = "h2", className, children, ...props }) => {
   return (
     <Tag
       className={clsx(
