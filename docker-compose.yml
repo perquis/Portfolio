@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  portfolio_web_app:
+    container_name: portfolio_web_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:3000"
+    restart: always
+    networks:
+      - portfolio_network
+    expose:
+      - 3000
+    tty: true
+
+networks:
+  portfolio_network:
+    driver: bridge

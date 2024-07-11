@@ -63,7 +63,15 @@
     },
     "commitizenEmoji": {
       "conventionalFormat": true,
-      "subjectMaxLength": 200
+      "subjectMaxLength": 200,
+      "types": [
+         {
+           "emoji": "🐋",
+           "code": ":whale:",
+           "description": "Added or updated the docker settings.",
+           "name": "docker"
+         }
+      ]   
     }
   }
 }

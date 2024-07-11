@@ -1,0 +1,14 @@
+.github
+.next
+
+.storybook
+
+coverage
+node_modules
+
+.gitignore
+.gitattributes
+
+README.md
+
+storybook.log
