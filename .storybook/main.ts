@@ -15,6 +15,26 @@ const config: StorybookConfig = {
     name: "@storybook/nextjs",
     options: {},
   },
+  webpackFinal: async (config: any) => {
+    // Find the rule that handles CSS files
+    const cssRule = config.module.rules.find(
+      (rule: any) => rule.test && rule.test.toString().includes('css')
+    );
+
+    if (cssRule) {
+      cssRule.use.forEach((useEntry: any) => {
+        if (typeof useEntry === 'object' && useEntry.loader.includes('css-loader')) {
+          useEntry.options = {
+            ...useEntry.options,
+            url: true,
+            import: true,
+          };
+        }
+      });
+    }
+
+    return config;
+  },
   staticDirs: ["..\\public"],
 };
 export default config;
