@@ -11,7 +11,8 @@ const meta = {
     layout: "centered",
     docs: {
       description: {
-        component: "The Title component is used to display a title on the screen. It is also used for SEO purposes.",
+        component:
+          "The **Title** component is used to display a title on the screen. It is also used for SEO purposes.",
       },
     },
   },
