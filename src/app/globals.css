@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --tw-indigo-600: hsla(243, 75%, 59%, 0.5);
+  --tw-white: hsl(0, 0%, 100%);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--tw-indigo-600) !important;
+  outline-offset: 3px !important;
+  box-sizing: border-box;
+}
+
+::-moz-selection {
+  color: var(--tw-white);
+  background: var(--tw-indigo-600);
+}
+
+::selection {
+  color: var(--tw-white);
+  background: var(--tw-indigo-600);
+}
