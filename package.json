@@ -18,11 +18,12 @@
     "clsx": "^2.1.1",
     "next": "14.2.5",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "ts-pattern": "^5.2.0"
   },
   "devDependencies": {
-    "@jest/globals": "^29.7.0",
     "@chromatic-com/storybook": "^1.6.1",
+    "@jest/globals": "^29.7.0",
     "@storybook/addon-essentials": "^8.2.1",
     "@storybook/addon-interactions": "^8.2.1",
     "@storybook/addon-links": "^8.2.1",
@@ -65,13 +66,13 @@
       "conventionalFormat": true,
       "subjectMaxLength": 200,
       "types": [
-         {
-           "emoji": "🐋",
-           "code": ":whale:",
-           "description": "Added or updated the docker settings.",
-           "name": "docker"
-         }
-      ]   
+        {
+          "emoji": "🐋",
+          "code": ":whale:",
+          "description": "Added or updated the docker settings.",
+          "name": "docker"
+        }
+      ]
     }
   }
 }
