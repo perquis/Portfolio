@@ -57,7 +57,8 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     color: "indigo",
-    rounded: "default",
+    rounded: "full",
+    border: false,
     children: "#nextjs",
   },
 };
