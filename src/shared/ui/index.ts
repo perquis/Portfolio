@@ -1,6 +1,7 @@
 export * from "./avatar/avatar";
 export * from "./badge/badge";
 export * from "./container/container";
+export * from "./divider/divider";
 export * from "./global-layout/global-layout";
 export * from "./link/link";
 export * from "./logo/logo";
