@@ -17,12 +17,9 @@ export const Button: FC<IButton & ComponentProps<"button">> = ({ children, size,
     .run();
 
   const colors = match({ variants })
-    .with({ variants: "black" }, () => "from-black to-zinc-900 text-white border-white/25 border-b-0 ring-black")
+    .with({ variants: "black" }, () => "from-black to-zinc-900 text-white border-white/25 ring-black")
     .with({ variants: "white" }, () => "from-zinc-200 to-white text-zinc-800 border-zinc-300 ring-zinc-500")
-    .with(
-      { variants: "indigo" },
-      () => "from-indigo-600 to-indigo-700 text-white border-white/25 border-b-0 ring-indigo-900",
-    )
+    .with({ variants: "indigo" }, () => "from-indigo-600 to-indigo-700 text-white border-white/25 ring-indigo-900")
     .run();
 
   const spinnerSize = match({ size })
@@ -39,7 +36,7 @@ export const Button: FC<IButton & ComponentProps<"button">> = ({ children, size,
   return (
     <button
       className={clsx(
-        "font-medium border-2 bg-gradient-to-t disabled:opacity-25 disabled:cursor-not-allowed disabled:pointer-events-none hover:opacity-90 focus-visible:opacity-90 flex items-center ring-2 ease-in-out active:scale-95 duration-200 shadow-md",
+        "font-medium border-2 border-b-0 bg-gradient-to-t disabled:opacity-25 disabled:cursor-not-allowed disabled:pointer-events-none hover:opacity-90 focus-visible:opacity-90 flex items-center ring-2 ease-in-out active:scale-95 duration-200 shadow-md",
         sizes,
         colors,
         loading ? "opacity-75 cursor-not-allowed pointer-events-none" : "active:opacity-100",
