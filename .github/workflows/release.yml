@@ -1,0 +1,63 @@
+name: 📦 Bump NPM Package Version
+
+on:
+  pull_request:
+    branches:
+      - main
+    types: [closed]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Set git config for bot
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Set current git tag
+        run: |
+          echo "CURRENT_TAG=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
+
+      - name: Set history
+        run: |
+          HISTORY=$(git log --oneline "${{ env.CURRENT_TAG }}..HEAD" --pretty=format:"%s" | tr '\n' ' ')
+          echo "GIT_LOG_HISTORY=${HISTORY}" >> $GITHUB_ENV
+
+      - name: Bump Version
+        id: version
+        run: |
+          if [[ "${{ env.GIT_LOG_HISTORY }}" != *"breaking"* && "${{ env.GIT_LOG_HISTORY }}" != *"feature"* && "${{ env.GIT_LOG_HISTORY }}" != *"fix"* ]]; then
+            echo "Error: No recognized keywords (breaking, feat, fix) found in GIT_LOG_HISTORY"
+            exit 1
+          elif [[ "${{ env.GIT_LOG_HISTORY }}" == *"breaking"* ]]; then
+            npm version major
+          elif [[ "${{ env.GIT_LOG_HISTORY }}" == *"feature"* ]]; then
+            npm version minor
+          elif [[ "${{ env.GIT_LOG_HISTORY }}" == *"fix"* ]]; then
+            npm version patch
+          fi
+
+      - name: Push changes
+        if: ${{ steps.version.outcome == 'success' }}
+        run: |
+          git push && git push --tags
+
+      - name: Install dependencies
+        run: npm i
+
+      - name: Testing modules
+        run: npm test
