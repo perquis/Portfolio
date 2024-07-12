@@ -69,7 +69,7 @@
         {
           "emoji": "🐋",
           "code": ":whale:",
-          "description": "Added or updated the docker settings.",
+          "description": "Add or updat the docker settings.",
           "name": "docker"
         }
       ]
