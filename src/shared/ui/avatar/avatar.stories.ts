@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
+import { emptyPlaceholderImage } from "@/data";
 import { Avatar } from "@/shared/ui/avatar/avatar";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -35,7 +36,7 @@ export const Default: Story = {
   args: {
     rounded: "full",
     size: "medium",
-    src: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
+    src: emptyPlaceholderImage,
     alt: "This is an empty placeholder for the image component.",
   },
 };

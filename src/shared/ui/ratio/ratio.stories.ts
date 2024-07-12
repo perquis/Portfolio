@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { ratios } from "@/data/ratios";
+import { emptyPlaceholderImage, ratios } from "@/data";
 import { Ratio } from "@/shared/ui/ratio/ratio";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -32,7 +32,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     resolution: "16:9",
-    src: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
+    src: emptyPlaceholderImage,
     alt: "This is an empty placeholder for the image component.",
   },
 };
