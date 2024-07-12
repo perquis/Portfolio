@@ -36,13 +36,13 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   render() {
     return (
-      <>
+      <Section className="gap-2">
         <Title level="h4">How to use Cypress with Next.js?</Title>
         <Paragraph>
           Cypress is a powerful tool that allows you to write end-to-end tests for your application. In this article, we
           will show you how to use Cypress with Next.js. We will cover the following topics:
         </Paragraph>
-      </>
+      </Section>
     );
   },
 };
