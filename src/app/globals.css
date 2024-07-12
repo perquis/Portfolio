@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --tw-indigo-600: hsla(243, 75%, 59%, 0.5);
+  --tw-indigo-600: hsla(243, 75%, 59%, 0.75);
   --tw-white: hsl(0, 0%, 100%);
 }
 
