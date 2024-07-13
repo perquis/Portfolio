@@ -39,5 +39,6 @@ export const Default: Story = {
     children: "Click me",
     loading: false,
     disabled: false,
+    mode: "gradient",
   },
 };

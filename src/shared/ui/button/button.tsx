@@ -6,20 +6,37 @@ import { match } from "ts-pattern";
 interface IButton {
   size: Exclude<Size, "tiny">;
   variants: "black" | "white" | "indigo";
+  mode: "simple" | "gradient";
   loading?: boolean;
 }
 
-export const Button: FC<IButton & ComponentProps<"button">> = ({ children, size, variants, loading, ...props }) => {
+export const Button: FC<IButton & ComponentProps<"button">> = ({
+  children,
+  size,
+  variants,
+  loading,
+  mode,
+  ...props
+}) => {
   const sizes = match({ size })
     .with({ size: "small" }, () => "text-xs gap-2 px-4 py-2 rounded-lg")
     .with({ size: "medium" }, () => "text-sm gap-2.5 px-5 py-2.5 rounded-[10px]")
     .with({ size: "large" }, () => "text-base gap-3 px-6 py-3 rounded-xl")
     .run();
 
-  const colors = match({ variants })
-    .with({ variants: "black" }, () => "from-black to-zinc-900 text-white border-white/25 ring-black")
-    .with({ variants: "white" }, () => "from-zinc-200 to-white text-zinc-800 border-zinc-300 ring-zinc-500")
-    .with({ variants: "indigo" }, () => "from-indigo-600 to-indigo-700 text-white border-white/25 ring-indigo-900")
+  const colors = match({ variants, mode })
+    .with({ variants: "black", mode: "simple" }, () => "bg-black text-white !border-0 !ring-0")
+    .with({ variants: "white", mode: "simple" }, () => "bg-white text-black ring-zinc-300 !border-0 !ring-1")
+    .with({ variants: "indigo", mode: "simple" }, () => "bg-indigo-600 text-white !border-0 !ring-0")
+    .with({ variants: "black", mode: "gradient" }, () => "from-black to-zinc-900 text-white border-white/25 ring-black")
+    .with(
+      { variants: "white", mode: "gradient" },
+      () => "from-zinc-200 to-white text-zinc-800 border-zinc-300 ring-zinc-500",
+    )
+    .with(
+      { variants: "indigo", mode: "gradient" },
+      () => "from-indigo-600 to-indigo-700 text-white border-white/25 ring-indigo-900",
+    )
     .run();
 
   const spinnerSize = match({ size })
