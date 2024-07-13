@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
+import { links } from "@/data";
 import { Navigation } from "@/shared/ui/navigation/navigation";
 
 const meta = {
@@ -21,11 +22,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    links: [
-      { label: "About", href: "/about" },
-      { label: "Portfolio", href: "/portfolio" },
-      { label: "Blog", href: "/blog" },
-      { label: "Contact", href: "/contact" },
-    ],
+    links,
   },
 };
