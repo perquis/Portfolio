@@ -4,7 +4,7 @@ import { Paragraph, Section, Title } from "@/shared/ui";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: "Text/Section",
+  title: "UI/Section",
   component: Section,
   parameters: {
     docs: {
