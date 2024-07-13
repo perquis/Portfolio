@@ -1,2 +1,2 @@
-export * from "./empty-placeholder/empty-placeholder";
+export * from "./placeholders/placeholders";
 export * from "./ratios/ratios";

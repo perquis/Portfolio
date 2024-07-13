@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { emptyPlaceholderImage } from "@/data";
+import { placeholders } from "@/data";
 import { Card } from "@/shared/ui/card/card";
 
 const meta = {
@@ -42,7 +42,7 @@ export const Default: Story = {
     title: "Card Title",
     description: "This is a description of the card. It can be used to provide more information about the card.",
     image: {
-      src: emptyPlaceholderImage,
+      src: placeholders.images,
       alt: "This is an image of the card.",
     },
     href: "/",
