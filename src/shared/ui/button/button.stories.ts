@@ -32,7 +32,33 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Simple: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: "The **Button** component is a primary button that users can click to perform an action.",
+      },
+    },
+  },
+  args: {
+    size: "medium",
+    variants: "black",
+    children: "Click me",
+    loading: false,
+    disabled: false,
+    mode: "simple",
+  },
+};
+
+export const Gradient: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "The **Button** component is a primary button that users can click to perform an action however in our web app is not used.",
+      },
+    },
+  },
   args: {
     size: "medium",
     variants: "black",
