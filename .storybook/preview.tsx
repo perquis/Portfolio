@@ -7,12 +7,12 @@ import { Container, GlobalLayout } from "../src/shared/ui";
 
 const withLayout = (Story: React.FC, options: any) => {
   const html = match(options.title)
-    .with("Actions/Navigation", () => (
+    .with("Actions/Navigation", () => <Story />)
+    .otherwise(() => (
       <Container>
         <Story />
       </Container>
-    ))
-    .otherwise(() => <Story />);
+    ));
 
   return <GlobalLayout>{html}</GlobalLayout>;
 };
