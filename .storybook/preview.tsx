@@ -1,16 +1,21 @@
 import { withThemeByDataAttribute } from "@storybook/addon-themes";
 import type { Preview } from "@storybook/react";
+import { match } from "ts-pattern";
 
 import "../src/app/globals.css";
 import { Container, GlobalLayout } from "../src/shared/ui";
 
-const withLayout = (Story: React.FC) => (
-  <GlobalLayout>
-    <Container>
-      <Story />
-    </Container>
-  </GlobalLayout>
-);
+const withLayout = (Story: React.FC, options: any) => {
+  const html = match(options.title)
+    .with("Actions/Navigation", () => (
+      <Container>
+        <Story />
+      </Container>
+    ))
+    .otherwise(() => <Story />);
+
+  return <GlobalLayout>{html}</GlobalLayout>;
+};
 
 const preview: Preview = {
   parameters: {
