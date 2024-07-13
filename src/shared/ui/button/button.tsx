@@ -25,8 +25,14 @@ export const Button: FC<IButton & ComponentProps<"button">> = ({
     .run();
 
   const colors = match({ variants, mode })
-    .with({ variants: "black", mode: "simple" }, () => "bg-black text-white !border-0 !ring-0")
-    .with({ variants: "white", mode: "simple" }, () => "bg-white text-black ring-zinc-400 !border-0 !ring-1")
+    .with(
+      { variants: "black", mode: "simple" },
+      () => "bg-black text-white !border-0 !ring-0 dark:bg-white dark:text-black",
+    )
+    .with(
+      { variants: "white", mode: "simple" },
+      () => "bg-white text-black ring-zinc-400 !border-0 !ring-1 dark:bg-zinc-950 dark:text-white dark:ring-zinc-800",
+    )
     .with({ variants: "indigo", mode: "simple" }, () => "bg-indigo-600 text-white !border-0 !ring-0")
     .with({ variants: "black", mode: "gradient" }, () => "from-black to-zinc-900 text-white border-white/25 ring-black")
     .with(
