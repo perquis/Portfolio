@@ -5,7 +5,7 @@ import { Avatar } from "@/shared/ui/avatar/avatar";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: "UI/Avatar",
+  title: "Generals/Avatar",
   component: Avatar,
   parameters: {
     docs: {

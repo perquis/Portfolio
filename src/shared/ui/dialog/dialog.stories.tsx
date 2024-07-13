@@ -8,7 +8,7 @@ import { Section } from "@/shared/ui/section/section";
 import { Title } from "@/shared/ui/title/title";
 
 const meta = {
-  title: "Actions/Dialog",
+  title: "Overlays/Dialog",
   component: Dialog,
   parameters: {
     docs: {

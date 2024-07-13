@@ -5,7 +5,7 @@ import { Ratio } from "@/shared/ui/ratio/ratio";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: "UI/Ratio",
+  title: "Generals/Ratio",
   component: Ratio,
   parameters: {
     docs: {
