@@ -14,7 +14,7 @@ const withLayout = (Story: React.FC, options: any) => {
       </Container>
     ));
 
-  return <GlobalLayout>{html}</GlobalLayout>;
+  return <GlobalLayout className="dark:bg-zinc-950">{html}</GlobalLayout>;
 };
 
 const preview: Preview = {
