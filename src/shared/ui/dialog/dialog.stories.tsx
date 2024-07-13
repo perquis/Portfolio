@@ -27,7 +27,7 @@ const Example = () => (
   <Section className="gap-3">
     <Section className="gap-2">
       <Title level="h6">We use cookies 🍪</Title>
-      <Paragraph className="text-sm">
+      <Paragraph>
         To provide you with the best experience on our website, we use cookies. Cookies help us personalize content,
         analyze site traffic, and deliver advertisements tailored to your interests.
       </Paragraph>
