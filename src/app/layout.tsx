@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={clsx(inter.className)}>
+      <body className={clsx(inter.className, "bg-white dark:bg-zinc-950")}>
         <GlobalLayout>
           <Container>{children}</Container>
         </GlobalLayout>

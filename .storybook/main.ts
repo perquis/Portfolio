@@ -17,13 +17,11 @@ const config: StorybookConfig = {
   },
   webpackFinal: async (config: any) => {
     // Find the rule that handles CSS files
-    const cssRule = config.module.rules.find(
-      (rule: any) => rule.test && rule.test.toString().includes('css')
-    );
+    const cssRule = config.module.rules.find((rule: any) => rule.test && rule.test.toString().includes("css"));
 
     if (cssRule) {
       cssRule.use.forEach((useEntry: any) => {
-        if (typeof useEntry === 'object' && useEntry.loader.includes('css-loader')) {
+        if (typeof useEntry === "object" && useEntry.loader.includes("css-loader")) {
           useEntry.options = {
             ...useEntry.options,
             url: true,
