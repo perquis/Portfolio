@@ -18,6 +18,14 @@ const meta = {
     },
   },
   tags: ["autodocs"],
+  argTypes: {
+    layout: {
+      control: {
+        type: "select",
+      },
+      options: ["center", "bottom", "bottom-left", "bottom-right", "top", "top-left", "top-right", "left", "right"],
+    },
+  },
 } satisfies Meta<typeof Dialog>;
 
 export default meta;
@@ -43,10 +51,17 @@ const Example = () => (
   </Section>
 );
 
-// @ts-ignore
 export const Default: Story = {
+  // @ts-ignore
+  args: {
+    layout: "center",
+    options: {
+      disabled: true,
+      autoFocus: false,
+    },
+  },
   decorators: [
-    (Story) => {
+    (Story, options) => {
       const [isOpen, setIsOpen] = useState(false);
 
       const open = () => setIsOpen(true);
@@ -62,6 +77,8 @@ export const Default: Story = {
               isOpen,
               close,
               children: <Example />,
+              layout: options.args.layout,
+              options: options.args.options,
             }}
           ></Story>
         </>
