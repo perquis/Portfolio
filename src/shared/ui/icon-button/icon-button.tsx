@@ -20,7 +20,7 @@ export const IconButton: FC<IconButtonProps> = ({ size, icon, className, childre
   // NOTE - If children are provided, render them instead of the Icon component.
   if (children)
     return (
-      <Button size={size} {...props}>
+      <Button size={size} className={className} {...props}>
         {children}
       </Button>
     );
@@ -30,7 +30,7 @@ export const IconButton: FC<IconButtonProps> = ({ size, icon, className, childre
 
   // NOTE - It is a default behavior of the IconButton component.
   return (
-    <Button size={size} {...props}>
+    <Button size={size} className={className} {...props}>
       <Icon {...viewBox} />
     </Button>
   );
