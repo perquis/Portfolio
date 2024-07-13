@@ -43,11 +43,8 @@ const Example = () => (
   </Section>
 );
 
+// @ts-ignore
 export const Default: Story = {
-  args: {
-    isOpen: false,
-    close: () => {},
-  },
   decorators: [
     (Story) => {
       const [isOpen, setIsOpen] = useState(false);
