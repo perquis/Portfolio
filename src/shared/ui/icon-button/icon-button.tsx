@@ -1,30 +1,34 @@
 import clsx from "clsx";
-import type { ComponentProps, FC } from "react";
+import type { FC } from "react";
 import { match } from "ts-pattern";
 
 import { icons } from "@/shared/icons";
+import type { ButtonPropsWithSize, IconButtonProps } from "@/shared/ui/icon-button/icon-button.types";
 
-type IconName = keyof typeof icons;
-
-interface IIconButton {
-  icon: IconName;
-  size: Exclude<Size, "tiny">;
-}
-
-export const IconButton: FC<IIconButton & ComponentProps<"button">> = ({ size, icon, className, ...props }) => {
+export const IconButton: FC<IconButtonProps> = ({ size, icon, className, children, ...props }) => {
   const squareSize = match(size)
     .with("small", () => 16)
     .with("medium", () => 20)
     .with("large", () => 24)
     .exhaustive();
 
-  const Icon = icons[icon];
-
   const viewBox = {
     width: squareSize,
     height: squareSize,
   };
 
+  // NOTE - If children are provided, render them instead of the Icon component.
+  if (children)
+    return (
+      <Button size={size} {...props}>
+        {children}
+      </Button>
+    );
+
+  if (!icon) throw new Error("Either icon or children prop is required.");
+  const Icon = icons[icon];
+
+  // NOTE - It is a default behavior of the IconButton component.
   return (
     <Button size={size} {...props}>
       <Icon {...viewBox} />
@@ -32,7 +36,7 @@ export const IconButton: FC<IIconButton & ComponentProps<"button">> = ({ size, i
   );
 };
 
-const Button: FC<Pick<IIconButton, "size"> & ComponentProps<"button">> = ({ className, size, children, ...props }) => {
+const Button: FC<ButtonPropsWithSize> = ({ className, size, children, ...props }) => {
   const classes = match(size)
     .with("small", () => "p-1 rounded-md")
     .with("medium", () => "p-[6px] rounded-lg")
