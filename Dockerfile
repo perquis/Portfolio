@@ -1,13 +1,11 @@
-FROM alpine:3.12 as deps
+FROM node:22-alpine as deps
 
 WORKDIR /deps
 
-RUN apk add --no-cache nodejs npm
 COPY ./package.json ./package-lock.json ./
-
 RUN npm install
 
-FROM alpine:3.12 as builder
+FROM node:22-alpine as builder
 
 WORKDIR /app
 
