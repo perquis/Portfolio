@@ -16,6 +16,7 @@ export const Title: FC<ITitle & ComponentProps<"h1">> = ({ level: Tag = "h2", cl
         Tag === "h4" && "text-xl lg:text-2xl xl:text-3xl",
         Tag === "h5" && "text-lg lg:text-xl xl:text-2xl",
         Tag === "h6" && "text-base lg:text-lg xl:text-xl",
+        Tag === "b" && "text-base",
         className,
       )}
       {...props}
