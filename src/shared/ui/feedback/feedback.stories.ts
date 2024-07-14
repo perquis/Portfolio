@@ -18,4 +18,11 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  args: {
+    isOpen: true,
+    title: "You can estimate this article",
+    description: "How was your experience?",
+    close: () => {},
+  },
+};
