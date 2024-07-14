@@ -21,9 +21,9 @@ export const Emoji: FC<IEmoji> = ({ emoji, size }) => {
   const [isOpen, [open, close]] = useOpen();
 
   const sizeClass = match(size)
-    .with("small", () => "w-5 h-5")
-    .with("medium", () => "w-6 h-6")
-    .with("large", () => "w-8 h-8")
+    .with("small", () => "w-6 <h-6></h-6>")
+    .with("medium", () => "w-8 h-8")
+    .with("large", () => "w-10 h-10")
     .exhaustive();
 
   const dotLottieRefCallback = (dotLottie: DotLottie) => setDotLottie(dotLottie);
@@ -48,6 +48,7 @@ export const Emoji: FC<IEmoji> = ({ emoji, size }) => {
       )}
       onFocus={open}
       onBlur={close}
+      title={foundEmoji?.title}
     >
       <DotLottieReact
         src={foundEmoji?.path}

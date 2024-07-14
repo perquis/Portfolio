@@ -6,6 +6,7 @@ export * from "./card/card";
 export * from "./container/container";
 export * from "./dialog/dialog";
 export * from "./divider/divider";
+export * from "./emoji/emoji";
 export * from "./global-layout/global-layout";
 export * from "./icon-button/icon-button";
 export * from "./link/link";
