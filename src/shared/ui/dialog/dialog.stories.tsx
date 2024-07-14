@@ -23,7 +23,7 @@ const meta = {
       control: {
         type: "select",
       },
-      options: ["center", "bottom", "bottom-left", "bottom-right", "top", "top-left", "top-right", "left", "right"],
+      options: ["top-left", "top", "top-right", "left", "center", "right", "bottom-left", "bottom", "bottom-right"],
     },
   },
 } satisfies Meta<typeof Dialog>;
