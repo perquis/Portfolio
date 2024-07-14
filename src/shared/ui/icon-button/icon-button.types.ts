@@ -9,6 +9,7 @@ type IconName = keyof typeof icons;
 export interface IIconButton {
   size: ExcludedSize;
   icon: IconName;
+  rounded?: Rounded;
   children: ButtonProps["children"];
 }
 
@@ -17,5 +18,5 @@ type IconButtonWithChildren = Omit<IIconButton, "icon"> & { children: ButtonProp
 
 export type TIconButton = IconButtonWithIcon | IconButtonWithChildren;
 
-export type ButtonPropsWithSize = Pick<IIconButton, "size"> & ButtonProps;
+export type ButtonPropsWithSize = Pick<IIconButton, "size" | "rounded"> & ButtonProps;
 export type IconButtonProps = TIconButton & ButtonProps;
