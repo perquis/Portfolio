@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import type { ComponentProps, FC } from "react";
 import { TailSpin } from "react-loader-spinner";

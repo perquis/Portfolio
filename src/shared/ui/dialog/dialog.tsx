@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import type { FC, ReactNode } from "react";
 import { createPortal } from "react-dom";
