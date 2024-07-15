@@ -1,4 +1,4 @@
-import type { ComponentProps } from "react";
+import type { ComponentProps, FC } from "react";
 
 import { Breadcrumbs, Container, Logo, Section, Tab } from "@/shared/ui";
 
@@ -10,15 +10,21 @@ export default function Navigation({ links }: INavigation) {
       <Container className="">
         <Section className="!flex-row justify-between items-center">
           <Logo />
-          <Section className="!flex-row gap-3 text-xs">
-            {links.map(({ href, label }) => (
-              <Tab key={href} href={href}>
-                {label}
-              </Tab>
-            ))}
-          </Section>
+          <Menu links={links} />
         </Section>
       </Container>
     </nav>
   );
 }
+
+const Menu: FC<INavigation> = ({ links }) => {
+  return (
+    <Section className="!flex-row gap-3 text-xs">
+      {links.map(({ href, label }) => (
+        <Tab key={href} href={href}>
+          {label}
+        </Tab>
+      ))}
+    </Section>
+  );
+};
