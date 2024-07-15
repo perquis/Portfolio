@@ -1,5 +1,16 @@
-type Rounded = "default" | "full";
 type Size = "large" | "medium" | "small" | "tiny";
+type Rounded = "default" | "full";
+
+type Alignment =
+  | "center"
+  | "bottom"
+  | "bottom-left"
+  | "bottom-right"
+  | "top"
+  | "top-left"
+  | "top-right"
+  | "left"
+  | "right";
 
 type Resolution =
   | "1:1"
