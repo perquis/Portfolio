@@ -37,6 +37,6 @@ type Story = StoryObj<typeof meta>;
 export const Smile: Story = {
   args: {
     emoji: "good",
-    size: "small",
+    size: "large",
   },
 };

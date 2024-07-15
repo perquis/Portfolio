@@ -15,13 +15,13 @@ interface IDialog {
   isOpen: boolean;
   close: () => void;
   children?: ReactNode;
-  layout?: "center" | "bottom" | "bottom-left" | "bottom-right" | "top" | "top-left" | "top-right" | "left" | "right";
+  alignment?: Alignment;
   options?: ReactFocusLockProps<ReactNode, Record<string, any>>;
 }
 
-export const Dialog: FC<IDialog> = ({ isOpen, close, layout = "center", children, options }) => {
+export const Dialog: FC<IDialog> = ({ isOpen, close, alignment = "center", children, options }) => {
   if (!isOpen) return null;
-  const classes = match(layout)
+  const classes = match(alignment)
     .with("center", () => "justify-center items-center")
     .with("bottom", () => "justify-center items-end")
     .with("top", () => "justify-center items-start")

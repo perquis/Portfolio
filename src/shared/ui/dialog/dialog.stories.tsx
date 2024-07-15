@@ -19,7 +19,7 @@ const meta = {
   },
   tags: ["autodocs"],
   argTypes: {
-    layout: {
+    alignment: {
       control: {
         type: "select",
       },
@@ -54,7 +54,7 @@ const Example = () => (
 export const Default: Story = {
   // @ts-ignore
   args: {
-    layout: "center",
+    alignment: "center",
     options: {
       disabled: true,
       autoFocus: false,
@@ -77,7 +77,7 @@ export const Default: Story = {
               isOpen,
               close,
               children: <Example />,
-              layout: options.args.layout,
+              alignment: options.args.alignment,
               options: options.args.options,
             }}
           ></Story>
