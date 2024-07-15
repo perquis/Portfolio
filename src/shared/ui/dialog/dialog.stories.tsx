@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { useState } from "react";
 
+import { useOpen } from "@/shared/hooks";
 import { Button, Dialog, Paragraph, Section, Title } from "@/shared/ui";
 
 const meta = {
@@ -58,10 +58,7 @@ export const Default: Story = {
   },
   decorators: [
     (Story, options) => {
-      const [isOpen, setIsOpen] = useState(false);
-
-      const open = () => setIsOpen(true);
-      const close = () => setIsOpen(false);
+      const [isOpen, [open]] = useOpen();
 
       return (
         <>
