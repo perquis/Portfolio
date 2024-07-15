@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { match } from "ts-pattern";
 
 import { emojis } from "@/data";
-import { useOpen } from "@/shared/hooks/use-open";
+import { useOpen } from "@/shared/hooks";
 
 type EmojiName = (typeof emojis)[number]["name"];
 

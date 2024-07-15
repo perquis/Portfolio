@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import type { ComponentProps } from "react";
 
-import { useOpen } from "@/shared/hooks/use-open";
+import { useOpen } from "@/shared/hooks";
 import { ArrowLeft } from "@/shared/icons";
 import { Paragraph, Section, Title } from "@/shared/ui";
 

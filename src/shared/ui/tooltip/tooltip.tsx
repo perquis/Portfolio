@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { type ComponentProps, useEffect, useRef } from "react";
 import { match } from "ts-pattern";
 
-import { useOpen } from "@/shared/hooks/use-open";
+import { useOpen } from "@/shared/hooks";
 
 type ITooltip = {
   label: string;
