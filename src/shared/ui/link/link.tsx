@@ -5,7 +5,9 @@ import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 import type { ComponentProps } from "react";
 
-export default function Link({ children, className, ...props }: ComponentProps<typeof NextLink>) {
+type ILink = ComponentProps<typeof NextLink>;
+
+export default function Link({ children, className, ...props }: ILink) {
   const pathname = usePathname();
 
   return (

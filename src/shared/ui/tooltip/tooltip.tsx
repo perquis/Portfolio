@@ -12,7 +12,7 @@ type ITooltip = {
   alignment?: Exclude<Alignment, "bottom-left" | "bottom-right" | "top-left" | "top-right" | "center">;
 } & ComponentProps<"div">;
 
-export default function Tooltip({ children, className, label, alignment = "top", ...props }: ITooltip) {
+export default function Tooltip({ children, label, alignment = "top" }: ITooltip) {
   const [isOpen, [open, close]] = useOpen();
   const containerRef = useRef<HTMLDivElement>(null);
 
