@@ -57,7 +57,7 @@ export const Tooltip: FC<ITooltip & ComponentProps<"div">> = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className={clsx(
-            "absolute pointer-events-none px-3 py-2 rounded-lg bg-zinc-900/90 border-t border-zinc-800/90 backdrop-blur text-white max-w-48 w-max text-x",
+            "absolute pointer-events-none px-3 py-2 rounded-lg bg-zinc-900/90 border-t border-zinc-800/90 backdrop-blur text-white max-w-64 w-max text-x",
             direction,
           )}
         >
