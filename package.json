@@ -64,22 +64,5 @@
     "ts-jest": "^29.2.2",
     "ts-node": "^10.9.2",
     "typescript": "^5"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/commitizen-emoji"
-    },
-    "commitizenEmoji": {
-      "conventionalFormat": true,
-      "subjectMaxLength": 200,
-      "types": [
-        {
-          "emoji": "🐋",
-          "code": ":whale:",
-          "description": "Add or updat the docker settings.",
-          "name": "docker"
-        }
-      ]
-    }
   }
 }
