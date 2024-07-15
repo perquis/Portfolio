@@ -18,3 +18,4 @@ export * from "./regular/regular";
 export * from "./section/section";
 export * from "./tab/tab";
 export * from "./title/title";
+export * from "./tooltip/tooltip";
