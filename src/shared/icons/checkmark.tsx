@@ -5,9 +5,9 @@ export const Checkmark: FC<ComponentProps<"svg">> = (props) => (
     <path
       d="M16.25 5L7.5 15L3.75 11.25"
       stroke="currentColor"
-      stroke-width="1.25"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );

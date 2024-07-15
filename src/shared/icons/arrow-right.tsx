@@ -5,9 +5,9 @@ export const ArrowRight: FC<ComponentProps<"svg">> = (props) => (
     <path
       d="M8.33334 14.1666L12.5 9.99998L8.33334 5.83331"
       stroke="currentColor"
-      stroke-width="1.25"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
