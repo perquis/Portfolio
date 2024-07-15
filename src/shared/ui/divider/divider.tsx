@@ -1,8 +1,11 @@
-export const Divider = () => {
+import clsx from "clsx";
+import type { ComponentProps, FC } from "react";
+
+export const Divider: FC<ComponentProps<"div">> = ({ className, ...props }) => {
   return (
-    <div className="stroke-zinc-200 dark:stroke-zinc-800">
-      <svg width="640" height="1" viewBox="0 0 640 1" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <line x1="0.5" y1="0.5" x2="639.5" y2="0.5" stroke="inherit" strokeLinecap="round" stroke-dasharray="8" />
+    <div className={clsx("text-zinc-200 dark:text-zinc-800", className)} {...props}>
+      <svg width="100%" height="1" viewBox="0 0 640 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0.5" y1="0.5" x2="639.5" y2="0.5" stroke="currentColor" strokeLinecap="round" stroke-dasharray="8" />
       </svg>
     </div>
   );
