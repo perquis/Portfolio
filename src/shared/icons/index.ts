@@ -1,43 +1,20 @@
-import { Anchor } from "@/shared/icons/anchor";
-import { ArrowDown } from "@/shared/icons/arrow-down";
-import { ArrowLeft } from "@/shared/icons/arrow-left";
-import { ArrowLineRight } from "@/shared/icons/arrow-line-right";
-import { ArrowRight } from "@/shared/icons/arrow-right";
-import { ArrowUp } from "@/shared/icons/arrow-up";
-import { Checkmark } from "@/shared/icons/checkmark";
-import { Clipboard } from "@/shared/icons/clipboard";
-import { Close } from "@/shared/icons/close";
-import { Danger } from "@/shared/icons/danger";
-import { Discord } from "@/shared/icons/discord";
-import { GitHub } from "@/shared/icons/github";
-import { Info } from "@/shared/icons/info";
-import { LinkOut } from "@/shared/icons/link-out";
-import { LinkedIn } from "@/shared/icons/linkedin";
-import { Plus } from "@/shared/icons/plus";
-import { Search } from "@/shared/icons/search";
-import { Star } from "@/shared/icons/star";
-import { Warning } from "@/shared/icons/warning";
-import { X } from "@/shared/icons/x";
-
-export const icons = {
-  Anchor,
-  ArrowDown,
-  ArrowLeft,
-  ArrowLineRight,
-  ArrowRight,
-  ArrowUp,
-  Checkmark,
-  Close,
-  Clipboard,
-  Danger,
-  Discord,
-  GitHub,
-  Info,
-  LinkOut,
-  LinkedIn,
-  Plus,
-  Search,
-  X,
-  Star,
-  Warning,
-};
+export { default as Anchor } from "@/shared/icons/anchor";
+export { default as ArrowDown } from "@/shared/icons/arrow-down";
+export { default as ArrowLeft } from "@/shared/icons/arrow-left";
+export { default as ArrowLineRight } from "@/shared/icons/arrow-line-right";
+export { default as ArrowRight } from "@/shared/icons/arrow-right";
+export { default as ArrowUp } from "@/shared/icons/arrow-up";
+export { default as Checkmark } from "@/shared/icons/checkmark";
+export { default as Clipboard } from "@/shared/icons/clipboard";
+export { default as Close } from "@/shared/icons/close";
+export { default as Danger } from "@/shared/icons/danger";
+export { default as Discord } from "@/shared/icons/discord";
+export { default as GitHub } from "@/shared/icons/github";
+export { default as Info } from "@/shared/icons/info";
+export { default as LinkOut } from "@/shared/icons/link-out";
+export { default as LinkedIn } from "@/shared/icons/linkedin";
+export { default as Plus } from "@/shared/icons/plus";
+export { default as Search } from "@/shared/icons/search";
+export { default as Star } from "@/shared/icons/star";
+export { default as Warning } from "@/shared/icons/warning";
+export { default as X } from "@/shared/icons/x";

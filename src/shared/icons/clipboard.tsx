@@ -1,6 +1,6 @@
 import type { ComponentProps, FC } from "react";
 
-export const Clipboard: FC<ComponentProps<"svg">> = (props) => (
+const Clipboard: FC<ComponentProps<"svg">> = (props) => (
   <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
     <path
       fill-rule="evenodd"
@@ -10,3 +10,5 @@ export const Clipboard: FC<ComponentProps<"svg">> = (props) => (
     />
   </svg>
 );
+
+export default Clipboard;

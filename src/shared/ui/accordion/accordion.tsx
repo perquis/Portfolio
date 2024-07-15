@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import type { ComponentProps, FC } from "react";
 
 import { useOpen } from "@/shared/hooks/use-open";
-import { ArrowLeft } from "@/shared/icons/arrow-left";
+import { ArrowLeft } from "@/shared/icons";
 import { Paragraph } from "@/shared/ui/paragraph/paragraph";
 import { Section } from "@/shared/ui/section/section";
 import { Title } from "@/shared/ui/title/title";

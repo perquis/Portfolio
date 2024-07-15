@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { icons } from "@/shared/icons";
+import * as icons from "@/shared/icons";
 import { IconButton } from "@/shared/ui/icon-button/icon-button";
 
 const meta = {

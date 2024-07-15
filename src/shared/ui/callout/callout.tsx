@@ -2,10 +2,7 @@ import clsx from "clsx";
 import type { FC } from "react";
 import { match } from "ts-pattern";
 
-import { Checkmark } from "@/shared/icons/checkmark";
-import { Danger } from "@/shared/icons/danger";
-import { Info } from "@/shared/icons/info";
-import { Warning } from "@/shared/icons/warning";
+import { Checkmark, Danger, Info, Warning } from "@/shared/icons";
 import { Paragraph, Section, Title } from "@/shared/ui";
 
 interface ICallout {
