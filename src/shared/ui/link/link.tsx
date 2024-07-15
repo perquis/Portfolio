@@ -7,6 +7,8 @@ import type { ComponentProps } from "react";
 
 type ILink = ComponentProps<typeof NextLink>;
 
+// FIXME: Należy koniecznie przenieść ten komponent do Breadcrumbs
+// oraz zastanowić się nad ogólnym designem samego linku.
 export default function Link({ children, className, ...props }: ILink) {
   const pathname = usePathname();
 
