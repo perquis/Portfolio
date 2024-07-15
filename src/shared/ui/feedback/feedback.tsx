@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 
-import { emojis } from "@/data/emojis/emojis";
+import { emojis } from "@/data";
 import { Emoji, IconButton, Paragraph, Section, Title } from "@/shared/ui";
 
 interface IFeedback {

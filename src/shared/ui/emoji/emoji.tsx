@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { useEffect, useState } from "react";
 import { match } from "ts-pattern";
 
-import { emojis } from "@/data/emojis/emojis";
+import { emojis } from "@/data";
 import { useOpen } from "@/shared/hooks/use-open";
 
 type EmojiName = (typeof emojis)[number]["name"];

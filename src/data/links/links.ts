@@ -1,6 +1,8 @@
-export const links = [
+const links = [
   { label: "About", href: "/" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
+
+export default links;

@@ -1,4 +1,4 @@
-export const emojis = [
+const emojis = [
   {
     path: "lotties/emojis/good.lottie",
     name: "good",
@@ -15,3 +15,5 @@ export const emojis = [
     title: "It was not helpful and boring.",
   },
 ] as const;
+
+export default emojis;

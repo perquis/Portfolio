@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { emojis } from "@/data/emojis/emojis";
+import { emojis } from "@/data";
 import { Emoji } from "@/shared/ui";
 
 const meta = {

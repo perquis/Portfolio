@@ -1,4 +1,4 @@
-export const ratios = [
+const ratios = [
   "1:1",
   "2:3",
   "3:2",
@@ -17,3 +17,5 @@ export const ratios = [
   "16:10",
   "21:9",
 ];
+
+export default ratios;
