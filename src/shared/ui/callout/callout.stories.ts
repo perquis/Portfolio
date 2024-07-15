@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Callout } from "@/shared/ui";
 
 const meta = {
-  title: "Generals/Callout",
+  title: "Blog/Callout",
   component: Callout,
   parameters: {
     docs: {

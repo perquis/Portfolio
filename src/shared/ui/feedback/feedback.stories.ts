@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Feedback } from "@/shared/ui";
 
 const meta = {
-  title: "Actions/Feedback",
+  title: "Blog/Feedback",
   component: Feedback,
   parameters: {
     docs: {

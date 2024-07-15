@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Breadcrumbs } from "@/shared/ui";
 
 const meta = {
-  title: "Generals/Breadcrumbs",
+  title: "Menu/Breadcrumbs",
   component: Breadcrumbs,
   parameters: {
     docs: {

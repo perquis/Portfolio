@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Tab } from "@/shared/ui";
 
 const meta = {
-  title: "Actions/Tab",
+  title: "Menu/Tab",
   component: Tab,
   parameters: {
     docs: {

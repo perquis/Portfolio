@@ -4,7 +4,7 @@ import * as icons from "@/shared/icons";
 import { IconButton } from "@/shared/ui";
 
 const meta = {
-  title: "Actions/IconButton",
+  title: "Buttons/IconButton",
   component: IconButton,
   parameters: {
     docs: {

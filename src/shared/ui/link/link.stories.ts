@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Link } from "@/shared/ui";
 
 const meta = {
-  title: "Actions/Link",
+  title: "Menu/Link",
   component: Link,
   parameters: {
     docs: {

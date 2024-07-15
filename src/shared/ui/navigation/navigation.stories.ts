@@ -4,7 +4,7 @@ import { links } from "@/data";
 import { Navigation } from "@/shared/ui";
 
 const meta = {
-  title: "Actions/Navigation",
+  title: "Menu/Navigation",
   component: Navigation,
   parameters: {
     docs: {
