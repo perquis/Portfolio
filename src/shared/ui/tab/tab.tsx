@@ -3,11 +3,11 @@
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import type { ComponentProps, FC } from "react";
+import type { ComponentProps } from "react";
 
 type ITab = ComponentProps<typeof Link>;
 
-export const Tab: FC<ITab> = ({ children, className, ...props }) => {
+export default function Tab({ children, className, ...props }: ITab) {
   const pathname = usePathname();
 
   return (
@@ -22,4 +22,4 @@ export const Tab: FC<ITab> = ({ children, className, ...props }) => {
       {children}
     </Link>
   );
-};
+}

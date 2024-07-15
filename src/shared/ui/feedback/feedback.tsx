@@ -1,7 +1,6 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import type { FC } from "react";
 
 import { emojis } from "@/data/emojis/emojis";
 import { Emoji, IconButton, Paragraph, Section, Title } from "@/shared/ui";
@@ -13,7 +12,7 @@ interface IFeedback {
   close: () => void;
 }
 
-export const Feedback: FC<IFeedback> = ({ isOpen, close, title, description }) => {
+export default function Feedback({ isOpen, close, title, description }: IFeedback) {
   return (
     <div className="w-full h-screen flex justify-center items-end pb-16 fixed top-0 left-0 pointer-events-none overflow-hidden">
       <AnimatePresence>
@@ -61,4 +60,4 @@ export const Feedback: FC<IFeedback> = ({ isOpen, close, title, description }) =
       </AnimatePresence>
     </div>
   );
-};
+}

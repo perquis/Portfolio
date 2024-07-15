@@ -1,8 +1,10 @@
 import clsx from "clsx";
-import type { ComponentProps, FC } from "react";
+import type { ComponentProps } from "react";
 
-export const GlobalLayout: FC<ComponentProps<"div">> = ({ children, className, ...props }) => (
-  <div className={clsx("w-full py-32", className)} {...props}>
-    {children}
-  </div>
-);
+export default function GlobalLayout({ children, className, ...props }: ComponentProps<"div">) {
+  return (
+    <div className={clsx("w-full py-32", className)} {...props}>
+      {children}
+    </div>
+  );
+}

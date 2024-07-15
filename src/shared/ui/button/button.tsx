@@ -1,25 +1,18 @@
 "use client";
 
 import clsx from "clsx";
-import type { ComponentProps, FC } from "react";
+import type { ComponentProps } from "react";
 import { TailSpin } from "react-loader-spinner";
 import { match } from "ts-pattern";
 
-interface IButton {
+type IButton = {
   size: Exclude<Size, "tiny">;
   variants: "black" | "white" | "indigo";
   mode: "simple" | "gradient";
   loading?: boolean;
-}
+} & ComponentProps<"button">;
 
-export const Button: FC<IButton & ComponentProps<"button">> = ({
-  children,
-  size,
-  variants,
-  loading,
-  mode,
-  ...props
-}) => {
+export default function Button({ children, size, variants, loading, mode, ...props }: IButton) {
   const sizes = match({ size })
     .with({ size: "small" }, () => "text-xs gap-2 px-4 py-2 rounded-lg")
     .with({ size: "medium" }, () => "text-sm gap-2.5 px-5 py-2.5 rounded-[10px]")
@@ -72,4 +65,4 @@ export const Button: FC<IButton & ComponentProps<"button">> = ({
       {loading ? "Loading..." : <span className="drop-shadow-sm">{children}</span>}
     </button>
   );
-};
+}

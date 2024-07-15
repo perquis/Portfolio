@@ -2,7 +2,7 @@
 
 import { DotLottie, DotLottieReact } from "@lottiefiles/dotlottie-react";
 import clsx from "clsx";
-import { type FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { match } from "ts-pattern";
 
 import { emojis } from "@/data/emojis/emojis";
@@ -15,7 +15,7 @@ interface IEmoji {
   size: Exclude<Size, "tiny">;
 }
 
-export const Emoji: FC<IEmoji> = ({ emoji, size }) => {
+export default function Emoji({ emoji, size }: IEmoji) {
   const [dotLottie, setDotLottie] = useState<DotLottie | null>(null);
   const foundEmoji = emojis.find((e) => e.name === emoji);
   const [isOpen, [open, close]] = useOpen();
@@ -59,4 +59,4 @@ export const Emoji: FC<IEmoji> = ({ emoji, size }) => {
       />
     </button>
   );
-};
+}

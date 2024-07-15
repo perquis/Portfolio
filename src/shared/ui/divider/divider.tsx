@@ -1,7 +1,7 @@
 import clsx from "clsx";
-import type { ComponentProps, FC } from "react";
+import type { ComponentProps } from "react";
 
-export const Divider: FC<ComponentProps<"div">> = ({ className, ...props }) => {
+export default function Divider({ className, ...props }: ComponentProps<"div">) {
   return (
     <div className={clsx("text-zinc-200 dark:text-zinc-800", className)} {...props}>
       <svg width="100%" height="1" viewBox="0 0 640 1" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -9,4 +9,4 @@ export const Divider: FC<ComponentProps<"div">> = ({ className, ...props }) => {
       </svg>
     </div>
   );
-};
+}

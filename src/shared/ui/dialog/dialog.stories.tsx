@@ -1,11 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
 
-import { Button } from "@/shared/ui/button/button";
-import { Dialog } from "@/shared/ui/dialog/dialog";
-import { Paragraph } from "@/shared/ui/paragraph/paragraph";
-import { Section } from "@/shared/ui/section/section";
-import { Title } from "@/shared/ui/title/title";
+import { Button, Dialog, Paragraph, Section, Title } from "@/shared/ui";
 
 const meta = {
   title: "Overlays/Dialog",

@@ -1,21 +1,15 @@
 import clsx from "clsx";
-import type { ComponentProps, FC } from "react";
+import type { ComponentProps } from "react";
 
 import { getColorClass } from "@/shared/ui/badge/getColorClass";
 
-interface IBadge {
+type IBadge = {
   color: Color;
   rounded: Rounded;
   border?: boolean;
-}
+} & ComponentProps<"span">;
 
-export const Badge: FC<IBadge & ComponentProps<"span">> = ({
-  children,
-  color,
-  border,
-  rounded = "default",
-  ...props
-}) => {
+export default function Badge({ children, color, border, rounded = "default", ...props }: IBadge) {
   const colorClass = getColorClass(color);
 
   return (
@@ -31,4 +25,4 @@ export const Badge: FC<IBadge & ComponentProps<"span">> = ({
       {children}
     </span>
   );
-};
+}

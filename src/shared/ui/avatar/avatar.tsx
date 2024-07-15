@@ -1,8 +1,7 @@
 import clsx from "clsx";
-import type { FC } from "react";
 import { match } from "ts-pattern";
 
-import { Ratio } from "@/shared/ui/ratio/ratio";
+import { Ratio } from "@/shared/ui";
 
 type RatioProps = React.ComponentProps<typeof Ratio>;
 type IAvatar = Omit<RatioProps, "resolution"> & {
@@ -10,7 +9,7 @@ type IAvatar = Omit<RatioProps, "resolution"> & {
   size: Size;
 };
 
-export const Avatar: FC<IAvatar> = ({ rounded = "full", size = "medium", ...props }) => {
+export default function Avatar({ rounded = "full", size = "medium", ...props }: IAvatar) {
   const className = match({ rounded, size })
     .with({ rounded: "full", size: "large" }, () => "rounded-full h-16 w-16")
     .with({ rounded: "full", size: "medium" }, () => "rounded-full h-12 w-12")
@@ -23,4 +22,4 @@ export const Avatar: FC<IAvatar> = ({ rounded = "full", size = "medium", ...prop
     .run();
 
   return <Ratio resolution="1:1" className={clsx("overflow-hidden shadow-inner", className)} {...props} />;
-};
+}

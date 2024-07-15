@@ -2,23 +2,17 @@
 
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import { type ComponentProps, type FC, useEffect, useRef } from "react";
+import { type ComponentProps, useEffect, useRef } from "react";
 import { match } from "ts-pattern";
 
 import { useOpen } from "@/shared/hooks/use-open";
 
-interface ITooltip {
+type ITooltip = {
   label: string;
   alignment?: Exclude<Alignment, "bottom-left" | "bottom-right" | "top-left" | "top-right" | "center">;
-}
+} & ComponentProps<"div">;
 
-export const Tooltip: FC<ITooltip & ComponentProps<"div">> = ({
-  children,
-  className,
-  label,
-  alignment = "top",
-  ...props
-}) => {
+export default function Tooltip({ children, className, label, alignment = "top", ...props }: ITooltip) {
   const [isOpen, [open, close]] = useOpen();
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -66,4 +60,4 @@ export const Tooltip: FC<ITooltip & ComponentProps<"div">> = ({
       )}
     </div>
   );
-};
+}

@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import type { FC } from "react";
 import { match } from "ts-pattern";
 
 import { Checkmark, Danger, Info, Warning } from "@/shared/icons";
@@ -18,7 +17,7 @@ const icons = [
   { name: "success", Icon: Checkmark },
 ];
 
-export const Callout: FC<ICallout> = ({ title, content, variants }) => {
+export default function Callout({ title, content, variants }: ICallout) {
   const classes = match(variants)
     .with("info", () => "bg-indigo-50 border-indigo-200 dark:bg-indigo-950 dark:border-indigo-800")
     .with("warning", () => "bg-yellow-50 border-yellow-200 dark:bg-yellow-950 dark:border-yellow-800")
@@ -46,4 +45,4 @@ export const Callout: FC<ICallout> = ({ title, content, variants }) => {
       </Section>
     </Section>
   );
-};
+}

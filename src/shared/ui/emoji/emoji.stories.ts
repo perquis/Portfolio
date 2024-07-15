@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { emojis } from "@/data/emojis/emojis";
-
-import { Emoji } from "./emoji";
+import { Emoji } from "@/shared/ui";
 
 const meta = {
   title: "Actions/Emoji",

@@ -3,9 +3,9 @@
 import clsx from "clsx";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
-import type { ComponentProps, FC } from "react";
+import type { ComponentProps } from "react";
 
-export const Link: FC<ComponentProps<typeof NextLink>> = ({ children, className, ...props }) => {
+export default function Link({ children, className, ...props }: ComponentProps<typeof NextLink>) {
   const pathname = usePathname();
 
   return (
@@ -20,4 +20,4 @@ export const Link: FC<ComponentProps<typeof NextLink>> = ({ children, className,
       {children}
     </NextLink>
   );
-};
+}

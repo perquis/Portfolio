@@ -1,16 +1,16 @@
 import clsx from "clsx";
 import Image from "next/image";
-import type { ComponentProps, FC } from "react";
+import type { ComponentProps } from "react";
 
 import { getAspectRatio } from "./get-aspect-ratio";
 
-interface IImage {
+type IImage = {
   resolution: Resolution;
   src: string;
   alt: string;
-}
+} & ComponentProps<"div">;
 
-export const Ratio: FC<IImage & ComponentProps<"div">> = ({ src, alt, className = "w-full", resolution, ...props }) => {
+export default function Ratio({ src, alt, className = "w-full", resolution, ...props }: IImage) {
   const style = getAspectRatio(resolution);
 
   return (
@@ -18,4 +18,4 @@ export const Ratio: FC<IImage & ComponentProps<"div">> = ({ src, alt, className 
       <Image fill src={src} alt={alt} />
     </div>
   );
-};
+}

@@ -1,18 +1,16 @@
 import { AnimatePresence, motion } from "framer-motion";
-import type { ComponentProps, FC } from "react";
+import type { ComponentProps } from "react";
 
 import { useOpen } from "@/shared/hooks/use-open";
 import { ArrowLeft } from "@/shared/icons";
-import { Paragraph } from "@/shared/ui/paragraph/paragraph";
-import { Section } from "@/shared/ui/section/section";
-import { Title } from "@/shared/ui/title/title";
+import { Paragraph, Section, Title } from "@/shared/ui";
 
 interface IAccordion {
   question: string;
   answer: string;
 }
 
-export const Accordion: FC<IAccordion & ComponentProps<"button">> = ({ question, answer }) => {
+export default function Accordion({ question, answer }: IAccordion & ComponentProps<"button">) {
   const [isOpen, [, , toggle]] = useOpen();
 
   return (
@@ -39,7 +37,6 @@ export const Accordion: FC<IAccordion & ComponentProps<"button">> = ({ question,
               initial={{ opacity: 0, height: 0, paddingTop: 0 }}
               animate={{ opacity: 1, height: "auto", paddingTop: 8 }}
               exit={{ opacity: 0, height: 0, paddingTop: 0 }}
-              // transition={{ type: "tween", duration: 0.25 }}
             >
               <Paragraph className="text-sm !text-zinc-500">{answer}</Paragraph>
             </motion.div>
@@ -48,4 +45,4 @@ export const Accordion: FC<IAccordion & ComponentProps<"button">> = ({ question,
       </Section>
     </motion.button>
   );
-};
+}

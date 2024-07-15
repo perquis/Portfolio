@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Tab } from "@/shared/ui/tab/tab";
+import { Tab } from "@/shared/ui";
 
 const meta = {
   title: "Actions/Tab",

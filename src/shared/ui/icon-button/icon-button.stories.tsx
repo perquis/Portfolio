@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import * as icons from "@/shared/icons";
-import { IconButton } from "@/shared/ui/icon-button/icon-button";
+import { IconButton } from "@/shared/ui";
 
 const meta = {
   title: "Actions/IconButton",

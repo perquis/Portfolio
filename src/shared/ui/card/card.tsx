@@ -1,19 +1,18 @@
 import Link from "next/link";
-import type { ComponentProps, FC } from "react";
+import type { ComponentProps } from "react";
 
 import { Paragraph, Ratio, Section, Title } from "@/shared/ui";
 
 type ImageProps = Pick<ComponentProps<typeof Ratio>, "src" | "alt">;
+type NextLinkProps = ComponentProps<typeof Link>;
 
-interface ICard {
+type ICard = {
   image: ImageProps;
   title: string;
   description: string;
-}
+} & NextLinkProps;
 
-type NextLinkProps = ComponentProps<typeof Link>;
-
-export const Card: FC<ICard & Pick<NextLinkProps, "href">> = ({ title, description, image, href }) => {
+export default function Card({ title, description, image, href }: ICard) {
   return (
     <Section className="gap-4">
       <Link href={href}>
@@ -27,4 +26,4 @@ export const Card: FC<ICard & Pick<NextLinkProps, "href">> = ({ title, descripti
       </Section>
     </Section>
   );
-};
+}

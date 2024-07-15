@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Feedback } from "@/shared/ui/feedback/feedback";
+import { Feedback } from "@/shared/ui";
 
 const meta = {
   title: "Actions/Feedback",

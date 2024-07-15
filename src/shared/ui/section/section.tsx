@@ -1,10 +1,10 @@
 import clsx from "clsx";
-import type { ComponentProps, FC } from "react";
+import type { ComponentProps } from "react";
 
-export const Section: FC<ComponentProps<"section">> = ({ children, className, ...props }) => {
+export default function Section({ children, className, ...props }: ComponentProps<"section">) {
   return (
     <section className={clsx("flex flex-col", className)} {...props}>
       {children}
     </section>
   );
-};
+}

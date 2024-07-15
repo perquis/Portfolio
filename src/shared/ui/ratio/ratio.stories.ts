@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { placeholders, ratios } from "@/data";
-import { Ratio } from "@/shared/ui/ratio/ratio";
+import { Ratio } from "@/shared/ui";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

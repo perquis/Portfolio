@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import type { FC, ReactNode } from "react";
+import type { ReactNode } from "react";
 import { createPortal } from "react-dom";
 import ReactFocusLock from "react-focus-lock";
 import type { ReactFocusLockProps } from "react-focus-lock/interfaces";
@@ -19,7 +19,7 @@ interface IDialog {
   options?: ReactFocusLockProps<ReactNode, Record<string, any>>;
 }
 
-export const Dialog: FC<IDialog> = ({ isOpen, close, alignment = "center", children, options }) => {
+export default function Dialog({ isOpen, close, alignment = "center", children, options }: IDialog) {
   if (!isOpen) return null;
   const classes = match(alignment)
     .with("center", () => "justify-center items-center")
@@ -49,4 +49,4 @@ export const Dialog: FC<IDialog> = ({ isOpen, close, alignment = "center", child
     </div>,
     dialogRoot!,
   );
-};
+}

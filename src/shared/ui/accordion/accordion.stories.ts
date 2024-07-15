@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Accordion } from "@/shared/ui/accordion/accordion";
+import { Accordion } from "@/shared/ui";
 
 const meta = {
   title: "Actions/Accordion",

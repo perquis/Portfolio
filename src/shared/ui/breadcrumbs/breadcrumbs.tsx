@@ -1,4 +1,3 @@
-import type { FC } from "react";
 import React from "react";
 
 import { Link, Section } from "@/shared/ui";
@@ -8,7 +7,7 @@ interface IBreadcrumb {
   href: string;
 }
 
-export const Breadcrumbs: FC<Record<"links", IBreadcrumb[]>> = ({ links }) => {
+export default function Breadcrumbs({ links }: Record<"links", IBreadcrumb[]>) {
   return (
     <Section className="!flex-row gap-2">
       {links.map(({ label, href }, i) => (
@@ -19,6 +18,6 @@ export const Breadcrumbs: FC<Record<"links", IBreadcrumb[]>> = ({ links }) => {
       ))}
     </Section>
   );
-};
+}
 
 const Dash = () => <span className="block text-center w-5 text-zinc-500">/</span>;

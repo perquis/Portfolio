@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Link } from "@/shared/ui/link/link";
+import { Link } from "@/shared/ui";
 
 const meta = {
   title: "Actions/Link",

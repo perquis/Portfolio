@@ -5,7 +5,7 @@ import { match } from "ts-pattern";
 import * as icons from "@/shared/icons";
 import type { ButtonPropsWithSize, IconButtonProps } from "@/shared/ui/icon-button/icon-button.types";
 
-export const IconButton: FC<IconButtonProps> = ({ size, icon, className, children, ...props }) => {
+export default function IconButton({ size, icon, className, children, ...props }: IconButtonProps) {
   const squareSize = match(size)
     .with("small", () => 16)
     .with("medium", () => 20)
@@ -34,7 +34,7 @@ export const IconButton: FC<IconButtonProps> = ({ size, icon, className, childre
       <Icon {...viewBox} />
     </Button>
   );
-};
+}
 
 const Button: FC<ButtonPropsWithSize> = ({ className, size, children, rounded, ...props }) => {
   const classes = match(size)
