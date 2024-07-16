@@ -39,6 +39,7 @@ export const Error: Story = {
     type: "text",
     placeholder: "Name",
     error: true,
+    defaultValue: "John Do3",
     message: "This field is required.",
   },
 };
