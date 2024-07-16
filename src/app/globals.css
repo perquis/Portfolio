@@ -4,7 +4,6 @@
 
 :root {
   --tw-indigo-600: hsla(243, 75%, 59%, 0.75);
-  --tw-rose-600: hsla(340, 82%, 55%, 0.75);
   --tw-white: hsl(0, 0%, 100%);
 }
 
@@ -22,16 +21,4 @@
 ::selection {
   color: var(--tw-white);
   background: var(--tw-indigo-600);
-}
-
-html[data-mode="dark"] *:focus-visible {
-  outline: 2px solid var(--tw-rose-600) !important;
-}
-
-html[data-mode="dark"] ::-moz-selection {
-  background: var(--tw-rose-600);
-}
-
-html[data-mode="dark"] ::selection {
-  background: var(--tw-rose-600);
 }
