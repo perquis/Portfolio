@@ -5,6 +5,6 @@ const statusActions = [
   { name: "warning", Icon: Warning },
   { name: "error", Icon: Danger },
   { name: "success", Icon: Checkmark },
-];
+] as const;
 
 export default statusActions;
