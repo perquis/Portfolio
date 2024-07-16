@@ -33,3 +33,12 @@ export const Default: Story = {
     placeholder: "Name",
   },
 };
+
+export const Error: Story = {
+  args: {
+    type: "text",
+    placeholder: "Name",
+    error: true,
+    message: "This field is required.",
+  },
+};
