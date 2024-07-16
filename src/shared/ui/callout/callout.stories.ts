@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
+import { statusActions } from "@/data";
 import { Callout } from "@/shared/ui";
 
 const meta = {
@@ -19,7 +20,7 @@ const meta = {
       control: {
         type: "select",
       },
-      options: ["info", "warning", "error", "success"],
+      options: statusActions.map((action) => action.name),
     },
   },
 } satisfies Meta<typeof Callout>;

@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { match } from "ts-pattern";
 
-import { Checkmark, Danger, Info, Warning } from "@/shared/icons";
+import { statusActions } from "@/data";
 import { Paragraph, Section, Title } from "@/shared/ui";
 
 interface ICallout {
@@ -9,13 +9,6 @@ interface ICallout {
   content: string;
   variants: "info" | "warning" | "error" | "success";
 }
-
-const icons = [
-  { name: "info", Icon: Info },
-  { name: "warning", Icon: Warning },
-  { name: "error", Icon: Danger },
-  { name: "success", Icon: Checkmark },
-];
 
 export default function Callout({ title, content, variants }: ICallout) {
   const classes = match(variants)
@@ -32,7 +25,7 @@ export default function Callout({ title, content, variants }: ICallout) {
     .with("success", () => "!text-green-600 dark:!text-green-500")
     .exhaustive();
 
-  const foundIcon = icons.find((icon) => icon.name === variants)!;
+  const foundIcon = statusActions.find((icon) => icon.name === variants)!;
 
   return (
     <Section className={clsx("!flex-row gap-3 px-5 py-4 rounded-lg border", classes)}>
