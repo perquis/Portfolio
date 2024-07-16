@@ -24,3 +24,4 @@ export { default as Tab } from "./tab/tab";
 export { default as Title } from "./title/title";
 export { default as Tooltip } from "./tooltip/tooltip";
 export { default as Transition } from "./transition/transition";
+export { default as Typography } from "./typography/typography";
