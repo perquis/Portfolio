@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Button, Form, FormField, Input } from "@/shared/ui";
+import { Button, Form, FormField, Input, Textarea } from "@/shared/ui";
 
 const meta = {
   title: "Form/Form",
@@ -27,6 +27,7 @@ export const Default: Story = {
           <Input placeholder="Name" />
           <Input placeholder="Email" type="email" />
         </FormField>
+        <Textarea placeholder="Message" />
         <Button type="submit" mode="simple" size="medium" variants="black">
           Submit
         </Button>
