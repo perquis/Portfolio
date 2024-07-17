@@ -1,9 +1,9 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 import { emojis } from "@/data";
-import { Emoji, IconButton, Paragraph, Section, Title } from "@/shared/ui";
+import { Emoji, IconButton, Paragraph, Section, Title, Transition } from "@/shared/ui";
 
 interface IFeedback {
   title: string;
@@ -17,7 +17,7 @@ export default function Feedback({ isOpen, close, title, description }: IFeedbac
     <div className="w-full h-screen flex justify-center items-end pb-16 fixed top-0 left-0 pointer-events-none overflow-hidden">
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <Transition
             initial={{
               scale: 0,
               opacity: 0,
@@ -55,7 +55,7 @@ export default function Feedback({ isOpen, close, title, description }: IFeedbac
                 />
               </Section>
             </Section>
-          </motion.div>
+          </Transition>
         )}
       </AnimatePresence>
     </div>

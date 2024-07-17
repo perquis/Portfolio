@@ -1,11 +1,11 @@
 "use client";
 
 import clsx from "clsx";
-import { motion } from "framer-motion";
 import { type ComponentProps, useEffect, useRef } from "react";
 import { match } from "ts-pattern";
 
 import { useOpen } from "@/shared/hooks";
+import { Transition } from "@/shared/ui";
 
 type ITooltip = {
   label: string;
@@ -47,7 +47,7 @@ export default function Tooltip({ children, label, alignment = "top" }: ITooltip
         {children}
       </div>
       {isOpen && (
-        <motion.div
+        <Transition
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className={clsx(
@@ -56,7 +56,7 @@ export default function Tooltip({ children, label, alignment = "top" }: ITooltip
           )}
         >
           {label}
-        </motion.div>
+        </Transition>
       )}
     </div>
   );
