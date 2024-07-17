@@ -40,6 +40,14 @@ export const Error: Story = {
     placeholder: "Name",
     error: true,
     defaultValue: "John Do3",
-    message: "This field is required.",
+    message: "This name is invalid.",
+  },
+};
+
+export const LabeledField: Story = {
+  args: {
+    type: "text",
+    placeholder: "Name",
+    name: "First Name",
   },
 };
