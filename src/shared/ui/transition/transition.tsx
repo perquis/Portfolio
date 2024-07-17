@@ -1,3 +1,5 @@
+"use client";
+
 import { type MotionProps, motion } from "framer-motion";
 import type { ComponentProps } from "react";
 

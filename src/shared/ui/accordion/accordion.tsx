@@ -1,3 +1,5 @@
+"use client";
+
 import { AnimatePresence } from "framer-motion";
 import type { ComponentProps } from "react";
 
