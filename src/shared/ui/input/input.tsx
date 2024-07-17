@@ -11,6 +11,7 @@ export default function Input({ className, error, message, id, name, ...props }:
     <Transition
       animate={error ? { rotate: [-1, 1.3, 0], translateX: [-1, 1.3, 0] } : { rotate: 0, translateX: 0 }}
       transition={{ duration: 0.2 }}
+      className="w-full"
     >
       <Section className="gap-1">
         <label className="flex flex-col gap-1" htmlFor={id}>
