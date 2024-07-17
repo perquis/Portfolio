@@ -10,6 +10,7 @@ export { default as Close } from "@/shared/icons/close";
 export { default as Danger } from "@/shared/icons/danger";
 export { default as Discord } from "@/shared/icons/discord";
 export { default as GitHub } from "@/shared/icons/github";
+export { default as Grid } from "@/shared/icons/grid";
 export { default as Info } from "@/shared/icons/info";
 export { default as LinkOut } from "@/shared/icons/link-out";
 export { default as LinkedIn } from "@/shared/icons/linkedin";
