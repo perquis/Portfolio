@@ -25,6 +25,7 @@ export { default as Regular } from "./regular/regular";
 export { default as Section } from "./section/section";
 export { default as StatusDot } from "./status-dot/status-dot";
 export { default as Tab } from "./tab/tab";
+export { default as Technology } from "./technology/technology";
 export { default as Textarea } from "./textarea/textarea";
 export { default as Title } from "./title/title";
 export { default as Tooltip } from "./tooltip/tooltip";
