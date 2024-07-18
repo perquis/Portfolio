@@ -62,7 +62,7 @@ export default function Button({ children, size, variants, loading, mode, ...pro
       {...props}
     >
       {loading && <TailSpin width={spinnerSize} height={spinnerSize} color={color} visible />}
-      {loading ? "Loading..." : <span className="drop-shadow-sm">{children}</span>}
+      {loading ? "Loading..." : <span className="drop-shadow-sm pointer-events-none">{children}</span>}
     </button>
   );
 }
