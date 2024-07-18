@@ -39,10 +39,12 @@ export default function Slider({ slides }: ISlider) {
   const slideRef = useRef<HTMLDivElement>(null),
     diff = ((slideRef.current?.offsetWidth ?? 0) * 10) / 12 + 20;
 
+  const duration = { type: "spring", damping: 100, stiffness: 1000 };
+
   return (
     <Section className="relative gap-5">
       <div className="relative">
-        <Transition animate={{ translateX: diff * -page }} className="w-full">
+        <Transition animate={{ translateX: diff * -page }} transition={duration} className="w-full">
           <Section className="!flex-row gap-5 items-center" style={{ aspectRatio: "5 / 4" }} ref={slideRef}>
             {slides.map((rest, index) => (
               <Ratio
@@ -65,7 +67,7 @@ export default function Slider({ slides }: ISlider) {
       </div>
       <Section className="overflow-hidden h-5">
         {slides.map(({ alt }, index) => (
-          <Transition key={index} animate={{ translateY: page * -27 }} className="text-center">
+          <Transition key={index} animate={{ translateY: page * -27 }} transition={duration} className="text-center">
             <Regular className="!text-sm text-center">{alt}</Regular>
           </Transition>
         ))}
