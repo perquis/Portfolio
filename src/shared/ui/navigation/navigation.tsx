@@ -1,6 +1,6 @@
 import type { ComponentProps, FC } from "react";
 
-import { Breadcrumbs, Container, Logo, Section, Tab } from "@/shared/ui";
+import { Breadcrumbs, Container, HamburgerMenu, Logo, Section, Tab } from "@/shared/ui";
 
 type INavigation = ComponentProps<typeof Breadcrumbs>;
 
@@ -11,6 +11,7 @@ export default function Navigation({ links }: INavigation) {
         <Section className="!flex-row justify-between items-center">
           <Logo />
           <Menu links={links} />
+          <HamburgerMenu links={links} />
         </Section>
       </Container>
     </nav>
