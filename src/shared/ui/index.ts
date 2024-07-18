@@ -24,6 +24,7 @@ export { default as Paragraph } from "./paragraph/paragraph";
 export { default as Ratio } from "./ratio/ratio";
 export { default as Regular } from "./regular/regular";
 export { default as Section } from "./section/section";
+export { default as Slider } from "./slider/slider";
 export { default as StatusDot } from "./status-dot/status-dot";
 export { default as Tab } from "./tab/tab";
 export { default as Technology } from "./technology/technology";
