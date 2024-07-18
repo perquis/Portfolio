@@ -58,7 +58,13 @@ export default function Slider({ slides }: ISlider) {
           ))}
         </Section>
       </div>
-      <Regular className="!text-sm text-center">{slides[page].alt}</Regular>
+      <Section className="overflow-hidden h-5">
+        {slides.map(({ alt }, index) => (
+          <Transition key={index} animate={{ translateY: page * -27 }} className="text-center">
+            <Regular className="!text-sm text-center">{alt}</Regular>
+          </Transition>
+        ))}
+      </Section>
       <Section className="absolute right-0 -bottom-2 !flex-row gap-2">
         {pagination.map(({ name, disabled, onClick }, index) => (
           <IconButton
