@@ -1,6 +1,6 @@
 import type { ComponentProps } from "react";
 
-import * as icons from "@/shared/icons";
+import * as icons from "@/shared/icons/design";
 
 export type ButtonProps = ComponentProps<"button">;
 type ExcludedSize = Exclude<Size, "tiny">;

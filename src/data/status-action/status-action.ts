@@ -1,4 +1,4 @@
-import { Checkmark, Danger, Info, Warning } from "@/shared/icons";
+import { Checkmark, Danger, Info, Warning } from "@/shared/icons/design";
 
 const statusActions = [
   { name: "info", Icon: Info },

@@ -4,7 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import type { ComponentProps } from "react";
 
 import { useOpen } from "@/shared/hooks";
-import { ArrowLeft } from "@/shared/icons";
+import { ArrowLeft } from "@/shared/icons/design";
 import { Paragraph, Section, Title, Transition } from "@/shared/ui";
 
 type IAccordion = {

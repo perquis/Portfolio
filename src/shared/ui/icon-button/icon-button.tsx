@@ -2,7 +2,7 @@ import clsx from "clsx";
 import type { FC } from "react";
 import { match } from "ts-pattern";
 
-import * as icons from "@/shared/icons";
+import * as icons from "@/shared/icons/design";
 import type { ButtonPropsWithSize, IconButtonProps } from "@/shared/ui/icon-button/icon-button.types";
 
 export default function IconButton({ size, icon, className, children, ...props }: IconButtonProps) {

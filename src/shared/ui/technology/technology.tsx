@@ -1,4 +1,4 @@
-import { Grid } from "@/shared/icons";
+import { Grid } from "@/shared/icons/design";
 import { Avatar, Paragraph, Ratio, Section, Title } from "@/shared/ui";
 
 type RatioProps = Pick<React.ComponentProps<typeof Ratio>, "src" | "alt">;
