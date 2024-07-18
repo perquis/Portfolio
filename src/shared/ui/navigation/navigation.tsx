@@ -19,7 +19,7 @@ export default function Navigation({ links }: INavigation) {
 
 const Menu: FC<INavigation> = ({ links }) => {
   return (
-    <Section className="!flex-row gap-3 text-xs">
+    <Section className="!flex-row gap-3 text-xs hidden sm:flex">
       {links.map(({ href, label }) => (
         <Tab key={href} href={href}>
           {label}
