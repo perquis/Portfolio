@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { type FC, useState } from "react";
+import { type FC, useRef, useState } from "react";
 
 import { IconButton, Ratio, Regular, Section, Transition } from "@/shared/ui";
 
@@ -36,22 +36,27 @@ export default function Slider({ slides }: ISlider) {
     },
   ] as const;
 
+  const slideRef = useRef<HTMLDivElement>(null),
+    diff = ((slideRef.current?.offsetWidth ?? 0) * 10) / 12 + 20;
+
   return (
     <Section className="relative gap-5">
       <div className="relative">
-        <Section className="!flex-row gap-5 items-center" style={{ aspectRatio: "5 / 4" }}>
-          {slides.map((rest, index) => (
-            <Ratio
-              key={index}
-              className={clsx(
-                "rounded-xl overflow-hidden flex-shrink-0",
-                page !== index ? "!w-10/12 opacity-15" : "w-full",
-              )}
-              resolution="5:4"
-              {...rest}
-            />
-          ))}
-        </Section>
+        <Transition animate={{ translateX: diff * -page }} className="w-full">
+          <Section className="!flex-row gap-5 items-center" style={{ aspectRatio: "5 / 4" }} ref={slideRef}>
+            {slides.map((rest, index) => (
+              <Ratio
+                key={index}
+                className={clsx(
+                  "rounded-xl overflow-hidden flex-shrink-0",
+                  page !== index ? "!w-10/12 opacity-15" : "w-full",
+                )}
+                resolution="5:4"
+                {...rest}
+              />
+            ))}
+          </Section>
+        </Transition>
         <Section className="absolute !flex-row gap-3 bottom-3 -translate-x-1/2 left-1/2">
           {slides.map((_, index) => (
             <Page key={index} isActive={index === page} />
