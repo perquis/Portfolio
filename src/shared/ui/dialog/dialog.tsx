@@ -1,12 +1,13 @@
 "use client";
 
 import clsx from "clsx";
-import type { ReactNode } from "react";
+import { type ReactNode, useRef } from "react";
 import { createPortal } from "react-dom";
 import ReactFocusLock from "react-focus-lock";
 import type { ReactFocusLockProps } from "react-focus-lock/interfaces";
 import { match } from "ts-pattern";
 
+import { useKey, useOutsideOnClick } from "@/shared/hooks";
 import { IconButton, Section } from "@/shared/ui";
 
 const dialogRoot = document.getElementById("dialog");
@@ -20,7 +21,6 @@ interface IDialog {
 }
 
 export default function Dialog({ isOpen, close, alignment = "center", children, options }: IDialog) {
-  if (!isOpen) return null;
   const classes = match(alignment)
     .with("center", () => "justify-center items-center")
     .with("bottom", () => "justify-center items-end")
@@ -33,6 +33,13 @@ export default function Dialog({ isOpen, close, alignment = "center", children, 
     .with("top-right", () => "justify-end items-start")
     .exhaustive();
 
+  const dialogRef = useRef<HTMLDivElement>(null);
+
+  useOutsideOnClick(dialogRef, close);
+  useKey("Escape", close);
+
+  if (!isOpen) return null;
+
   return createPortal(
     <div
       className={clsx(
@@ -41,7 +48,10 @@ export default function Dialog({ isOpen, close, alignment = "center", children, 
       )}
     >
       <ReactFocusLock {...options}>
-        <Section className="bg-white dark:bg-zinc-950 p-5 max-w-screen-sm h-screen sm:h-auto sm:rounded-2xl sm:shadow border border-zinc-200 dark:border-zinc-800 relative">
+        <Section
+          className="bg-white dark:bg-zinc-950 p-5 max-w-screen-sm h-screen sm:h-auto sm:rounded-2xl sm:shadow border border-zinc-200 dark:border-zinc-800 relative"
+          ref={dialogRef}
+        >
           <IconButton className="absolute top-3 right-3" size="medium" icon="Close" onClick={close} />
           {children}
         </Section>

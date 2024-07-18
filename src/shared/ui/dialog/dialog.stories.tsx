@@ -58,7 +58,7 @@ export const Default: Story = {
   },
   decorators: [
     (Story, options) => {
-      const [isOpen, [open]] = useOpen();
+      const [isOpen, [open, close]] = useOpen();
 
       return (
         <>
