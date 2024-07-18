@@ -15,7 +15,7 @@ export default function Ratio({ src, alt, className = "w-full", resolution, ...p
 
   return (
     <div className={clsx("relative", className)} style={style} {...props}>
-      <Image fill src={src} alt={alt} />
+      <Image fill objectFit="cover" unoptimized priority src={src} alt={alt} />
     </div>
   );
 }
