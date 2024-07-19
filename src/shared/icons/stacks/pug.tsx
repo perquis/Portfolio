@@ -1,7 +1,7 @@
 import type { ComponentProps, FC } from "react";
 
 const Pug: FC<ComponentProps<"svg">> = (props) => (
-  <svg {...props} viewBox="0 0 128 128" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+  <svg {...props} viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
     <g transform="translate(-.25 -1.71)">
       <path
         class="st1"

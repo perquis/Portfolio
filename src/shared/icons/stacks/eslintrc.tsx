@@ -1,7 +1,7 @@
 import type { ComponentProps, FC } from "react";
 
 const Eslintrc: FC<ComponentProps<"svg">> = (props) => (
-  <svg {...props} xml:space="preserve" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
     <path
       d="m97.478 120.86 50.098-28.924a4.052 4.052 0 0 1 4.053 0l50.1 28.924a4.055 4.055 0 0 1 2.026 3.51v57.848a4.06 4.06 0 0 1-2.027 3.51l-50.099 28.924a4.052 4.052 0 0 1-4.053 0l-50.098-28.924a4.055 4.055 0 0 1-2.026-3.51V124.37a4.057 4.057 0 0 1 2.026-3.51"
       fill="#7986cb"
