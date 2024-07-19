@@ -5,7 +5,7 @@ type IGlobalLayout = ComponentProps<"div">;
 
 export default function GlobalLayout({ children, className, ...props }: IGlobalLayout) {
   return (
-    <div className={clsx("w-full py-32 overflow-x-hidden", className)} {...props}>
+    <div className={clsx("w-full py-32 min-h-screen overflow-x-hidden", className)} {...props}>
       {children}
     </div>
   );
