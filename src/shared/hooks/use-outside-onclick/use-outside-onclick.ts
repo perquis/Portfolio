@@ -15,7 +15,7 @@ const useOutsideOnClick = (ref: RefObject<HTMLElement>, close: () => void, eleme
       const target = event.target as HTMLElement,
         tagName = target.tagName?.toLowerCase();
 
-      if (tagName === "button" || tagName === "a") return;
+      if (tagName === "button" || tagName === "a" || tagName === "img") return;
 
       if (ref.current && !ref.current.contains(event.target as Node)) {
         setIsOutsideElement(true);
