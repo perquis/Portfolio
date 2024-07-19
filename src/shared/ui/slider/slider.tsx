@@ -1,12 +1,15 @@
 "use client";
 
 import clsx from "clsx";
-import type { ComponentProps } from "react";
+import { type ComponentProps } from "react";
 
+import { useKey } from "@/shared/hooks";
 import { Container, IconButton, Ratio, Regular, Section, Transition } from "@/shared/ui";
 
 import { Page } from "./page";
+import { Popup } from "./popup";
 import { useAnimate } from "./use-animate";
+import { usePopup } from "./use-popup";
 
 type RatioProps = ComponentProps<typeof Ratio>;
 type Slide = Pick<RatioProps, "src" | "alt">;
@@ -17,27 +20,37 @@ interface ISlider {
 
 export default function Slider({ slides }: ISlider) {
   const {
-    animate: { page, diff, slideWidth },
-    duration: { current: transition },
-    actions,
-    slideRef,
-  } = useAnimate();
+      animate: { page, diff, slideWidth },
+      duration: { current: transition },
+      actions,
+      slideRef,
+    } = useAnimate(),
+    popup = usePopup(page);
+
+  useKey("Escape", popup.close);
 
   return (
     <Section className="relative gap-5">
+      <Popup {...popup} />
+
       <Container className="relative">
         <Transition animate={{ translateX: diff * -page }} transition={transition} className="w-full">
           <Section className="!flex-row gap-5 items-center" style={{ aspectRatio: "5 / 4" }} ref={slideRef}>
             {slides.map((rest, index) => (
               <Transition
                 key={index}
+                layoutId={String(index)}
                 className={"flex-shrink-0"}
+                onClick={() => page === index && popup.setSelectedId(String(index))}
                 style={{ width: page === index ? "100%" : "83.33%" }}
                 animate={{ width: page === index ? slideWidth.active : slideWidth.inactive }}
               >
                 <Ratio
                   key={index}
-                  className={clsx("rounded-xl overflow-hidden flex-shrink-0 w-full", page !== index && "opacity-15")}
+                  className={clsx(
+                    "rounded-xl overflow-hidden flex-shrink-0 w-full lock",
+                    page !== index && "opacity-15",
+                  )}
                   resolution="5:4"
                   {...rest}
                 />
@@ -45,7 +58,7 @@ export default function Slider({ slides }: ISlider) {
             ))}
           </Section>
         </Transition>
-        <Section className="absolute !flex-row gap-3 bottom-3 -translate-x-1/2 left-1/2">
+        <Section className="absolute !flex-row gap-3 bottom-5 -translate-x-1/2 left-1/2">
           {slides.map((_, index) => (
             <Page key={index} isActive={index === page} />
           ))}
