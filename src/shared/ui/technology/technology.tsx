@@ -1,17 +1,21 @@
 import { Grid } from "@/shared/icons/design";
-import { Avatar, Paragraph, Ratio, Section, Title } from "@/shared/ui";
+import * as stacks from "@/shared/icons/stacks";
+import { Paragraph, Section, Title } from "@/shared/ui";
 
-type RatioProps = Pick<React.ComponentProps<typeof Ratio>, "src" | "alt">;
+type IconName = keyof typeof stacks;
+
 type ITechnology = {
-  avatar: RatioProps;
+  icon: IconName;
   name: string;
   content: string;
 };
 
-export default function Technology({ avatar, name, content }: ITechnology) {
+export default function Technology({ icon, name, content }: ITechnology) {
+  const Icon = stacks[icon];
+
   return (
     <Section className="relative gap-2 bg-white dark:bg-zinc-900 overflow-hidden rounded-xl dark:border-zinc-800/50 border border-zinc-300 p-4 shadow flex-1">
-      <Avatar rounded="default" size="small" className="z-50" {...avatar} />
+      <Icon width={32} height={32} />
       <Section className="gap-1 z-50">
         <Title level="b">{name}</Title>
         <Paragraph className="text-sm">{content}</Paragraph>
