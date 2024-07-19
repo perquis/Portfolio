@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { type FC, useRef, useState } from "react";
+import { type FC, useEffect, useRef, useState } from "react";
 
 import { IconButton, Ratio, Regular, Section, Transition } from "@/shared/ui";
 
@@ -14,6 +14,11 @@ type ISlider = {
 
 export default function Slider({ slides }: ISlider) {
   const [page, setPage] = useState(0);
+  const [animate, setAnimate] = useState({
+    offsetWidth: 0,
+    closestSlideWidth: 0,
+    diff: 0,
+  });
 
   const paginate = (newPage: number) =>
     setPage((prevPage) => {
@@ -36,26 +41,41 @@ export default function Slider({ slides }: ISlider) {
     },
   ] as const;
 
-  const slideRef = useRef<HTMLDivElement>(null),
-    diff = ((slideRef.current?.offsetWidth ?? 0) * 10) / 12 + 20;
+  const slideRef = useRef<HTMLDivElement>(null);
 
-  const duration = { type: "spring", damping: 100, stiffness: 1000 };
+  useEffect(() => {
+    const offsetWidth = slideRef.current?.offsetWidth ?? 0,
+      closestSlideWidth = (offsetWidth * 10) / 12,
+      diff = closestSlideWidth + 20;
+
+    setAnimate({ offsetWidth, closestSlideWidth, diff });
+  }, []);
+
+  const duration = {
+    type: "spring",
+    damping: 100,
+    stiffness: 1000,
+  };
 
   return (
     <Section className="relative gap-5">
       <div className="relative">
-        <Transition animate={{ translateX: diff * -page }} transition={duration} className="w-full">
+        <Transition animate={{ translateX: animate.diff * -page }} transition={duration} className="w-full">
           <Section className="!flex-row gap-5 items-center" style={{ aspectRatio: "5 / 4" }} ref={slideRef}>
             {slides.map((rest, index) => (
-              <Ratio
+              <Transition
                 key={index}
-                className={clsx(
-                  "rounded-xl overflow-hidden flex-shrink-0",
-                  page !== index ? "!w-10/12 opacity-15" : "w-full",
-                )}
-                resolution="5:4"
-                {...rest}
-              />
+                className={"flex-shrink-0"}
+                style={{ width: page === index ? "100%" : "83.33%" }}
+                animate={{ width: page === index ? animate.offsetWidth : animate.closestSlideWidth }}
+              >
+                <Ratio
+                  key={index}
+                  className={clsx("rounded-xl overflow-hidden flex-shrink-0 w-full", page !== index && "opacity-15")}
+                  resolution="5:4"
+                  {...rest}
+                />
+              </Transition>
             ))}
           </Section>
         </Transition>
