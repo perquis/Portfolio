@@ -7,7 +7,7 @@ import ReactFocusLock from "react-focus-lock";
 import type { ReactFocusLockProps } from "react-focus-lock/interfaces";
 import { match } from "ts-pattern";
 
-import { useKey, useOutsideOnClick } from "@/shared/hooks";
+import { useHideBodyScrollbar, useKey, useOutsideOnClick } from "@/shared/hooks";
 import { IconButton, Section } from "@/shared/ui";
 
 const dialogRoot = document.getElementById("dialog");
@@ -36,6 +36,7 @@ export default function Dialog({ isOpen, close, alignment = "center", children, 
   const dialogRef = useRef<HTMLDivElement>(null);
 
   useOutsideOnClick(dialogRef, close);
+  useHideBodyScrollbar(isOpen);
   useKey("Escape", close);
 
   if (!isOpen) return null;
