@@ -12,3 +12,5 @@ node_modules
 README.md
 
 storybook.log
+
+*.py
