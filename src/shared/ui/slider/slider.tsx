@@ -1,73 +1,39 @@
+"use client";
+
 import clsx from "clsx";
-import { type FC, useEffect, useRef, useState } from "react";
+import type { ComponentProps } from "react";
 
-import { IconButton, Ratio, Regular, Section, Transition } from "@/shared/ui";
+import { Container, IconButton, Ratio, Regular, Section, Transition } from "@/shared/ui";
 
-interface Slide {
-  src: string;
-  alt: string;
+import { Page } from "./page";
+import { useAnimate } from "./use-animate";
+
+type RatioProps = ComponentProps<typeof Ratio>;
+type Slide = Pick<RatioProps, "src" | "alt">;
+
+interface ISlider {
+  slides: Slide[];
 }
 
-type ISlider = {
-  slides: Slide[];
-};
-
 export default function Slider({ slides }: ISlider) {
-  const [page, setPage] = useState(0);
-  const [animate, setAnimate] = useState({
-    offsetWidth: 0,
-    closestSlideWidth: 0,
-    diff: 0,
-  });
-
-  const paginate = (newPage: number) =>
-    setPage((prevPage) => {
-      if (prevPage + newPage < 0) return prevPage;
-      if (prevPage + newPage > slides.length - 1) return prevPage;
-
-      return prevPage + newPage;
-    });
-
-  const pagination = [
-    {
-      name: "ArrowLeft",
-      onClick: () => paginate(-1),
-      disabled: page === 0,
-    },
-    {
-      name: "ArrowRight",
-      onClick: () => paginate(1),
-      disabled: page === slides.length - 1,
-    },
-  ] as const;
-
-  const slideRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const offsetWidth = slideRef.current?.offsetWidth ?? 0,
-      closestSlideWidth = (offsetWidth * 10) / 12,
-      diff = closestSlideWidth + 20;
-
-    setAnimate({ offsetWidth, closestSlideWidth, diff });
-  }, []);
-
-  const duration = {
-    type: "spring",
-    damping: 100,
-    stiffness: 1000,
-  };
+  const {
+    animate: { page, diff, slideWidth },
+    duration: { current: transition },
+    actions,
+    slideRef,
+  } = useAnimate();
 
   return (
     <Section className="relative gap-5">
-      <div className="relative">
-        <Transition animate={{ translateX: animate.diff * -page }} transition={duration} className="w-full">
+      <Container className="relative">
+        <Transition animate={{ translateX: diff * -page }} transition={transition} className="w-full">
           <Section className="!flex-row gap-5 items-center" style={{ aspectRatio: "5 / 4" }} ref={slideRef}>
             {slides.map((rest, index) => (
               <Transition
                 key={index}
                 className={"flex-shrink-0"}
                 style={{ width: page === index ? "100%" : "83.33%" }}
-                animate={{ width: page === index ? animate.offsetWidth : animate.closestSlideWidth }}
+                animate={{ width: page === index ? slideWidth.active : slideWidth.inactive }}
               >
                 <Ratio
                   key={index}
@@ -84,13 +50,13 @@ export default function Slider({ slides }: ISlider) {
             <Page key={index} isActive={index === page} />
           ))}
         </Section>
-      </div>
+      </Container>
       <Section className="overflow-hidden h-5 gap-1">
         {slides.map(({ alt }, index) => (
           <Transition
             key={index}
             animate={{ translateY: page * -24 }}
-            transition={duration}
+            transition={transition}
             className="text-center h-5"
           >
             <Regular className="!text-sm text-center">{alt}</Regular>
@@ -98,7 +64,7 @@ export default function Slider({ slides }: ISlider) {
         ))}
       </Section>
       <Section className="absolute right-0 -bottom-2 !flex-row gap-2">
-        {pagination.map(({ name, disabled, onClick }, index) => (
+        {actions.map(({ name, disabled, onClick }, index) => (
           <IconButton
             key={index}
             icon={name}
@@ -113,16 +79,3 @@ export default function Slider({ slides }: ISlider) {
     </Section>
   );
 }
-
-interface IPage {
-  isActive?: boolean;
-}
-
-const Page: FC<IPage> = ({ isActive }) => {
-  return (
-    <Transition
-      className={"w-2 h-2 rounded-full bg-zinc-950 dark:bg-white"}
-      animate={isActive ? { opacity: 1 } : { opacity: 0.5 }}
-    />
-  );
-};
