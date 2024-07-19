@@ -85,9 +85,14 @@ export default function Slider({ slides }: ISlider) {
           ))}
         </Section>
       </div>
-      <Section className="overflow-hidden h-5">
+      <Section className="overflow-hidden h-5 gap-1">
         {slides.map(({ alt }, index) => (
-          <Transition key={index} animate={{ translateY: page * -27 }} transition={duration} className="text-center">
+          <Transition
+            key={index}
+            animate={{ translateY: page * -24 }}
+            transition={duration}
+            className="text-center h-5"
+          >
             <Regular className="!text-sm text-center">{alt}</Regular>
           </Transition>
         ))}
