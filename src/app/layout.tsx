@@ -1,8 +1,10 @@
 import clsx from "clsx";
 import type { Metadata } from "next";
+import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
 
-import { Container, GlobalLayout } from "@/shared/ui";
+import { links } from "@/data";
+import { Container, GlobalLayout, Navigation } from "@/shared/ui";
 
 import "./globals.css";
 
@@ -19,11 +21,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={clsx(inter.className, "bg-white dark:bg-zinc-950")}>
-        <GlobalLayout>
-          <Container>{children}</Container>
-        </GlobalLayout>
+        <ThemeProvider enableSystem disableTransitionOnChange>
+          <GlobalLayout>
+            <Navigation links={links} />
+            <Container>{children}</Container>
+          </GlobalLayout>
+        </ThemeProvider>
       </body>
     </html>
   );
