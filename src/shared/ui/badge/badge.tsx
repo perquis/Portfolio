@@ -9,7 +9,7 @@ type IBadge = {
   border?: boolean;
 } & ComponentProps<"span">;
 
-export default function Badge({ children, color, border, rounded = "default", ...props }: IBadge) {
+export default function Badge({ children, color, className, border, rounded = "default", ...props }: IBadge) {
   const colorClass = getColorClass(color);
 
   return (
@@ -19,6 +19,7 @@ export default function Badge({ children, color, border, rounded = "default", ..
         rounded === "default" ? "rounded-md" : "rounded-full",
         border && "border",
         colorClass,
+        className,
       )}
       {...props}
     >

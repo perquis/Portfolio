@@ -72,7 +72,7 @@ export const getColorClass = (color: Color) =>
     )
     .with(
       "zinc",
-      () => "bg-zinc-100 dark:bg-zinc-950 border-zinc-300 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400",
+      () => "bg-zinc-100 dark:bg-zinc-900 border-zinc-300 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400",
     )
     .with(
       "stone",
