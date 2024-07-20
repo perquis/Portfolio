@@ -21,6 +21,7 @@ export { default as Input } from "./input/input";
 export { default as Link } from "./link/link";
 export { default as Logo } from "./logo/logo";
 export { default as Navigation } from "./navigation/navigation";
+export { default as Page } from "./page/page";
 export { default as Paragraph } from "./paragraph/paragraph";
 export { default as Ratio } from "./ratio/ratio";
 export { default as Regular } from "./regular/regular";
