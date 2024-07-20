@@ -5,9 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 
 import { useEventCallback } from "@/shared/hooks";
 
-type IElement = (Window & typeof globalThis) | Element | Document;
-
-const useOutsideOnClick = (ref: RefObject<HTMLElement>, close: () => void, element: IElement = window) => {
+const useOutsideOnClick = (ref: RefObject<HTMLElement>, close: () => void) => {
   const [isOutsideElement, setIsOutsideElement] = useState(false);
 
   const callback = useCallback(
@@ -35,7 +33,7 @@ const useOutsideOnClick = (ref: RefObject<HTMLElement>, close: () => void, eleme
     return;
   }, [isOutsideElement, close, setIsOutsideElement]);
 
-  useEventCallback({ eventName: "click", callback, element });
+  useEventCallback({ eventName: "click", callback });
 
   return isOutsideElement;
 };

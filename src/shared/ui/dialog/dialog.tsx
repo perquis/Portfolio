@@ -10,8 +10,6 @@ import { match } from "ts-pattern";
 import { useHideBodyScrollbar, useKey, useOutsideOnClick } from "@/shared/hooks";
 import { IconButton, Section } from "@/shared/ui";
 
-const dialogRoot = document.getElementById("dialog");
-
 interface IDialog {
   isOpen: boolean;
   close: () => void;
@@ -58,6 +56,6 @@ export default function Dialog({ isOpen, close, alignment = "center", children, 
         </Section>
       </ReactFocusLock>
     </div>,
-    dialogRoot!,
+    document.getElementById("dialog")!,
   );
 }
