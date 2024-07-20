@@ -1,22 +1,9 @@
 import ESLintWebpackPlugin from "eslint-webpack-plugin";
 import createNextIntlPlugin from "next-intl/plugin";
 
-const withNextIntl = createNextIntlPlugin("./src/config/i18n.ts");
+import cspHeader from "./src/auth/content-securiity-policy.js";
 
-const cspHeader = `
-    default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline';
-    style-src 'self' 'unsafe-inline';
-    img-src 'self' blob: data:;
-    font-src 'self';
-    connect-src 'self';
-    object-src 'none';
-    base-uri 'self';
-    form-action 'self';
-    frame-ancestors 'none';
-    upgrade-insecure-requests;
-    block-all-mixed-content;
-`;
+const withNextIntl = createNextIntlPlugin("./src/config/i18n.ts");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
