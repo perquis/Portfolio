@@ -18,7 +18,7 @@ export default function Input({ className, error, message, id, name, ...props }:
           {name && <span className="text-xs font-medium text-zinc-900 dark:text-zinc-100">{name}</span>}
           <input
             className={clsx(
-              "text-sm py-2.5 px-3 rounded-[10px] bg-zinc-100 dark:bg-zinc-900 hover:bg-zinc-200 focus-visible:bg-zinc-200 dark:hover:bg-zinc-800 dark:focus-visible:bg-zinc-800 placeholder:text-zinc-600 dark:placeholder:text-zinc-400 text-zinc-900 dark:text-zinc-100 w-full",
+              "text-sm py-2.5 px-3 rounded-[10px] bg-zinc-100 dark:bg-zinc-900 hover:bg-zinc-200 focus-visible:bg-zinc-200 dark:hover:bg-zinc-800 dark:focus-visible:bg-zinc-800 placeholder:text-zinc-400 dark:placeholder:text-zinc-600 text-zinc-900 dark:text-zinc-100 w-full",
               error && "ring-2 ring-rose-500 focus-visible:!outline-none",
               className,
             )}
