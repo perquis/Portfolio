@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import type { ComponentProps } from "react";
 
 import { getAspectRatio } from "./get-aspect-ratio";
@@ -15,7 +15,7 @@ export default function Ratio({ src, alt, className = "w-full", resolution, ...p
 
   return (
     <div className={clsx("relative", className)} style={style} {...props}>
-      <Image fill objectFit="cover" unoptimized priority src={src} alt={alt} />
+      <Image layout="fill" objectFit="cover" unoptimized priority src={src} alt={alt} />
     </div>
   );
 }
