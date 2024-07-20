@@ -23,6 +23,7 @@ export { default as Navigation } from "./navigation/navigation";
 export { default as Paragraph } from "./paragraph/paragraph";
 export { default as Ratio } from "./ratio/ratio";
 export { default as Regular } from "./regular/regular";
+export { default as SearchBar } from "./searchbar/searchbar";
 export { default as Section } from "./section/section";
 export { default as SegmentedControl } from "./segmented-control/segmented-control";
 export { default as Slider } from "./slider/slider";
