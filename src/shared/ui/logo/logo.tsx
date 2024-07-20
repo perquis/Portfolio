@@ -5,7 +5,7 @@ import { Avatar } from "@/shared/ui";
 
 export default function Logo() {
   return (
-    <Link href="/" className="flex flex-row gap-5 w-fit items-center">
+    <Link href="/" className="flex flex-row gap-5 w-fit items-center rounded-full pr-5 flex-shrink-0">
       <Avatar rounded="full" size="tiny" src={placeholders.images} alt="Damian Werens" />
       <b className="dark:text-white text-sm">Damian Werens</b>
     </Link>
