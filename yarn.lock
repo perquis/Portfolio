@@ -1948,6 +1948,11 @@
   resolved "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-14.2.5.tgz"
   integrity sha512-tEQ7oinq1/CjSG9uSTerca3v4AZ+dFa+4Yu6ihaG8Ud8ddqLQgFGcnwYls13H5X5CPDPZJdYxyeMui6muOLd4g==
 
+"@nimpl/middleware-chain@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@nimpl/middleware-chain/-/middleware-chain-0.2.0.tgz#ff361681a429c9b0fee0c34dd5e0081f8e288461"
+  integrity sha512-SBs3Qy1QJ/sku9AZBROkkm54vkRgq5RHgCkGt8ZBmd/vNC1xyz5sCW2gouW1y498P5GJE7vLC1aMNbLdALwMTQ==
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz"
