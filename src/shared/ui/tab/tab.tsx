@@ -17,6 +17,7 @@ export default function Tab({ children, className, ...props }: ITab) {
         props.href === pathname && "text-zinc-800 dark:text-white/80 pointer-events-none",
         className,
       )}
+      tabIndex={props.href === pathname ? -1 : undefined}
       {...props}
     >
       {children}
