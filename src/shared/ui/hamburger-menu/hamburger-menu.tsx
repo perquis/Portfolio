@@ -8,6 +8,7 @@ import { Breadcrumbs, Section, Tab, Transition } from "@/shared/ui";
 
 type IHamburgerMenu = ComponentProps<typeof Breadcrumbs>;
 
+// FIXME: This component should be fixed to animate the menu items better.
 export default function HamburgerMenu({ links }: IHamburgerMenu) {
   const ref = useRef<HTMLButtonElement>(null);
 
@@ -22,7 +23,7 @@ export default function HamburgerMenu({ links }: IHamburgerMenu) {
         <Line animate={isOpen ? { translateY: 0, rotate: -45 } : { translateY: -6, rotate: 0 }} />
       </button>
       {isOpen && (
-        <Section className="absolute top-12 right-0 w-64 bg-white border border-zinc-300 p-1 rounded-xl shadow-md">
+        <Section className="absolute top-12 right-0 w-64 bg-white dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-800 p-1 rounded-xl shadow-md">
           {links.map(({ href, label }, index) => (
             <Tab key={index} className="flex w-full" href={href} onClick={close}>
               {label}
