@@ -30,6 +30,10 @@ export const Default: Story = {
         icon: "Tsx",
         name: "page.tsx",
       },
+      {
+        icon: "Py",
+        name: "app.py",
+      },
     ],
   },
 };
