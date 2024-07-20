@@ -2,12 +2,21 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 import { slides } from "@/data";
 
-const initialValue = {
-  page: 0,
+interface IAnimate {
+  page: number;
   slideWidth: {
-    active: 0,
-    inactive: 0,
-  },
+    // These properties are optional
+    // to animation look better
+    // when the component is mounted 🔥.
+    active?: number;
+    inactive?: number;
+  };
+  diff: number;
+}
+
+const initialValue: IAnimate = {
+  page: 0,
+  slideWidth: {},
   diff: 0,
 };
 
