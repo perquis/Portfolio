@@ -36,3 +36,4 @@ export { default as Title } from "./title/title";
 export { default as Tooltip } from "./tooltip/tooltip";
 export { default as Transition } from "./transition/transition";
 export { default as Typography } from "./typography/typography";
+export { default as Workflows } from "./workflows/workflows";
