@@ -17,7 +17,7 @@ const Pnpm: FC<ComponentProps<"svg">> = (props) => (
       />
       <path
         d="M115.248 115.258h69.484v69.484h-69.484zm0 76.432h69.484v69.485h-69.484zm76.447 0h69.484v69.485h-69.484zm-152.884 0h69.484v69.485H38.811z"
-        fill="#e0e0e0"
+        className="fill-zinc-400 dark:fill-[#e0e0e0]"
       />
     </g>
   </svg>
