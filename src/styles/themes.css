@@ -1,0 +1,15 @@
+.stop-color-white {
+  stop-color: var(--tw-white);
+}
+
+.stop-color-zinc {
+  stop-color: var(--tw-zinc-50);
+}
+
+html[data-mode="dark"] .stop-color-white {
+  stop-color: var(--tw-zinc-950);
+}
+
+html[data-mode="dark"] .stop-color-zinc {
+  stop-color: var(--tw-zinc-900);
+}

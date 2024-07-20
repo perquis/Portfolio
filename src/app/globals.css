@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --tw-indigo-600: hsla(243, 75%, 59%, 0.75);
   --tw-white: hsl(0, 0%, 100%);
+  --tw-zinc-50: hsl(240, 5%, 96%);
+  --tw-zinc-900: hsl(240, 4%, 16%);
+  --tw-zinc-950: hsl(240, 6%, 10%);
+  --tw-indigo-600: hsla(243, 75%, 59%, 0.75);
 }
 
 *:focus-visible {
@@ -23,18 +26,5 @@
   background: var(--tw-indigo-600);
 }
 
-.stop-color-white {
-  stop-color: var(--tw-white);
-}
-
-.stop-color-zinc {
-  stop-color: hsl(240, 5%, 96%);
-}
-
-html[data-mode="dark"] .stop-color-white {
-  stop-color: hsl(240, 6%, 10%);
-}
-
-html[data-mode="dark"] .stop-color-zinc {
-  stop-color: hsl(240, 4%, 16%);
-}
+@import url(../styles/input.css);
+@import url(../styles/themes.css);
