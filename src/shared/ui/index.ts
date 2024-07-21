@@ -12,6 +12,7 @@ export { default as Dialog } from "./dialog/dialog";
 export { default as Divider } from "./divider/divider";
 export { default as Emoji } from "./emoji/emoji";
 export { default as Feedback } from "./feedback/feedback";
+export { default as Footer } from "./footer/footer";
 export { default as FormField } from "./form-field/form-field";
 export { default as Form } from "./form/form";
 export { default as GlobalLayout } from "./global-layout/global-layout";
