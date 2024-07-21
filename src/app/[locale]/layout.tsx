@@ -5,7 +5,7 @@ import { Suspense } from "react";
 
 import { AppProvider } from "@/app/[locale]/_providers";
 import { locales } from "@/config/i18n";
-import { Container, GlobalLayout, Navigation } from "@/shared/ui";
+import { Container, Divider, Footer, GlobalLayout, Navigation, Page } from "@/shared/ui";
 
 import "./globals.css";
 
@@ -32,7 +32,13 @@ export default async function RootLayout({
           <AppProvider>
             <GlobalLayout>
               <Navigation />
-              <Container>{children}</Container>
+              <Container>
+                <Page>
+                  {children}
+                  <Divider />
+                  <Footer />
+                </Page>
+              </Container>
             </GlobalLayout>
           </AppProvider>
         </Suspense>
