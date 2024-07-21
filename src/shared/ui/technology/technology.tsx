@@ -14,7 +14,7 @@ export default function Technology({ icon, name, content }: ITechnology) {
   const Icon = stacks[icon];
 
   return (
-    <Section className="relative gap-2 bg-white dark:bg-zinc-900 overflow-hidden rounded-xl dark:border-zinc-800/50 border border-zinc-300 p-4 shadow flex-1">
+    <Section className="relative gap-2 bg-white dark:bg-zinc-950 overflow-hidden rounded-xl dark:border-zinc-800/50 border border-zinc-300 p-4 shadow flex-1">
       <Icon width={32} height={32} />
       <Section className="gap-1 z-50">
         <Title level="b">{name}</Title>

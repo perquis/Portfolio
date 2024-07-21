@@ -4,7 +4,7 @@ const Grid: FC<ComponentProps<"svg">> = (props) => {
   return (
     <svg width="240" height="132" viewBox="0 0 240 132" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <g clipPath="url(#clip0_1664_1353)">
-        <rect width="240" height="132" className="fill-white dark:fill-zinc-900" />
+        <rect width="240" height="132" className="fill-white dark:fill-zinc-950" />
         <mask id="mask0_1664_1353" maskUnits="userSpaceOnUse" x="-297" y="-232" width="537" height="497">
           <rect x="115" width="33" height="33" fill="url(#paint0_linear_1664_1353)" />
           <rect
