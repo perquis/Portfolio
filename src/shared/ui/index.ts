@@ -16,6 +16,7 @@ export { default as Footer } from "./footer/footer";
 export { default as FormField } from "./form-field/form-field";
 export { default as Form } from "./form/form";
 export { default as GlobalLayout } from "./global-layout/global-layout";
+export { default as Grid } from "./grid/grid";
 export { default as HamburgerMenu } from "./hamburger-menu/hamburger-menu";
 export { default as IconButton } from "./icon-button/icon-button";
 export { default as Input } from "./input/input";
