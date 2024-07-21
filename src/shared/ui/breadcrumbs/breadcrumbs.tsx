@@ -2,10 +2,7 @@ import React from "react";
 
 import { Link, Section } from "@/shared/ui";
 
-interface IBreadcrumb {
-  label: string;
-  href: string;
-}
+type IBreadcrumb = (typeof import("@/data").links)[number];
 
 export default function Breadcrumbs({ links }: Record<"links", IBreadcrumb[]>) {
   return (
