@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import type { ComponentProps, FC } from "react";
 
 import { links } from "@/data";
@@ -20,11 +21,13 @@ export default function Navigation() {
 type IMenu = ComponentProps<typeof Breadcrumbs>;
 
 const Menu: FC<IMenu> = ({ links }) => {
+  const t = useTranslations();
+
   return (
     <Section className="!flex-row gap-3 text-xs hidden sm:flex">
       {links.map(({ href, label }) => (
         <Tab key={href} href={href}>
-          {label}
+          {t(`navigation.${label}`)}
         </Tab>
       ))}
     </Section>
