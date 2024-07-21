@@ -20,9 +20,9 @@ const nextConfig = {
       },
     ];
   },
-  webpack(config, { isServer }) {
-    if (!isServer) {
-      config.plugins.push(new ESLintWebpackPlugin());
+  webpack(config, { dev }) {
+    if (dev) {
+      config.plugins.push(new ESLintWebpackPlugin({ extensions: ["js", "jsx", "ts", "tsx"] }));
     }
 
     return config;
