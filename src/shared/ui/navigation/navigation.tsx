@@ -1,10 +1,9 @@
 import type { ComponentProps, FC } from "react";
 
+import { links } from "@/data";
 import { Breadcrumbs, Container, HamburgerMenu, Logo, Section, Tab } from "@/shared/ui";
 
-type INavigation = ComponentProps<typeof Breadcrumbs>;
-
-export default function Navigation({ links }: INavigation) {
+export default function Navigation() {
   return (
     <nav className="py-2 bg-white/95 dark:bg-zinc-950/95 border-b border-zinc-200 dark:border-zinc-800 fixed top-0 left-0 w-full backdrop-blur-xl z-50">
       <Container>
@@ -18,7 +17,9 @@ export default function Navigation({ links }: INavigation) {
   );
 }
 
-const Menu: FC<INavigation> = ({ links }) => {
+type IMenu = ComponentProps<typeof Breadcrumbs>;
+
+const Menu: FC<IMenu> = ({ links }) => {
   return (
     <Section className="!flex-row gap-3 text-xs hidden sm:flex">
       {links.map(({ href, label }) => (
