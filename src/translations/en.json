@@ -3,6 +3,9 @@
     "all_rights_reserved": "All rights reserved © 2024"
   },
   "home": {
+    "blog": {
+      "view_all": "View all posts"
+    },
     "experiences": {
       "description": "placeholder_experience_description",
       "title": "Experience"
@@ -26,6 +29,10 @@
     "services": {
       "description": "placeholder_service_description",
       "title": "Services"
+    },
+    "skills": {
+      "description": "placeholder_skill_description",
+      "title": "Skills"
     }
   },
   "navigation": {
