@@ -12,14 +12,14 @@ export const ContactForm = () => {
       <Section className="gap-5">
         <Section className="!flex-row justify-between">
           <Regular className="font-semibold">{t("CONTACT_FORM_TITLE")}</Regular>
-          <Link href="/portfolio" className="text-sm font-medium flex gap-2">
+          <Link href="/portfolio" className="flex gap-2 text-sm font-medium">
             FAQ <icons.ArrowLineRight width={20} height={20} />
           </Link>
         </Section>
 
         <Paragraph>{t("CONTACT_FORM_DESCRIPTION")}</Paragraph>
 
-        <Section className="!flex-row gap-3 items-center">
+        <Section className="!flex-row items-center gap-3">
           <StatusDot status="online" />
           <Paragraph className="!text-sm">{t("HOME_HERO_OPEN_TO_NEW_PROJECTS")}</Paragraph>
         </Section>
@@ -36,6 +36,8 @@ export const ContactForm = () => {
         <Button type="submit" mode="simple" size="medium" variants="black" className="!justify-center">
           {t("CONTACT_FORM_BUTTON_SEND")}
         </Button>
+
+        <Regular>{t("CONTACT_FORM_TIME_TO_RESPONSE")}</Regular>
       </Form>
     </Section>
   );

@@ -13,7 +13,7 @@ export default function SearchBar({ className, id, name, ...props }: IInput) {
   return (
     <div
       className={clsx(
-        "text-sm rounded-[10px] bg-zinc-100 dark:bg-zinc-900 hover:bg-zinc-200 focus-visible:bg-zinc-200 dark:hover:bg-zinc-800 dark:focus-visible:bg-zinc-800 text-zinc-900 dark:text-zinc-100 w-full flex items-center px-3 gap-2",
+        "flex w-full items-center gap-2 rounded-[10px] bg-zinc-100 px-3 text-sm text-zinc-900 hover:bg-zinc-200 focus-visible:bg-zinc-200 dark:bg-zinc-900 dark:text-zinc-100 dark:hover:bg-zinc-800 dark:focus-visible:bg-zinc-800",
         className,
         isFocus && "outline outline-offset-[3px] outline-indigo-600/75",
       )}
@@ -24,7 +24,7 @@ export default function SearchBar({ className, id, name, ...props }: IInput) {
     >
       <Search width={20} height={20} className="flex-shrink-0 text-zinc-400 dark:text-zinc-600" />
       <input
-        className="w-full rounded-[10px] py-2.5 bg-transparent !outline-none focus-visible:!outline-none placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
+        className="w-full rounded-[10px] bg-transparent py-2.5 !outline-none placeholder:text-zinc-400 focus-visible:!outline-none dark:placeholder:text-zinc-600"
         type="search"
         ref={inputRef}
         tabIndex={-1}

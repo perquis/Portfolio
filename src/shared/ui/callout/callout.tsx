@@ -28,7 +28,7 @@ export default function Callout({ title, content, variants }: ICallout) {
   const foundIcon = statusActions.find((icon) => icon.name === variants)!;
 
   return (
-    <Section className={clsx("!flex-row gap-3 px-5 py-4 rounded-lg border", classes)}>
+    <Section className={clsx("!flex-row gap-3 rounded-lg border px-5 py-4", classes)}>
       <foundIcon.Icon className={titleColor} width={24} height={24} />
       <Section className="gap-1">
         <Title className={titleColor} level="b">

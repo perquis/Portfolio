@@ -5,7 +5,7 @@ type IRegular = ComponentProps<"span">;
 
 export default function Regular({ children, className, ...props }: IRegular) {
   return (
-    <span className={clsx("text-black/50 dark:text-white/50 text-sm", className)} {...props}>
+    <span className={clsx("text-sm text-black/50 dark:text-white/50", className)} {...props}>
       {children}
     </span>
   );

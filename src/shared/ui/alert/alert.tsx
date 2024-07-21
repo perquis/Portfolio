@@ -21,8 +21,8 @@ export default function Alert({ status, content }: IAlert) {
     .otherwise(() => "bg-gray-500");
 
   return (
-    <Section className="max-w-sm bg-zinc-900/90 backdrop-blur-xl shadow-md rounded-lg p-3 border-t-2 border-zinc-800/50 !flex-row gap-3 items-start">
-      <div className={clsx("p-1 rounded-full text-white", textColor)}>
+    <Section className="max-w-sm !flex-row items-start gap-3 rounded-lg border-t-2 border-zinc-800/50 bg-zinc-900/90 p-3 shadow-md backdrop-blur-xl">
+      <div className={clsx("rounded-full p-1 text-white", textColor)}>
         <foundIcon.Icon width={16} height={16} />
       </div>
       <Paragraph className="text-sm !text-white/85">{content}</Paragraph>

@@ -14,7 +14,7 @@ interface IFeedback {
 
 export default function Feedback({ isOpen, close, title, description }: IFeedback) {
   return (
-    <div className="w-full h-screen flex justify-center items-end pb-16 fixed top-0 left-0 pointer-events-none overflow-hidden">
+    <div className="pointer-events-none fixed left-0 top-0 flex h-screen w-full items-end justify-center overflow-hidden pb-16">
       <AnimatePresence>
         {isOpen && (
           <Transition
@@ -34,9 +34,9 @@ export default function Feedback({ isOpen, close, title, description }: IFeedbac
               translateY: 200,
             }}
           >
-            <Section className="bg-zinc-900/90 backdrop-blur-xl rounded-full !flex-row gap-10 py-3 pl-10 pr-6 items-center justify-between w-fit origin-center border-t-2 border-zinc-800/50 pointer-events-auto">
+            <Section className="pointer-events-auto w-fit origin-center !flex-row items-center justify-between gap-10 rounded-full border-t-2 border-zinc-800/50 bg-zinc-900/90 py-3 pl-10 pr-6 backdrop-blur-xl">
               <Section>
-                <Title level="b" className="!text-white font-medium">
+                <Title level="b" className="font-medium !text-white">
                   {title}
                 </Title>
                 <Paragraph className="!text-white/50">{description}</Paragraph>
@@ -48,7 +48,7 @@ export default function Feedback({ isOpen, close, title, description }: IFeedbac
                 ))}
                 <IconButton
                   rounded="full"
-                  className="hover:!bg-white/5 focus-visible:!bg-white/5 focus-visible:!text-zinc-200 !text-zinc-500 hover:!text-zinc-200"
+                  className="!text-zinc-500 hover:!bg-white/5 hover:!text-zinc-200 focus-visible:!bg-white/5 focus-visible:!text-zinc-200"
                   size="medium"
                   icon="Close"
                   onClick={close}

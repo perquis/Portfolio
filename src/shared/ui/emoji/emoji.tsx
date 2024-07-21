@@ -43,7 +43,7 @@ export default function Emoji({ emoji, size }: IEmoji) {
   return (
     <button
       className={clsx(
-        "rounded-full dark:focus-visible:!outline-yellow-300 focus-visible:!outline-yellow-300 ease-in-out duration-200 active:scale-90",
+        "rounded-full duration-200 ease-in-out focus-visible:!outline-yellow-300 active:scale-90 dark:focus-visible:!outline-yellow-300",
         sizeClass,
       )}
       onFocus={open}

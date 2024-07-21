@@ -20,7 +20,7 @@ export default function SegmentedControl({ controls }: ISegmentedControl) {
   const [selected, setSelected] = useState<string | null>(controls[0].name);
 
   return (
-    <Section className="relative !flex-row gap-2 p-1 items-center rounded-[10px] w-fit bg-zinc-100 dark:bg-zinc-950 dark:ring-1 dark:ring-zinc-900">
+    <Section className="relative w-fit !flex-row items-center gap-2 rounded-[10px] bg-zinc-100 p-1 dark:bg-zinc-950 dark:ring-1 dark:ring-zinc-900">
       {controls.map(({ name, icon }, index) => {
         const Icon = stacks[icon];
         const isAcive = selected === name;
@@ -31,16 +31,16 @@ export default function SegmentedControl({ controls }: ISegmentedControl) {
               key={index}
               onClick={() => setSelected(name)}
               className={clsx(
-                "flex gap-2 items-center px-2 py-1.5 relative rounded-md",
+                "relative flex items-center gap-2 rounded-md px-2 py-1.5",
                 isAcive && "pointer-events-none",
               )}
               disabled={isAcive}
             >
               <Icon width={20} height={20} className="z-10" />{" "}
-              <span className="text-sm z-10 select-none drop-shadow">{name}</span>
+              <span className="z-10 select-none text-sm drop-shadow">{name}</span>
               {isAcive && (
                 <motion.div
-                  className="absolute bg-white dark:bg-zinc-900 top-0 left-0 right-0 w-full h-full shadow-sm rounded-md dark:border dark:border-zinc-800/50"
+                  className="absolute left-0 right-0 top-0 h-full w-full rounded-md bg-white shadow-sm dark:border dark:border-zinc-800/50 dark:bg-zinc-900"
                   layoutId="control"
                   transition={{ type: "spring", stiffness: 200, damping: 30 }}
                 />

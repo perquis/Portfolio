@@ -17,7 +17,7 @@ export const ExperiencesList: FC<IExperiencesList> = ({ items }) => {
   return (
     <>
       {items.map(({ name, position, years, image }, index) => (
-        <Section className="!flex-row gap-10 justify-between w-full" key={index}>
+        <Section className="w-full !flex-row justify-between gap-10" key={index}>
           <Section className="!flex-row gap-4">
             <Avatar innerShadow size="medium" rounded="full" {...image} />
             <Section className="gap-1">

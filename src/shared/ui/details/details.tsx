@@ -13,7 +13,7 @@ export default function Details({ items }: IDetails) {
   return (
     <Section className="gap-5">
       <Regular className="font-semibold">Project details</Regular>
-      <Section className="bg-zinc-100 dark:bg-zinc-900 rounded-xl overflow-hidden">
+      <Section className="overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-900">
         {items.map((item, index) => (
           <Item key={index} {...item} />
         ))}
@@ -36,7 +36,7 @@ const Item: FC<IItem> = ({ type, href, label, content }) => {
         <Link
           target="_blank"
           rel="noopenner noreferrer nofollow"
-          className="!text-sm flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:!underline focus-visible:!underline"
+          className="flex items-center gap-2 !text-sm text-indigo-600 hover:!underline focus-visible:!underline dark:text-indigo-400"
           href={href ?? ""}
         >
           {content} <LinkOut width={12} height={12} />
@@ -51,7 +51,7 @@ const Item: FC<IItem> = ({ type, href, label, content }) => {
       </Label>
     ))
     .otherwise(() => (
-      <Regular className="!text-sm font-medium block px-4 py-3.5 !text-zinc-800 dark:!text-zinc-200">
+      <Regular className="block px-4 py-3.5 !text-sm font-medium !text-zinc-800 dark:!text-zinc-200">
         {content.split("\n").map((v) => (
           <>
             {v}
@@ -62,8 +62,8 @@ const Item: FC<IItem> = ({ type, href, label, content }) => {
     ));
 
   return (
-    <Section className="!flex-row border-b items-start border-zinc-200 dark:border-zinc-800 last:border-b-0">
-      <Regular className="!text-sm font-medium block px-4 py-3.5 min-w-40">{label}</Regular>
+    <Section className="!flex-row items-start border-b border-zinc-200 last:border-b-0 dark:border-zinc-800">
+      <Regular className="block min-w-40 px-4 py-3.5 !text-sm font-medium">{label}</Regular>
       {html}
     </Section>
   );

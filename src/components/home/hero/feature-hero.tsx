@@ -18,11 +18,11 @@ export const Hero = () => {
 
       <SocialsList />
 
-      <Section className="!flex-row gap-5 flex-wrap">
+      <Section className="!flex-row flex-wrap gap-5">
         <Button mode="simple" size="small" variants="black">
           {t("HOME_HERO_EMAIL_ME")}
         </Button>
-        <Section className="!flex-row gap-3 items-center">
+        <Section className="!flex-row items-center gap-3">
           <StatusDot status="online" />
           <Paragraph className="!text-sm">{t("HOME_HERO_OPEN_TO_NEW_PROJECTS")}</Paragraph>
         </Section>

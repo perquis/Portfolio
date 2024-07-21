@@ -33,7 +33,7 @@ export const Popup: FC<IPopup> = ({ selectedId, slide, close }) => {
       {selectedId && (
         <ReactFocusLock>
           <motion.div
-            className="fixed top-0 left-0 w-full h-screen flex items-center justify-center bg-zinc-950/90 dark:bg-white/10 backdrop-blur-sm z-50"
+            className="fixed left-0 top-0 z-50 flex h-screen w-full items-center justify-center bg-zinc-950/90 backdrop-blur-sm dark:bg-white/10"
             variants={variants}
             initial="hide"
             animate="show"
@@ -42,11 +42,11 @@ export const Popup: FC<IPopup> = ({ selectedId, slide, close }) => {
             <motion.img
               ref={ref}
               layoutId={selectedId}
-              className="w-9/12 object-cover rounded-3xl overflow-hidden select-none"
+              className="w-9/12 select-none overflow-hidden rounded-3xl object-cover"
               style={{ aspectRatio: "5 / 4" }}
               {...slide}
             />
-            <motion.div className="absolute top-10 right-10">
+            <motion.div className="absolute right-10 top-10">
               <IconButton
                 className="!text-white hover:!bg-zinc-900 focus-visible:!bg-zinc-900 active:scale-90"
                 size="medium"

@@ -27,8 +27,8 @@ const Item: FC<IItem> = ({ index = 0, title, description, last }) => {
   return (
     <Section>
       <Section className="!flex-row gap-5">
-        <Section className="gap-2 justify-start items-center">
-          <div className="w-10 h-10 rounded-full border border-zinc-200 dark:border-zinc-800 flex items-center justify-center text-zinc-950 dark:text-white flex-shrink-0">
+        <Section className="items-center justify-start gap-2">
+          <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-zinc-200 text-zinc-950 dark:border-zinc-800 dark:text-white">
             <span>{index + 1}</span>
           </div>
           {!last && <VerticalLine />}
@@ -39,7 +39,7 @@ const Item: FC<IItem> = ({ index = 0, title, description, last }) => {
         </Section>
       </Section>
       {!last && (
-        <div className="w-10 h-6 flex justify-center">
+        <div className="flex h-6 w-10 justify-center">
           <VerticalLine />
         </div>
       )}
@@ -47,4 +47,4 @@ const Item: FC<IItem> = ({ index = 0, title, description, last }) => {
   );
 };
 
-const VerticalLine = () => <div className="w-[1px] h-full bg-zinc-100 dark:bg-zinc-900" />;
+const VerticalLine = () => <div className="h-full w-[1px] bg-zinc-100 dark:bg-zinc-900" />;

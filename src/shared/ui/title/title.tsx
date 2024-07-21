@@ -9,7 +9,7 @@ export default function Title({ level: Tag = "h2", className, children, ...props
   return (
     <Tag
       className={clsx(
-        "font-bold text-zinc-950 dark:text-white text-left",
+        "text-left font-bold text-zinc-950 dark:text-white",
         Tag === "h1" && "text-4xl lg:text-5xl xl:text-6xl",
         Tag === "h2" && "text-3xl lg:text-4xl xl:text-5xl",
         Tag === "h3" && "text-2xl lg:text-3xl xl:text-4xl",

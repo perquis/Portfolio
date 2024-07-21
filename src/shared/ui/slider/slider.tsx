@@ -35,7 +35,7 @@ export default function Slider({ slides }: ISlider) {
 
       <Container className="relative">
         <Transition animate={{ translateX: diff * -page }} transition={transition} className="w-full">
-          <Section className="!flex-row gap-5 items-center" style={{ aspectRatio: "5 / 4" }} ref={slideRef}>
+          <Section className="!flex-row items-center gap-5" style={{ aspectRatio: "5 / 4" }} ref={slideRef}>
             {slides.map((rest, index) => (
               <Transition
                 key={index}
@@ -48,7 +48,7 @@ export default function Slider({ slides }: ISlider) {
                 <Ratio
                   key={index}
                   className={clsx(
-                    "rounded-xl overflow-hidden flex-shrink-0 w-full lock",
+                    "lock w-full flex-shrink-0 overflow-hidden rounded-xl",
                     page !== index && "opacity-15",
                   )}
                   resolution="5:4"
@@ -58,25 +58,25 @@ export default function Slider({ slides }: ISlider) {
             ))}
           </Section>
         </Transition>
-        <Section className="absolute !flex-row gap-3 bottom-5 -translate-x-1/2 left-1/2">
+        <Section className="absolute bottom-5 left-1/2 -translate-x-1/2 !flex-row gap-3">
           {slides.map((_, index) => (
             <Page key={index} isActive={index === page} />
           ))}
         </Section>
       </Container>
-      <Section className="overflow-hidden h-5 gap-1">
+      <Section className="h-5 gap-1 overflow-hidden">
         {slides.map(({ alt }, index) => (
           <Transition
             key={index}
             animate={{ translateY: page * -24 }}
             transition={transition}
-            className="text-center h-5"
+            className="h-5 text-center"
           >
-            <Regular className="!text-sm text-center">{alt}</Regular>
+            <Regular className="text-center !text-sm">{alt}</Regular>
           </Transition>
         ))}
       </Section>
-      <Section className="absolute right-0 -bottom-2 !flex-row gap-2">
+      <Section className="absolute -bottom-2 right-0 !flex-row gap-2">
         {actions.map(({ name, disabled, onClick }, index) => (
           <IconButton
             key={index}
@@ -85,7 +85,7 @@ export default function Slider({ slides }: ISlider) {
             rounded="full"
             onClick={onClick}
             disabled={disabled}
-            className="bg-zinc-100 dark:bg-zinc-900 active:scale-90"
+            className="bg-zinc-100 active:scale-90 dark:bg-zinc-900"
           />
         ))}
       </Section>

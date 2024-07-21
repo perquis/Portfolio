@@ -42,7 +42,7 @@ export default function Tooltip({ children, label, alignment = "top" }: ITooltip
     .run();
 
   return (
-    <div className="relative flex justify-center pointer-events-none w-fit">
+    <div className="pointer-events-none relative flex w-fit justify-center">
       <div className="pointer-events-auto" onMouseEnter={open} onMouseLeave={close} ref={containerRef}>
         {children}
       </div>
@@ -51,7 +51,7 @@ export default function Tooltip({ children, label, alignment = "top" }: ITooltip
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className={clsx(
-            "absolute pointer-events-none px-3 py-2 rounded-lg bg-zinc-900/90 border-t border-zinc-800/90 backdrop-blur text-white max-w-64 w-max text-x",
+            "text-x pointer-events-none absolute w-max max-w-64 rounded-lg border-t border-zinc-800/90 bg-zinc-900/90 px-3 py-2 text-white backdrop-blur",
             direction,
           )}
         >

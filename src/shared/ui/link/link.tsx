@@ -17,7 +17,7 @@ export default function Link({ children, className, ...props }: ILink) {
     <NextLink
       className={clsx(
         "text-zinc-500 hover:text-zinc-800 focus-visible:text-zinc-800 dark:text-white/50 dark:hover:text-white/80 dark:focus-visible:text-white/80",
-        props.href === pathname ? "text-zinc-800 dark:text-white/80 pointer-events-none" : "",
+        props.href === pathname ? "pointer-events-none text-zinc-800 dark:text-white/80" : "",
         className,
       )}
       {...props}

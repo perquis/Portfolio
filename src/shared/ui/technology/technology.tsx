@@ -14,13 +14,13 @@ export default function Technology({ icon, name, content }: ITechnology) {
   const Icon = stacks[icon];
 
   return (
-    <Section className="relative gap-2 bg-white dark:bg-zinc-950 overflow-hidden rounded-xl dark:border-zinc-800/50 border border-zinc-300 p-4 shadow flex-1">
+    <Section className="relative flex-1 gap-2 overflow-hidden rounded-xl border border-zinc-300 bg-white p-4 shadow dark:border-zinc-800/50 dark:bg-zinc-950">
       <Icon width={32} height={32} />
-      <Section className="gap-1 z-50">
+      <Section className="z-50 gap-1">
         <Title level="b">{name}</Title>
         <Paragraph className="text-sm">{content}</Paragraph>
       </Section>
-      <Grid className="absolute right-0 bottom-0 pointer-events-none" />
+      <Grid className="pointer-events-none absolute bottom-0 right-0" />
     </Section>
   );
 }

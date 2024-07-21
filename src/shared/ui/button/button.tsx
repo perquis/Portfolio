@@ -54,16 +54,16 @@ export default function Button({ children, size, variants, loading, mode, classN
   return (
     <button
       className={clsx(
-        "font-medium border-2 border-b-0 bg-gradient-to-t disabled:opacity-25 disabled:cursor-not-allowed disabled:pointer-events-none hover:opacity-90 focus-visible:opacity-90 flex items-center ring-2 ease-in-out active:scale-95 duration-200 shadow-md",
+        "flex items-center border-2 border-b-0 bg-gradient-to-t font-medium shadow-md ring-2 duration-200 ease-in-out hover:opacity-90 focus-visible:opacity-90 active:scale-95 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-25",
         sizes,
         colors,
         className,
-        loading ? "opacity-75 cursor-not-allowed pointer-events-none" : "active:opacity-100",
+        loading ? "pointer-events-none cursor-not-allowed opacity-75" : "active:opacity-100",
       )}
       {...props}
     >
       {loading && <TailSpin width={spinnerSize} height={spinnerSize} color={color} visible />}
-      {loading ? "Loading..." : <span className="drop-shadow-sm pointer-events-none">{children}</span>}
+      {loading ? "Loading..." : <span className="pointer-events-none drop-shadow-sm">{children}</span>}
     </button>
   );
 }

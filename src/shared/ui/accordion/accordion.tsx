@@ -19,7 +19,7 @@ export default function Accordion({ question, answer }: IAccordion) {
     <Transition
       as="button"
       onClick={toggle}
-      className="p-4 pl-5 rounded-3xl bg-zinc-100 dark:bg-zinc-900 w-full dark:border-t-2 dark:border-zinc-800/50"
+      className="w-full rounded-3xl bg-zinc-100 p-4 pl-5 dark:border-t-2 dark:border-zinc-800/50 dark:bg-zinc-900"
     >
       <Section>
         <Section className="relative !flex-row items-center text-zinc-800 dark:text-zinc-200">
