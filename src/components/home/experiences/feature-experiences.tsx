@@ -10,8 +10,8 @@ export const Experiences = () => {
 
   return (
     <Section className="gap-5">
-      <Regular className="font-semibold">{t("home.experiences.title")}</Regular>
-      <Paragraph>{t("home.experiences.description")}</Paragraph>
+      <Regular className="font-semibold">{t("HOME_EXPERIENCES_TITLE")}</Regular>
+      <Paragraph>{t("HOME_EXPERIENCES_DESCRIPTION")}</Paragraph>
       <ExperiencesList items={items} />
     </Section>
   );

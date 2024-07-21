@@ -11,17 +11,17 @@ export const ContactForm = () => {
     <Section className="gap-10">
       <Section className="gap-5">
         <Section className="!flex-row justify-between">
-          <Regular className="font-semibold">{t("contact.form.title")}</Regular>
+          <Regular className="font-semibold">{t("CONTACT_FORM_TITLE")}</Regular>
           <Link href="/portfolio" className="text-sm font-medium flex gap-2">
             FAQ <icons.ArrowLineRight width={20} height={20} />
           </Link>
         </Section>
 
-        <Paragraph>{t("contact.form.description")}</Paragraph>
+        <Paragraph>{t("CONTACT_FORM_DESCRIPTION")}</Paragraph>
 
         <Section className="!flex-row gap-3 items-center">
           <StatusDot status="online" />
-          <Paragraph className="!text-sm">{t("home.hero.open_to_new_projects")}</Paragraph>
+          <Paragraph className="!text-sm">{t("HOME_HERO_OPEN_TO_NEW_PROJECTS")}</Paragraph>
         </Section>
       </Section>
 
@@ -31,10 +31,10 @@ export const ContactForm = () => {
             <Input name="name" required placeholder="John" />
             <Input type="email" name="email" required placeholder="jdoe@gmail.com" />
           </Section>
-          <Textarea name="message" required placeholder={t("contact.form.textarea_message")} />
+          <Textarea name="message" required placeholder={t("CONTACT_FORM_TEXTAREA_MESSAGE")} />
         </Section>
         <Button type="submit" mode="simple" size="medium" variants="black" className="!justify-center">
-          {t("contact.form.send")}
+          {t("CONTACT_FORM_BUTTON_SEND")}
         </Button>
       </Form>
     </Section>

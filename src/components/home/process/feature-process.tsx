@@ -10,8 +10,8 @@ export const Process = () => {
 
   return (
     <Section className="gap-5">
-      <Regular className="font-semibold">{t("home.process.title")}</Regular>
-      <Paragraph>{t("home.process.description")}</Paragraph>
+      <Regular className="font-semibold">{t("HOME_PROCESS_TITLE")}</Regular>
+      <Paragraph>{t("HOME_PROCESS_DESCRIPTION")}</Paragraph>
       <Workflows items={items} />
     </Section>
   );

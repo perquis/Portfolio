@@ -13,7 +13,7 @@ export const Articles = () => {
       <Section className="!flex-row justify-between">
         <Regular className="font-semibold">Blog</Regular>
         <Link href="/portfolio" className="text-sm font-medium flex gap-2">
-          {t("home.blog.view_all")} <icons.ArrowLineRight width={20} height={20} />
+          {t("HOME_BLOG_VIEW_ALL")} <icons.ArrowLineRight width={20} height={20} />
         </Link>
       </Section>
 

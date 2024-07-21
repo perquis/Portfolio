@@ -38,7 +38,8 @@ const Menu: FC<IMenu> = ({ links }) => {
     <Section className="!flex-row gap-3 text-xs hidden sm:flex">
       {links.map(({ href, label }) => (
         <Tab key={href} href={href}>
-          {t(`navigation.${label}`)}
+          {/* @ts-ignore */}
+          {t(`NAVIGATION_${label.toUpperCase()}`)}
         </Tab>
       ))}
     </Section>

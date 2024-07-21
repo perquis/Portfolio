@@ -11,9 +11,9 @@ export const Projects = () => {
   return (
     <Section className="gap-5">
       <Section className="!flex-row justify-between">
-        <Regular className="font-semibold">{t("home.projects.featured_projects")}</Regular>
+        <Regular className="font-semibold">{t("HOME_PROJECTS_FEATURED_PROJECTS")}</Regular>
         <Link href="/portfolio" className="text-sm font-medium flex gap-2">
-          {t("home.projects.view_all")} <icons.ArrowLineRight width={20} height={20} />
+          {t("HOME_PROJECTS_VIEW_ALL")} <icons.ArrowLineRight width={20} height={20} />
         </Link>
       </Section>
 

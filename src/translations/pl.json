@@ -1,53 +1,27 @@
 {
-  "contact": {
-    "form": {
-      "description": "placeholder_contact_description",
-      "send": "Wyślij",
-      "textarea_message": "Napisz swoją wiadomość tutaj...",
-      "time_to_response": "Czas odpowiedzi to 24 godziny",
-      "title": "Współpracuj ze mną"
-    }
-  },
-  "footer": {
-    "all_rights_reserved": "Wszelkie prawa zastrzeżone © 2024"
-  },
-  "home": {
-    "blog": {
-      "view_all": "Zobacz wszystkie posty"
-    },
-    "experiences": {
-      "description": "placeholder_experience_description",
-      "title": "Doświadczenie"
-    },
-    "hero": {
-      "email_me": "Napisz do mnie",
-      "open_to_new_projects": "Otwarty na nowe projekty"
-    },
-    "meta": {
-      "description": "Cześć, mam na imię Damian, jestem Full Stack Developerem i Cyfrowym Projektantem UI. Prowadzę blog o programowaniu i dizajnie oraz aktywnie rozwijam umiejętności zawodowe.",
-      "title": "Damian Werens - Full-Stack Developer & Digital Designer"
-    },
-    "process": {
-      "description": "placeholder_process_description",
-      "title": "Proces"
-    },
-    "projects": {
-      "featured_projects": "Wyróżnione projekty",
-      "view_all": "Zobacz wszystkie"
-    },
-    "services": {
-      "description": "placeholder_service_description",
-      "title": "Usługi"
-    },
-    "skills": {
-      "description": "placeholder_skill_description",
-      "title": "Umiejętności"
-    }
-  },
-  "navigation": {
-    "About": "O mnie",
-    "Blog": "Blog",
-    "Contact": "Kontakt",
-    "Portfolio": "Portfolio"
-  }
+  "CONTACT_FORM_BUTTON_SEND": "Wyślij",
+  "CONTACT_FORM_DESCRIPTION": "placeholder_contact_description",
+  "CONTACT_FORM_TEXTAREA_MESSAGE": "Napisz swoją wiadomość tutaj...",
+  "CONTACT_FORM_TIME_TO_RESPONSE": "Czas odpowiedzi to 24 godziny",
+  "CONTACT_FORM_TITLE": "Współpracuj ze mną",
+  "FOOTER_ALL_RIGHTS_RESERVED": "Wszelkie prawa zastrzeżone © 2024",
+  "HOME_BLOG_VIEW_ALL": "Zobacz wszystkie posty",
+  "HOME_EXPERIENCES_DESCRIPTION": "placeholder_experience_description",
+  "HOME_EXPERIENCES_TITLE": "Doświadczenie",
+  "HOME_HERO_EMAIL_ME": "Napisz do mnie",
+  "HOME_HERO_OPEN_TO_NEW_PROJECTS": "Otwarty na nowe projekty",
+  "HOME_META_DESCRIPTION": "Cześć, mam na imię Damian, jestem Full Stack Developerem i Cyfrowym Projektantem UI. Prowadzę blog o programowaniu i dizajnie oraz aktywnie rozwijam umiejętności zawodowe.",
+  "HOME_META_TITLE": "Damian Werens - Full-Stack Developer & Digital Designer",
+  "HOME_PROCESS_DESCRIPTION": "placeholder_process_description",
+  "HOME_PROCESS_TITLE": "Proces",
+  "HOME_PROJECTS_FEATURED_PROJECTS": "Wyróżnione projekty",
+  "HOME_PROJECTS_VIEW_ALL": "Zobacz wszystkie",
+  "HOME_SERVICES_DESCRIPTION": "placeholder_service_description",
+  "HOME_SERVICES_TITLE": "Usługi",
+  "HOME_SKILLS_DESCRIPTION": "placeholder_skill_description",
+  "HOME_SKILLS_TITLE": "Umiejętności",
+  "NAVIGATION_ABOUT": "O mnie",
+  "NAVIGATION_BLOG": "Blog",
+  "NAVIGATION_CONTACT": "Kontakt",
+  "NAVIGATION_PORTFOLIO": "Portfolio"
 }

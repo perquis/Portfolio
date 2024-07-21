@@ -14,17 +14,17 @@ export const Hero = () => {
         <Title level="h6">Damian Werens</Title>
         <Paragraph className="!text-zinc-500">Full-Stack Developer & Digital Designer</Paragraph>
       </Section>
-      <Paragraph>{t("home.meta.description")}</Paragraph>
+      <Paragraph>{t("HOME_META_DESCRIPTION")}</Paragraph>
 
       <SocialsList />
 
       <Section className="!flex-row gap-5 flex-wrap">
         <Button mode="simple" size="small" variants="black">
-          {t("home.hero.email_me")}
+          {t("HOME_HERO_EMAIL_ME")}
         </Button>
         <Section className="!flex-row gap-3 items-center">
           <StatusDot status="online" />
-          <Paragraph className="!text-sm">{t("home.hero.open_to_new_projects")}</Paragraph>
+          <Paragraph className="!text-sm">{t("HOME_HERO_OPEN_TO_NEW_PROJECTS")}</Paragraph>
         </Section>
       </Section>
     </Section>

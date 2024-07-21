@@ -8,8 +8,8 @@ export const Services = () => {
 
   return (
     <Section className="gap-5">
-      <Regular className="font-semibold">{t("home.services.title")}</Regular>
-      <Paragraph>{t("home.services.description")}</Paragraph>
+      <Regular className="font-semibold">{t("HOME_SERVICES_TITLE")}</Regular>
+      <Paragraph>{t("HOME_SERVICES_DESCRIPTION")}</Paragraph>
 
       <ServicesList />
     </Section>

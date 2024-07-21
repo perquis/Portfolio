@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <Section className="!flex-row justify-between items-start">
       <Logo />
-      <Regular className="!text-sm">{t("footer.all_rights_reserved")}</Regular>
+      <Regular className="!text-sm">{t("FOOTER_ALL_RIGHTS_RESERVED")}</Regular>
     </Section>
   );
 }
