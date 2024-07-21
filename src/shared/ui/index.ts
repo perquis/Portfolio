@@ -18,6 +18,7 @@ export { default as GlobalLayout } from "./global-layout/global-layout";
 export { default as HamburgerMenu } from "./hamburger-menu/hamburger-menu";
 export { default as IconButton } from "./icon-button/icon-button";
 export { default as Input } from "./input/input";
+export { default as Layout } from "./layout/layout";
 export { default as Link } from "./link/link";
 export { default as Logo } from "./logo/logo";
 export { default as Navigation } from "./navigation/navigation";
