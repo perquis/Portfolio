@@ -1,7 +1,7 @@
 import clsx from "clsx";
-import Link from "next/link";
 import type { ComponentProps } from "react";
 
+import { Link } from "@/next/navigation";
 import { Ratio, Regular, Section, Title } from "@/shared/ui";
 
 type ImageProps = Pick<ComponentProps<typeof Ratio>, "src" | "alt">;

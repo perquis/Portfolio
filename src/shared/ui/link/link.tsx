@@ -1,9 +1,10 @@
 "use client";
 
 import clsx from "clsx";
-import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 import type { ComponentProps } from "react";
+
+import { Link as NextLink } from "@/next/navigation";
 
 type ILink = ComponentProps<typeof NextLink>;
 
