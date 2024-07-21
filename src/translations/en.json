@@ -1,8 +1,37 @@
 {
+  "footer": {
+    "all_rights_reserved": "All rights reserved © 2024"
+  },
   "home": {
+    "experiences": {
+      "description": "placeholder_experience_description",
+      "title": "Experience"
+    },
+    "hero": {
+      "email_me": "Email me",
+      "open_to_new_projects": "Open to new projects"
+    },
     "meta": {
       "description": "Hi, my name is Damian, I'm a Full-Stack Developer and Digital UI Designer. I run a blog about programming and design and actively develop professional skills.",
       "title": "Damian Werens - Full-Stack Developer & Digital Designer"
+    },
+    "process": {
+      "description": "placeholder_process_description",
+      "title": "Process"
+    },
+    "projects": {
+      "featured_projects": "Featured projects",
+      "view_all": "View all"
+    },
+    "services": {
+      "description": "placeholder_service_description",
+      "title": "Services"
     }
+  },
+  "navigation": {
+    "About": "About",
+    "Blog": "Blog",
+    "Contact": "Contact",
+    "Portfolio": "Portfolio"
   }
 }

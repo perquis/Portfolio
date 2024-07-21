@@ -1,8 +1,37 @@
 {
+  "footer": {
+    "all_rights_reserved": "Wszelkie prawa zastrzeżone © 2024"
+  },
   "home": {
+    "experiences": {
+      "description": "placeholder_experience_description",
+      "title": "Doświadczenie"
+    },
+    "hero": {
+      "email_me": "Napisz do mnie",
+      "open_to_new_projects": "Otwarty na nowe projekty"
+    },
     "meta": {
       "description": "Cześć, mam na imię Damian, jestem Full Stack Developerem i Cyfrowym Projektantem UI. Prowadzę blog o programowaniu i dizajnie oraz aktywnie rozwijam umiejętności zawodowe.",
       "title": "Damian Werens - Full-Stack Developer & Digital Designer"
+    },
+    "process": {
+      "description": "placeholder_process_description",
+      "title": "Proces"
+    },
+    "projects": {
+      "featured_projects": "Wyróżnione projekty",
+      "view_all": "Zobacz wszystkie"
+    },
+    "services": {
+      "description": "placeholder_service_description",
+      "title": "Usługi"
     }
+  },
+  "navigation": {
+    "About": "O mnie",
+    "Blog": "Blog",
+    "Contact": "Kontakt",
+    "Portfolio": "Portfolio"
   }
 }
