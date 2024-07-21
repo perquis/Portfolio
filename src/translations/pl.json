@@ -1,4 +1,13 @@
 {
+  "contact": {
+    "form": {
+      "description": "placeholder_contact_description",
+      "send": "Wyślij",
+      "textarea_message": "Napisz swoją wiadomość tutaj...",
+      "time_to_response": "Czas odpowiedzi to 24 godziny",
+      "title": "Współpracuj ze mną"
+    }
+  },
   "footer": {
     "all_rights_reserved": "Wszelkie prawa zastrzeżone © 2024"
   },

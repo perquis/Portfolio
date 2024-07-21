@@ -1,4 +1,13 @@
 {
+  "contact": {
+    "form": {
+      "description": "placeholder_contact_description",
+      "send": "Send",
+      "textarea_message": "Write your message here...",
+      "time_to_response": "Time to response is 24 hours",
+      "title": "Contact me"
+    }
+  },
   "footer": {
     "all_rights_reserved": "All rights reserved © 2024"
   },
