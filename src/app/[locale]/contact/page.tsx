@@ -1,5 +1,8 @@
-import { Page } from "@/shared/ui";
+import { ContactForm } from "@/components/contact";
+import { Layout } from "@/shared/ui";
+
+const components = [ContactForm];
 
 export default function Contact() {
-  return <Page></Page>;
+  return <Layout components={components} />;
 }

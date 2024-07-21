@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
-import { ContactForm } from "@/components/contact/form/feature-form";
+import { ContactForm } from "@/components/contact";
 import { Articles, Experiences, Hero, Process, Projects, Services, Skills } from "@/components/home";
 import { Divider, Layout } from "@/shared/ui";
 
