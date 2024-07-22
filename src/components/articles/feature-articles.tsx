@@ -1,10 +1,11 @@
 import { useTranslations } from "next-intl";
 
-import { placeholders } from "@/data";
+import { ArticlesList } from "@/components/articles/ui-articles-list";
 import { Link } from "@/next/navigation";
 import * as icons from "@/shared/icons/design";
-import { Card, Grid, Regular, Section } from "@/shared/ui";
+import { Regular, Section } from "@/shared/ui";
 
+// NOTE: Tutaj będą pojawiać się artykuły z bloga (generowane losowo).
 export const Articles = () => {
   const t = useTranslations();
 
@@ -17,19 +18,7 @@ export const Articles = () => {
         </Link>
       </Section>
 
-      <Grid>
-        {Array.from({ length: 2 })
-          .fill(0)
-          .map((_, index) => (
-            <Card
-              key={index}
-              title="Untitled"
-              description="placeholder_description"
-              href=""
-              image={{ src: placeholders.images, alt: "" }}
-            />
-          ))}
-      </Grid>
+      <ArticlesList />
     </Section>
   );
 };
