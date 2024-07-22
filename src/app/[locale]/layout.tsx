@@ -4,9 +4,10 @@ import { Inter } from "next/font/google";
 import { Suspense } from "react";
 
 import { AppProvider } from "@/app/[locale]/_providers";
+import { Body } from "@/app/[locale]/body";
 import { locales } from "@/config/i18n";
 import { PageBackground } from "@/shared/icons/design/page-background";
-import { Container, Divider, Footer, GlobalLayout, Navigation, Page } from "@/shared/ui";
+import { GlobalLayout, Navigation } from "@/shared/ui";
 
 import "./globals.css";
 
@@ -34,13 +35,7 @@ export default async function RootLayout({
             <GlobalLayout>
               <Navigation />
               <PageBackground />
-              <Container>
-                <Page>
-                  {children}
-                  <Divider />
-                  <Footer />
-                </Page>
-              </Container>
+              <Body>{children}</Body>
             </GlobalLayout>
           </AppProvider>
         </Suspense>
