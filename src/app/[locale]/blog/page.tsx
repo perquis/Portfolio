@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
-import { Page } from "@/shared/ui";
+import { Socials } from "@/components/contact";
+import { Divider, Layout } from "@/shared/ui";
 
 export async function generateMetadata({
   params: { locale },
@@ -14,6 +15,8 @@ export async function generateMetadata({
   };
 }
 
+const components = [Divider, Socials];
+
 export default function Blog() {
-  return <Page></Page>;
+  return <Layout components={components} />;
 }

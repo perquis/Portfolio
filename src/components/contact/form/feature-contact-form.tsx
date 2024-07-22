@@ -26,7 +26,7 @@ export const ContactForm = () => {
             {t("CONTACT_FORM_TITLE")}
           </Regular>
           {!isContactPage && (
-            <Link href="/portfolio" className="flex gap-2 text-sm font-medium">
+            <Link href="/contact#faq" className="flex gap-2 text-sm font-medium">
               FAQ <icons.ArrowLineRight width={20} height={20} />
             </Link>
           )}

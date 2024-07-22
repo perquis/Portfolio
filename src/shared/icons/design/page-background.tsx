@@ -1,5 +1,5 @@
 export const PageBackground = () => (
-  <div className="absolute left-0 top-0 w-full" style={{ aspectRatio: "9.8 / 1" }}>
+  <div className="pointer-events-none absolute left-0 top-0 w-full" style={{ aspectRatio: "9.8 / 1" }}>
     <svg className="h-full w-full" viewBox="0 0 1920 196" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_1724_8283)">
         <mask id="mask0_1724_8283" maskUnits="userSpaceOnUse" x="-993" y="-1148" width="3906" height="1288">

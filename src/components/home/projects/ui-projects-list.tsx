@@ -9,7 +9,7 @@ export const ProjectsList = () => {
         .map((_, index) => (
           <Card
             key={index}
-            className={index === 0 ? "col-span-2" : ""}
+            className={index === 0 ? "sm:col-span-2" : ""}
             title="Untitled UI"
             href="/portfolio/untitled-ui"
             description="Strona internetowa"
