@@ -1,8 +1,8 @@
 import { chain } from "@nimpl/middleware-chain";
 
-import { withNextIntl } from "@/middlewares";
+import { withNextIntl, withXFramePathname } from "@/middlewares";
 
-export default chain([withNextIntl]);
+export default chain([withNextIntl, withXFramePathname]);
 
 export const config = {
   matcher: ["/", "/(en|pl)/:path*"],
