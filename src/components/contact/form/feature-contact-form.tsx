@@ -1,20 +1,35 @@
+"use client";
+
+import clsx from "clsx";
 import { useTranslations } from "next-intl";
 
-import { Link } from "@/next/navigation";
+import { Link, usePathname } from "@/next/navigation";
 import * as icons from "@/shared/icons/design";
 import { Button, Form, Input, Paragraph, Regular, Section, StatusDot, Textarea } from "@/shared/ui";
 
 export const ContactForm = () => {
   const t = useTranslations();
+  const pathname = usePathname();
+  const isContactPage = pathname === "/contact";
 
   return (
     <Section className="gap-10">
       <Section className="gap-5">
-        <Section className="!flex-row justify-between">
-          <Regular className="font-semibold">{t("CONTACT_FORM_TITLE")}</Regular>
-          <Link href="/portfolio" className="flex gap-2 text-sm font-medium">
-            FAQ <icons.ArrowLineRight width={20} height={20} />
-          </Link>
+        <Section className={clsx("!flex-row", { "justify-between": !isContactPage })}>
+          <Regular
+            className={clsx(
+              isContactPage ? "font-bold" : "font-semibold",
+              { "text-xl": isContactPage },
+              { "!text-zinc-950 dark:!text-white": isContactPage },
+            )}
+          >
+            {t("CONTACT_FORM_TITLE")}
+          </Regular>
+          {!isContactPage && (
+            <Link href="/portfolio" className="flex gap-2 text-sm font-medium">
+              FAQ <icons.ArrowLineRight width={20} height={20} />
+            </Link>
+          )}
         </Section>
 
         <Paragraph>{t("CONTACT_FORM_DESCRIPTION")}</Paragraph>
