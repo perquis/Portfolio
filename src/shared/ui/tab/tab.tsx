@@ -5,9 +5,9 @@ import type { ComponentProps } from "react";
 
 import { Link, usePathname } from "@/next/navigation";
 
-type ITab = ComponentProps<typeof Link>;
+type ITab = ComponentProps<typeof Link> & { lock?: boolean };
 
-export default function Tab({ children, className, ...props }: ITab) {
+export default function Tab({ children, className, lock, ...props }: ITab) {
   const pathname = usePathname(),
     isActive = pathname === props.href;
 
@@ -18,7 +18,7 @@ export default function Tab({ children, className, ...props }: ITab) {
         isActive && "pointer-events-none text-zinc-800 dark:text-white/80",
         className,
       )}
-      tabIndex={isActive ? -1 : undefined}
+      tabIndex={lock ? -1 : isActive ? -1 : undefined}
       {...props}
     >
       {children}

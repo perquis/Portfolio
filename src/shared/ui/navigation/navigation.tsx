@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 "use client";
 
 import { useTranslations } from "next-intl";
@@ -9,10 +8,9 @@ import { useScrollDirection } from "@/shared/hooks";
 import type { Breadcrumbs } from "@/shared/ui";
 import { Container, HamburgerMenu, Logo, Section, Tab, Transition } from "@/shared/ui";
 
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-
 export default function Navigation() {
   const direction = useScrollDirection("y");
+  const lock = direction === "down";
 
   return (
     <Transition
@@ -24,8 +22,8 @@ export default function Navigation() {
     >
       <Container>
         <Section className="!flex-row items-center justify-between">
-          <Logo />
-          <Menu links={links} />
+          <Logo lock={lock} />
+          <Menu links={links} lock={lock} />
           <HamburgerMenu links={links} />
         </Section>
       </Container>
@@ -33,15 +31,15 @@ export default function Navigation() {
   );
 }
 
-type IMenu = ComponentProps<typeof Breadcrumbs>;
+type IMenu = ComponentProps<typeof Breadcrumbs> & { lock?: boolean };
 
-const Menu: FC<IMenu> = ({ links }) => {
+const Menu: FC<IMenu> = ({ links, lock }) => {
   const t = useTranslations();
 
   return (
     <Section className="hidden !flex-row gap-3 text-xs sm:flex">
       {links.map(({ href, label }) => (
-        <Tab key={href} href={href}>
+        <Tab key={href} href={href} lock={lock}>
           {/* @ts-expect-error */}
           {t(`NAVIGATION_${label.toUpperCase()}`)}
         </Tab>
