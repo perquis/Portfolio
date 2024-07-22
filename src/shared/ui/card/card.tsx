@@ -22,7 +22,9 @@ export default function Card({ title, description, className, image, href }: ICa
       </Link>
       <Section className="gap-1">
         <Link href={href}>
-          <Title level="h6">{title}</Title>
+          <Title level="b" className="text-xl">
+            {title}
+          </Title>
         </Link>
         <Regular className="text-base">{description}</Regular>
       </Section>
