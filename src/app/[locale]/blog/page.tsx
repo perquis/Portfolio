@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
-import { Socials } from "@/components/contact";
+import { Socials } from "@/components";
 import { Divider, Layout } from "@/shared/ui";
 
 export async function generateMetadata({

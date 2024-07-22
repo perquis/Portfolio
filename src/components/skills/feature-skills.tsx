@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 
-import { TechnologiesList } from "@/components/home/skills/ui-technologies-list";
+import { TechnologiesList } from "@/components/skills/ui-technologies-list";
 import { Paragraph, Regular, Section } from "@/shared/ui";
 
 export const Skills = () => {

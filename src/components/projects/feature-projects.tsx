@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 
-import { ProjectsList } from "@/components/home/projects/ui-projects-list";
+import { ProjectsList } from "@/components/projects/ui-projects-list";
 import { Link, usePathname } from "@/next/navigation";
 import * as icons from "@/shared/icons/design";
 import { Regular, Section } from "@/shared/ui";

@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 
-import { SocialsList } from "@/components/home/hero/ui-socials-list";
+import { SocialsList } from "@/components/hero/ui-socials-list";
 import { placeholders } from "@/data";
 import { Avatar, Button, Paragraph, Section, StatusDot, Title } from "@/shared/ui";
 

@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 
-import { ServicesList } from "@/components/home/services/ui-services-list";
+import { ServicesList } from "@/components/services/ui-services-list";
 import { Paragraph, Regular, Section } from "@/shared/ui";
 
 export const Services = () => {

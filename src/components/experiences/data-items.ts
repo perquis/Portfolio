@@ -1,6 +1,6 @@
 import type { ComponentProps } from "react";
 
-import type { ExperiencesList } from "@/components/home/experiences/ui-experiences-list";
+import type { ExperiencesList } from "@/components/experiences/ui-experiences-list";
 
 export const items: ComponentProps<typeof ExperiencesList>["items"] = [
   {

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
-import { ContactForm } from "@/components/contact";
-import { Articles, Experiences, Hero, Process, Projects, Services, Skills } from "@/components/home";
+import { Articles, ContactForm, Experiences, Hero, Process, Projects, Services, Skills } from "@/components";
 import { Divider, Layout } from "@/shared/ui";
 
 export async function generateMetadata({
