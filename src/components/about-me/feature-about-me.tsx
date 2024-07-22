@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import { placeholders } from "@/data";
 import { Avatar, Paragraph, Section, Title } from "@/shared/ui";
 
-export const Owner = () => {
+export const AboutMe = () => {
   const t = useTranslations();
 
   return (

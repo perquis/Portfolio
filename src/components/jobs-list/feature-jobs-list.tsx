@@ -3,9 +3,9 @@ import { useTranslations } from "next-intl";
 import { Paragraph, Regular, Section } from "@/shared/ui";
 
 import { items } from "./data-items";
-import { ExperiencesList } from "./ui-experiences-list";
+import { List } from "./ui-list";
 
-export const Experiences = () => {
+export const JobsList = () => {
   const t = useTranslations();
 
   return (
@@ -13,7 +13,7 @@ export const Experiences = () => {
       <Regular className="font-semibold">{t("HOME_EXPERIENCES_TITLE")}</Regular>
       <Paragraph>{t("HOME_EXPERIENCES_DESCRIPTION")}</Paragraph>
 
-      <ExperiencesList items={items} />
+      <List items={items} />
     </Section>
   );
 };

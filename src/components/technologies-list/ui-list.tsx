@@ -2,7 +2,7 @@ import { Grid, Technology } from "@/shared/ui";
 
 import { useItems } from "./utils-use-items";
 
-export const TechnologiesList = () => {
+export const List = () => {
   const items = useItems();
 
   return (

@@ -1,9 +1,10 @@
 import { useTranslations } from "next-intl";
 
-import { ServicesList } from "@/components/services/ui-services-list";
 import { Paragraph, Regular, Section } from "@/shared/ui";
 
-export const Services = () => {
+import { List } from "./ui-list";
+
+export const ServicesList = () => {
   const t = useTranslations();
 
   return (
@@ -11,7 +12,7 @@ export const Services = () => {
       <Regular className="font-semibold">{t("HOME_SERVICES_TITLE")}</Regular>
       <Paragraph>{t("HOME_SERVICES_DESCRIPTION")}</Paragraph>
 
-      <ServicesList />
+      <List />
     </Section>
   );
 };

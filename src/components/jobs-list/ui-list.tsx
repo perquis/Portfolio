@@ -13,7 +13,7 @@ interface IExperiencesList {
   items: Item[];
 }
 
-export const ExperiencesList: FC<IExperiencesList> = ({ items }) => {
+export const List: FC<IExperiencesList> = ({ items }) => {
   return (
     <>
       {items.map(({ name, position, years, image }, index) => (

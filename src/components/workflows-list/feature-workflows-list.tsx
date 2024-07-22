@@ -4,7 +4,7 @@ import { Paragraph, Regular, Section, Workflows } from "@/shared/ui";
 
 import { useItems } from "./utils-use-items";
 
-export const Process = () => {
+export const WorkflowsList = () => {
   const items = useItems();
   const t = useTranslations();
 

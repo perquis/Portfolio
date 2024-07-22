@@ -1,7 +1,7 @@
 import * as icons from "@/shared/icons/design";
 import { Grid, Regular, Section } from "@/shared/ui";
 
-export const ServicesList = () => {
+export const List = () => {
   return (
     <Grid>
       {Array.from({ length: 1 })

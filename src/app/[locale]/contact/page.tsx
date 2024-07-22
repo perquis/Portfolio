@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
-import { ContactForm, FAQ, Socials } from "@/components";
+import { ContactForm, FAQSection, SocialLinksList } from "@/components";
 import { Divider, Layout } from "@/shared/ui";
 
 export async function generateMetadata({
@@ -15,7 +15,7 @@ export async function generateMetadata({
   };
 }
 
-const components = [ContactForm, Divider, FAQ, Divider, Socials];
+const components = [ContactForm, Divider, FAQSection, Divider, SocialLinksList];
 
 export default function Contact() {
   return <Layout components={components} />;

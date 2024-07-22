@@ -1,15 +1,16 @@
 import { useTranslations } from "next-intl";
 
-import { SocialsList } from "@/components/hero/ui-socials-list";
-import { Owner } from "@/components/owner/feature-owner";
+import { AboutMe } from "@/components";
 import { Button, Paragraph, Section, StatusDot } from "@/shared/ui";
 
-export const Hero = () => {
+import { SocialsList } from "./ui-socials-list";
+
+export const HeroSection = () => {
   const t = useTranslations();
 
   return (
     <Section className="gap-5">
-      <Owner />
+      <AboutMe />
       <SocialsList />
 
       <Section className="!flex-row flex-wrap gap-5">

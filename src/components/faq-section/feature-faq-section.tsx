@@ -4,7 +4,7 @@ import { Paragraph, Regular, Section } from "@/shared/ui";
 
 import { QuestionsList } from "./ui-questions-list";
 
-export const FAQ = () => {
+export const FAQSection = () => {
   const t = useTranslations();
 
   return (

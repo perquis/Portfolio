@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import { socials } from "@/data";
 import { Details, Regular, Section } from "@/shared/ui";
 
-export const Socials = () => {
+export const SocialLinksList = () => {
   const t = useTranslations();
   const items = socials.map(
     (social) =>

@@ -1,12 +1,13 @@
 import { useTranslations } from "next-intl";
 
-import { ArticlesList } from "@/components/articles/ui-articles-list";
 import { Link } from "@/next/navigation";
 import * as icons from "@/shared/icons/design";
 import { Regular, Section } from "@/shared/ui";
 
+import { List } from "./ui-list";
+
 // NOTE: Tutaj będą pojawiać się artykuły z bloga (generowane losowo).
-export const Articles = () => {
+export const PostsList = () => {
   const t = useTranslations();
 
   return (
@@ -18,7 +19,7 @@ export const Articles = () => {
         </Link>
       </Section>
 
-      <ArticlesList />
+      <List />
     </Section>
   );
 };
