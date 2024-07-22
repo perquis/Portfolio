@@ -1,9 +1,13 @@
 {
+  "BLOG_META_DESCRIPTION": "Bądź na bieżąco z najnowszymi spostrzeżeniami na temat projektowania UI/UX i programowania. Czytaj artykuły, samouczki i studia przypadków dotyczące tworzenia intuicyjnych interfejsów, poprawy doświadczenia użytkownika i integrowania nowoczesnych zasad projektowania w rozwoju oprogramowania.",
+  "BLOG_META_TITLE": "Damian Werens - Spostrzeżenia na temat projektowania UI/UX i programowania",
   "CONTACT_FORM_BUTTON_SEND": "Wyślij",
   "CONTACT_FORM_DESCRIPTION": "placeholder_contact_description",
   "CONTACT_FORM_TEXTAREA_MESSAGE": "Napisz swoją wiadomość tutaj...",
   "CONTACT_FORM_TIME_TO_RESPONSE": "Czas odpowiedzi to 24 godziny",
   "CONTACT_FORM_TITLE": "Współpracuj ze mną",
+  "CONTACT_META_DESCRIPTION": "Skontaktuj się z doświadczonym programistą specjalizującym się w projektowaniu UI/UX. Skontaktuj się w sprawie współpracy, zapytań lub aby omówić, jak możemy razem tworzyć wyjątkowe doświadczenia użytkownika. Skontaktuj się z nami już dziś!",
+  "CONTACT_META_TITLE": "Damian Werens - Kontakt",
   "FOOTER_ALL_RIGHTS_RESERVED": "Wszelkie prawa zastrzeżone © 2024",
   "HOME_BLOG_VIEW_ALL": "Zobacz wszystkie posty",
   "HOME_EXPERIENCES_DESCRIPTION": "placeholder_experience_description",
@@ -23,5 +27,7 @@
   "NAVIGATION_ABOUT": "O mnie",
   "NAVIGATION_BLOG": "Blog",
   "NAVIGATION_CONTACT": "Kontakt",
-  "NAVIGATION_PORTFOLIO": "Portfolio"
+  "NAVIGATION_PORTFOLIO": "Portfolio",
+  "PORTFOLIO_META_DESCRIPTION": "Odkryj projekty programisty specjalizującego się w projektowaniu UI/UX. Odkryj innowacyjne aplikacje, intuicyjne interfejsy i wyjątkowe doświadczenia użytkownika, które doskonale łączą estetykę z funkcjonalnością.",
+  "PORTFOLIO_META_TITLE": "Damian Werens - Projekty designu i programowania"
 }
