@@ -12,6 +12,7 @@ export const Experiences = () => {
     <Section className="gap-5">
       <Regular className="font-semibold">{t("HOME_EXPERIENCES_TITLE")}</Regular>
       <Paragraph>{t("HOME_EXPERIENCES_DESCRIPTION")}</Paragraph>
+
       <ExperiencesList items={items} />
     </Section>
   );

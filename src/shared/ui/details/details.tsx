@@ -11,13 +11,10 @@ interface IDetails {
 
 export default function Details({ items }: IDetails) {
   return (
-    <Section className="gap-5">
-      <Regular className="font-semibold">Project details</Regular>
-      <Section className="overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-900">
-        {items.map((item, index) => (
-          <Item key={index} {...item} />
-        ))}
-      </Section>
+    <Section className="overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-900">
+      {items.map((item, index) => (
+        <Item key={index} {...item} />
+      ))}
     </Section>
   );
 }
