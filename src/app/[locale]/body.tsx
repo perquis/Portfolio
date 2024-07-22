@@ -1,12 +1,13 @@
 import type { FC, PropsWithChildren } from "react";
 
 import { getServerSideSlug } from "@/server/functions";
-import { Container, Divider, Footer, Page } from "@/shared/ui";
+import { PageBackground } from "@/shared/icons/design/page-background";
+import { Container, Divider, Footer, Navigation, Page } from "@/shared/ui";
 
 export const Body: FC<PropsWithChildren> = async ({ children }) => {
   const slug = await getServerSideSlug();
 
-  return slug ? (
+  const html = slug ? (
     <Page>
       {children}
       <Container className="flex flex-col gap-10">
@@ -22,5 +23,13 @@ export const Body: FC<PropsWithChildren> = async ({ children }) => {
         <Footer />
       </Page>
     </Container>
+  );
+
+  return (
+    <>
+      <Navigation />
+      <PageBackground />
+      {html}
+    </>
   );
 };
