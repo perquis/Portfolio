@@ -5,7 +5,7 @@ import type { ComponentProps } from "react";
 
 import { Link, usePathname } from "@/next/navigation";
 
-type ITab = ComponentProps<typeof Link> & { lock?: boolean };
+type ITab = ComponentProps<typeof Link> & IsLock;
 
 export default function Tab({ children, className, lock, ...props }: ITab) {
   const pathname = usePathname(),

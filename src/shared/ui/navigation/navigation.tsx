@@ -31,7 +31,7 @@ export default function Navigation() {
   );
 }
 
-type IMenu = ComponentProps<typeof Breadcrumbs> & { lock?: boolean };
+type IMenu = ComponentProps<typeof Breadcrumbs> & IsLock;
 
 const Menu: FC<IMenu> = ({ links, lock }) => {
   const t = useTranslations();

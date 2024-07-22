@@ -1,5 +1,6 @@
 type Size = "large" | "medium" | "small" | "tiny";
 type Rounded = "default" | "full";
+type IsLock = { lock?: boolean };
 
 type Alignment =
   | "center"
