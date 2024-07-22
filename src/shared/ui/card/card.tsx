@@ -17,7 +17,7 @@ type ICard = {
 export default function Card({ title, description, className, image, href }: ICard) {
   return (
     <Section className={clsx("gap-4", className)}>
-      <Link href={href}>
+      <Link href={href} className="rounded-xl">
         <Ratio resolution="16:9" className="overflow-hidden rounded-xl" {...image} />
       </Link>
       <Section className="gap-1">
