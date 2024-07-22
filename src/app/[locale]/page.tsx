@@ -3,10 +3,10 @@ import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 import {
   ContactForm,
+  FeaturedProjectsList,
   HeroSection,
   JobsList,
   PostsList,
-  Projects,
   ServicesList,
   TechnologiesList,
   WorkflowsList,
@@ -27,7 +27,7 @@ export async function generateMetadata({
 const components = [
   HeroSection,
   Divider,
-  Projects,
+  FeaturedProjectsList,
   Divider,
   ServicesList,
   Divider,

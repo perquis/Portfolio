@@ -1,7 +1,7 @@
 import { placeholders } from "@/data";
 import { Card, Grid } from "@/shared/ui";
 
-export const ProjectsList = () => {
+export const CardsList = () => {
   return (
     <Grid>
       {Array.from({ length: 3 })
