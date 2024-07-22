@@ -6,6 +6,7 @@ import type { Technology } from "@/shared/ui";
 type Item = ComponentProps<typeof Technology>;
 
 export const useItems = (): Item[] => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const t = useTranslations();
 
   return [

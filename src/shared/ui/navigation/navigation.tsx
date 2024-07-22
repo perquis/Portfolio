@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 "use client";
 
 import { useTranslations } from "next-intl";
@@ -5,7 +6,10 @@ import type { ComponentProps, FC } from "react";
 
 import { links } from "@/data";
 import { useScrollDirection } from "@/shared/hooks";
-import { Breadcrumbs, Container, HamburgerMenu, Logo, Section, Tab, Transition } from "@/shared/ui";
+import type { Breadcrumbs } from "@/shared/ui";
+import { Container, HamburgerMenu, Logo, Section, Tab, Transition } from "@/shared/ui";
+
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 
 export default function Navigation() {
   const direction = useScrollDirection("y");
@@ -38,7 +42,7 @@ const Menu: FC<IMenu> = ({ links }) => {
     <Section className="hidden !flex-row gap-3 text-xs sm:flex">
       {links.map(({ href, label }) => (
         <Tab key={href} href={href}>
-          {/* @ts-ignore */}
+          {/* @ts-expect-error */}
           {t(`NAVIGATION_${label.toUpperCase()}`)}
         </Tab>
       ))}

@@ -7,7 +7,7 @@ import { useFocus } from "./use-focus";
 
 type IInput = ComponentProps<"input">;
 
-export default function SearchBar({ className, id, name, ...props }: IInput) {
+export default function SearchBar({ className, ...props }: IInput) {
   const { blur, focus, inputRef, isFocus } = useFocus();
 
   return (

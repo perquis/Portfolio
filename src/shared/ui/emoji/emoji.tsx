@@ -1,6 +1,7 @@
 "use client";
 
-import { DotLottie, DotLottieReact } from "@lottiefiles/dotlottie-react";
+import type { DotLottie } from "@lottiefiles/dotlottie-react";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 import { match } from "ts-pattern";

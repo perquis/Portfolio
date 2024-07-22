@@ -4,7 +4,8 @@ import type { MotionProps } from "framer-motion";
 import { type ComponentProps, type FC, useRef } from "react";
 
 import { useKey, useOpen, useOutsideOnClick } from "@/shared/hooks";
-import { Breadcrumbs, Section, Tab, Transition } from "@/shared/ui";
+import type { Breadcrumbs } from "@/shared/ui";
+import { Section, Tab, Transition } from "@/shared/ui";
 
 type IHamburgerMenu = ComponentProps<typeof Breadcrumbs>;
 
@@ -36,6 +37,6 @@ export default function HamburgerMenu({ links }: IHamburgerMenu) {
 }
 
 const Line: FC<MotionProps> = (props) => {
-  // @ts-ignore
+  // @ts-expect-error
   return <Transition className="absolute h-[2px] w-full rounded-sm bg-zinc-950 dark:bg-white" {...props} />;
 };

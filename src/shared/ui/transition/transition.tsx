@@ -3,6 +3,8 @@
 import { type MotionProps, motion } from "framer-motion";
 import type { ComponentProps } from "react";
 
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+
 type MotionElement = keyof typeof motion;
 
 export default function Transition<T extends MotionElement>({
@@ -11,6 +13,6 @@ export default function Transition<T extends MotionElement>({
   ...props
 }: MotionProps & ComponentProps<T> & { as?: MotionElement }) {
   const Tag = motion[as];
-  // @ts-ignore
+  // @ts-expect-error
   return <Tag {...props}>{children}</Tag>;
 }

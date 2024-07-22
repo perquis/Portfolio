@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import clsx from "clsx";
@@ -9,6 +10,8 @@ import { match } from "ts-pattern";
 
 import { useHideBodyScrollbar, useKey, useOutsideOnClick } from "@/shared/hooks";
 import { IconButton, Section } from "@/shared/ui";
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 interface IDialog {
   isOpen: boolean;

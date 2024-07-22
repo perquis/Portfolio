@@ -1,8 +1,9 @@
 import React from "react";
 
+import type { links } from "@/data";
 import { Link, Section } from "@/shared/ui";
 
-type IBreadcrumb = (typeof import("@/data").links)[number];
+type IBreadcrumb = (typeof links)[number];
 
 export default function Breadcrumbs({ links }: Record<"links", IBreadcrumb[]>) {
   return (

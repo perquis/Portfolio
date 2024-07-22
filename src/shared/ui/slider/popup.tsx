@@ -3,7 +3,8 @@ import { type ComponentProps, type FC, useRef } from "react";
 import ReactFocusLock from "react-focus-lock";
 
 import { useHideBodyScrollbar, useOutsideOnClick } from "@/shared/hooks";
-import { IconButton, Ratio } from "@/shared/ui";
+import type { Ratio } from "@/shared/ui";
+import { IconButton } from "@/shared/ui";
 
 type RatioProps = ComponentProps<typeof Ratio>;
 type Slide = Pick<RatioProps, "src" | "alt">;
