@@ -1,1 +1,1 @@
-export { default as getServerSideSlug } from "./get-server-side-slug";
+export { default as docs } from "./docs/docs";
