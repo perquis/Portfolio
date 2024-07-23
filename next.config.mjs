@@ -7,7 +7,27 @@ const withNextIntl = createNextIntlPlugin("./src/config/i18n.ts");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  transpilePackages: ["next-mdx-remote"],
+  reactStrictMode: true,
+  transpilePackages: ["next-mdx-remote", "shiki"],
+  async redirects() {
+    return [
+      {
+        source: "/in",
+        destination: "https://www.linkedin.com/in/damian-werens",
+        permanent: true,
+      },
+      {
+        source: "/gh",
+        destination: "https://github.com/perquis",
+        permanent: true,
+      },
+      {
+        source: "/x",
+        destination: "https://x.com/_perquis",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
