@@ -18,6 +18,7 @@
     "@hookform/resolvers": "^3.9.0",
     "@lottiefiles/dotlottie-react": "^0.7.2",
     "@nimpl/middleware-chain": "^0.2.0",
+    "@shikijs/transformers": "^1.11.1",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.2",
     "next": "14.2.5",
@@ -30,7 +31,14 @@
     "react-focus-lock": "^2.12.1",
     "react-hook-form": "^7.52.1",
     "react-loader-spinner": "^6.1.6",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-pretty-code": "^0.13.2",
+    "rehype-stringify": "^10.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.0",
+    "shiki": "^1.11.1",
     "ts-pattern": "^5.2.0",
+    "unified": "^11.0.5",
     "zod": "^3.23.8"
   },
   "devDependencies": {
