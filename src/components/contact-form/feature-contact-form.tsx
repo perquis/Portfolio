@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { Link, usePathname } from "@/next/navigation";
+import { sendMail } from "@/server/actions/sendMail";
 import * as icons from "@/shared/icons/design";
 import { Button, Form, Input, Paragraph, Regular, Section, StatusDot, Textarea } from "@/shared/ui";
 
@@ -16,7 +17,7 @@ const schema = z.object({
   message: z.string().min(10).max(256),
 });
 
-type Schema = z.infer<typeof schema>;
+export type Schema = z.infer<typeof schema>;
 
 export const ContactForm = () => {
   const t = useTranslations();
@@ -31,7 +32,7 @@ export const ContactForm = () => {
   } = useForm<Schema>({ resolver: zodResolver(schema) });
 
   const onSubmit = handleSubmit((e) => {
-    console.log(e);
+    sendMail(e);
   });
 
   return (
