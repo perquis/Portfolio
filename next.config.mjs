@@ -7,6 +7,7 @@ const withNextIntl = createNextIntlPlugin("./src/config/i18n.ts");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  transpilePackages: ["next-mdx-remote"],
   async headers() {
     return [
       {
