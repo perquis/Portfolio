@@ -3,6 +3,7 @@ import fs from "fs";
 import { serialize } from "next-mdx-remote/serialize";
 import { headers } from "next/headers";
 import path from "path";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 const getPathname = (location: Location, slug = "") => path.join(process.cwd(), "src", "docs", location, slug);
 
@@ -48,6 +49,9 @@ async function getSerializedSource(location: Location, slug: string, locale: Loc
 
   return await serialize(file, {
     parseFrontmatter: true,
+    mdxOptions: {
+      rehypePlugins: [[rehypeAutolinkHeadings, { behavior: "wrap" }]],
+    },
   });
 }
 

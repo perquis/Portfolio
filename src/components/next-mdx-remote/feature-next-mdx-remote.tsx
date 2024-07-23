@@ -6,6 +6,7 @@ import type { ComponentProps, FC } from "react";
 import {
   Callout,
   Card,
+  Code,
   Container,
   Details,
   Divider,
@@ -21,6 +22,7 @@ import {
 } from "@/shared/ui";
 
 const components = {
+  Code,
   Callout,
   Container,
   Title,
