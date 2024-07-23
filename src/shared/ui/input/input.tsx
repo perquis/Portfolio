@@ -1,12 +1,12 @@
 import clsx from "clsx";
-import type { ComponentProps } from "react";
+import { type ComponentProps, forwardRef } from "react";
 
 import { Section, Transition } from "@/shared/ui";
 
-type ErrorValidation = { error?: boolean; message?: string | null };
+type ErrorValidation = { error?: string };
 type IInput = ComponentProps<"input"> & ErrorValidation;
 
-export default function Input({ className, error, message, ...props }: IInput) {
+const Input = forwardRef<HTMLInputElement, IInput>(function Input({ className, error, ...props }, ref) {
   return (
     <Transition
       animate={error ? { rotate: [-1, 1.3, 0], translateX: [-1, 1.3, 0] } : { rotate: 0, translateX: 0 }}
@@ -20,10 +20,13 @@ export default function Input({ className, error, message, ...props }: IInput) {
             error && "ring-2 ring-rose-500 focus-visible:!outline-none",
             className,
           )}
+          ref={ref}
           {...props}
         />
-        {error && <span className="text-sm text-rose-500">{message}</span>}
+        {error && <span className="text-sm text-rose-500">{error}</span>}
       </Section>
     </Transition>
   );
-}
+});
+
+export default Input;
