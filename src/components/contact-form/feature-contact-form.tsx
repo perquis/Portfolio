@@ -7,7 +7,9 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { Link, usePathname } from "@/next/navigation";
+import { useAlert } from "@/providers/alert/alert.provider";
 import { sendMail } from "@/server/actions/sendMail";
+import { useOpen } from "@/shared/hooks";
 import * as icons from "@/shared/icons/design";
 import { Button, Form, Input, Paragraph, Regular, Section, StatusDot, Textarea } from "@/shared/ui";
 
@@ -21,18 +23,42 @@ export type Schema = z.infer<typeof schema>;
 
 export const ContactForm = () => {
   const t = useTranslations();
+  const [loading, [open, close]] = useOpen();
+  const { alert, setAlert } = useAlert();
 
   const pathname = usePathname();
   const root = pathname === "/contact";
 
   const {
+    reset,
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<Schema>({ resolver: zodResolver(schema) });
 
   const onSubmit = handleSubmit((e) => {
-    sendMail(e);
+    open();
+
+    try {
+      setAlert({
+        status: "success",
+        content: t("ALERT_SUCCESSFULLY"),
+      });
+
+      reset();
+      sendMail(e);
+
+      close();
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error(error);
+      setAlert({
+        status: "error",
+        content: t("ALERT_ERROR"),
+      });
+
+      close();
+    }
   });
 
   return (
@@ -86,7 +112,15 @@ export const ContactForm = () => {
             placeholder={t("CONTACT_FORM_TEXTAREA_MESSAGE")}
           />
         </Section>
-        <Button type="submit" mode="simple" size="medium" variants="black" className="!justify-center">
+        <Button
+          type="submit"
+          mode="simple"
+          size="medium"
+          variants="black"
+          loading={loading}
+          disabled={!!alert}
+          className="!justify-center"
+        >
           {t("CONTACT_FORM_BUTTON_SEND")}
         </Button>
 

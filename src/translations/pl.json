@@ -1,4 +1,6 @@
 {
+  "ALERT_ERROR": "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później.",
+  "ALERT_SUCCESSFULLY": "Twoja wiadomość została wysłana pomyślnie! ✉️",
   "BLOG_META_DESCRIPTION": "Bądź na bieżąco z najnowszymi spostrzeżeniami na temat projektowania UI/UX i programowania. Czytaj artykuły, samouczki i studia przypadków dotyczące tworzenia intuicyjnych interfejsów, poprawy doświadczenia użytkownika i integrowania nowoczesnych zasad projektowania w rozwoju oprogramowania.",
   "BLOG_META_TITLE": "Damian Werens - Spostrzeżenia na temat projektowania UI/UX i programowania",
   "BLOG_REGULAR_PRESENT": "Teraz",
