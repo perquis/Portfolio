@@ -8,7 +8,7 @@ const withNextIntl = createNextIntlPlugin("./src/config/i18n.ts");
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  transpilePackages: ["next-mdx-remote", "shiki"],
+  transpilePackages: ["next-mdx-remote", "shiki", "geist"],
   async redirects() {
     return [
       {
