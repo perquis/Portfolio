@@ -2,7 +2,7 @@ import type { ComponentProps, FC } from "react";
 
 const Prettierrc: FC<ComponentProps<"svg">> = (props) => (
   <svg {...props} viewBox="0 0 210 210" xmlns="http://www.w3.org/2000/svg">
-    <g transform="matrix(.9 0 0 .9 10.5 10.5)" fill="none" fill-rule="evenodd">
+    <g transform="matrix(.9 0 0 .9 10.5 10.5)" fill="none" fillRule="evenodd">
       <rect x="165" y="40" width="20" height="10" rx="5" fill="#56B3B4" />
       <rect x="15" y="200" width="60" height="10" rx="5" fill="#EA5E5E" />
       <rect x="135" y="120" width="40" height="10" rx="5" fill="#BF85BF" />

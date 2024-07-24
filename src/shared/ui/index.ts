@@ -6,6 +6,7 @@ export { default as Breadcrumbs } from "./breadcrumbs/breadcrumbs";
 export { default as Button } from "./button/button";
 export { default as Callout } from "./callout/callout";
 export { default as Card } from "./card/card";
+export { default as CodeBlock } from "./code-block/code-block";
 export { default as Code } from "./code/code";
 export { default as Container } from "./container/container";
 export { default as Details } from "./details/details";

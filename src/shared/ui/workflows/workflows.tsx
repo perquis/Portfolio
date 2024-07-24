@@ -35,7 +35,7 @@ const Item: FC<IItem> = ({ index = 0, title, description, last }) => {
         </Section>
         <Section className="gap-2">
           <Title level="b">{title}</Title>
-          <Paragraph className="!text-zinc-500">{description}</Paragraph>
+          <Paragraph className="!text-white/50">{description}</Paragraph>
         </Section>
       </Section>
       {!last && (

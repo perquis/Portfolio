@@ -3,10 +3,10 @@ import type { ComponentProps, FC } from "react";
 const Ts: FC<ComponentProps<"svg">> = (props) => (
   <svg
     {...props}
-    clip-rule="evenodd"
-    fill-rule="evenodd"
-    stroke-linejoin="round"
-    stroke-miterlimit="1.414"
+    clipRule="evenodd"
+    fillRule="evenodd"
+    strokeLinejoin="round"
+    strokeMiterlimit="1.414"
     viewBox="0 0 500 500"
     xmlns="http://www.w3.org/2000/svg"
   >

@@ -3,14 +3,14 @@ import type { ComponentProps, FC } from "react";
 const Pnpm: FC<ComponentProps<"svg">> = (props) => (
   <svg
     {...props}
-    clip-rule="evenodd"
-    fill-rule="evenodd"
-    stroke-linejoin="round"
-    stroke-miterlimit="2"
+    clipRule="evenodd"
+    fillRule="evenodd"
+    strokeLinejoin="round"
+    strokeMiterlimit="2"
     viewBox="0 0 300 300"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <g fill-rule="nonzero">
+    <g fillRule="nonzero">
       <path
         d="M191.7 38.825h69.483v69.485H191.7zm-76.447 0h69.484v69.485h-69.484zm-76.433 0h69.484v69.485H38.82zm152.884 76.433h69.484v69.484h-69.484z"
         fill="#ffb300"
