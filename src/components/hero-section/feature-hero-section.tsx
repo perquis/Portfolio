@@ -15,7 +15,7 @@ export const HeroSection = () => {
 
       <Section className="!flex-row flex-wrap gap-5">
         <Button mode="simple" size="small" variants="black">
-          {t("HOME_HERO_EMAIL_ME")}
+          {t("HOME_HERO_BUTTON_MEETING")}
         </Button>
         <Section className="!flex-row items-center gap-3">
           <StatusDot status="online" />

@@ -6,13 +6,20 @@ import type { Accordion } from "@/shared/ui";
 type Item = ComponentProps<typeof Accordion>;
 
 export const useItems = (): Item[] => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const t = useTranslations();
 
   return [
     {
-      question: "What is the refund policy?",
-      answer: "",
+      question: t("CONTACT_FAQ_ITEM_QUESTION_1"),
+      answer: t("CONTACT_FAQ_ITEM_ANSWER_1"),
+    },
+    {
+      question: t("CONTACT_FAQ_ITEM_QUESTION_2"),
+      answer: t("CONTACT_FAQ_ITEM_ANSWER_2"),
+    },
+    {
+      question: t("CONTACT_FAQ_ITEM_QUESTION_3"),
+      answer: t("CONTACT_FAQ_ITEM_ANSWER_3"),
     },
   ];
 };

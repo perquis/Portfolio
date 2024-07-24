@@ -20,9 +20,9 @@ export default function Card({ title, description, className, image, href }: ICa
       <Link href={href} className="rounded-xl">
         <Ratio resolution="16:9" className="overflow-hidden rounded-xl" {...image} />
       </Link>
-      <Section className="gap-1">
+      <Section>
         <Link href={href}>
-          <Title level="b" className="text-xl">
+          <Title level="b" className="text-lg">
             {title}
           </Title>
         </Link>
