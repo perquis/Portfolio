@@ -6,12 +6,11 @@ import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { Link, usePathname } from "@/next/navigation";
+import { usePathname } from "@/next/navigation";
 import { useAlert } from "@/providers/alert/alert.provider";
 import { sendMail } from "@/server/actions/sendMail";
 import { useOpen } from "@/shared/hooks";
-import * as icons from "@/shared/icons/design";
-import { Button, Form, Input, Paragraph, Regular, Section, StatusDot, Textarea } from "@/shared/ui";
+import { ArrowLink, Button, Form, Input, Paragraph, Regular, Section, StatusDot, Textarea } from "@/shared/ui";
 
 const schema = z.object({
   name: z.string().min(3).max(32),
@@ -74,11 +73,7 @@ export const ContactForm = () => {
           >
             {t("CONTACT_FORM_TITLE")}
           </Regular>
-          {!root && (
-            <Link href="/contact#faq" className="flex gap-2 text-sm font-medium">
-              FAQ <icons.ArrowLineRight width={20} height={20} />
-            </Link>
-          )}
+          {!root && <ArrowLink href="/contact#faq">FAQ</ArrowLink>}
         </Section>
 
         <Paragraph>{t("CONTACT_FORM_DESCRIPTION")}</Paragraph>
