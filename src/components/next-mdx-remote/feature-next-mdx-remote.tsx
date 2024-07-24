@@ -7,6 +7,7 @@ import {
   Callout,
   Card,
   Code,
+  CodeBlock,
   Container,
   Details,
   Divider,
@@ -23,6 +24,7 @@ import {
 
 const components = {
   Code,
+  CodeBlock,
   Callout,
   Container,
   Title,
