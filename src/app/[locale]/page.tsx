@@ -8,7 +8,6 @@ import {
   JobsList,
   PostsList,
   ServicesList,
-  TechnologiesList,
   WorkflowsList,
 } from "@/components";
 import { Divider, Layout } from "@/shared/ui";
@@ -34,8 +33,6 @@ const components = [
   WorkflowsList,
   Divider,
   JobsList,
-  Divider,
-  TechnologiesList,
   Divider,
   PostsList,
   Divider,
