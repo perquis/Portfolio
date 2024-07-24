@@ -1,9 +1,10 @@
 "use client";
 
-import { type ComponentProps, useState } from "react";
+import { type ComponentProps } from "react";
 
 import type { Code } from "@/shared/ui";
 import { Section, SegmentedControl } from "@/shared/ui";
+import { useCode } from "@/shared/ui/code-block/code.provider";
 
 type ICode = ComponentProps<typeof Code>;
 type ISegmentedControl = ComponentProps<typeof SegmentedControl>;
@@ -14,7 +15,7 @@ type ICodeBlock = {
 };
 
 export default function CodeWrapper({ controls, snippets }: ICodeBlock) {
-  const [blockName, setBlockName] = useState(controls[0].name);
+  const { selected } = useCode()!;
 
   if (!controls || !snippets) {
     throw new Error("Controls and snippets must be provided");
@@ -26,10 +27,10 @@ export default function CodeWrapper({ controls, snippets }: ICodeBlock) {
 
   return (
     <Section className="gap-2">
-      <SegmentedControl controls={controls} setBlockName={setBlockName} />
+      <SegmentedControl controls={controls} />
       {snippets.map(
         ({ code }, index) =>
-          blockName === controls[index].name && <Section key={index} dangerouslySetInnerHTML={{ __html: code }} />,
+          selected === controls[index].name && <Section key={index} dangerouslySetInnerHTML={{ __html: code }} />,
       )}
     </Section>
   );

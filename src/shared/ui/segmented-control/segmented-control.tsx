@@ -2,10 +2,11 @@
 
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 
 import * as stacks from "@/shared/icons/stacks";
 import { Section } from "@/shared/ui";
+import { useCode } from "@/shared/ui/code-block/code.provider";
 
 type IconName = keyof typeof stacks;
 
@@ -14,10 +15,10 @@ interface Control {
   name: string;
 }
 
-type ISegmentedControl = Record<"controls", Control[]> & { setBlockName?: (name: string) => void };
+type ISegmentedControl = Record<"controls", Control[]>;
 
-export default function SegmentedControl({ controls, setBlockName }: ISegmentedControl) {
-  const [selected, setSelected] = useState<string | null>(controls[0].name);
+export default function SegmentedControl({ controls }: ISegmentedControl) {
+  const { selected, setSelected } = useCode()!;
 
   return (
     <Section className="relative w-fit !flex-row items-center gap-2 rounded-[10px] border border-zinc-200 bg-zinc-100 p-1 dark:border-zinc-800 dark:bg-zinc-950">
@@ -28,10 +29,7 @@ export default function SegmentedControl({ controls, setBlockName }: ISegmentedC
         return (
           <Fragment key={index}>
             <button
-              onClick={() => {
-                setBlockName && setBlockName(name);
-                setSelected(name);
-              }}
+              onClick={() => setSelected(name)}
               className={clsx(
                 "relative flex items-center gap-2 rounded-md px-2 py-1.5",
                 isAcive && "pointer-events-none",
