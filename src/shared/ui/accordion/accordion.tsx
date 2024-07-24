@@ -16,11 +16,7 @@ export default function Accordion({ question, answer }: IAccordion) {
   const [isOpen, [, , toggle]] = useOpen();
 
   return (
-    <Transition
-      as="button"
-      onClick={toggle}
-      className="w-full rounded-3xl bg-zinc-100 p-4 pl-5 dark:border-t-2 dark:border-zinc-800/50 dark:bg-zinc-900"
-    >
+    <Transition as="button" onClick={toggle} className="w-full rounded-3xl bg-zinc-100 p-4 pl-5 dark:bg-zinc-900">
       <Section>
         <Section className="relative !flex-row items-center text-zinc-800 dark:text-zinc-200">
           <Title level="b" className="text-sm font-medium !text-zinc-800 dark:!text-zinc-200">
