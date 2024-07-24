@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { GeistMono } from "geist/font/mono";
 import { unstable_setRequestLocale } from "next-intl/server";
 import { Inter } from "next/font/google";
 import { Suspense } from "react";
@@ -27,7 +28,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={clsx(inter.className, "bg-white dark:bg-zinc-950")}>
+      <body className={clsx(inter.className, GeistMono.variable, "bg-white dark:bg-zinc-950")}>
         <Suspense>
           <AppProvider>
             <GlobalLayout>

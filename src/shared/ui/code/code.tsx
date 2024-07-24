@@ -5,7 +5,8 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 
-import theme from "./poimandres.json";
+import expoDark from "./expo-dark.json";
+import expoLight from "./expo-light.json";
 
 /**
  * You can visit examples here https://github.com/rehype-pretty/rehype-pretty-code/blob/master/examples/next/src/app/rsc/page.tsx.
@@ -22,6 +23,8 @@ export default async function Code({ code }: { code: string }) {
   );
 }
 
+const parseToTheme = (theme: unknown) => JSON.parse(JSON.stringify(theme));
+
 async function highlightCode(code: string) {
   const file = await unified()
     .use(remarkParse)
@@ -29,7 +32,10 @@ async function highlightCode(code: string) {
     .use(rehypePrettyCode, {
       filterMetaString: (string) => string.replace(/filename="[^"]*"/, ""),
       transformers: [transformerNotationDiff()],
-      theme: JSON.parse(JSON.stringify(theme)),
+      theme: {
+        light: parseToTheme(expoLight),
+        dark: parseToTheme(expoDark),
+      },
       keepBackground: true,
       tokensMap: {
         fn: "entity.name.function",
