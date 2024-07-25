@@ -2,8 +2,8 @@
 
 import { useTranslations } from "next-intl";
 
-import { CardsList } from "@/components";
-import { ArrowLink, Regular, Section } from "@/shared/ui";
+import { slides } from "@/data";
+import { ArrowLink, Paragraph, Regular, Section, Slider } from "@/shared/ui";
 
 export const FeaturedProjectsList = () => {
   const t = useTranslations();
@@ -15,7 +15,9 @@ export const FeaturedProjectsList = () => {
         <ArrowLink href="/portfolio">{t("HOME_PROJECTS_VIEW_ALL")}</ArrowLink>
       </Section>
 
-      <CardsList />
+      <Paragraph>{t("HOME_HERO_FEATURED_PROJECTS")}</Paragraph>
+
+      <Slider slides={slides} />
     </Section>
   );
 };

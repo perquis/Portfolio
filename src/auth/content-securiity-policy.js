@@ -2,7 +2,7 @@ const cspHeader = `
     default-src 'self';
     script-src 'self' 'unsafe-eval' 'unsafe-inline';
     style-src 'self' 'unsafe-inline';
-    img-src 'self' blob: data: media.istockphoto.com;
+    img-src 'self' blob: data: media.istockphoto.com *.unsplash.com;
     font-src 'self';
     connect-src 'self';
     object-src 'none';
