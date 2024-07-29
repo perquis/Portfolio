@@ -40,7 +40,7 @@ export default function SegmentedControl({ controls }: ISegmentedControl) {
               <span className="z-10 select-none text-sm drop-shadow">{name}</span>
               {isAcive && (
                 <motion.div
-                  className="absolute left-0 right-0 top-0 h-full w-full rounded-md bg-white shadow-sm dark:border dark:border-zinc-800/50 dark:bg-zinc-900"
+                  className="absolute left-0 right-0 top-0 h-full w-full rounded-md border border-zinc-300 bg-white shadow-sm dark:border-zinc-800/50 dark:bg-zinc-900"
                   layoutId="control"
                   transition={{ type: "spring", stiffness: 200, damping: 30 }}
                 />
