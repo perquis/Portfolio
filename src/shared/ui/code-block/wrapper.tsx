@@ -26,7 +26,7 @@ export default function CodeWrapper({ controls, snippets }: ICodeBlock) {
   }
 
   return (
-    <Section className="gap-2">
+    <Section className="w-full gap-2">
       <SegmentedControl controls={controls} />
       {snippets.map(
         ({ code }, index) =>
