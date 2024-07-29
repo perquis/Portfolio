@@ -8,6 +8,9 @@ const config: Config = {
       fontFamily: {
         mono: ["var(--font-geist-mono)"],
       },
+      boxShadow: {
+        full: "0 0 0 99999px",
+      },
     },
   },
   plugins: [],

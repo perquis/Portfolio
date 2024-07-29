@@ -7,7 +7,7 @@ import { Suspense } from "react";
 import { AppProvider } from "@/app/[locale]/_providers";
 import { Body } from "@/app/[locale]/body";
 import { locales } from "@/config/i18n";
-import { GlobalLayout } from "@/shared/ui";
+import { Cursor, GlobalLayout } from "@/shared/ui";
 
 import "./globals.css";
 
@@ -37,6 +37,7 @@ export default async function RootLayout({
           </AppProvider>
         </Suspense>
 
+        <Cursor />
         <div className="pointer-events-none fixed left-1/2 top-0 z-50 -translate-x-1/2" id="alerts" />
       </body>
     </html>

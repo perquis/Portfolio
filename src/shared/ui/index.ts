@@ -10,6 +10,7 @@ export { default as Card } from "./card/card";
 export { default as CodeBlock } from "./code-block/code-block";
 export { default as Code } from "./code/code";
 export { default as Container } from "./container/container";
+export { default as Cursor } from "./cursor/cursor";
 export { default as Details } from "./details/details";
 export { default as Dialog } from "./dialog/dialog";
 export { default as Divider } from "./divider/divider";
