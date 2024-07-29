@@ -23,7 +23,7 @@ pre {
 }
 
 code {
-  @apply text-sm !leading-loose md:text-base;
+  @apply text-sm !leading-loose dark:shadow-inner md:text-base;
 }
 
 pre > code {
