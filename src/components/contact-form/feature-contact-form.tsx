@@ -10,7 +10,7 @@ import { usePathname } from "@/next/navigation";
 import { useAlert } from "@/providers/alert/alert.provider";
 import { sendMail } from "@/server/actions/sendMail";
 import { useOpen } from "@/shared/hooks";
-import { ArrowLink, Button, Form, Input, Paragraph, Regular, Section, StatusDot, Textarea } from "@/shared/ui";
+import { ArrowLink, Button, Form, Input, Paragraph, Regular, Section, Textarea } from "@/shared/ui";
 
 const schema = z.object({
   name: z.string().min(3).max(32),
@@ -77,11 +77,6 @@ export const ContactForm = () => {
         </Section>
 
         <Paragraph>{t("CONTACT_FORM_DESCRIPTION")}</Paragraph>
-
-        <Section className="!flex-row items-center gap-3">
-          <StatusDot status="online" />
-          <Paragraph className="!text-sm">{t("HOME_HERO_OPEN_TO_NEW_PROJECTS")}</Paragraph>
-        </Section>
       </Section>
 
       <Form className="!gap-10" onSubmit={onSubmit}>
