@@ -5,3 +5,5 @@
 *.spec.tsx
 
 __tests__
+
+tailwind.config.ts
