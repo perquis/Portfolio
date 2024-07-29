@@ -1,10 +1,13 @@
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 import { socials } from "@/data";
 import * as icons from "@/shared/icons/design";
-import { Section } from "@/shared/ui";
+import { Button, Section } from "@/shared/ui";
 
 export const SocialsList = () => {
+  const t = useTranslations();
+
   return (
     <Section className="!flex-row flex-wrap gap-3">
       {socials.map(({ name, url }, index) => {
@@ -22,6 +25,10 @@ export const SocialsList = () => {
           </Link>
         );
       })}
+
+      <Button mode="simple" size="small" variants="black">
+        {t("HOME_HERO_BUTTON_MEETING")}
+      </Button>
     </Section>
   );
 };
