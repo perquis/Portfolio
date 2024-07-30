@@ -7,9 +7,9 @@ import { Search } from "@/shared/icons/design";
 
 import { useFocus } from "./use-focus";
 
-type IInput = ComponentProps<"input">;
+type TSearchBar = ComponentProps<"input">;
 
-export default function SearchBar({ className, ...props }: IInput) {
+export default function SearchBar({ className, ...props }: TSearchBar) {
   const { blur, focus, inputRef, isFocus } = useFocus();
 
   return (

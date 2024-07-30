@@ -4,13 +4,13 @@ import { Paragraph, Section, Title } from "@/shared/ui";
 
 type IconName = keyof typeof stacks;
 
-type ITechnology = {
+type TTechnology = {
   icon: IconName;
   name: string;
   content: string;
 };
 
-export default function Technology({ icon, name, content }: ITechnology) {
+export default function Technology({ icon, name, content }: TTechnology) {
   const Icon = stacks[icon];
 
   return (

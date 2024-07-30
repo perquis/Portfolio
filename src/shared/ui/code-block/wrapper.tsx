@@ -6,15 +6,15 @@ import type { Code } from "@/shared/ui";
 import { Section, SegmentedControl } from "@/shared/ui";
 import { useCode } from "@/shared/ui/code-block/code.provider";
 
-type ICode = ComponentProps<typeof Code>;
-type ISegmentedControl = ComponentProps<typeof SegmentedControl>;
+type TCode = ComponentProps<typeof Code>;
+type TSegmentedControl = ComponentProps<typeof SegmentedControl>;
 
-type ICodeBlock = {
-  controls: ISegmentedControl["controls"];
-  snippets: ICode[];
+type TCodeBlock = {
+  controls: TSegmentedControl["controls"];
+  snippets: TCode[];
 };
 
-export default function CodeWrapper({ controls, snippets }: ICodeBlock) {
+export default function CodeWrapper({ controls, snippets }: TCodeBlock) {
   const { selected } = useCode()!;
 
   if (!controls || !snippets) {

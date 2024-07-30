@@ -15,9 +15,9 @@ interface Control {
   name: string;
 }
 
-type ISegmentedControl = Record<"controls", Control[]>;
+type TSegmentedControl = Record<"controls", Control[]>;
 
-export default function SegmentedControl({ controls }: ISegmentedControl) {
+export default function SegmentedControl({ controls }: TSegmentedControl) {
   const { selected, setSelected } = useCode()!;
 
   return (

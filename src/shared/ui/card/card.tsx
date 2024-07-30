@@ -7,14 +7,14 @@ import { Ratio, Regular, Section, Title } from "@/shared/ui";
 type ImageProps = Pick<ComponentProps<typeof Ratio>, "src" | "alt">;
 type NextLinkProps = ComponentProps<typeof Link>;
 
-type ICard = {
+type TCard = {
   image: ImageProps;
   title: string;
   description: string;
   className?: string;
 } & NextLinkProps;
 
-export default function Card({ title, description, className, image, href }: ICard) {
+export default function Card({ title, description, className, image, href }: TCard) {
   return (
     <Section className={clsx("gap-4", className)}>
       <Link href={href} className="rounded-xl">

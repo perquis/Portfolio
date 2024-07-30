@@ -3,9 +3,9 @@ import type { ComponentProps } from "react";
 
 import type { Accordion } from "@/shared/ui";
 
-type Item = ComponentProps<typeof Accordion>;
+type TItem = ComponentProps<typeof Accordion>;
 
-export const useItems = (): Item[] => {
+export const useItems = (): TItem[] => {
   const t = useTranslations();
 
   return [

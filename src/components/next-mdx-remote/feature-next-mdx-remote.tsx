@@ -41,8 +41,8 @@ const components = {
   Workflows,
 };
 
-type INextMDXRemote = ComponentProps<typeof MDXRemote>;
+type TNextMDXRemote = ComponentProps<typeof MDXRemote>;
 
-export const NextMDXRemote: FC<INextMDXRemote> = (props) => {
+export const NextMDXRemote: FC<TNextMDXRemote> = (props) => {
   return <MDXRemote {...props} components={components} />;
 };

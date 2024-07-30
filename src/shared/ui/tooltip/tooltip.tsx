@@ -7,12 +7,12 @@ import { match } from "ts-pattern";
 import { useOpen } from "@/shared/hooks";
 import { Transition } from "@/shared/ui";
 
-type ITooltip = {
+type TTooltip = {
   label: string;
   alignment?: Exclude<Alignment, "bottom-left" | "bottom-right" | "top-left" | "top-right" | "center">;
 } & ComponentProps<"div">;
 
-export default function Tooltip({ children, label, alignment = "top" }: ITooltip) {
+export default function Tooltip({ children, label, alignment = "top" }: TTooltip) {
   const [isOpen, [open, close]] = useOpen();
   const containerRef = useRef<HTMLDivElement>(null);
 

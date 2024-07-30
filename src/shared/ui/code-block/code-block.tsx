@@ -6,15 +6,15 @@ import type { Code, SegmentedControl } from "@/shared/ui";
 import CodeProvider from "./code.provider";
 import CodeWrapper from "./wrapper";
 
-type ICode = ComponentProps<typeof Code>;
-type ISegmentedControl = ComponentProps<typeof SegmentedControl>;
+type TCode = ComponentProps<typeof Code>;
+type TSegmentedControl = ComponentProps<typeof SegmentedControl>;
 
-type ICodeBlock = {
-  controls: ISegmentedControl["controls"];
-  snippets: ICode[];
+type TCodeBlock = {
+  controls: TSegmentedControl["controls"];
+  snippets: TCode[];
 };
 
-export default async function CodeBlock({ controls, snippets }: ICodeBlock) {
+export default async function CodeBlock({ controls, snippets }: TCodeBlock) {
   const codes = await Promise.all(snippets.map(async ({ code }) => ({ code: await highlightCode(code) })));
 
   return (

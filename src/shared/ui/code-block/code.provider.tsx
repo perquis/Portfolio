@@ -2,12 +2,12 @@
 
 import { type Dispatch, type PropsWithChildren, type SetStateAction, createContext, useContext, useState } from "react";
 
-type ICodeContext = {
+type TCodeContext = {
   selected: string;
   setSelected: Dispatch<SetStateAction<string>>;
 };
 
-const CodeContext = createContext<ICodeContext | null>(null);
+const CodeContext = createContext<TCodeContext | null>(null);
 
 export default function CodeProvider({ name, children }: PropsWithChildren & { name: string }) {
   const [selected, setSelected] = useState(name);

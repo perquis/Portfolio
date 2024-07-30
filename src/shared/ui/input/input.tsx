@@ -4,9 +4,9 @@ import { type ComponentProps, forwardRef } from "react";
 import { Section, Transition } from "@/shared/ui";
 
 type ErrorValidation = { error?: string };
-type IInput = ComponentProps<"input"> & ErrorValidation;
+type TInput = ComponentProps<"input"> & ErrorValidation;
 
-const Input = forwardRef<HTMLInputElement, IInput>(function Input({ className, error, ...props }, ref) {
+const Input = forwardRef<HTMLInputElement, TInput>(function Input({ className, error, ...props }, ref) {
   return (
     <Transition
       animate={error ? { rotate: [-1, 1.3, 0], translateX: [-1, 1.3, 0] } : { rotate: 0, translateX: 0 }}

@@ -1,11 +1,11 @@
 import clsx from "clsx";
 import type { ComponentProps } from "react";
 
-type ITitle = {
+type TTitle = {
   level?: Level;
 } & ComponentProps<"h1">;
 
-export default function Title({ level: Tag = "h2", className, children, ...props }: ITitle) {
+export default function Title({ level: Tag = "h2", className, children, ...props }: TTitle) {
   return (
     <Tag
       className={clsx(

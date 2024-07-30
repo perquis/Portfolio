@@ -4,13 +4,13 @@ import type { ComponentProps } from "react";
 
 import { getAspectRatio } from "./get-aspect-ratio";
 
-type IImage = {
+type TImage = {
   resolution: Resolution;
   src: string;
   alt: string;
 } & ComponentProps<"div">;
 
-export default function Ratio({ src, alt, className = "w-full", resolution, ...props }: IImage) {
+export default function Ratio({ src, alt, className = "w-full", resolution, ...props }: TImage) {
   const style = getAspectRatio(resolution);
 
   return (

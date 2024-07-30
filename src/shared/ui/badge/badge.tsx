@@ -3,13 +3,13 @@ import type { ComponentProps } from "react";
 
 import { getColorClass } from "@/shared/ui/badge/getColorClass";
 
-type IBadge = {
+type TBadge = {
   color: Color;
   rounded: Rounded;
   border?: boolean;
 } & ComponentProps<"span">;
 
-export default function Badge({ children, color, className, border, rounded = "default", ...props }: IBadge) {
+export default function Badge({ children, color, className, border, rounded = "default", ...props }: TBadge) {
   const colorClass = getColorClass(color);
 
   return (

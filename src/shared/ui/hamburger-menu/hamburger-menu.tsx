@@ -7,10 +7,10 @@ import { useKey, useOpen, useOutsideOnClick } from "@/shared/hooks";
 import type { Breadcrumbs } from "@/shared/ui";
 import { Section, Tab, Transition } from "@/shared/ui";
 
-type IHamburgerMenu = ComponentProps<typeof Breadcrumbs>;
+type THamburgerMenu = ComponentProps<typeof Breadcrumbs>;
 
 // FIXME: This component should be fixed to animate the menu items better.
-export default function HamburgerMenu({ links }: IHamburgerMenu) {
+export default function HamburgerMenu({ links }: THamburgerMenu) {
   const ref = useRef<HTMLButtonElement>(null);
 
   const [isOpen, [, close, toggle]] = useOpen();

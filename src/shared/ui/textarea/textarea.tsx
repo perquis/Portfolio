@@ -4,9 +4,9 @@ import { type ComponentProps, forwardRef } from "react";
 import { Section, Transition } from "@/shared/ui";
 
 type ErrorValidation = { error?: string };
-type ITextarea = ComponentProps<"textarea"> & ErrorValidation;
+type TTextarea = ComponentProps<"textarea"> & ErrorValidation;
 
-const Textarea = forwardRef<HTMLTextAreaElement, ITextarea>(function Textarea({ className, error, ...props }, ref) {
+const Textarea = forwardRef<HTMLTextAreaElement, TTextarea>(function Textarea({ className, error, ...props }, ref) {
   return (
     <Transition
       animate={error ? { rotate: [-1, 1.3, 0], translateX: [-1, 1.3, 0] } : { rotate: 0, translateX: 0 }}

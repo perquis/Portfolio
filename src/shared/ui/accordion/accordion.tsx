@@ -7,12 +7,12 @@ import { useOpen } from "@/shared/hooks";
 import { ArrowLeft } from "@/shared/icons/design";
 import { Paragraph, Section, Title, Transition } from "@/shared/ui";
 
-type IAccordion = {
+type TAccordion = {
   question: string;
   answer: string;
 } & ComponentProps<"button">;
 
-export default function Accordion({ question, answer }: IAccordion) {
+export default function Accordion({ question, answer }: TAccordion) {
   const [isOpen, [, , toggle]] = useOpen();
 
   return (

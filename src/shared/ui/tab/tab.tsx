@@ -5,9 +5,9 @@ import type { ComponentProps } from "react";
 
 import { Link, usePathname } from "@/next/navigation";
 
-type ITab = ComponentProps<typeof Link> & IsLock;
+type TTab = ComponentProps<typeof Link> & IsLock;
 
-export default function Tab({ children, className, lock, ...props }: ITab) {
+export default function Tab({ children, className, lock, ...props }: TTab) {
   const pathname = usePathname(),
     isActive = pathname === props.href;
 

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/consistent-type-imports */
 import type { ComponentProps } from "react";
 
 import * as icons from "@/shared/icons/design";

@@ -5,11 +5,11 @@ import { createPortal } from "react-dom";
 
 import { Alert } from "@/shared/ui";
 
-type IAlertProvider = { alert: AlertOrNull; setAlert: (alert: AlertOrNull) => void };
-type IAlertContext = ComponentProps<typeof Alert> | null;
-type AlertOrNull = IAlertContext | null;
+type TAlertProvider = { alert: AlertOrNull; setAlert: (alert: AlertOrNull) => void };
+type TAlertContext = ComponentProps<typeof Alert> | null;
+type AlertOrNull = TAlertContext | null;
 
-const AlertContext = createContext<IAlertProvider | null>(null);
+const AlertContext = createContext<TAlertProvider | null>(null);
 
 export default function AlertProvider({ children }: PropsWithChildren) {
   const [alert, setAlert] = useState<AlertOrNull>(null);

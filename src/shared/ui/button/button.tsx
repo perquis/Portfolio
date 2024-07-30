@@ -5,14 +5,14 @@ import type { ComponentProps } from "react";
 import { TailSpin } from "react-loader-spinner";
 import { match } from "ts-pattern";
 
-type IButton = {
+type TButton = {
   size: Exclude<Size, "tiny">;
   variants: "black" | "white" | "indigo";
   mode: "simple" | "gradient";
   loading?: boolean;
 } & ComponentProps<"button">;
 
-export default function Button({ children, size, variants, loading, mode, className, ...props }: IButton) {
+export default function Button({ children, size, variants, loading, mode, className, ...props }: TButton) {
   const sizes = match({ size })
     .with({ size: "small" }, () => "text-xs gap-2 px-4 py-2 rounded-lg")
     .with({ size: "medium" }, () => "text-sm gap-2.5 px-5 py-2.5 rounded-[10px]")

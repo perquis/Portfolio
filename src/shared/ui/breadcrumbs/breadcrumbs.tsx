@@ -3,9 +3,9 @@ import React from "react";
 import type { links } from "@/data";
 import { Link, Section } from "@/shared/ui";
 
-type IBreadcrumb = (typeof links)[number];
+type TBreadcrumb = (typeof links)[number];
 
-export default function Breadcrumbs({ links }: Record<"links", IBreadcrumb[]>) {
+export default function Breadcrumbs({ links }: Record<"links", TBreadcrumb[]>) {
   return (
     <Section className="!flex-row gap-2">
       {links.map(({ label, href }, i) => (

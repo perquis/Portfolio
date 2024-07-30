@@ -6,11 +6,11 @@ import type { ComponentProps } from "react";
 
 import { Link as NextLink } from "@/next/navigation";
 
-type ILink = ComponentProps<typeof NextLink>;
+type TLink = ComponentProps<typeof NextLink>;
 
 // FIXME: Należy koniecznie przenieść ten komponent do Breadcrumbs
 // oraz zastanowić się nad ogólnym designem samego linku.
-export default function Link({ children, className, ...props }: ILink) {
+export default function Link({ children, className, ...props }: TLink) {
   const pathname = usePathname();
 
   return (

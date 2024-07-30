@@ -4,13 +4,13 @@ import { match } from "ts-pattern";
 import { Ratio } from "@/shared/ui";
 
 type RatioProps = React.ComponentProps<typeof Ratio>;
-type IAvatar = Omit<RatioProps, "resolution"> & {
+type TAvatar = Omit<RatioProps, "resolution"> & {
   rounded: Rounded;
   size: Size;
   innerShadow?: boolean;
 };
 
-export default function Avatar({ rounded = "full", size = "medium", className, innerShadow, ...props }: IAvatar) {
+export default function Avatar({ rounded = "full", size = "medium", className, innerShadow, ...props }: TAvatar) {
   const classes = match({ rounded, size })
     .with({ rounded: "full", size: "large" }, () => "rounded-full h-16 w-16")
     .with({ rounded: "full", size: "medium" }, () => "rounded-full h-12 w-12")
