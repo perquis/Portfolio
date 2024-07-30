@@ -20,10 +20,11 @@ export const HeroSection = () => {
           {
             code: `\`\`\`json {showLineNumbers}
 {
-  "location": "Warsaw, Poland",
+  "level": "Mid/Regular 🔥",
+  "experience": "5 years",
   "technologies": ["HTML", "CSS", "TypeScript", "Python", "C#"],
   "hobbies": ["Football", "Travels", "Animals"],
-  "experience": "5 years"
+  "location": "Warsaw, Poland",
 }`,
           },
         ]}
