@@ -43,7 +43,7 @@ export const Popup: FC<IPopup> = ({ selectedId, slide, close }) => {
             <motion.img
               ref={ref}
               layoutId={selectedId}
-              className="w-9/12 select-none overflow-hidden rounded-3xl object-cover"
+              className="w-8/12 select-none overflow-hidden rounded-3xl object-cover"
               style={{ aspectRatio: "5 / 4" }}
               {...slide}
             />

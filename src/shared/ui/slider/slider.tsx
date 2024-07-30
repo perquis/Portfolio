@@ -38,11 +38,13 @@ export default function Slider({ slides }: ISlider) {
           <Section className="!flex-row items-center gap-5" style={{ aspectRatio: "5 / 4" }} ref={slideRef}>
             {slides.map((rest, index) => (
               <Transition
+                as="button"
                 key={index}
                 layoutId={String(index)}
-                className={"flex-shrink-0"}
+                className={clsx(page !== index && "pointer-events-none", "flex-shrink-0 rounded-xl")}
                 onClick={() => page === index && popup.setSelectedId(String(index))}
                 style={{ width: page === index ? "100%" : "83.33%" }}
+                disabled={page !== index}
                 animate={{ width: page === index ? slideWidth.active : slideWidth.inactive }}
               >
                 <Ratio
