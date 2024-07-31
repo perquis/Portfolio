@@ -83,8 +83,10 @@ export const ContactForm = () => {
         <Section className="gap-3">
           <Section className="!flex-row gap-3">
             <Input
-              placeholder="John"
+              placeholder="John Doe"
               autoComplete="name"
+              labelText={t("CONTACT_FORM_INPUT_NAME")}
+              id="name"
               error={errors.name?.message}
               {...register("name", { required: true })}
             />
@@ -92,11 +94,15 @@ export const ContactForm = () => {
               type="email"
               autoComplete="email"
               placeholder="jdoe@gmail.com"
+              labelText={t("CONTACT_FORM_INPUT_EMAIL")}
+              id="email"
               error={errors.email?.message}
               {...register("email", { required: true })}
             />
           </Section>
           <Textarea
+            labelText={t("CONTACT_FORM_INPUT_MESSAGE")}
+            id="message"
             error={errors.message?.message}
             {...register("message", { required: true })}
             placeholder={t("CONTACT_FORM_TEXTAREA_MESSAGE")}
