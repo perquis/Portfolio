@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
-import { AboutMe, AllPostsList, SocialLinksList } from "@/components";
+import { AllPostsList, HeroSection, SocialLinksList } from "@/components";
 import { Divider, Layout } from "@/shared/ui";
 
 export async function generateMetadata({
@@ -15,7 +15,7 @@ export async function generateMetadata({
   };
 }
 
-const components = [AboutMe, Divider, AllPostsList, Divider, SocialLinksList];
+const components = [HeroSection, Divider, AllPostsList, Divider, SocialLinksList];
 
 export default function Blog() {
   return <Layout components={components} />;

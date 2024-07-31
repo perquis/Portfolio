@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
-import { AllProjectsList, ContactForm } from "@/components";
+import { AllProjectsList, ContactForm, HeroSection } from "@/components";
 import { Divider, Layout } from "@/shared/ui";
 
 export async function generateMetadata({
@@ -15,7 +15,7 @@ export async function generateMetadata({
   };
 }
 
-const components = [AllProjectsList, Divider, ContactForm];
+const components = [HeroSection, Divider, AllProjectsList, Divider, ContactForm];
 
 export default function Portfolio() {
   return <Layout components={components} />;
