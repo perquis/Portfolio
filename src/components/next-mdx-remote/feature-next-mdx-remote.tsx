@@ -1,6 +1,6 @@
 "use client";
 
-import { MDXRemote } from "next-mdx-remote";
+import { MDXRemote, type MDXRemoteProps } from "next-mdx-remote";
 import type { ComponentProps, FC } from "react";
 
 import {
@@ -22,13 +22,12 @@ import {
   Workflows,
 } from "@/shared/ui";
 
-const components = {
+const components: MDXRemoteProps["components"] = {
   Code,
   CodeBlock,
   Callout,
   Container,
   Title,
-  Paragraph,
   Regular,
   Slider,
   Card,
@@ -39,6 +38,8 @@ const components = {
   Technology,
   Details,
   Workflows,
+
+  p: (props) => <Paragraph {...props} />,
 };
 
 type TNextMDXRemote = ComponentProps<typeof MDXRemote>;
