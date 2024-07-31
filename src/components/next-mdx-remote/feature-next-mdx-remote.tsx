@@ -12,6 +12,7 @@ import {
   Details,
   Divider,
   Link,
+  MotionPicture,
   Paragraph,
   Ratio,
   Regular,
@@ -19,6 +20,7 @@ import {
   Slider,
   Technology,
   Title,
+  VideoPlayer,
   Workflows,
 } from "@/shared/ui";
 
@@ -38,6 +40,8 @@ const components: MDXRemoteProps["components"] = {
   Technology,
   Details,
   Workflows,
+  MotionPicture,
+  VideoPlayer,
 
   p: (props) => <Paragraph {...props} />,
 };
