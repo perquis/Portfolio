@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import type { ComponentProps, FC } from "react";
 
 import { AboutMe } from "@/components";
 import { CodeBlock, Section } from "@/shared/ui";
@@ -10,7 +10,7 @@ interface IHeroSection {
   withoutCodeBlock?: boolean;
 }
 
-export const HeroSection: FC<IHeroSection> = ({ withoutCodeBlock }) => {
+export const HeroSection: FC<IHeroSection & ComponentProps<"div">> = ({ withoutCodeBlock }) => {
   return (
     <Section className="items-start gap-5">
       <AboutMe />
