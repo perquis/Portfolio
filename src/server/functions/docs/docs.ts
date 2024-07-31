@@ -1,5 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 import fs from "fs";
+import { getLocale } from "next-intl/server";
 import { serialize } from "next-mdx-remote/serialize";
 import { headers } from "next/headers";
 import path from "path";
@@ -91,9 +92,36 @@ async function getItemsList(location: Location, locale: Locale) {
   return data.filter(({ metadata }) => metadata.isPublished);
 }
 
+export interface IDocsItem {
+  slug: string;
+  title: string;
+  description: string;
+  thumbnail_img: string;
+  tags: string[];
+  year: number;
+  publishedAt: Date;
+}
+
+async function fetchItemsList(location: Location): Promise<IDocsItem[]> {
+  const locale = await getLocale();
+  const data = await fetch(`${process.env.NEXT_URL}/api/docs?location=${location}&locale=${locale}`);
+  const json = (await data.json()) as unknown as IDocs;
+
+  return json.data.map(({ metadata }) => ({
+    slug: metadata.slug,
+    title: metadata.title,
+    description: metadata.description,
+    thumbnail_img: metadata.thumbnail_img,
+    tags: metadata.tags,
+    year: new Date(metadata.publishedAt).getFullYear(),
+    publishedAt: new Date(metadata.publishedAt),
+  }));
+}
+
 export default {
   getServerSideSlug,
   getSerializedSource,
   getItemsList,
   getSlugs,
+  fetchItemsList,
 };

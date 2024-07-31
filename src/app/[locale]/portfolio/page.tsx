@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
 import { AllProjectsList, ContactForm, HeroSection } from "@/components";
-import { Divider, Layout } from "@/shared/ui";
+import { docs } from "@/server/functions";
+import { Divider } from "@/shared/ui";
 
 export async function generateMetadata({
   params: { locale },
@@ -15,8 +16,16 @@ export async function generateMetadata({
   };
 }
 
-const components = [HeroSection, Divider, AllProjectsList, Divider, ContactForm];
+export default async function Portfolio() {
+  const items = await docs.fetchItemsList("projects");
 
-export default function Portfolio() {
-  return <Layout components={components} />;
+  return (
+    <>
+      <HeroSection />
+      <Divider />
+      <AllProjectsList items={items} />
+      <Divider />
+      <ContactForm />
+    </>
+  );
 }

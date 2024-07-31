@@ -1,10 +1,12 @@
 import { useTranslations } from "next-intl";
+import type { FC } from "react";
 
+import type { IDocsItem } from "@/server/functions/docs/docs";
 import { Paragraph, Regular, Section, Title } from "@/shared/ui";
 
 import { List } from "./ui-list";
 
-export const AllProjectsList = () => {
+export const AllProjectsList: FC<Record<"items", IDocsItem[]>> = ({ items }) => {
   const fullYear = new Date().getFullYear();
   const t = useTranslations();
 
@@ -17,7 +19,7 @@ export const AllProjectsList = () => {
 
       <Paragraph>{t("HOME_HERO_FEATURED_PROJECTS")}</Paragraph>
 
-      <List items={[]} />
+      <List items={items} />
     </Section>
   );
 };

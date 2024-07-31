@@ -4,19 +4,12 @@ import clsx from "clsx";
 import { useTranslations } from "next-intl";
 import { type Dispatch, type FC, type SetStateAction, useState } from "react";
 
+import type { IDocsItem } from "@/server/functions/docs/docs";
 import { ArrowLeft } from "@/shared/icons/design";
 import { ArrowLink, Paragraph, Ratio, Regular, Section, Title, Transition } from "@/shared/ui";
 
-interface IItem {
-  name: string;
-  year: number;
-  image: string;
-  tags: string[];
-  description: string;
-}
-
-export const List: FC<{ items: IItem[] }> = ({ items }) => {
-  const [selected, setSelected] = useState(items[0]?.name);
+export const List: FC<{ items: IDocsItem[] }> = ({ items }) => {
+  const [selected, setSelected] = useState(items[0]?.title);
 
   return (
     <Section>
@@ -27,23 +20,24 @@ export const List: FC<{ items: IItem[] }> = ({ items }) => {
   );
 };
 
-const Item: FC<IItem & { selected: string; setSelected: Dispatch<SetStateAction<string>> }> = ({
-  name,
+const Item: FC<IDocsItem & { selected: string; setSelected: Dispatch<SetStateAction<string>> }> = ({
+  title,
   year,
-  image,
+  thumbnail_img,
   tags,
+  slug,
   description,
   selected,
   setSelected,
 }) => {
   const t = useTranslations();
-  const onClick = () => setSelected(name);
-  const isActive = name === selected;
+  const onClick = () => setSelected(title);
+  const isActive = title === selected;
 
   return (
     <Section className={clsx(isActive && "pb-5", "gap-5 border-b border-zinc-200/50 dark:border-zinc-800/50")}>
       <button className="flex justify-between rounded-lg py-2.5 text-sm" onClick={onClick} disabled={isActive}>
-        <Title level="b">{name}</Title>
+        <Title level="b">{title}</Title>
 
         <Section className="relative !flex-row items-center text-zinc-800 dark:text-zinc-200">
           <Regular className="mr-8 !text-base">{year}</Regular>
@@ -60,8 +54,8 @@ const Item: FC<IItem & { selected: string; setSelected: Dispatch<SetStateAction<
       >
         <Section className="gap-5">
           <Ratio
-            src={image}
-            alt={name}
+            src={thumbnail_img}
+            alt={title}
             className="overflow-hidden rounded-lg border dark:border-zinc-800/50"
             resolution="16:9"
           />
@@ -69,7 +63,7 @@ const Item: FC<IItem & { selected: string; setSelected: Dispatch<SetStateAction<
             <Regular className="w-full">{tags.join(", ")}</Regular>
             <Section className="w-full gap-10">
               <Paragraph className="!text-sm">{description}</Paragraph>
-              <ArrowLink href="/portfolio">{t("DETAILS")}</ArrowLink>
+              <ArrowLink href={`/portfolio/${slug}`}>{t("DETAILS")}</ArrowLink>
             </Section>
           </Section>
         </Section>
