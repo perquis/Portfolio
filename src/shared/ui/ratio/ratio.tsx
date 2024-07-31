@@ -1,4 +1,7 @@
+"use client";
+
 import clsx from "clsx";
+import { useTheme } from "next-themes";
 import Image from "next/legacy/image";
 import type { ComponentProps } from "react";
 
@@ -8,14 +11,21 @@ type TImage = {
   resolution: Resolution;
   src: string;
   alt: string;
+  withoutThemeMode?: boolean;
 } & ComponentProps<"div">;
 
-export default function Ratio({ src, alt, className = "w-full", resolution, ...props }: TImage) {
+const isHttpProtocol = /(http(s?)):\/\//i;
+
+export default function Ratio({ src, alt, className = "w-full", resolution, withoutThemeMode, ...props }: TImage) {
   const style = getAspectRatio(resolution);
+
+  const { systemTheme } = useTheme(),
+    fileName = src.split("/").at(-1)!,
+    image = isHttpProtocol.test(src) ? src : src.replace(fileName, `${systemTheme}/${fileName}`);
 
   return (
     <div className={clsx("relative", className)} style={style} {...props}>
-      <Image layout="fill" objectFit="cover" unoptimized priority src={src} alt={alt} />
+      <Image layout="fill" objectFit="cover" unoptimized priority src={withoutThemeMode ? src : image} alt={alt} />
     </div>
   );
 }

@@ -8,7 +8,7 @@ export const AboutMe = () => {
 
   return (
     <Section className="gap-5">
-      <Avatar src={placeholders.images} alt="Damian Werens" rounded="full" size="large" />
+      <Avatar withoutThemeMode src={placeholders.images} alt="Damian Werens" rounded="full" size="large" />
       <Section>
         <Title level="h6">Damian Werens</Title>
         <Paragraph className="!text-zinc-500">Full-Stack Developer & Digital Designer</Paragraph>
