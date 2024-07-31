@@ -1,5 +1,6 @@
 import { AboutMe } from "@/components";
 import { CodeBlock, Section } from "@/shared/ui";
+import { calculateYearsSince } from "@/shared/utils/calculateYearsSince";
 
 import { SocialsList } from "./ui-socials-list";
 
@@ -21,7 +22,7 @@ export const HeroSection = () => {
             code: `\`\`\`json {showLineNumbers}
 {
   "level": "Mid/Regular 🔥",
-  "experience": "5 years",
+  "experience": "${calculateYearsSince("10.09.2020 00:00")} years",
   "technologies": ["HTML", "CSS", "TypeScript", "Python", "C#"],
   "hobbies": ["Football", "Travels", "Animals"],
   "location": "Warsaw, Poland",
