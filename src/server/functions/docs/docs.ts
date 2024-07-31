@@ -5,6 +5,8 @@ import { headers } from "next/headers";
 import path from "path";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
+import type { Locale } from "../../../../@types/i18n";
+
 const getPathname = (location: Location, slug = "") => path.join(process.cwd(), "src", "docs", location, slug);
 
 /**
@@ -38,7 +40,6 @@ async function getSlugs(location: Location) {
   }));
 }
 
-type Locale = "pl" | "en";
 const createMdxFilenameFromSlug = (slug: string, locale: Locale) => `${slug}.${locale}.mdx`;
 
 async function getSerializedSource(location: Location, slug: string, locale: Locale) {
