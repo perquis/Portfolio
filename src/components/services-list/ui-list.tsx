@@ -46,9 +46,6 @@ export const List: FC<TList> = ({ items }) => {
       ))}
 
       <Section className="mt-5 gap-1 rounded-[20px] border border-zinc-200 bg-white p-1 shadow dark:border-zinc-800 dark:bg-zinc-950">
-        <Regular className="block pb-1 pl-6 pt-2 text-sm font-semibold text-zinc-500 dark:text-zinc-400">
-          Opis usługi
-        </Regular>
         <Section className="gap-1 rounded-2xl bg-zinc-100 p-6 dark:bg-zinc-900">
           <Title level="b" className="text-sm">
             {selected.label}

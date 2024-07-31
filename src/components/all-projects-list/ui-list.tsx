@@ -35,7 +35,9 @@ const Item: FC<IDocsItem & { selected: string; setSelected: Dispatch<SetStateAct
   const isActive = title === selected;
 
   return (
-    <Section className={clsx(isActive && "pb-5", "gap-5 border-b border-zinc-200/50 dark:border-zinc-800/50")}>
+    <Section
+      className={clsx(isActive && "pb-5", "gap-5 border-b border-zinc-200/50 last:border-b-0 dark:border-zinc-800/50")}
+    >
       <button className="flex justify-between rounded-lg py-2.5 text-sm" onClick={onClick} disabled={isActive}>
         <Title level="b">{title}</Title>
 

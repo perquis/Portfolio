@@ -4,6 +4,7 @@ export { default as ArrowLeft } from "@/shared/icons/design/arrow-left";
 export { default as ArrowLineRight } from "@/shared/icons/design/arrow-line-right";
 export { default as ArrowRight } from "@/shared/icons/design/arrow-right";
 export { default as ArrowUp } from "@/shared/icons/design/arrow-up";
+export { default as CalendarEvent } from "@/shared/icons/design/calendar-event";
 export { default as Checkmark } from "@/shared/icons/design/checkmark";
 export { default as Clipboard } from "@/shared/icons/design/clipboard";
 export { default as Close } from "@/shared/icons/design/close";

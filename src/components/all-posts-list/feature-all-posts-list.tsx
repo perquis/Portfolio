@@ -1,9 +1,12 @@
 import { useTranslations } from "next-intl";
+import type { FC } from "react";
 
-import { CardsList } from "@/components/cards-list/feature-cards-list";
-import { Regular, SearchBar, Section, Title } from "@/shared/ui";
+import type { IDocsItem } from "@/server/functions/docs/docs";
+import { Regular, Section, Title } from "@/shared/ui";
 
-export const AllPostsList = () => {
+import { List } from "./ui-list";
+
+export const AllPostsList: FC<Record<"items", IDocsItem[]>> = ({ items }) => {
   const t = useTranslations();
   const fullYear = new Date().getFullYear();
 
@@ -16,9 +19,9 @@ export const AllPostsList = () => {
         </Regular>
       </Section>
 
-      <SearchBar placeholder={t("BLOG_SEARCHBAR_PLACEHOLDER")} />
+      {/* <SearchBar placeholder={t("BLOG_SEARCHBAR_PLACEHOLDER")} /> */}
 
-      <CardsList />
+      <List items={items} />
     </Section>
   );
 };

@@ -12,6 +12,8 @@ export const SocialsList = () => {
   const t = useTranslations();
   const pathname = usePathname();
 
+  if (pathname === "/blog") return null;
+
   return (
     <Section className="!flex-row flex-wrap gap-3">
       {socials.map(({ name, url }, index) => {
