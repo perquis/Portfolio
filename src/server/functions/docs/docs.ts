@@ -56,8 +56,44 @@ async function getSerializedSource(location: Location, slug: string, locale: Loc
   });
 }
 
+async function getItemsList(location: Location, locale: Locale) {
+  "use server";
+
+  const initialData = {
+    metadata: {
+      slug: "",
+      title: "",
+      description: "",
+      thumbnail_img: "",
+      tags: [],
+      publishedAt: "01.01.2100 12:00",
+    },
+  };
+
+  const slugs = await getSlugs(location);
+  const data = await Promise.all(
+    slugs.map(async ({ slug }) => {
+      const { frontmatter: metadata } = await getSerializedSource(location, slug, locale);
+      const publishedAt = (metadata.publishedAt as string) || initialData.metadata.publishedAt;
+
+      return {
+        metadata: {
+          ...initialData.metadata,
+          ...metadata,
+          publishedAt: new Date(publishedAt),
+          isPublished: new Date(publishedAt) < new Date(),
+          slug,
+        },
+      };
+    }),
+  );
+
+  return data.filter(({ metadata }) => metadata.isPublished);
+}
+
 export default {
   getServerSideSlug,
   getSerializedSource,
+  getItemsList,
   getSlugs,
 };
