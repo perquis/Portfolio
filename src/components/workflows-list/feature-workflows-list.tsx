@@ -14,7 +14,7 @@ export const WorkflowsList = () => {
       <Paragraph>{t("HOME_PROCESS_DESCRIPTION")}</Paragraph>
 
       <Code
-        code={`\`\`\`tsx
+        code={`\`\`\`tsx {showLineNumbers}
 const items = await getItems();
 render(<List items={items} />);`}
       />
