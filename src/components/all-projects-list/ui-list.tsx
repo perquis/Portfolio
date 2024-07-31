@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { useTranslations } from "next-intl";
 import { type Dispatch, type FC, type SetStateAction, useState } from "react";
 
+import { Link } from "@/next/navigation";
 import type { IDocsItem } from "@/server/functions/docs/docs";
 import { ArrowLeft } from "@/shared/icons/design";
 import { ArrowLink, Paragraph, Ratio, Regular, Section, Title, Transition } from "@/shared/ui";
@@ -33,6 +34,7 @@ const Item: FC<IDocsItem & { selected: string; setSelected: Dispatch<SetStateAct
   const t = useTranslations();
   const onClick = () => setSelected(title);
   const isActive = title === selected;
+  const redirectTo = `/portfolio/${slug}`;
 
   return (
     <Section
@@ -55,17 +57,19 @@ const Item: FC<IDocsItem & { selected: string; setSelected: Dispatch<SetStateAct
         className={clsx("overflow-hidden", isActive ? "h-auto" : "h-0")}
       >
         <Section className="gap-5">
-          <Ratio
-            src={thumbnail_img}
-            alt={title}
-            className="overflow-hidden rounded-lg border dark:border-zinc-800/50"
-            resolution="16:9"
-          />
+          <Link href={redirectTo} className="rounded-lg">
+            <Ratio
+              src={thumbnail_img}
+              alt={title}
+              className="overflow-hidden rounded-lg border dark:border-zinc-800/50"
+              resolution="16:9"
+            />
+          </Link>
           <Section className="!flex-row gap-5">
             <Regular className="w-full">{tags.join(", ")}</Regular>
-            <Section className="w-full gap-10">
+            <Section className="w-full items-start gap-10">
               <Paragraph className="!text-sm">{description}</Paragraph>
-              <ArrowLink href={`/portfolio/${slug}`}>{t("DETAILS")}</ArrowLink>
+              <ArrowLink href={redirectTo}>{t("DETAILS")}</ArrowLink>
             </Section>
           </Section>
         </Section>

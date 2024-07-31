@@ -21,7 +21,7 @@ export default async function Portfolio() {
 
   return (
     <>
-      <HeroSection />
+      <HeroSection withoutCodeBlock />
       <Divider />
       <AllProjectsList items={items} />
       <Divider />

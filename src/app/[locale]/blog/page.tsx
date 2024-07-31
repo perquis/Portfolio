@@ -21,7 +21,7 @@ export default async function Blog() {
 
   return (
     <>
-      <HeroSection />
+      <HeroSection withoutCodeBlock />
       <Divider />
       <AllPostsList items={items} />
       <Divider />
