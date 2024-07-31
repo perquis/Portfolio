@@ -28,6 +28,7 @@ export { default as Input } from "./input/input";
 export { default as Layout } from "./layout/layout";
 export { default as Link } from "./link/link";
 export { default as Logo } from "./logo/logo";
+export { default as MotionPicture } from "./motion-picture/motion-picture";
 export { default as Navigation } from "./navigation/navigation";
 export { default as Page } from "./page/page";
 export { default as Paragraph } from "./paragraph/paragraph";
