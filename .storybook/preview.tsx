@@ -2,7 +2,7 @@ import { withThemeByDataAttribute } from "@storybook/addon-themes";
 import type { Preview } from "@storybook/react";
 import { match } from "ts-pattern";
 
-import "../src/app/globals.css";
+import "../src/app/[locale]/globals.css";
 import { Container, GlobalLayout } from "../src/shared/ui";
 
 const withLayout = (Story: React.FC, options: any) => {
