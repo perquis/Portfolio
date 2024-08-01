@@ -103,11 +103,10 @@ export interface IDocsItem {
 }
 
 async function fetchItemsList(location: Location): Promise<IDocsItem[]> {
-  const locale = await getLocale();
-  const data = await fetch(`${process.env.NEXT_URL}/api/docs?location=${location}&locale=${locale}`);
-  const json = (await data.json()) as unknown as IDocs;
+  const locale = (await getLocale()) as Locale;
+  const data = await getItemsList(location, locale);
 
-  return json.data.map(({ metadata }) => ({
+  return data.map(({ metadata }) => ({
     slug: metadata.slug,
     title: metadata.title,
     description: metadata.description,
