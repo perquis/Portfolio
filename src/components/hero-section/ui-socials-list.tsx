@@ -3,10 +3,11 @@
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
+import { ScheduleMeeting } from "@/components";
 import { socials } from "@/data";
 import { usePathname } from "@/next/navigation";
 import * as icons from "@/shared/icons/design";
-import { Button, Section } from "@/shared/ui";
+import { Section } from "@/shared/ui";
 
 export const SocialsList = () => {
   const t = useTranslations();
@@ -32,11 +33,7 @@ export const SocialsList = () => {
         );
       })}
 
-      {pathname === "/" && (
-        <Button mode="simple" size="small" variants="black">
-          {t("HOME_HERO_BUTTON_MEETING")}
-        </Button>
-      )}
+      {pathname === "/" && <ScheduleMeeting />}
     </Section>
   );
 };
