@@ -38,7 +38,7 @@ export const Default: Story = {
 // @ts-ignore
 export const List: Story = {
   decorators: [
-    (Story) => (
+    () => (
       <Section className="!flex-row gap-5">
         <Technology icon="Jsx" name="React" content="A JavaScript library for building user interfaces." />
         <Technology icon="Vue" name="Vue" content="The Progressive JavaScript Framework." />

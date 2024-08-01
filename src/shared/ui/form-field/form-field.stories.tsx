@@ -21,7 +21,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   decorators: [
-    (Story) => (
+    () => (
       <Form className="items-end">
         <FormField>
           <Input placeholder="Name" />
