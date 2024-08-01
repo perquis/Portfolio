@@ -7,6 +7,8 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 import type { Locale } from "../../../../@types/i18n";
 
+// TODO: Cały ten plik jest do refaktoryzacji
+
 const getPathname = (location: Location, slug = "") => path.join(process.cwd(), "src", "docs", location, slug);
 
 type Location = "projects" | "posts";
