@@ -2,32 +2,12 @@
 import fs from "fs";
 import { getLocale } from "next-intl/server";
 import { serialize } from "next-mdx-remote/serialize";
-import { headers } from "next/headers";
 import path from "path";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 import type { Locale } from "../../../../@types/i18n";
 
 const getPathname = (location: Location, slug = "") => path.join(process.cwd(), "src", "docs", location, slug);
-
-/**
- * This function is used to get the slug from `the server side`
- * and is used to determine if the page is a slug page or not 🎉.
- */
-async function getServerSideSlug() {
-  "use server";
-
-  const headersList = headers();
-  const pathname = headersList.get("x-frame-pathname");
-
-  const [_page, slug] =
-    pathname
-      ?.split("/")
-      .filter((v) => v !== "pl" && v !== "en")
-      .filter(Boolean) ?? [];
-
-  return slug || null;
-}
 
 type Location = "projects" | "posts";
 async function getSlugs(location: Location) {
@@ -122,7 +102,6 @@ async function fetchItemsList(location: Location): Promise<IDocsItem[]> {
 }
 
 export default {
-  getServerSideSlug,
   getSerializedSource,
   getItemsList,
   getSlugs,
