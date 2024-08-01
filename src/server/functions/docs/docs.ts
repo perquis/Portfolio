@@ -103,18 +103,23 @@ export interface IDocsItem {
 }
 
 async function fetchItemsList(location: Location): Promise<IDocsItem[]> {
-  const locale = (await getLocale()) as Locale;
-  const data = await getItemsList(location, locale);
+  try {
+    const locale = (await getLocale()) as Locale;
+    const data = await getItemsList(location, locale);
 
-  return data.map(({ metadata }) => ({
-    slug: metadata.slug,
-    title: metadata.title,
-    description: metadata.description,
-    thumbnail_img: metadata.thumbnail_img,
-    tags: metadata.tags,
-    year: new Date(metadata.publishedAt).getFullYear(),
-    publishedAt: new Date(metadata.publishedAt),
-  }));
+    return data.map(({ metadata }) => ({
+      slug: metadata.slug,
+      title: metadata.title,
+      description: metadata.description,
+      thumbnail_img: metadata.thumbnail_img,
+      tags: metadata.tags,
+      year: new Date(metadata.publishedAt).getFullYear(),
+      publishedAt: new Date(metadata.publishedAt),
+    }));
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
 }
 
 export default {
