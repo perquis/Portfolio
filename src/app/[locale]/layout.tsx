@@ -6,7 +6,8 @@ import { Suspense } from "react";
 
 import { AppProvider } from "@/app/[locale]/_providers";
 import { locales } from "@/config/i18n";
-import { GlobalLayout } from "@/shared/ui";
+import { PageBackground } from "@/shared/icons/design/page-background";
+import { Cursor, GlobalLayout, Navigation } from "@/shared/ui";
 
 import "./globals.css";
 
@@ -30,7 +31,12 @@ export default async function AppLayout({
       <body className={clsx(inter.className, GeistMono.variable, "bg-white dark:bg-zinc-950")}>
         <Suspense>
           <AppProvider>
-            <GlobalLayout>{children}</GlobalLayout>
+            <Navigation />
+            <GlobalLayout>
+              <PageBackground />
+              {children}
+              <Cursor />
+            </GlobalLayout>
           </AppProvider>
         </Suspense>
 
