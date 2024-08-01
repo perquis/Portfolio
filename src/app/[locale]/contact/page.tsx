@@ -15,7 +15,7 @@ export async function generateMetadata({
   };
 }
 
-const components = [ContactForm, Divider, FAQSection, Divider, SocialLinksList];
+const components = [FAQSection, Divider, ContactForm, Divider, SocialLinksList];
 
 export default async function Contact({ params: { locale } }: Readonly<{ params: { locale: string } }>) {
   unstable_setRequestLocale(locale);

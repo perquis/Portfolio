@@ -64,15 +64,7 @@ export const ContactForm = () => {
     <Section className="gap-10">
       <Section className="gap-5">
         <Section className={clsx("!flex-row", { "justify-between": !root })}>
-          <Regular
-            className={clsx(
-              root ? "font-bold" : "font-semibold",
-              { "text-xl": root },
-              { "!text-zinc-950 dark:!text-white": root },
-            )}
-          >
-            {t("CONTACT_FORM_TITLE")}
-          </Regular>
+          <Regular>{t("CONTACT_FORM_TITLE")}</Regular>
           {!root && <ArrowLink href="/contact#faq">FAQ</ArrowLink>}
         </Section>
 
