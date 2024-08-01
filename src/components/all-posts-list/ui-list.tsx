@@ -1,9 +1,9 @@
 import type { FC } from "react";
 
-import type { IDocsItem } from "@/server/functions/docs/docs";
+import type { TMetadata } from "@/server/functions/docs/docs";
 import { Card } from "@/shared/ui";
 
-export const List: FC<Record<"items", IDocsItem[]>> = ({ items }) => {
+export const List: FC<Record<"items", TMetadata[]>> = ({ items }) => {
   return (
     <>
       {items.map((item) => (

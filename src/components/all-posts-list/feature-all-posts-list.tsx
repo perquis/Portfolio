@@ -1,12 +1,12 @@
 import { useTranslations } from "next-intl";
 import type { FC } from "react";
 
-import type { IDocsItem } from "@/server/functions/docs/docs";
+import type { TMetadata } from "@/server/functions/docs/docs";
 import { Regular, Section, Title } from "@/shared/ui";
 
 import { List } from "./ui-list";
 
-export const AllPostsList: FC<Record<"items", IDocsItem[]>> = ({ items }) => {
+export const AllPostsList: FC<Record<"items", TMetadata[]>> = ({ items }) => {
   const t = useTranslations();
   const fullYear = new Date().getFullYear();
 

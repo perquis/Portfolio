@@ -19,7 +19,7 @@ export async function generateMetadata({
 export default async function Portfolio({ params: { locale } }: Readonly<{ params: { locale: string } }>) {
   unstable_setRequestLocale(locale);
 
-  const items = await docs.fetchItemsList("projects");
+  const items = await docs.getItemsWithMetadata("projects");
 
   return (
     <>

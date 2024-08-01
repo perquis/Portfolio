@@ -5,11 +5,11 @@ import { useTranslations } from "next-intl";
 import { type Dispatch, type FC, type SetStateAction, useState } from "react";
 
 import { Link } from "@/next/navigation";
-import type { IDocsItem } from "@/server/functions/docs/docs";
+import type { TMetadata } from "@/server/functions/docs/docs";
 import { ArrowLeft } from "@/shared/icons/design";
 import { ArrowLink, Paragraph, Ratio, Regular, Section, Title, Transition } from "@/shared/ui";
 
-export const List: FC<{ items: IDocsItem[] }> = ({ items }) => {
+export const List: FC<{ items: TMetadata[] }> = ({ items }) => {
   const [selected, setSelected] = useState(items[0]?.title);
 
   if (items.length === 0) return null;
@@ -23,7 +23,7 @@ export const List: FC<{ items: IDocsItem[] }> = ({ items }) => {
   );
 };
 
-const Item: FC<IDocsItem & { selected: string; setSelected: Dispatch<SetStateAction<string>> }> = ({
+const Item: FC<TMetadata & { selected: string; setSelected: Dispatch<SetStateAction<string>> }> = ({
   title,
   year,
   thumbnail_img,

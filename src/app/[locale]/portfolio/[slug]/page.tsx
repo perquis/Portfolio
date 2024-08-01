@@ -6,7 +6,7 @@ import { docs } from "@/server/functions";
 import type { Locale } from "../../../../../@types/i18n";
 
 export async function generateStaticParams() {
-  return await docs.getSlugs("projects");
+  return await docs.getSlugsWithoutFiles("projects");
 }
 
 export default async function ProjectPage({
@@ -14,7 +14,7 @@ export default async function ProjectPage({
 }: Readonly<{ params: { locale: string; slug: string } }>) {
   unstable_setRequestLocale(locale);
 
-  const source = await docs.getSerializedSource("projects", slug, locale as Locale);
+  const source = await docs.getSourcesSinceMdxFiles("projects", slug, locale as Locale);
 
   return <NextMDXRemote {...source} />;
 }

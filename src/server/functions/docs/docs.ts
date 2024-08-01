@@ -7,95 +7,99 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 import type { Locale } from "../../../../@types/i18n";
 
-// TODO: Cały ten plik jest do refaktoryzacji
-
-const getPathname = (location: Location, slug = "") => path.join(process.cwd(), "src", "docs", location, slug);
-
 type Location = "projects" | "posts";
-async function getSlugs(location: Location) {
+export type TMetadata = typeof METADATA_RESPONSE.metadata;
+
+const DEFAULT_DATE = new Date("01.01.2100 12:00");
+const BASE_PATH = path.join(process.cwd(), "src", "docs");
+
+const METADATA_RESPONSE = {
+  metadata: {
+    slug: "",
+    title: "",
+    description: "",
+    thumbnail_img: "",
+    tags: [],
+    publishedAt: DEFAULT_DATE,
+  },
+};
+
+const createFileNameWithLocale = (slug: string, locale: Locale) => `${slug}.${locale}.mdx`;
+const getPathToResources = (rootDirectory: Location, slug = "") => path.join(BASE_PATH, rootDirectory, slug);
+
+async function getSlugsWithoutFiles(rootDirectory: Location) {
   "use server";
 
-  const pathname = getPathname(location);
-  const directories = fs.readdirSync(pathname);
+  const pathToRootDirectory = getPathToResources(rootDirectory),
+    directories = fs.readdirSync(pathToRootDirectory),
+    slugs = directories.map((slug) => ({ slug }));
 
-  return directories.map((slug) => ({ slug })).filter(({ slug }) => slug !== ".gitkeep");
+  const slugsWithoutFiles = slugs.filter(({ slug }) => !slug.includes("."));
+  return slugsWithoutFiles;
 }
 
-const createMdxFilenameFromSlug = (slug: string, locale: Locale) => `${slug}.${locale}.mdx`;
-
-async function getSerializedSource(location: Location, slug: string, locale: Locale) {
+async function getSourcesSinceMdxFiles(rootDirectory: Location, slug: string, currentLocale: Locale) {
   "use server";
-  const filename = createMdxFilenameFromSlug(slug, locale),
-    pathname = getPathname(location, slug),
-    file = fs.readFileSync(path.join(pathname, filename), { encoding: "utf-8" });
 
-  return await serialize(file, {
+  const fileNameWithLocale = createFileNameWithLocale(slug, currentLocale),
+    pathToDirectoryWithMdxFiles = getPathToResources(rootDirectory, slug),
+    pathToSpecificFile = path.join(pathToDirectoryWithMdxFiles, fileNameWithLocale),
+    specificFileWithLocale = fs.readFileSync(pathToSpecificFile, { encoding: "utf-8" });
+
+  const source = await serialize(specificFileWithLocale, {
     parseFrontmatter: true,
     mdxOptions: {
       rehypePlugins: [[rehypeAutolinkHeadings, { behavior: "wrap" }]],
     },
   });
+
+  return source;
 }
 
-async function getItemsList(location: Location, locale: Locale) {
+async function getItemsWithPublishedDate(rootDirectory: Location) {
   "use server";
 
-  const initialData = {
-    metadata: {
-      slug: "",
-      title: "",
-      description: "",
-      thumbnail_img: "",
-      tags: [],
-      publishedAt: "01.01.2100 12:00",
-    },
-  };
+  const currentLocale = (await getLocale()) as Locale,
+    slugsWithoutFiles = await getSlugsWithoutFiles(rootDirectory);
 
-  const slugs = await getSlugs(location);
-  const data = await Promise.all(
-    slugs.map(async ({ slug }) => {
-      const { frontmatter: metadata } = await getSerializedSource(location, slug, locale);
-      const publishedAt = (metadata.publishedAt as string) || initialData.metadata.publishedAt;
+  const itemsWithMetadata = await Promise.all(
+    slugsWithoutFiles.map(async ({ slug }) => {
+      const { frontmatter } = await getSourcesSinceMdxFiles(rootDirectory, slug, currentLocale);
+      const publishedAt = new Date(`${frontmatter.publishedAt}`) || METADATA_RESPONSE.metadata.publishedAt;
+
+      const metadata = {
+        ...METADATA_RESPONSE.metadata,
+        ...frontmatter,
+
+        publishedAt,
+        isPublished: publishedAt < new Date(),
+        slug,
+      };
 
       return {
-        metadata: {
-          ...initialData.metadata,
-          ...metadata,
-          publishedAt: new Date(publishedAt),
-          isPublished: new Date(publishedAt) < new Date(),
-          slug,
-        },
+        metadata,
       };
     }),
   );
 
-  return data.filter(({ metadata }) => metadata.isPublished);
+  const sortedItemsByPublishedDate = itemsWithMetadata.sort(
+    (a, b) => b.metadata.publishedAt.getTime() - a.metadata.publishedAt.getTime(),
+  );
+  const itemsWithPublishedDate = sortedItemsByPublishedDate.filter(({ metadata }) => metadata.isPublished);
+
+  return itemsWithPublishedDate;
 }
 
-export interface IDocsItem {
-  slug: string;
-  title: string;
-  description: string;
-  thumbnail_img: string;
-  tags: string[];
-  year: number;
-  publishedAt: Date;
-}
-
-async function fetchItemsList(location: Location): Promise<IDocsItem[]> {
+async function getItemsWithMetadata(rootDirectory: Location): Promise<TMetadata[]> {
   try {
-    const locale = (await getLocale()) as Locale;
-    const data = await getItemsList(location, locale);
+    const itemsWithPublishedDate = await getItemsWithPublishedDate(rootDirectory);
 
-    return data.map(({ metadata }) => ({
-      slug: metadata.slug,
-      title: metadata.title,
-      description: metadata.description,
-      thumbnail_img: metadata.thumbnail_img,
-      tags: metadata.tags,
-      year: new Date(metadata.publishedAt).getFullYear(),
-      publishedAt: new Date(metadata.publishedAt),
+    const dataWithMetadataFromMdxFiles = itemsWithPublishedDate.map(({ metadata }) => ({
+      year: metadata.publishedAt.getFullYear(),
+      ...metadata,
     }));
+
+    return dataWithMetadataFromMdxFiles;
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error(error);
@@ -104,8 +108,7 @@ async function fetchItemsList(location: Location): Promise<IDocsItem[]> {
 }
 
 export default {
-  getSerializedSource,
-  getItemsList,
-  getSlugs,
-  fetchItemsList,
+  getSourcesSinceMdxFiles,
+  getSlugsWithoutFiles,
+  getItemsWithMetadata,
 };
