@@ -10,12 +10,15 @@ import { usePathname } from "@/next/navigation";
 import { useAlert } from "@/providers/alert/alert.provider";
 import { sendMail } from "@/server/actions/sendMail";
 import { useOpen } from "@/shared/hooks";
-import { ArrowLink, Button, Form, Input, Paragraph, Regular, Section, Textarea } from "@/shared/ui";
+import { ArrowLink, Button, Checkbox, Form, Input, Paragraph, Regular, Section, Textarea } from "@/shared/ui";
 
 const schema = z.object({
   name: z.string().min(3).max(32),
   email: z.string().email().max(64),
   message: z.string().min(10).max(256),
+  checked: z.boolean().refine((value) => value === true, {
+    message: "Please agree with the policy and privacy.",
+  }),
 });
 
 export type Schema = z.infer<typeof schema>;
@@ -99,7 +102,12 @@ export const ContactForm = () => {
             {...register("message", { required: true })}
             placeholder={t("CONTACT_FORM_TEXTAREA_MESSAGE")}
           />
+          <label className="mt-2 flex items-start gap-3" htmlFor="checked">
+            <Checkbox {...register("checked", { required: true })} required id="checked" />
+            <Regular className="!text-xs">{t("CONTACT_FORM_CHECKBOX_AGREE")}</Regular>
+          </label>
         </Section>
+
         <Button
           type="submit"
           mode="simple"
