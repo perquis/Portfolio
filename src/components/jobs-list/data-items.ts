@@ -1,8 +1,8 @@
 import type { ComponentProps } from "react";
 
-import type { ExperiencesList } from "@/components/experiences/ui-experiences-list";
+import type { List } from "./ui-list";
 
-export const items: ComponentProps<typeof ExperiencesList>["items"] = [
+export const items: ComponentProps<typeof List>["items"] = [
   {
     image: {
       src: "/static/jobs/haergi_logo.jpg",

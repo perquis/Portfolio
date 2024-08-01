@@ -38,9 +38,8 @@ export const Error: Story = {
   args: {
     type: "text",
     placeholder: "Name",
-    error: true,
+    error: "This name is invalid.",
     defaultValue: "John Do3",
-    message: "This name is invalid.",
   },
 };
 

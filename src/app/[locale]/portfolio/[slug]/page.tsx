@@ -1,4 +1,4 @@
-import { getLocale } from "next-intl/server";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 import { NextMDXRemote } from "@/components/next-mdx-remote/feature-next-mdx-remote";
 import { docs } from "@/server/functions";
@@ -9,9 +9,12 @@ export async function generateStaticParams() {
   return await docs.getSlugs("projects");
 }
 
-export default async function ProjectPage({ params }: { params: { slug: string } }) {
-  const locale = await getLocale();
-  const source = await docs.getSerializedSource("projects", params.slug, locale as Locale);
+export default async function ProjectPage({
+  params: { locale, slug },
+}: Readonly<{ params: { locale: string; slug: string } }>) {
+  unstable_setRequestLocale(locale);
+
+  const source = await docs.getSerializedSource("projects", slug, locale as Locale);
 
   return <NextMDXRemote {...source} />;
 }

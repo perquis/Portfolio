@@ -26,11 +26,6 @@ const meta = {
         type: "text",
       },
     },
-    image: {
-      control: {
-        type: "object",
-      },
-    },
   },
 } satisfies Meta<typeof Card>;
 
@@ -41,10 +36,10 @@ export const Default: Story = {
   args: {
     title: "Card Title",
     description: "This is a description of the card. It can be used to provide more information about the card.",
-    image: {
-      src: placeholders.images,
-      alt: "This is an image of the card.",
-    },
-    href: "/",
+    thumbnail_img: placeholders.images,
+    publishedAt: new Date(),
+    slug: "card-slug",
+    tags: ["tag1", "tag2"],
+    year: 2021,
   },
 };

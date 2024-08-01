@@ -27,9 +27,8 @@ export const Default: Story = {
 export const Error: Story = {
   args: {
     placeholder: "Enter your message",
-    error: true,
     defaultValue: "Jo",
-    message: "This message is invalid.",
+    error: "This message is too short.",
   },
 };
 

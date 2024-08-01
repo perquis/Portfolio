@@ -33,10 +33,6 @@ export const Default: Story = {
         label: "Blog",
         href: "/blog",
       },
-      {
-        label: "How to secure cookies in JavaScript correctly?",
-        href: "/blog/how-to-secure-cookies-in-javascript-correctly",
-      },
     ],
   },
 };

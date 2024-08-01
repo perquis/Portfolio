@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 import { AllPostsList, HeroSection, SocialLinksList } from "@/components";
 import { docs } from "@/server/functions";
@@ -16,7 +16,9 @@ export async function generateMetadata({
   };
 }
 
-export default async function Blog() {
+export default async function Blog({ params: { locale } }: Readonly<{ params: { locale: string } }>) {
+  unstable_setRequestLocale(locale);
+
   const items = await docs.fetchItemsList("posts");
 
   return (
