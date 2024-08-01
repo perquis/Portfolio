@@ -12,6 +12,8 @@ import { ArrowLink, Paragraph, Ratio, Regular, Section, Title, Transition } from
 export const List: FC<{ items: IDocsItem[] }> = ({ items }) => {
   const [selected, setSelected] = useState(items[0]?.title);
 
+  if (items.length === 0) return null;
+
   return (
     <Section>
       {items.map((item, index) => (
