@@ -36,9 +36,7 @@ async function getSlugs(location: Location) {
   const pathname = getPathname(location);
   const directories = fs.readdirSync(pathname);
 
-  return directories.map((slug) => ({
-    slug,
-  }));
+  return directories.map((slug) => ({ slug })).filter(({ slug }) => slug !== ".gitkeep");
 }
 
 const createMdxFilenameFromSlug = (slug: string, locale: Locale) => `${slug}.${locale}.mdx`;
@@ -117,6 +115,7 @@ async function fetchItemsList(location: Location): Promise<IDocsItem[]> {
       publishedAt: new Date(metadata.publishedAt),
     }));
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error(error);
     return [];
   }
