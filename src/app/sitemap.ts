@@ -6,7 +6,7 @@ import { getSlugsWithoutFiles } from "@/server/functions/docs/utils";
 const pathnames = ["/", "/portfolio", "/blog", "/contact"];
 
 function getUrl(pathname: string, locale: string) {
-  return `${process.env.SITE_URL}/${locale}${pathname === "/" ? "" : pathname}`;
+  return `${process.env.VERCEL_URL}/${locale}${pathname === "/" ? "" : pathname}`;
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

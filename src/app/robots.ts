@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: ["/"],
       },
     ],
-    sitemap: `${process.env.SITE_URL}/sitemap.xml`,
+    sitemap: `${process.env.VERCEL_URL}/sitemap.xml`,
   };
 }

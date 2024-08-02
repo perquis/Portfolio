@@ -12,13 +12,13 @@ export const size = {
 export const contentType = "image/png";
 
 export default async function Image({ params: { slug, locale } }: { params: { locale: Locale; slug: string } }) {
-  const data = await fetch(`${process.env.SITE_URL}/api/op?location=projects&slug=${slug}&locale=${locale}`);
+  const data = await fetch(`${process.env.VERCEL_URL}/api/op?location=projects&slug=${slug}&locale=${locale}`);
   const open_graph_img = await data.json();
 
   return new ImageResponse(
     (
       // eslint-disable-next-line jsx-a11y/alt-text
-      <img src={`${process.env.SITE_URL}${open_graph_img}`} />
+      <img src={`${process.env.VERCEL_URL}${open_graph_img}`} />
     ),
     {
       ...size,

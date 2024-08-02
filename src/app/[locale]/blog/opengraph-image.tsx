@@ -12,7 +12,7 @@ export const contentType = "image/png";
 
 export default async function Image() {
   // eslint-disable-next-line @next/next/no-img-element
-  return new ImageResponse(<img src={`${process.env.SITE_URL}/static/pages/blog.png`} />, {
+  return new ImageResponse(<img src={`${process.env.VERCEL_URL}/static/pages/blog.png`} />, {
     ...size,
   });
 }

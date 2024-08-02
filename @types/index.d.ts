@@ -1,6 +1,6 @@
 declare global {
   namespace NodeJS {
-    type Env = "SMTP_GMAIL_EMAIL" | "SMTP_GMAIL_PASSWORD" | "SITE_URL";
+    type Env = "SMTP_GMAIL_EMAIL" | "SMTP_GMAIL_PASSWORD" | "VERCEL_URL";
 
     type MappedEnv = {
       [K in Env]?: string;

@@ -14,7 +14,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  metadataBase: new URL(process.env.SITE_URL!),
+  metadataBase: new URL(process.env.VERCEL_URL!),
   alternates: {
     canonical: "/",
     languages: {
