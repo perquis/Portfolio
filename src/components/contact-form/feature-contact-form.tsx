@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
+import { ScheduleMeeting } from "@/components";
 import { usePathname } from "@/next/navigation";
 import { useAlert } from "@/providers/alert/alert.provider";
 import { sendMail } from "@/server/actions/sendMail";
@@ -29,7 +30,6 @@ export const ContactForm = () => {
   const { alert, setAlert } = useAlert();
 
   const pathname = usePathname();
-  const root = pathname === "/contact";
 
   const {
     reset,
@@ -65,13 +65,15 @@ export const ContactForm = () => {
 
   return (
     <Section className="gap-10">
-      <Section className="gap-5">
-        <Section className={clsx("!flex-row", { "justify-between": !root })}>
+      <Section className="items-start gap-5">
+        <Section className={clsx("w-full !flex-row", { "justify-between": pathname !== "/contact" })}>
           <Regular>{t("CONTACT_FORM_TITLE")}</Regular>
-          {!root && <ArrowLink href="/contact#faq">FAQ</ArrowLink>}
+          {pathname !== "/contact" && <ArrowLink href="/contact#faq">FAQ</ArrowLink>}
         </Section>
 
         <Paragraph>{t("CONTACT_FORM_DESCRIPTION")}</Paragraph>
+
+        {pathname !== "/" && <ScheduleMeeting />}
       </Section>
 
       <Form className="!gap-10" onSubmit={onSubmit}>
