@@ -1,4 +1,3 @@
-import { transformerNotationDiff } from "@shikijs/transformers";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeStringify from "rehype-stringify";
 import remarkParse from "remark-parse";
@@ -16,7 +15,6 @@ export async function highlightCode(code: string) {
     .use(remarkRehype)
     .use(rehypePrettyCode, {
       filterMetaString: (string) => string.replace(/filename="[^"]*"/, ""),
-      transformers: [transformerNotationDiff()],
       theme: {
         light: parseToTheme(expoLight),
         dark: parseToTheme(expoDark),

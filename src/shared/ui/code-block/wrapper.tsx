@@ -3,7 +3,7 @@
 import { type ComponentProps } from "react";
 
 import type { Code } from "@/shared/ui";
-import { Section, SegmentedControl } from "@/shared/ui";
+import { CopyToClipboard, Section, SegmentedControl } from "@/shared/ui";
 import { useCode } from "@/shared/ui/code-block/code.provider";
 
 type TCode = ComponentProps<typeof Code>;
@@ -30,7 +30,12 @@ export default function CodeWrapper({ controls, snippets }: TCodeBlock) {
       <SegmentedControl controls={controls} />
       {snippets.map(
         ({ code }, index) =>
-          selected === controls[index].name && <Section key={index} dangerouslySetInnerHTML={{ __html: code }} />,
+          selected === controls[index].name && (
+            <div className="relative" key={index}>
+              <Section dangerouslySetInnerHTML={{ __html: code }} />
+              <CopyToClipboard code={code} />
+            </div>
+          ),
       )}
     </Section>
   );

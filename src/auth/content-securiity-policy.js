@@ -5,7 +5,7 @@ const cspHeader = `
     frame-src 'self' www.youtube.com cal.com app.cal.com;
     style-src 'self' 'unsafe-inline';
     font-src 'self';
-    connect-src 'self';
+    connect-src 'self' cdn.jsdelivr.net unpkg.com lottie.host;
     object-src 'none';
     base-uri 'self';
     form-action 'self';

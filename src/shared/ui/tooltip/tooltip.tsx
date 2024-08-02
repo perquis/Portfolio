@@ -9,10 +9,11 @@ import { Transition } from "@/shared/ui";
 
 type TTooltip = {
   label: string;
+  disabled?: boolean;
   alignment?: Exclude<Alignment, "bottom-left" | "bottom-right" | "top-left" | "top-right" | "center">;
 } & ComponentProps<"div">;
 
-export default function Tooltip({ children, label, alignment = "top" }: TTooltip) {
+export default function Tooltip({ children, label, disabled, className, alignment = "top" }: TTooltip) {
   const [isOpen, [open, close]] = useOpen();
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -35,18 +36,18 @@ export default function Tooltip({ children, label, alignment = "top" }: TTooltip
   }, [open, close]);
 
   const direction = match(alignment)
-    .with("top", () => "bottom-[calc(100%+8px)]")
-    .with("bottom", () => "top-[calc(100%+8px)]")
-    .with("left", () => "right-[calc(100%+8px)] -translate-y-1/2 top-1/2")
-    .with("right", () => "left-[calc(100%+8px)] -translate-y-1/2 top-1/2")
+    .with("top", () => "bottom-[calc(100%+12px)]")
+    .with("bottom", () => "top-[calc(100%+12px)]")
+    .with("left", () => "right-[calc(100%+12px)] -translate-y-1/2 top-1/2")
+    .with("right", () => "left-[calc(100%+12px)] -translate-y-1/2 top-1/2")
     .run();
 
   return (
-    <div className="pointer-events-none relative flex w-fit justify-center">
+    <div className={clsx("pointer-events-none relative flex w-fit justify-center", className)}>
       <div className="pointer-events-auto" onMouseEnter={open} onMouseLeave={close} ref={containerRef}>
         {children}
       </div>
-      {isOpen && (
+      {isOpen && !disabled && (
         <Transition
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
