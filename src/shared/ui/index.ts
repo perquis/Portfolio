@@ -10,6 +10,7 @@ export { default as Card } from "./card/card";
 export { default as Checkbox } from "./checkbox/checkbox";
 export { default as Chip } from "./chip/chip";
 export { default as CodeBlock } from "./code-block/code-block";
+export { default as CodeSandbox } from "./code-sandbox/code-sandbox";
 export { default as Code } from "./code/code";
 export { default as Container } from "./container/container";
 export { default as CopyToClipboard } from "./copy-to-clipboard/copy-to-clipboard";

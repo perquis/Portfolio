@@ -28,3 +28,7 @@
 
 @import url(../../styles/input.css);
 @import url(../../styles/themes.css);
+
+.sandpack * {
+  outline: none !important;
+}
