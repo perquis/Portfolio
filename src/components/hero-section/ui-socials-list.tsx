@@ -1,6 +1,5 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 import { ScheduleMeeting } from "@/components";
@@ -10,7 +9,6 @@ import * as icons from "@/shared/icons/design";
 import { Section } from "@/shared/ui";
 
 export const SocialsList = () => {
-  const t = useTranslations();
   const pathname = usePathname();
 
   if (pathname === "/blog") return null;
