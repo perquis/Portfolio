@@ -4,15 +4,20 @@ import { MDXRemote, type MDXRemoteProps } from "next-mdx-remote";
 import type { ComponentProps, FC } from "react";
 
 import {
+  Accordion,
+  ArrowLink,
+  Breadcrumbs,
   Callout,
   Card,
   Code,
   CodeBlock,
+  CodeSandbox,
   Container,
   Details,
   Divider,
   Link,
   MotionPicture,
+  Page,
   Paragraph,
   Ratio,
   Regular,
@@ -20,17 +25,21 @@ import {
   Slider,
   Technology,
   Title,
-  VideoPlayer,
   Workflows,
+  YoutubePlayer,
 } from "@/shared/ui";
 
 const components: MDXRemoteProps["components"] = {
   Code,
   CodeBlock,
+  Breadcrumbs,
   Callout,
+  Accordion,
   Container,
   Title,
   Regular,
+  Page,
+  ArrowLink,
   Slider,
   Card,
   Divider,
@@ -41,7 +50,8 @@ const components: MDXRemoteProps["components"] = {
   Details,
   Workflows,
   MotionPicture,
-  VideoPlayer,
+  YoutubePlayer,
+  CodeSandbox,
 
   p: (props) => <Paragraph {...props} />,
 };
