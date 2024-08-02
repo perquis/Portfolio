@@ -6,7 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: ["Googlebot", "Applebot", "Bingbot"],
         allow: ["/"],
-        disallow: "/private/",
       },
     ],
     sitemap: `${process.env.SITE_URL}/sitemap.xml`,

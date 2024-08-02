@@ -1,50 +1,41 @@
 import type { MetadataRoute } from "next";
 
 import { locales } from "@/config/i18n";
+import { docs } from "@/server/functions";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+const pathnames = ["/", "/portfolio", "/blog", "/contact"];
+
+function getUrl(pathname: string, locale: string) {
+  return `${process.env.SITE_URL}/${locale}${pathname === "/" ? "" : pathname}`;
+}
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date();
 
+  const projects = await docs.getSlugsWithoutFiles("projects");
+  const posts = await docs.getSlugsWithoutFiles("posts");
+
   return [
-    {
-      url: process.env.SITE_URL!,
+    ...pathnames.map((pathname) => ({
+      url: getUrl(pathname, "en"),
       lastModified,
-      changeFrequency: "yearly",
-      priority: 1,
       alternates: {
-        [locales[0]]: `${process.env.SITE_URL}/${locales[0]}`,
-        [locales[1]]: `${process.env.SITE_URL}/${locales[1]}`,
+        languages: Object.fromEntries(locales.map((locale) => [locale, getUrl(pathname, locale)])),
       },
-    },
-    {
-      url: `${process.env.SITE_URL}/portfolio`,
+    })),
+    ...projects.map(({ slug }) => ({
+      url: getUrl(`/portfolio/${slug}`, "en"),
       lastModified,
-      changeFrequency: "monthly",
-      priority: 0.8,
       alternates: {
-        [locales[0]]: `${process.env.SITE_URL}/${locales[0]}/portfolio`,
-        [locales[1]]: `${process.env.SITE_URL}/${locales[1]}/portfolio`,
+        languages: Object.fromEntries(locales.map((locale) => [locale, getUrl(`/portfolio/${slug}`, locale)])),
       },
-    },
-    {
-      url: `${process.env.SITE_URL}/blog`,
+    })),
+    ...posts.map(({ slug }) => ({
+      url: getUrl(`/blog/${slug}`, "en"),
       lastModified,
-      changeFrequency: "weekly",
-      priority: 0.5,
       alternates: {
-        [locales[0]]: `${process.env.SITE_URL}/${locales[0]}/blog`,
-        [locales[1]]: `${process.env.SITE_URL}/${locales[1]}/blog`,
+        languages: Object.fromEntries(locales.map((locale) => [locale, getUrl(`/blog/${slug}`, locale)])),
       },
-    },
-    {
-      url: `${process.env.SITE_URL}/contact`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.3,
-      alternates: {
-        [locales[0]]: `${process.env.SITE_URL}/${locales[0]}/contact`,
-        [locales[1]]: `${process.env.SITE_URL}/${locales[1]}/contact`,
-      },
-    },
+    })),
   ];
 }

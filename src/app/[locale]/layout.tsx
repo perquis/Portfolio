@@ -13,6 +13,20 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const metadata = {
+  metadataBase: new URL(process.env.SITE_URL!),
+  alternates: {
+    canonical: "/",
+    languages: {
+      [locales[0]]: `/${locales[0]}`,
+      [locales[1]]: `/${locales[1]}`,
+    },
+  },
+  openGraph: {
+    images: "/static/pages/og-image.png",
+  },
+};
+
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
