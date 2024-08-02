@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import type { FC } from "react";
 
-import type { TMetadata } from "@/server/functions/docs/docs";
+import type { TMetadata } from "@/server/functions/docs/types";
 import { Regular, Section, Title } from "@/shared/ui";
 
 import { List } from "./ui-list";

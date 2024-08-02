@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { type Dispatch, type FC, type SetStateAction, useState } from "react";
 
 import { Link } from "@/next/navigation";
-import type { TMetadata } from "@/server/functions/docs/docs";
+import type { TMetadata } from "@/server/functions/docs/types";
 import { ArrowLeft } from "@/shared/icons/design";
 import { ArrowLink, Paragraph, Ratio, Regular, Section, Title, Transition } from "@/shared/ui";
 

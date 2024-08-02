@@ -3,7 +3,7 @@ import { getLocale } from "next-intl/server";
 import type { ComponentProps } from "react";
 
 import { Link } from "@/next/navigation";
-import type { TMetadata } from "@/server/functions/docs/docs";
+import type { TMetadata } from "@/server/functions/docs/types";
 import { CalendarEvent } from "@/shared/icons/design";
 import { Badge, Paragraph, Ratio, Regular, Section, Title } from "@/shared/ui";
 

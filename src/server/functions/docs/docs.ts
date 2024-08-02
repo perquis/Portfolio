@@ -5,41 +5,11 @@ import { serialize } from "next-mdx-remote/serialize";
 import path from "path";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
+import { METADATA_RESPONSE } from "@/server/functions/docs/constants";
+import { createFileNameWithLocale, getPathToResources, getSlugsWithoutFiles } from "@/server/functions/docs/utils";
+
 import type { Locale } from "../../../../@types/i18n";
-
-type Location = "projects" | "posts";
-export type TMetadata = typeof METADATA_RESPONSE.metadata;
-
-const DEFAULT_DATE = new Date("01.01.2100 12:00");
-const BASE_PATH = path.join(process.cwd(), "src", "docs");
-
-const METADATA_RESPONSE = {
-  metadata: {
-    slug: "",
-    title: "",
-    description: "",
-    thumbnail_img: "",
-    opengraph_img: "",
-    tags: [],
-    year: 2100,
-    updatedAt: DEFAULT_DATE,
-    publishedAt: DEFAULT_DATE,
-  },
-};
-
-const createFileNameWithLocale = (slug: string, locale: Locale) => `${slug}.${locale}.mdx`;
-const getPathToResources = (rootDirectory: Location, slug = "") => path.join(BASE_PATH, rootDirectory, slug);
-
-async function getSlugsWithoutFiles(rootDirectory: Location) {
-  "use server";
-
-  const pathToRootDirectory = getPathToResources(rootDirectory),
-    directories = fs.readdirSync(pathToRootDirectory),
-    slugs = directories.map((slug) => ({ slug }));
-
-  const slugsWithoutFiles = slugs.filter(({ slug }) => !slug.includes("."));
-  return slugsWithoutFiles;
-}
+import type { Location, TMetadata } from "./types";
 
 async function getSourcesSinceMdxFiles(rootDirectory: Location, slug: string, currentLocale: Locale) {
   "use server";

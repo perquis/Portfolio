@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { locales } from "@/config/i18n";
-import { docs } from "@/server/functions";
+import { getSlugsWithoutFiles } from "@/server/functions/docs/utils";
 
 const pathnames = ["/", "/portfolio", "/blog", "/contact"];
 
@@ -12,8 +12,8 @@ function getUrl(pathname: string, locale: string) {
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date();
 
-  const projects = await docs.getSlugsWithoutFiles("projects");
-  const posts = await docs.getSlugsWithoutFiles("posts");
+  const projects = await getSlugsWithoutFiles("projects");
+  const posts = await getSlugsWithoutFiles("posts");
 
   return [
     ...pathnames.map((pathname) => ({
