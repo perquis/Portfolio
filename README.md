@@ -11,7 +11,7 @@ I will use this file to keep track of the tasks that I need to do in this projec
 - [x] Create the pages.
 - [x] Add the translations to the project.
 - [x] Add the styles to the project.
-- [ ] Add the schedule functionality to the project.
+- [x] Add the schedule functionality to the project.
 - [x] Add headers for the social medias for every page in the project.
 - [x] Add the [next-sitemap](https://www.npmjs.com/package/next-sitemap) package to the project and init new config to generate sitemaps and robots.txt.
 - [x] Add the open graph images to the pages in the project.
