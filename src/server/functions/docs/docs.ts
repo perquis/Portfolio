@@ -19,6 +19,7 @@ const METADATA_RESPONSE = {
     title: "",
     description: "",
     thumbnail_img: "",
+    opengraph_img: "",
     tags: [],
     publishedAt: DEFAULT_DATE,
   },

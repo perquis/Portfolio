@@ -7,6 +7,7 @@ When you want to **write a new post or project**, you should follow the below st
 title: // Title of the project or post
 description: // Description of the project or post
 thumbnail_img: // path to the thumbnail image in the public folder, remember to create root directory and add two folders: light and dark to there.
+opengraph_img: // path to the opengraph image in the public folder. This the image should be in 1200x630px size.
 tags: // Tags in array string format
 publishedAt: // Date publication
 ---

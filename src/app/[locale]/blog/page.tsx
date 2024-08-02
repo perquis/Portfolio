@@ -13,6 +13,22 @@ export async function generateMetadata({
   return {
     title: t("BLOG_META_TITLE"),
     description: t("BLOG_META_DESCRIPTION"),
+    openGraph: {
+      title: t("BLOG_META_TITLE"),
+      description: t("BLOG_META_DESCRIPTION"),
+      type: "website",
+      siteName: t("BLOG_META_TITLE"),
+      url: process.env.SITE_URL,
+      locale,
+      images: [
+        {
+          url: `${process.env.SITE_URL}/static/pages/og/blog.png`,
+          width: 1200,
+          height: 630,
+          alt: t("BLOG_META_TITLE"),
+        },
+      ],
+    },
   };
 }
 
