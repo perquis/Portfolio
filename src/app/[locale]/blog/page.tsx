@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
-import { AllPostsList, HeroSection, SocialLinksList } from "@/components";
+import { AllPostsList, HeroSection, JobsList, SocialLinksList } from "@/components";
 import { docs } from "@/server/functions";
 import { Divider } from "@/shared/ui";
 
@@ -26,6 +26,8 @@ export default async function Blog({ params: { locale } }: Readonly<{ params: { 
       <HeroSection withoutCodeBlock />
       <Divider />
       <AllPostsList items={items} />
+      <Divider />
+      <JobsList />
       <Divider />
       <SocialLinksList />
     </>
