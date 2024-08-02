@@ -19,9 +19,6 @@ export default function Tooltip({ children, label, disabled, className, alignmen
 
   useEffect(() => {
     const nodes = containerRef.current?.children as unknown as HTMLElement[];
-    if (nodes.length > 2) {
-      throw new Error("Too much elements in inside component!");
-    }
 
     const [element] = nodes;
     if (!element) return;

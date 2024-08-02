@@ -54,14 +54,17 @@ export default function CopyToClipboard({ code }: ICopyToClipboard) {
         <Icon width={20} height={20} />
       </button>
       {isCopied && (
-        <video
-          width={128}
-          height={128}
-          autoPlay
-          muted
-          src="/static/effects/confetti.webm"
-          className="pointer-events-none absolute -left-12 -top-12 h-32 w-max max-w-32"
-        />
+        <>
+          <video
+            width={128}
+            height={128}
+            autoPlay
+            muted
+            src="/static/effects/confetti.webm"
+            className="pointer-events-none absolute -left-12 -top-12 h-32 w-max max-w-32"
+          />
+          <audio src="/static/effects/sound-button.mp3" autoPlay />
+        </>
       )}
     </Tooltip>
   );
