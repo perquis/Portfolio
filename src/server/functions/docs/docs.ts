@@ -22,6 +22,7 @@ const METADATA_RESPONSE = {
     opengraph_img: "",
     tags: [],
     year: 2100,
+    updatedAt: DEFAULT_DATE,
     publishedAt: DEFAULT_DATE,
   },
 };
@@ -47,6 +48,7 @@ async function getSourcesSinceMdxFiles(rootDirectory: Location, slug: string, cu
     pathToDirectoryWithMdxFiles = getPathToResources(rootDirectory, slug),
     pathToSpecificFile = path.join(pathToDirectoryWithMdxFiles, fileNameWithLocale),
     specificFileWithLocale = fs.readFileSync(pathToSpecificFile, { encoding: "utf-8" });
+  const { mtime } = fs.statSync(pathToSpecificFile);
 
   const source = await serialize(specificFileWithLocale, {
     parseFrontmatter: true,
@@ -55,7 +57,7 @@ async function getSourcesSinceMdxFiles(rootDirectory: Location, slug: string, cu
     },
   });
 
-  return source;
+  return { ...source, updatedAt: mtime };
 }
 
 async function getItemsWithPublishedDate(rootDirectory: Location) {
@@ -66,13 +68,14 @@ async function getItemsWithPublishedDate(rootDirectory: Location) {
 
   const itemsWithMetadata = await Promise.all(
     slugsWithoutFiles.map(async ({ slug }) => {
-      const { frontmatter } = await getSourcesSinceMdxFiles(rootDirectory, slug, currentLocale);
+      const { frontmatter, updatedAt } = await getSourcesSinceMdxFiles(rootDirectory, slug, currentLocale);
       const publishedAt = new Date(`${frontmatter.publishedAt}`) || METADATA_RESPONSE.metadata.publishedAt;
 
       const metadata = {
         ...METADATA_RESPONSE.metadata,
         ...frontmatter,
 
+        updatedAt,
         publishedAt,
         isPublished: publishedAt < new Date(),
         slug,
