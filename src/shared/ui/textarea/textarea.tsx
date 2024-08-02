@@ -22,7 +22,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TTextarea>(function Textarea(
 
           <textarea
             className={clsx(
-              "min-h-64 w-full rounded-[10px] bg-zinc-100 px-3 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 hover:bg-zinc-200 focus-visible:bg-zinc-200 dark:bg-zinc-900 dark:text-zinc-100 dark:placeholder:text-zinc-600 dark:hover:bg-zinc-800 dark:focus-visible:bg-zinc-800",
+              "min-h-64 w-full rounded-[10px] bg-zinc-100 px-3 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 hover:bg-zinc-200 hover:text-zinc-500 focus-visible:bg-zinc-200 focus-visible:text-zinc-500 dark:bg-zinc-900 dark:text-zinc-100 dark:placeholder:text-zinc-600 dark:hover:bg-zinc-800 dark:hover:placeholder:text-zinc-500 dark:focus-visible:bg-zinc-800 dark:focus-visible:placeholder:text-zinc-500",
               error && "ring-2 ring-rose-500 focus-visible:!outline-none",
               className,
             )}
