@@ -21,6 +21,7 @@ const METADATA_RESPONSE = {
     thumbnail_img: "",
     opengraph_img: "",
     tags: [],
+    year: 2100,
     publishedAt: DEFAULT_DATE,
   },
 };
@@ -96,8 +97,8 @@ async function getItemsWithMetadata(rootDirectory: Location): Promise<TMetadata[
     const itemsWithPublishedDate = await getItemsWithPublishedDate(rootDirectory);
 
     const dataWithMetadataFromMdxFiles = itemsWithPublishedDate.map(({ metadata }) => ({
-      year: metadata.publishedAt.getFullYear(),
       ...metadata,
+      year: metadata.publishedAt.getFullYear(),
     }));
 
     return dataWithMetadataFromMdxFiles;

@@ -39,6 +39,7 @@ export const Default: Story = {
     thumbnail_img: placeholders.images,
     publishedAt: new Date(),
     slug: "card-slug",
+    // @ts-expect-error
     tags: ["tag1", "tag2"],
     year: 2021,
   },
