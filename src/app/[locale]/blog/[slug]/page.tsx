@@ -12,22 +12,6 @@ export async function generateMetadata({ params }: { params: { locale: string; s
   return {
     title: item.title,
     description: item.description,
-    openGraph: {
-      title: item.title,
-      description: item.description,
-      type: "article",
-      siteName: "Damian Werens - Portfolio",
-      url: `${process.env.SITE_URL}/portfolio/${item.slug}`,
-      locale: params.locale,
-      images: [
-        {
-          url: item.opengraph_img,
-          width: 1200,
-          height: 630,
-          alt: item.title,
-        },
-      ],
-    },
   };
 }
 

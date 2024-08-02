@@ -47,7 +47,7 @@ async function getItemsWithPublishedDate(rootDirectory: Location) {
 
         updatedAt,
         publishedAt,
-        isPublished: publishedAt < new Date(),
+        isPublished: publishedAt.getTime() < new Date().getTime(),
         slug,
       };
 

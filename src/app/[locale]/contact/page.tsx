@@ -12,22 +12,6 @@ export async function generateMetadata({
   return {
     title: t("CONTACT_META_TITLE"),
     description: t("CONTACT_META_DESCRIPTION"),
-    openGraph: {
-      title: t("CONTACT_META_TITLE"),
-      description: t("CONTACT_META_DESCRIPTION"),
-      type: "website",
-      siteName: t("CONTACT_META_TITLE"),
-      url: process.env.SITE_URL,
-      locale,
-      images: [
-        {
-          url: `${process.env.SITE_URL}/static/pages/og/contact.png`,
-          width: 1200,
-          height: 630,
-          alt: t("CONTACT_META_TITLE"),
-        },
-      ],
-    },
   };
 }
 
