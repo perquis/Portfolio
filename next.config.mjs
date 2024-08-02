@@ -1,8 +1,6 @@
 import ESLintWebpackPlugin from "eslint-webpack-plugin";
 import createNextIntlPlugin from "next-intl/plugin";
 
-import cspHeader from "./src/auth/content-securiity-policy.js";
-
 const withNextIntl = createNextIntlPlugin("./src/config/i18n.ts");
 
 /** @type {import('next').NextConfig} */
@@ -35,7 +33,21 @@ const nextConfig = {
         headers: [
           {
             key: "Content-Security-Policy",
-            value: cspHeader.replace(/\n/g, ""),
+            value: `
+    default-src 'self';
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' app.cal.com;
+    img-src 'self' blob: data: media.istockphoto.com *.unsplash.com;
+    frame-src 'self' www.youtube.com cal.com app.cal.com *.codesandbox.io;
+    style-src 'self' 'unsafe-inline';
+    font-src 'self';
+    connect-src 'self' cdn.jsdelivr.net unpkg.com lottie.host;
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    frame-ancestors 'none';
+    upgrade-insecure-requests;
+    block-all-mixed-content;
+`.replace(/\n/g, ""),
           },
         ],
       },
