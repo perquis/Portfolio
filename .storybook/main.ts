@@ -14,7 +14,11 @@ const config: StorybookConfig = {
   ],
   framework: {
     name: "@storybook/nextjs",
-    options: {},
+    options: {
+      builder: {
+        useSWC: true,
+      },
+    },
   },
   webpackFinal: async (config: any) => {
     // Find the rule that handles CSS files

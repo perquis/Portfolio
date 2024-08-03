@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { getLocale } from "next-intl/server";
+import { useLocale } from "next-intl";
 import type { ComponentProps } from "react";
 
 import { Link } from "@/next/navigation";
@@ -14,9 +14,9 @@ type TCard = {
 } & Omit<NextLinkProps, "href"> &
   TMetadata;
 
-export default async function Card({ title, description, className, thumbnail_img, publishedAt, slug, tags }: TCard) {
+export default function Card({ title, description, className, thumbnail_img, publishedAt, slug, tags }: TCard) {
   const redirectTo = `/blog/${slug}`;
-  const locale = await getLocale();
+  const locale = useLocale();
 
   return (
     <Section
