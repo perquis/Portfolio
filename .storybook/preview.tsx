@@ -4,6 +4,7 @@ import { match } from "ts-pattern";
 
 import "../src/app/[locale]/globals.css";
 import { Container, GlobalLayout } from "../src/shared/ui";
+import nextIntl from "./next-intl";
 
 const withLayout = (Story: React.FC, options: any) => {
   const html = match(options.title)
@@ -18,7 +19,15 @@ const withLayout = (Story: React.FC, options: any) => {
 };
 
 const preview: Preview = {
+  initialGlobals: {
+    locale: "en",
+    locales: {
+      en: "English",
+      pl: "Polish",
+    },
+  },
   parameters: {
+    nextIntl,
     controls: {
       matchers: {
         color: /(background|color)$/i,
