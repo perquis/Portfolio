@@ -34,7 +34,7 @@ export const ScheduleMeeting = () => {
 
   return (
     <>
-      <Button mode="simple" size="small" variants="black" onClick={open}>
+      <Button mode="simple" size="small" variants="black" onClick={open} data-test-id="schedule-meeting">
         {t("HOME_HERO_BUTTON_MEETING")}
       </Button>
       {isOpen &&
