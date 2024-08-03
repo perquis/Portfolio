@@ -2,7 +2,7 @@ import type { ComponentProps, FC } from "react";
 
 import { AboutMe } from "@/components";
 import { CodeBlock, Section } from "@/shared/ui";
-import { calculateYearsSince } from "@/shared/utils/calculateYearsSince";
+import { calculateYearsSince } from "@/shared/utils";
 
 import { SocialsList } from "./ui-socials-list";
 
