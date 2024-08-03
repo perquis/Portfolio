@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { SegmentedControl } from "@/shared/ui";
+import CodeProvider from "@/shared/ui/code-block/code.provider";
 
 const meta = {
   title: "Controls/SegmentedControl",
@@ -36,4 +37,11 @@ export const Default: Story = {
       },
     ],
   },
+  decorators: [
+    (Story, options) => (
+      <CodeProvider name={options.args.controls[0].name}>
+        <Story args={options.args} />
+      </CodeProvider>
+    ),
+  ],
 };
