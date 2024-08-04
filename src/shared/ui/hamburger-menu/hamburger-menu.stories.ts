@@ -4,7 +4,7 @@ import { links } from "@/data";
 import { HamburgerMenu } from "@/shared/ui";
 
 const meta = {
-  title: "Menu/HamburgerMenu",
+  title: "Shared/Menu/HamburgerMenu",
   component: HamburgerMenu,
   parameters: {
     docs: {

@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import YoutubePlayer from "./youtube-player";
+import { VideoPlayer } from "@/shared/ui";
 
-const meta: Meta<typeof YoutubePlayer> = {
-  title: "Media/YoutubePlayer",
-  component: YoutubePlayer,
+const meta: Meta<typeof VideoPlayer> = {
+  title: "Markdown/Media/VideoPlayer",
+  component: VideoPlayer,
   tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
         component:
-          "This is a responsive YouTube player component. It maintains the aspect ratio of the video. The `src` prop is the URL of the YouTube video to embed.",
+          "This component allows you to embed a YouTube video in your content. You can pass the URL of the video as a prop.",
       },
     },
   },
@@ -25,7 +25,7 @@ const meta: Meta<typeof YoutubePlayer> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof YoutubePlayer>;
+type Story = StoryObj<typeof VideoPlayer>;
 
 export const Primary: Story = {
   args: {

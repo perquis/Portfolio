@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Details } from "@/shared/ui";
 
 const meta = {
-  title: "List/Details",
+  title: "Markdown/List/Details",
   component: Details,
   parameters: {
     docs: {

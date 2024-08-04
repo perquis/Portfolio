@@ -4,7 +4,7 @@ import { placeholders } from "@/data";
 import { Card } from "@/shared/ui";
 
 const meta = {
-  title: "Blog/Card",
+  title: "Markdown/Blog/Card",
   component: Card,
   parameters: {
     docs: {

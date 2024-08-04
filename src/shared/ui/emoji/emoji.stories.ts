@@ -4,7 +4,7 @@ import { emojis } from "@/data";
 import { Emoji } from "@/shared/ui";
 
 const meta = {
-  title: "Buttons/Emoji",
+  title: "Shared/Actions/Emoji",
   component: Emoji,
   parameters: {
     docs: {

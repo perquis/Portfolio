@@ -8,7 +8,7 @@ import "./tailwind.css";
 
 const withLayout = (Story: React.FC, options: any) => {
   const html = match(options.title)
-    .with("Menu/Navigation", () => <Story />)
+    .with("Shared/Menu/Navigation", () => <Story />)
     .otherwise(() => (
       <Container>
         <Story />

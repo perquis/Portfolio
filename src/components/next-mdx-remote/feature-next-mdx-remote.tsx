@@ -6,6 +6,7 @@ import type { ComponentProps, FC } from "react";
 import {
   Accordion,
   ArrowLink,
+  Badge,
   Breadcrumbs,
   Callout,
   Card,
@@ -25,12 +26,13 @@ import {
   Slider,
   Technology,
   Title,
+  VideoPlayer,
   Workflows,
-  YoutubePlayer,
 } from "@/shared/ui";
 
 const components: MDXRemoteProps["components"] = {
   Code,
+  Badge,
   CodeBlock,
   Breadcrumbs,
   Callout,
@@ -50,7 +52,7 @@ const components: MDXRemoteProps["components"] = {
   Details,
   Workflows,
   MotionPicture,
-  YoutubePlayer,
+  VideoPlayer,
   CodeSandbox,
 
   p: (props) => <Paragraph {...props} />,

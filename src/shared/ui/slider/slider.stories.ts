@@ -4,7 +4,7 @@ import { slides } from "@/data";
 import { Slider } from "@/shared/ui";
 
 const meta = {
-  title: "Media/Slider",
+  title: "Markdown/Media/Slider",
   component: Slider,
   parameters: {
     docs: {

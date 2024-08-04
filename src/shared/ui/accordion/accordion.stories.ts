@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Accordion } from "@/shared/ui";
 
 const meta = {
-  title: "Buttons/Accordion",
+  title: "Markdown/Actions/Accordion",
   component: Accordion,
   parameters: {
     docs: {

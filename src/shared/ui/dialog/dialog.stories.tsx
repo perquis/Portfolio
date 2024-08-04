@@ -4,7 +4,7 @@ import { useOpen } from "@/shared/hooks";
 import { Button, Dialog, Paragraph, Section, Title } from "@/shared/ui";
 
 const meta = {
-  title: "Overlays/Dialog",
+  title: "Shared/Overlays/Dialog",
   component: Dialog,
   parameters: {
     docs: {

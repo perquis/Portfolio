@@ -4,7 +4,7 @@ import { SegmentedControl } from "@/shared/ui";
 import CodeProvider from "@/shared/ui/code-block/code.provider";
 
 const meta = {
-  title: "Controls/SegmentedControl",
+  title: "Shared/Actions/SegmentedControl",
   component: SegmentedControl,
   parameters: {
     docs: {

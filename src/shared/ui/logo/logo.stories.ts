@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Logo } from "@/shared/ui";
 
 const meta = {
-  title: "Generals/Logo",
+  title: "Shared/Menu/Logo",
   component: Logo,
   parameters: {
     docs: {

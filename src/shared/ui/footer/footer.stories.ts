@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Footer } from "@/shared/ui";
 
 const meta = {
-  title: "Menu/Footer",
+  title: "Shared/Menu/Footer",
   component: Footer,
   parameters: {
     docs: {

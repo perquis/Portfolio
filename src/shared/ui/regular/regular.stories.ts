@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Regular } from "@/shared/ui";
 
 const meta = {
-  title: "Text/Regular",
+  title: "Markdown/Text/Regular",
   component: Regular,
   parameters: {
     docs: {

@@ -1,6 +1,6 @@
 import type { ComponentProps } from "react";
 
-export default function YoutubePlayer(props: ComponentProps<"iframe">) {
+export default function VideoPlayer(props: ComponentProps<"iframe">) {
   return (
     <iframe
       {...props}

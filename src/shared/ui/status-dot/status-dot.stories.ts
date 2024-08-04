@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { StatusDot } from "@/shared/ui";
 
 const meta = {
-  title: "Generals/StatusDot",
+  title: "Shared/Other/StatusDot",
   component: StatusDot,
   parameters: {
     docs: {

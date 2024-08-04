@@ -4,7 +4,7 @@ import { statusActions } from "@/data";
 import { Callout } from "@/shared/ui";
 
 const meta = {
-  title: "Blog/Callout",
+  title: "Markdown/Blog/Callout",
   component: Callout,
   parameters: {
     docs: {

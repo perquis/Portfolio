@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Form, FormField, Input } from "@/shared/ui";
 
 const meta = {
-  title: "Form/FormField",
+  title: "Shared/Form/FormField",
   component: Form,
   parameters: {
     docs: {

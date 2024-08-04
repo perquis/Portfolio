@@ -4,7 +4,7 @@ import * as stacks from "@/shared/icons/stacks";
 import { Section, Technology } from "@/shared/ui";
 
 const meta = {
-  title: "List/Technology",
+  title: "Markdown/List/Technology",
   component: Technology,
   parameters: {
     docs: {

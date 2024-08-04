@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Button, Tooltip } from "@/shared/ui";
 
 const meta = {
-  title: "Overlays/Tooltip",
+  title: "Shared/Overlays/Tooltip",
   component: Tooltip,
   parameters: {
     docs: {

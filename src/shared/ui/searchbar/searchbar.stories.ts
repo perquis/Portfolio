@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { SearchBar } from "@/shared/ui";
 
 const meta = {
-  title: "Form/SearchBar",
+  title: "Shared/Form/SearchBar",
   component: SearchBar,
   parameters: {
     docs: {

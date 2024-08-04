@@ -4,7 +4,7 @@ import { statusActions } from "@/data";
 import { Alert } from "@/shared/ui";
 
 const meta = {
-  title: "Popups/Alert",
+  title: "Shared/Popups/Alert",
   component: Alert,
   parameters: {
     docs: {

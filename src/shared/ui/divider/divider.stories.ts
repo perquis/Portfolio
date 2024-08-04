@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Divider } from "@/shared/ui";
 
 const meta = {
-  title: "Generals/Divider",
+  title: "Markdown/UI/Divider",
   component: Divider,
   parameters: {
     docs: {

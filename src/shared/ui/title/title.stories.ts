@@ -4,7 +4,7 @@ import { Title } from "@/shared/ui";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: "Text/Title",
+  title: "Markdown/Text/Title",
   component: Title,
   parameters: {
     docs: {
