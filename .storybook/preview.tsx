@@ -2,9 +2,9 @@ import { withThemeByDataAttribute } from "@storybook/addon-themes";
 import type { Preview } from "@storybook/react";
 import { match } from "ts-pattern";
 
-import "../src/app/[locale]/globals.css";
 import { Container, GlobalLayout } from "../src/shared/ui";
 import nextIntl from "./next-intl";
+import "./tailwind.css";
 
 const withLayout = (Story: React.FC, options: any) => {
   const html = match(options.title)
