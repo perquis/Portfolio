@@ -2,7 +2,7 @@ import { withThemeByDataAttribute } from "@storybook/addon-themes";
 import type { Preview } from "@storybook/react";
 import { match } from "ts-pattern";
 
-import { Container, GlobalLayout } from "../src/shared/ui";
+import { Container } from "../src/shared/ui";
 import nextIntl from "./next-intl";
 import "./tailwind.css";
 
@@ -15,7 +15,7 @@ const withLayout = (Story: React.FC, options: any) => {
       </Container>
     ));
 
-  return <GlobalLayout className="dark:bg-zinc-950">{html}</GlobalLayout>;
+  return <div className="py-32 dark:bg-zinc-950">{html}</div>;
 };
 
 const preview: Preview = {
