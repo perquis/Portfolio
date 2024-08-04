@@ -10,6 +10,9 @@ const config: StorybookConfig = {
     "@storybook/addon-interactions",
     "@storybook/addon-postcss",
     "@storybook/addon-themes",
+    "@storybook/addon-measure",
+    "@storybook/addon-viewport",
+    "@storybook/addon-a11y",
     "storybook-next-intl",
   ],
   framework: {

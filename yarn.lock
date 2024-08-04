@@ -2398,6 +2398,14 @@
     "@storybook/global" "^5.0.0"
     tiny-invariant "^1.3.1"
 
+"@storybook/addon-measure@^8.2.7":
+  version "8.2.7"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-measure/-/addon-measure-8.2.7.tgz#92dd3fa52ccf3dc8aadef7c54f6c30cad9094b30"
+  integrity sha512-cS5njwlzrgrUjigUKjhbgJMT8bhPmVDK3FwrQqGhw6xYP4cd9/YBJ4RLNPWhOgGJ+EUTz7eFZ/Rkli5mNrhYcQ==
+  dependencies:
+    "@storybook/global" "^5.0.0"
+    tiny-invariant "^1.3.1"
+
 "@storybook/addon-onboarding@^8.2.1":
   version "8.2.1"
   resolved "https://registry.npmjs.org/@storybook/addon-onboarding/-/addon-onboarding-8.2.1.tgz"
@@ -2440,6 +2448,13 @@
   version "8.2.1"
   resolved "https://registry.npmjs.org/@storybook/addon-viewport/-/addon-viewport-8.2.1.tgz"
   integrity sha512-mk5FGH8W6IIjbRRpCPagjWfY77UgHmxUUYzUagc9KZKG0MfSy6hYtXaWy5NrZOegblS5K9cGNdKXdM59Rc9JFg==
+  dependencies:
+    memoizerific "^1.11.3"
+
+"@storybook/addon-viewport@^8.2.7":
+  version "8.2.7"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-8.2.7.tgz#00145b13d11bc0db8201c237235d1cdcceac03ca"
+  integrity sha512-d4+klwM/duTukNED1WCeBgIMqL5Jvm/iUs2rUc5HI1FGMEDYnoLVR2ztjivQs+6f1cJWuGwWZD/toB5pKHuR/A==
   dependencies:
     memoizerific "^1.11.3"
 
