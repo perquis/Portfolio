@@ -1,6 +1,16 @@
 name: 🏷️ Deploy Next.js App to the server
 
 on:
+  push:
+    branches:
+      - main
+    paths: ["docs/**", "public/**"]
+
+  pull_request:
+    branches:
+      - main
+    paths: ["docs/**", "public/**"]
+
   workflow_run:
     workflows: ["🔖 Create new release and tag with changelogs"]
     types:
