@@ -10,7 +10,8 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: "The **Avatar** component is a wrapper around an element that maintains a fixed aspect ratio.",
+        component:
+          "The **Avatar** component is the image around the around that look like **circle**. It's used to represent the **user profile picture** or anything else in this area. It has a few of variants that you can use in the markdown files.",
       },
     },
   },

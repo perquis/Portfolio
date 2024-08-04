@@ -9,7 +9,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "The **Breadcrumbs** component is a simple component that displays a list of links in a visually appealing way. It is often used to display a navigation path.",
+          "It is often used to display a navigation path. So if you want to provide additional navigation for the users, you can use it to show the path.",
       },
     },
   },

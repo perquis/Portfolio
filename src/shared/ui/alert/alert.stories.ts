@@ -10,7 +10,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "The **Alert** component is a simple component that displays a message to the user. It is often used to provide feedback or to alert the user of a specific action.",
+          "The **Alert** component is use to display **important information** after the user do any actions on the page. Remember that it's not accessible for the markdown files and if you want to use it, you should make it **programmatically**.",
       },
     },
   },

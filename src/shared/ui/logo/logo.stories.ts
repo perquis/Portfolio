@@ -9,7 +9,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "The **Logo** component is used to display a logo or brand name in a visually appealing way. It can be customized with a style object to apply custom styles to the component.",
+          "The **Logo** component is used to display a logo or brand name in a visually appealing way. It was placed in the navigation bar or footer of the website. You should know that it's not accessible for the markdown files.",
       },
     },
   },

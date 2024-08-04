@@ -9,7 +9,8 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: "The **Emoji** component is a simple component that displays an animated emoji.",
+        component:
+          "The **Emoji** component is a nice addon in this project. If you want to **improve user experiences** you can use it to he can express his feelings. It's used in the **Feedback** component and currently it's not provided as basic feature on the page. However, We are going to add this in the future releases, so stay tuned and wait for this update 🎉.",
       },
     },
   },

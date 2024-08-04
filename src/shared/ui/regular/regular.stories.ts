@@ -9,7 +9,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "The **Regular** component is a simple text component that applies a text-zinc-500 color and text-xs size. It is used to display regular text in the application.",
+          "The **Regular** component is used to display text that it's not important when it was compared to other text. You can use it carefully, because it's not recommended to use it in **a large amount of text**.",
       },
     },
   },

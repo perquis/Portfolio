@@ -9,7 +9,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "The **StatusDot** component is a simple component that displays a small dot in a visually appealing way. It is often used to display a status.",
+          "The **StatusDot** component is a simple dot that displays the status of a component. The `status` prop takes a string that can be either `online` or `offline`. The `className` prop is used to apply custom styles to the component.",
       },
     },
   },

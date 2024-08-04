@@ -10,7 +10,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "The **IconButton** component is a simple component that displays an icon inside a button. It is often used to represent an action or a command.",
+          "The **IconButton** component is super useful when you want to **add an icon** to your button. It has a lot of **variants**, **sizes** and **icons set**. It used as user action that he can perform, it should be visible and intuitive as possible. If you want to learn **how much it has icons**, you can use **select element** in story to see all of them.",
       },
     },
   },

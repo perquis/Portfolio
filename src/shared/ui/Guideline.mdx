@@ -1,9 +1,18 @@
 import Grid from "../ui/grid/grid.tsx";
+import Ratio from "../ui/ratio/ratio.tsx";
 import YoutubePlayer from "../ui/youtube-player/youtube-player.tsx";
 
 # Guideline
 
 In this guideline, you will learn **how to use markdown syntax** to create much more readable and organized documents for this project and **how you can use the custom components** that we have created for you to make your documents more **interactive and user-friendly**.
+
+<Ratio
+  className="overflow-hidden rounded-2xl border border-zinc-200 shadow-md ring-2 ring-zinc-200/50"
+  withoutThemeMode
+  src="/static/assets/storybook/guideline/banner.png"
+  alt="Damian Werens - Guideline"
+  resolution="4:1"
+/>
 
 **Do you feel excited?** If so, Let's get started! 🔥
 
@@ -37,9 +46,11 @@ publishedAt: // Date publication
 
 The above code block is **the front matter of the markdown file**. It's important to load all necessary information about **thumbnail, seo details and date publication**. Remember to create mdx files in the `/docs/<projects|posts>` folder in the `/<new_name>` and to place there two files with the same name and different extensions: `.pl.mdx` or `.en.mdx`.
 
-Your static assets should be placed in the `/public/static` folder. Remember to create a folder with the name of the project or post and place there all necessary images. The path to the image should be like `/static/<projects|posts>/<light_and_dark>/<name>/<image_name>.png`.
+Your static assets should be placed in the `/public/static` folder. Remember to create a folder with the name of **the project or post** and place there all necessary images. The path to the image should be like `/static/<projects|posts>/<light_and_dark>/<name>/<image_name>.png`.
 
-When you have created the front matter, you can start writing the content of the post or project. You can use **markdown syntax** to create much more readable and organized documents. If you want to **learn more about markdown syntax**, you can go to the previous section.
+When you have created the front matter, you can **start writing** the content of the post or project. If you want to add metadata to markdown files, we linked the video below to explain you about benefits of using **frontmatter** in markdown files.
+
+<YoutubePlayer src="https://www.youtube.com/embed/kLKgLoGOs1E" />
 
 ## **3. How to use custom components?**
 

@@ -9,7 +9,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "The **Badge** component is a simple component that displays a small piece of information in a visually appealing way. It is often used to display a count or a status.",
+          "The **Badge** component is very useful for displaying a label. For example, if you write **any article for this project**, you can use it to show which frameworks or technologies were used.",
       },
     },
   },

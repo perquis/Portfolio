@@ -8,7 +8,8 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: "The **Button** component is a simple component that users can click to perform an action.",
+        component:
+          "The **Button** component has **a lot of variants** which you can use if you need it. You can use it for **call to action** or **submitting forms**. It's **fully customizable** and **easy to use**.",
       },
     },
   },

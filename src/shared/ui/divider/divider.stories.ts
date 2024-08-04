@@ -9,7 +9,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "The **Divider** component is a simple component that displays a horizontal line to separate content.",
+          "The **Divider** component allows you to separate content in a meaningful way. It's a simple line that can be used to divide sections of a page. So if you worry about the **separation** of the content, you can use this component.",
       },
     },
   },

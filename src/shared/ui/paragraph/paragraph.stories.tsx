@@ -10,7 +10,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "The **Paragraph** component is used to display a paragraph on the screen. It is also used with the Title component for SEO purposes.",
+          "The **Paragraph** component is very useful for displaying a block of text. For example, if you write **any article for this project**, you can use it to show the content. It's very common to use it in combination with the `<Title>` component.",
       },
     },
   },

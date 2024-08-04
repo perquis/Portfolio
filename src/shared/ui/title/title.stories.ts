@@ -10,7 +10,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "The **Title** component is used to display a title on the screen. It is also used for SEO purposes.",
+          "The **Title** component has very much impact on **SEO** and **accessibility**. It's used to define the title of a page or a section. It's used it in combination with the `<Paragraph>` component.",
       },
     },
   },

@@ -9,11 +9,11 @@ const meta = {
     docs: {
       description: {
         component:
-          "The **Accordion** component is a simple component that displays a question and an answer. When the question is clicked, the answer is shown.",
+          "The **Accordion** component is used to **display important information** about provided question. If the user is interested at, he will click on this component to see more details. So, if you want to **hide some information** and show it only when user is interested, you can use this component 😉.",
       },
     },
   },
-  tags: ["autodocs"],
+  tags: ["autodocs", "mdx"],
   argTypes: {
     question: {
       control: {
