@@ -1,24 +1,56 @@
-# The To Do list for this project 🔥
+# My personal portfolio 🎉🎈
 
-I will use this file to keep track of the tasks that I need to do in this project. This file will be updated as I progress in the project and it will show all progress that I have made in the project.
+I decided to create a personal portfolio to showcase my projects and skills. I have been working on this project for a few weeks now and I am excited to share it with you. I hope you enjoy it!
 
-- [x] Create a new repository on GitHub.
-- [x] Create a new project in Figma and design the project.
-- [x] Create a storybook with all custom components based on the figma project.
-- [x] Initialize the project with create-next-app.
-- [x] Create the project structure.
-- [x] Create the custom components.
-- [x] Create the pages.
-- [x] Add the translations to the project.
-- [x] Add the styles to the project.
-- [x] Add the schedule functionality to the project.
-- [x] Add headers for the social medias for every page in the project.
-- [x] Add the [next-sitemap](https://www.npmjs.com/package/next-sitemap) package to the project and init new config to generate sitemaps and robots.txt.
-- [x] Add the open graph images to the pages in the project.
-- [x] Add the tests to the project.
-- [x] Add the CI/CD to the project.
-- [x] Add the documentation to the project.
-- [ ] Add the license to the project.
-- [ ] Add the contributing guide to the project.
+![My personal portfolio](./public/static/assets/storybook/guideline/banner.png)
 
-When I finish all the tasks in this list, then I update this file by removing the tasks that I have completed and adding the date of the completion of the project. I will want to describe interesting things about this project.
+## Table of contents
+
+- [General info](#general-info)
+- [Technologies](#technologies)
+- [Setup](#setup)
+- [Features](#features)
+- [Status](#status)
+- [Contact](#contact)
+
+## General info
+
+It was built with **React, Next.js, and TailwindCSS**. Before I started writing code I created a design system using **Figma** and I also created a **Storybook** to **document all the components** I would be using in the project. I used the per domain pattern to structure the project, so it **should be easy to maintain and scale**. Since 2020, It was my dream to create awesome portfolio page that will showcase my skills and projects. I am happy that I **finally** did it.
+
+## Technologies
+
+- React
+- Next.js
+- TailwindCSS
+- Storybook
+- Figma
+- Jest
+- Cypress
+- framer-motion
+
+## Setup
+
+1. Clone the repository
+2. Run `npm install`
+3. Create a `.env.local` file and add the values for the environment variables that are in the `.env.example` file
+4. Run `npm run dev` to start the development server
+5. Run `npm run storybook` to start the Storybook server
+6. Done! 🚀 You can explore my project in the development mode
+
+## Features
+
+- **Responsive design**: The website is fully responsive and works on all devices
+- **Dark mode**: You can switch between light and dark mode
+- **Animations**: I used framer-motion to create animations
+- **Storybook**: I created a Storybook to document all the components
+- **Design system**: I created a design system using Figma
+- **SEO**: I used Next.js to improve the SEO of the website
+- **Tests**: I wrote tests using Jest and Cypress
+
+## Status
+
+Project is: _finished_ but I will continue to improve it, add new features and posts in the future 🔥.
+
+## Contact
+
+To contact me, you can visit my website that it's linked in this repository that you read. You can also send me an email there. I will be happy to answer you. 📱
