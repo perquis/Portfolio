@@ -12,7 +12,7 @@ import { useAnimate } from "./use-animate";
 import { usePopup } from "./use-popup";
 
 type RatioProps = ComponentProps<typeof Ratio>;
-type Slide = Pick<RatioProps, "src" | "alt">;
+type Slide = Pick<RatioProps, "src" | "alt" | "withThemeMode">;
 
 interface ISlider {
   slides: Slide[];

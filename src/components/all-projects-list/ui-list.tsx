@@ -61,6 +61,7 @@ const Item: FC<TMetadata & { selected: string; setSelected: Dispatch<SetStateAct
         <Section className="gap-5">
           <Link href={redirectTo} className="rounded-lg">
             <Ratio
+              withThemeMode
               src={thumbnail_img}
               alt={title}
               className="overflow-hidden rounded-lg border dark:border-zinc-800/50"

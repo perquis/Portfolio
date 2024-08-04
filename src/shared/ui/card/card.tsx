@@ -28,6 +28,7 @@ export default function Card({ title, description, className, thumbnail_img, pub
     >
       <Link href={redirectTo} className="w-full rounded-xl">
         <Ratio
+          withThemeMode
           resolution="16:9"
           className="overflow-hidden rounded-lg border border-zinc-200/50 dark:border-zinc-800/50"
           src={thumbnail_img}
