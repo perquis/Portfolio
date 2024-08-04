@@ -15,7 +15,9 @@ I decided to create a personal portfolio to showcase my projects and skills. I h
 
 ## General info
 
-It was built with **React, Next.js, and TailwindCSS**. Before I started writing code I created a design system using **Figma** and I also created a **Storybook** to **document all the components** I would be using in the project. I used the per domain pattern to structure the project, so it **should be easy to maintain and scale**. Since 2020, It was my dream to create awesome portfolio page that will showcase my skills and projects. I am happy that I **finally** did it.
+It was built with **React, Next.js, and TailwindCSS**. Before I started writing code I created a design system using **Figma** and I also created a **Storybook** to **document all the components** I would be using in the project. I used the per domain pattern to structure the project, so it **should be easy to maintain and scale**.
+
+Since 2020, It was my dream to create awesome portfolio page that will showcase my skills and projects. I am happy that I **finally** did it.
 
 ## Technologies
 
@@ -32,10 +34,30 @@ It was built with **React, Next.js, and TailwindCSS**. Before I started writing 
 
 1. Clone the repository
 2. Run `npm install`
-3. Create a `.env.local` file and add the values for the environment variables that are in the `.env.example` file
+3. Create a `.env.local` file and add the values for the environment variables that are in the `.env.template` file
 4. Run `npm run dev` to start the development server
 5. Run `npm run storybook` to start the Storybook server
 6. Done! 🚀 You can explore my project in the development mode
+
+### How to setup .env.local correctly?
+
+I provide the helpful **accordion with the video or link** that will show you how to setup `.env.local` file correctly. Just click on the accordion and **explore the content**.
+
+<details>
+<summary><b>SMTP Gmail</b></summary>
+
+- [Node How To Send An Email From Gmail With Nodemailer](https://www.youtube.com/watch?v=cqdAS49RthQ)
+
+</details>
+
+<details>
+<summary><b>Calcom settings</b></summary>
+
+- [Integrating Cal.com Into Your Website Using React: A Step-by-Step Guide](https://medium.com/@hamzabhf00/integrating-cal-com-into-your-website-using-react-a-step-by-step-guide-b9886b8e175f)
+- [@calcom/embed-react](https://www.npmjs.com/package/@calcom/embed-react)
+- [What can you configure?](https://cal.com/docs/core-features/embed/embed-snippet-generator#what-can-you-configure)
+
+</details>
 
 ## Features
 
