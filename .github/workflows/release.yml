@@ -1,4 +1,4 @@
-name: 🔖 Create new release and deploy to the server
+name: 🔖 Create new release and tag with changelogs
 
 on:
   push:
