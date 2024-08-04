@@ -17,7 +17,7 @@ I will use this file to keep track of the tasks that I need to do in this projec
 - [x] Add the open graph images to the pages in the project.
 - [x] Add the tests to the project.
 - [x] Add the CI/CD to the project.
-- [ ] Add the documentation to the project.
+- [x] Add the documentation to the project.
 - [ ] Add the license to the project.
 - [ ] Add the contributing guide to the project.
 
