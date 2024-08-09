@@ -39,7 +39,7 @@ export default function CopyToClipboard({ code }: ICopyToClipboard) {
   return (
     <Tooltip
       label={isCopied ? t("COPY_TO_CLIPBOARD_SUCCESSFULLY") : t("COPY_TO_CLIPBOARD_IDDLE")}
-      className="!absolute right-2 top-2"
+      className="!absolute right-2 top-2 hidden md:flex"
     >
       <button
         className={clsx(
