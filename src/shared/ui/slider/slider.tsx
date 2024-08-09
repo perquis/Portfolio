@@ -20,7 +20,7 @@ interface ISlider {
 
 export default function Slider({ slides }: ISlider) {
   const {
-      animate: { page, diff, slideWidth },
+      animate: { page, diff },
       duration: { current: transition },
       actions,
       slideRef,
@@ -29,33 +29,42 @@ export default function Slider({ slides }: ISlider) {
 
   useKey("Escape", popup.close);
 
+  const showSlide = (index: number) => ({
+    opacity: page === index ? 1 : 0.15,
+  });
+
   return (
     <Section className="relative gap-5">
       <Popup {...popup} />
 
-      <Container className="relative">
+      <Container className="relative !px-0">
         <Transition animate={{ translateX: diff * -page }} transition={transition} className="w-full">
-          <Section className="!flex-row items-center gap-5" style={{ aspectRatio: "5 / 4" }} ref={slideRef}>
+          <Section className="w-full !flex-row items-center gap-5" ref={slideRef}>
             {slides.map((rest, index) => (
               <Transition
                 as="button"
                 key={index}
                 layoutId={String(index)}
-                className={clsx(page !== index && "pointer-events-none", "flex-shrink-0 rounded-xl")}
+                className={clsx(
+                  page !== index && "pointer-events-none",
+                  "flex-shrink-0 rounded-xl",
+                  page === index ? "w-full" : "!w-10/12",
+                )}
                 onClick={() => page === index && popup.setSelectedId(String(index))}
-                style={{ width: page === index ? "100%" : "83.33%" }}
                 disabled={page !== index}
-                animate={{ width: page === index ? slideWidth.active : slideWidth.inactive }}
               >
-                <Ratio
-                  key={index}
-                  className={clsx(
-                    "lock w-full flex-shrink-0 overflow-hidden rounded-xl",
-                    page !== index && "opacity-15",
-                  )}
-                  resolution="5:4"
-                  {...rest}
-                />
+                <div className="bg-white dark:bg-zinc-950">
+                  <Transition style={showSlide(index)} animate={showSlide(index)}>
+                    <Ratio
+                      key={index}
+                      className={clsx(
+                        "lock w-full flex-shrink-0 overflow-hidden rounded-xl transition-opacity duration-300",
+                      )}
+                      resolution="5:4"
+                      {...rest}
+                    />
+                  </Transition>
+                </div>
               </Transition>
             ))}
           </Section>

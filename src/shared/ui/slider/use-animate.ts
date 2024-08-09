@@ -4,19 +4,11 @@ import { slides } from "@/data";
 
 interface IAnimate {
   page: number;
-  slideWidth: {
-    // These properties are optional
-    // to animation look better
-    // when the component is mounted 🔥.
-    active?: number;
-    inactive?: number;
-  };
   diff: number;
 }
 
 const initialValue: IAnimate = {
   page: 0,
-  slideWidth: {},
   diff: 0,
 };
 
@@ -66,10 +58,6 @@ export const useAnimate = () => {
 
     setAnimate((prev) => ({
       ...prev,
-      slideWidth: {
-        active: activeSlideWidth,
-        inactive: inactiveSlideWidth,
-      },
       diff,
     }));
   }, []);
