@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export const PageBackground = () => (
   <div
-    className="pointer-events-none fixed left-0 top-0 -z-50 flex h-screen w-full justify-between"
+    className="pointer-events-none fixed left-0 top-0 -z-50 hidden h-screen w-full justify-between xl:flex"
     style={{ aspectRatio: "9.8 / 1" }}
   >
     {Array.from({ length: 36 }).map((_, i) => (

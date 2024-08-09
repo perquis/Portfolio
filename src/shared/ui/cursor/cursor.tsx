@@ -23,7 +23,7 @@ export default function Cursor() {
 
   return (
     <motion.div
-      className="fixed left-0 top-0 -z-40 h-96 w-96 bg-white/0 shadow-full shadow-white blur-3xl dark:shadow-zinc-950"
+      className="fixed left-0 top-0 -z-40 hidden h-96 w-96 bg-white/0 shadow-full shadow-white blur-3xl dark:shadow-zinc-950 xl:block"
       initial={{ width: 0, height: 0 }}
       animate={{ width: 384, height: 384 }}
       style={{
