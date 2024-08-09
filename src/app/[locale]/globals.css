@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url(../../styles/input.css);
+@import url(../../styles/themes.css);
 
 :root {
   --tw-white: hsl(0, 0%, 100%);
@@ -26,8 +28,10 @@
   background: var(--tw-indigo-600);
 }
 
-@import url(../../styles/input.css);
-@import url(../../styles/themes.css);
+html {
+  scroll-behavior: smooth !important;
+  scroll-padding-top: 64px;
+}
 
 .sandpack * {
   outline: none !important;
