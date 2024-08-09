@@ -106,7 +106,7 @@ export const ContactForm = () => {
           />
           <label className="mt-2 flex items-start gap-3" htmlFor="checked">
             <Checkbox {...register("checked", { required: true })} required id="checked" />
-            <Regular className="!text-xs">{t("CONTACT_FORM_CHECKBOX_AGREE")}</Regular>
+            <Regular className="select-none !text-xs">{t("CONTACT_FORM_CHECKBOX_AGREE")}</Regular>
           </label>
         </Section>
 
