@@ -4,7 +4,7 @@ export * from "./all-projects-list/feature-all-projects-list";
 export * from "./contact-form/feature-contact-form";
 export * from "./faq-section/feature-faq-section";
 export * from "./featured-projects-list/feature-featured-projects-list";
-export * from "./github-activity/github-activity";
+export * from "./github-activity/feature-github-activity";
 export * from "./hero-section/feature-hero-section";
 export * from "./jobs-list/feature-jobs-list";
 export * from "./schedule-meeting/feature-schedule-meeting";
