@@ -40,7 +40,7 @@ const nextConfig = {
     frame-src 'self' www.youtube.com cal.com app.cal.com *.codesandbox.io;
     style-src 'self' 'unsafe-inline';
     font-src 'self';
-    connect-src 'self' cdn.jsdelivr.net unpkg.com lottie.host;
+    connect-src 'self' cdn.jsdelivr.net unpkg.com lottie.host github-contributions-api.jogruber.de;
     object-src 'none';
     base-uri 'self';
     form-action 'self';
