@@ -78,7 +78,7 @@ export const ContactForm = () => {
 
       <Form className="!gap-10" onSubmit={onSubmit}>
         <Section className="gap-3">
-          <Section className="!flex-row gap-3">
+          <Section className="gap-3 sm:!flex-row">
             <Input
               placeholder="John Doe"
               autoComplete="name"

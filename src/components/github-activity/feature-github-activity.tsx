@@ -43,7 +43,7 @@ export const GithubActivity = () => {
           year={year ?? "last"}
         />
 
-        <Section className="!flex-row gap-2">
+        <Section className="!flex-row flex-wrap gap-2">
           {years.map((value) => (
             <button
               className={clsx(

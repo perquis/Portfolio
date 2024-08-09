@@ -19,13 +19,13 @@ export const List: FC<IExperiencesList> = ({ items }) => {
       {items.map(({ name, position, years, image }, index) => (
         <Section className="w-full !flex-row justify-between gap-10" key={index}>
           <Section className="!flex-row gap-4">
-            <Avatar innerShadow size="medium" rounded="full" {...image} />
+            <Avatar className="flex-shrink-0" innerShadow size="medium" rounded="full" {...image} />
             <Section className="gap-1">
               <Title level="b">{name}</Title>
-              <Regular className="">{position}</Regular>
+              <Regular>{position}</Regular>
             </Section>
           </Section>
-          <Regular className="font-medium">{years}</Regular>
+          <Regular className="flex-shrink-0 font-medium">{years}</Regular>
         </Section>
       ))}
     </>
