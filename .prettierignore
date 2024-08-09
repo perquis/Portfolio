@@ -5,3 +5,12 @@
 *.spec.tsx
 
 __tests__
+
+.storybook
+.next
+.husky
+
+cypress
+public
+
+node_modules
