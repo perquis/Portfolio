@@ -26,7 +26,7 @@ export const GithubActivity = () => {
           cloneElement(block, {
             // @ts-ignore
             "data-tooltip-id": "react-tooltip",
-            "data-tooltip-html": `${activity.count} activities on ${activity.date}`,
+            "data-tooltip-html": `${activity.count} contribution${activity.count > 1 ? "s" : ""} on ${activity.date}`,
           })
         }
         theme={themeInput}
