@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import type { ComponentProps } from "react";
 
 import { Link } from "@/next/navigation";
@@ -5,9 +6,15 @@ import * as icons from "@/shared/icons/design";
 
 type TArrowLink = ComponentProps<typeof Link>;
 
-export default function ArrowLink({ children, ...props }: Omit<TArrowLink, "className">) {
+export default function ArrowLink({ children, className, ...props }: TArrowLink) {
   return (
-    <Link className="flex gap-2 text-sm font-medium hover:underline focus-visible:underline" {...props}>
+    <Link
+      className={clsx(
+        "flex gap-2 text-sm font-medium transition-colors duration-200 hover:text-indigo-500 hover:underline focus-visible:text-indigo-500 focus-visible:underline",
+        className,
+      )}
+      {...props}
+    >
       {children} <icons.ArrowLineRight width={20} height={20} />
     </Link>
   );
