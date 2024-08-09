@@ -7,7 +7,7 @@ import GitHubCalendar from "react-github-calendar";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 
 import { useMounted } from "@/shared/hooks";
-import { Regular, Section } from "@/shared/ui";
+import { Paragraph, Regular, Section } from "@/shared/ui";
 
 import { themeInput } from "./data-theme-colors";
 
@@ -27,6 +27,7 @@ export const GithubActivity = () => {
   return (
     <Section className="max-w-screen-sm gap-5">
       <Regular className="font-semibold">{t("MY_GITHUB_ACTIVITY")}</Regular>
+      <Paragraph>{t("GITHUB_ACTIVITY_DESCRIPTION")}</Paragraph>
 
       <Section className="gap-5">
         <GitHubCalendar
