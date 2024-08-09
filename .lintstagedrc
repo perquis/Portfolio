@@ -1,5 +1,3 @@
 {
-  "lint-staged": {
-    "*.{ts,tsx}": ["npm run lint", "npm run format"]
-  }
+  "*.{ts,tsx}": ["npm run lint", "npm run format"]
 }
