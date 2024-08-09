@@ -4,7 +4,7 @@ export default function VideoPlayer(props: ComponentProps<"iframe">) {
   return (
     <iframe
       {...props}
-      className="aspect-video w-full overflow-hidden rounded-xl"
+      className="aspect-video w-full overflow-hidden rounded-lg"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerPolicy="strict-origin-when-cross-origin"
       allowFullScreen
