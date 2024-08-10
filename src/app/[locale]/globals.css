@@ -18,6 +18,10 @@
   box-sizing: border-box;
 }
 
+a {
+  @apply rounded-sm;
+}
+
 ::-moz-selection {
   color: var(--tw-white);
   background: var(--tw-indigo-600);
