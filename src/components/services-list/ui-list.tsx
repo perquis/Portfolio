@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import { type FC, useState } from "react";
 
+import { useRouter } from "@/next/navigation";
 import { Chip, Paragraph, Regular, Section, Title } from "@/shared/ui";
 
 interface Chip {
@@ -21,6 +22,8 @@ type TList = {
 
 export const List: FC<TList> = ({ items }) => {
   const [selected, setSelected] = useState<Chip>(items?.[0]?.chips?.[0]);
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
+  const { push } = useRouter();
 
   return (
     <>
@@ -31,7 +34,10 @@ export const List: FC<TList> = ({ items }) => {
             {chips.map(({ label, ...rest }, index) => (
               <Chip
                 key={index}
-                onClick={() => setSelected({ label, ...rest })}
+                onClick={() => {
+                  if (isMobile) push("#description");
+                  setSelected({ label, ...rest });
+                }}
                 className={clsx(
                   selected.label === label &&
                     "!bg-indigo-50 !text-indigo-600 dark:!bg-indigo-950 dark:!text-indigo-400",
@@ -45,7 +51,10 @@ export const List: FC<TList> = ({ items }) => {
         </Section>
       ))}
 
-      <Section className="mt-5 gap-1 rounded-[20px] border border-zinc-200 bg-white p-1 shadow dark:border-zinc-800 dark:bg-zinc-950">
+      <Section
+        className="mt-5 gap-1 rounded-[20px] border border-zinc-200 bg-white p-1 shadow dark:border-zinc-800 dark:bg-zinc-950"
+        id="description"
+      >
         <Section className="gap-1 rounded-2xl bg-zinc-100 p-6 dark:bg-zinc-900">
           <Title level="b" className="text-sm">
             {selected.label}
