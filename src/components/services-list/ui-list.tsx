@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { type FC, useState } from "react";
 
 import { useRouter } from "@/next/navigation";
+import { usePlatform } from "@/providers/device/device.provider";
 import { Chip, Paragraph, Regular, Section, Title } from "@/shared/ui";
 
 interface Chip {
@@ -22,7 +23,7 @@ type TList = {
 
 export const List: FC<TList> = ({ items }) => {
   const [selected, setSelected] = useState<Chip>(items?.[0]?.chips?.[0]);
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
+  const platform = usePlatform();
   const { push } = useRouter();
 
   return (
@@ -35,7 +36,7 @@ export const List: FC<TList> = ({ items }) => {
               <Chip
                 key={index}
                 onClick={() => {
-                  if (isMobile) push("#description");
+                  if (platform === "mobile") push("#description");
                   setSelected({ label, ...rest });
                 }}
                 className={clsx(

@@ -53,7 +53,7 @@ export default function Slider({ slides }: ISlider) {
                 onClick={() => page === index && popup.setSelectedId(String(index))}
                 disabled={page !== index}
               >
-                <div className="bg-white dark:bg-zinc-950">
+                <div className="rounded-xl bg-white dark:bg-zinc-950">
                   <Transition style={showSlide(index)} animate={showSlide(index)}>
                     <Ratio
                       key={index}
