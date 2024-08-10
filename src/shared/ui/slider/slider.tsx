@@ -58,7 +58,7 @@ export default function Slider({ slides }: ISlider) {
                     <Ratio
                       key={index}
                       className={clsx(
-                        "lock w-full flex-shrink-0 overflow-hidden rounded-xl transition-opacity duration-300",
+                        "lock w-full flex-shrink-0 cursor-zoom-in overflow-hidden rounded-xl transition-opacity duration-300",
                       )}
                       resolution="5:4"
                       {...rest}
