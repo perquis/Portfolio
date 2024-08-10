@@ -26,6 +26,7 @@ export { default as Form } from "./form/form";
 export { default as GlobalLayout } from "./global-layout/global-layout";
 export { default as Grid } from "./grid/grid";
 export { default as HamburgerMenu } from "./hamburger-menu/hamburger-menu";
+export { default as Header } from "./header/header";
 export { default as IconButton } from "./icon-button/icon-button";
 export { default as Input } from "./input/input";
 export { default as Layout } from "./layout/layout";

@@ -1,10 +1,7 @@
-import { useTranslations } from "next-intl";
-
 import { socials } from "@/data";
-import { Details, Regular, Section } from "@/shared/ui";
+import { Details, Header, Section } from "@/shared/ui";
 
 export const SocialLinksList = () => {
-  const t = useTranslations();
   const items = socials.map(
     (social) =>
       ({
@@ -17,8 +14,7 @@ export const SocialLinksList = () => {
 
   return (
     <Section className="gap-5">
-      <Regular className="font-semibold">{t("CONTACT_SOCIALS_TITLE")}</Regular>
-
+      <Header heading="CONTACT_SOCIALS_TITLE" />
       <Details items={items} />
     </Section>
   );

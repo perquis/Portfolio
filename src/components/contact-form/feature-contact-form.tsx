@@ -1,7 +1,6 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import clsx from "clsx";
 import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -11,7 +10,7 @@ import { usePathname } from "@/next/navigation";
 import { useAlert } from "@/providers/alert/alert.provider";
 import { sendMail } from "@/server/actions/sendMail";
 import { useOpen } from "@/shared/hooks";
-import { ArrowLink, Button, Checkbox, Form, Input, Paragraph, Regular, Section, Textarea } from "@/shared/ui";
+import { Button, Checkbox, Form, Header, Input, Regular, Section, Textarea } from "@/shared/ui";
 
 const schema = z.object({
   name: z.string().min(3).max(32),
@@ -66,12 +65,15 @@ export const ContactForm = () => {
   return (
     <Section className="gap-10">
       <Section className="items-start gap-5">
-        <Section className={clsx("w-full !flex-row", { "justify-between": pathname !== "/contact" })}>
-          <Regular>{t("CONTACT_FORM_TITLE")}</Regular>
-          {pathname !== "/contact" && <ArrowLink href="/contact#faq">FAQ</ArrowLink>}
-        </Section>
-
-        <Paragraph>{t("CONTACT_FORM_DESCRIPTION")}</Paragraph>
+        <Header
+          heading="CONTACT_FORM_TITLE"
+          description="CONTACT_FORM_DESCRIPTION"
+          pathname="/contact"
+          link={{
+            name: "FAQ",
+            url: "/contact#faq",
+          }}
+        />
 
         {pathname !== "/" && <ScheduleMeeting />}
       </Section>

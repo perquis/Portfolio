@@ -1,17 +1,13 @@
-import { useTranslations } from "next-intl";
-
-import { Code, Details, Paragraph, Regular, Section } from "@/shared/ui";
+import { Code, Details, Header, Section } from "@/shared/ui";
 
 import { useItems } from "./utils-use-items";
 
 export const WorkflowsList = () => {
   const items = useItems();
-  const t = useTranslations();
 
   return (
     <Section className="gap-5">
-      <Regular className="font-semibold">{t("HOME_PROCESS_TITLE")}</Regular>
-      <Paragraph>{t("HOME_PROCESS_DESCRIPTION")}</Paragraph>
+      <Header heading="HOME_PROCESS_TITLE" description="HOME_PROCESS_DESCRIPTION" />
 
       <Code
         code={`\`\`\`tsx {showLineNumbers}
