@@ -1,22 +1,19 @@
 "use client";
 
-import clsx from "clsx";
 import { cloneElement, useState } from "react";
 import GitHubCalendar from "react-github-calendar";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 
 import { useMounted } from "@/shared/hooks";
-import { Section } from "@/shared/ui";
+import { Chip, Section } from "@/shared/ui";
 
 import { themeInput } from "./data-theme-colors";
 
 export const Calendar = () => {
-  const [year, setYear] = useState<number | null>(null),
+  const [selectedYear, setSelectedYear] = useState<number | null>(null),
     mounted = useMounted();
 
   if (!mounted) return null;
-
-  const setSelectedYear = (n: number) => setYear(n);
 
   const currentYear = new Date().getFullYear(),
     items = Array.from({ length: currentYear - 2020 + 1 }, (_, i) => currentYear - i).sort((a, b) => a - b),
@@ -34,23 +31,19 @@ export const Calendar = () => {
           })
         }
         theme={themeInput}
-        year={year ?? "last"}
+        year={selectedYear ?? "last"}
       />
 
       <Section className="!flex-row flex-wrap gap-2">
-        {years.map((value) => (
-          <button
-            className={clsx(
-              "rounded p-2 text-xs font-medium text-zinc-500 transition-colors duration-200 hover:text-zinc-950 focus-visible:text-zinc-950 dark:hover:text-white dark:focus-visible:text-white",
-              year !== null && value === year
-                ? "pointer-events-none bg-indigo-600 !text-white"
-                : "bg-zinc-100 hover:bg-zinc-200 focus-visible:bg-zinc-200 dark:bg-zinc-900 dark:hover:bg-zinc-800 dark:focus-visible:bg-zinc-800",
-            )}
-            onClick={() => setSelectedYear(value)}
-            key={value}
+        {years.map((year) => (
+          <Chip
+            className="!rounded !text-xs"
+            isActive={selectedYear === year}
+            onClick={() => setSelectedYear(year)}
+            key={year}
           >
-            {value}
-          </button>
+            {year}
+          </Chip>
         ))}
       </Section>
 

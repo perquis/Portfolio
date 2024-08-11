@@ -1,6 +1,5 @@
 "use client";
 
-import clsx from "clsx";
 import { type FC, useState } from "react";
 
 import { useRouter } from "@/next/navigation";
@@ -32,22 +31,23 @@ export const List: FC<TList> = ({ items }) => {
         <Section key={index} className="gap-2">
           <Regular className="!text-zinc-950 dark:!text-white">{title}</Regular>
           <Section className="!flex-row flex-wrap gap-3">
-            {chips.map(({ label, ...rest }, index) => (
-              <Chip
-                key={index}
-                onClick={() => {
-                  if (platform === "mobile") push("#description");
-                  setSelected({ label, ...rest });
-                }}
-                className={clsx(
-                  selected.label === label &&
-                    "!bg-indigo-50 !text-indigo-600 dark:!bg-indigo-950 dark:!text-indigo-400",
-                )}
-                disabled={selected.label === label}
-              >
-                {label}
-              </Chip>
-            ))}
+            {chips.map(({ label, ...rest }, index) => {
+              const isActive = selected.label === label;
+
+              return (
+                <Chip
+                  key={index}
+                  onClick={() => {
+                    if (platform === "mobile") push("#description");
+                    setSelected({ label, ...rest });
+                  }}
+                  isActive={isActive}
+                  disabled={isActive}
+                >
+                  {label}
+                </Chip>
+              );
+            })}
           </Section>
         </Section>
       ))}
