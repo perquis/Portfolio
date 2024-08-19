@@ -25,7 +25,7 @@ export const Calendar = () => {
         username="perquis"
         renderBlock={(block, activity) =>
           cloneElement(block, {
-            // @ts-ignore
+            tabIndex: -1,
             "data-tooltip-id": "react-tooltip",
             "data-tooltip-html": `${activity.count} contribution${activity.count > 1 ? "s" : ""} on ${activity.date}`,
           })
