@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { ComponentProps, FC } from "react";
+import { type ComponentProps, type FC, Fragment } from "react";
 import { match } from "ts-pattern";
 
 import { LinkOut } from "@/shared/icons/design";
@@ -50,10 +50,10 @@ const Item: FC<IItem> = ({ type, href, label, content }) => {
     .otherwise(() => (
       <Regular className="block px-4 py-3.5 !text-sm font-medium !text-zinc-800 dark:!text-zinc-200">
         {content.split("\n").map((v) => (
-          <>
+          <Fragment key={v}>
             {v}
             <br />
-          </>
+          </Fragment>
         ))}
       </Regular>
     ));
