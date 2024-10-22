@@ -2,7 +2,7 @@ FROM node:22-alpine as deps
 
 WORKDIR /deps
 
-COPY ./package.json ./package-lock.json ./
+COPY ./package.json ./
 RUN npm install
 
 FROM node:22-alpine as builder
