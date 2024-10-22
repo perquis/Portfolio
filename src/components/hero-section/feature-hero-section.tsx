@@ -29,7 +29,7 @@ export const HeroSection: FC<IHeroSection & ComponentProps<"div">> = ({ withoutC
               code: `\`\`\`json {showLineNumbers}
 {
   "level": "Mid/Regular 🔥",
-  "experience": "${calculateYearsSince("10.09.2020 00:00")} years",
+  "experience": "${calculateYearsSince("01.07.2019 00:00")} years",
   "technologies": ["HTML", "CSS", "TypeScript", "Python", "C#"],
   "hobbies": ["Football", "Travels", "Animals"],
   "location": "Warsaw, Poland",

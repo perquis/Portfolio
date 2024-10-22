@@ -9,7 +9,7 @@ export const items: ComponentProps<typeof List>["items"] = [
       alt: "HAERGI Sp. Z. O. O.",
     },
     name: "Haergi",
-    position: "Full Stack Developer, Digital Designer",
+    position: "Full Stack Developer",
     years: "2023 - 2024",
   },
 ];
