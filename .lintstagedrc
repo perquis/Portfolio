@@ -1,3 +1,4 @@
 {
-  "*.{ts,tsx}": ["npm run format"]
+  "*.spec.{ts,tsx}": ["npm run test"],
+  "*.{ts,tsx}": ["npm run lint", "npm run format", "npm run type:check"]
 }
