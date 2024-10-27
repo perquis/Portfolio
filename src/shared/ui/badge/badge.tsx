@@ -1,8 +1,8 @@
 import clsx from "clsx";
 import type { ComponentProps } from "react";
 
-import type { Color } from "@/interfaces/tailwindcss";
-import type { Rounded } from "@/interfaces/variants";
+import type { Color } from "@/interfaces/tailwindcss.interface";
+import type { Rounded } from "@/interfaces/variants.interface";
 import { getColorClass } from "@/shared/ui/badge/getColorClass";
 
 type TBadge = {

@@ -6,11 +6,11 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { ScheduleMeeting } from "@/components";
-import { usePathname } from "@/next/navigation";
-import { useAlert } from "@/providers/alert/alert.provider";
+import { useAlert } from "@/providers/alert.provider";
 import { sendMail } from "@/server/actions/sendMail";
 import { useOpen } from "@/shared/hooks";
 import { Button, Checkbox, Form, Header, Input, Regular, Section, Textarea } from "@/shared/ui";
+import { usePathname } from "@/third-party/next-intl";
 
 const schema = z.object({
   name: z.string().min(3).max(32),

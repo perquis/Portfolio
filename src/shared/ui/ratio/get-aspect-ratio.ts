@@ -1,6 +1,6 @@
 import { match } from "ts-pattern";
 
-import type { Resolution } from "@/interfaces/variants";
+import type { Resolution } from "@/interfaces/variants.interface";
 
 type Result = {
   aspectRatio: string;

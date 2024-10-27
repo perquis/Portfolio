@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { type ComponentProps, useEffect, useRef } from "react";
 import { match } from "ts-pattern";
 
-import type { Alignment } from "@/interfaces/variants";
+import type { Alignment } from "@/interfaces/variants.interface";
 import { useOpen } from "@/shared/hooks";
 import { Transition } from "@/shared/ui";
 

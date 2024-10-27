@@ -2,10 +2,10 @@ import clsx from "clsx";
 import { useLocale } from "next-intl";
 import type { ComponentProps } from "react";
 
-import { Link } from "@/next/navigation";
 import type { TMetadata } from "@/server/functions/docs/types";
 import { CalendarEvent } from "@/shared/icons/design";
 import { Badge, Paragraph, Ratio, Regular, Section, Title } from "@/shared/ui";
+import { Link } from "@/third-party/next-intl";
 
 type NextLinkProps = ComponentProps<typeof Link>;
 

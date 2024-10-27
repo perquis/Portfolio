@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from "next/og";
 
-import type { Locale } from "../../../../interfaces/i18n";
+import type { Locale } from "@/interfaces/i18n.interface";
 
 export const runtime = "edge";
 

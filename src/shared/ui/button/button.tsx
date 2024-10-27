@@ -5,7 +5,7 @@ import type { ComponentProps } from "react";
 import { TailSpin } from "react-loader-spinner";
 import { match } from "ts-pattern";
 
-import type { Size } from "@/interfaces/variants";
+import type { Size } from "@/interfaces/variants.interface";
 
 type TButton = {
   size: Exclude<Size, "tiny">;

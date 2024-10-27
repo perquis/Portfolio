@@ -1,7 +1,6 @@
+import type { Locale } from "@/interfaces/i18n.interface";
 import { docs } from "@/server/functions";
 import type { Location } from "@/server/functions/docs/types";
-
-import type { Locale } from "../../../interfaces/i18n";
 
 export const GET = async (request: Request) => {
   const url = new URL(request.url);

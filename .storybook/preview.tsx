@@ -2,7 +2,7 @@ import { withThemeByDataAttribute } from "@storybook/addon-themes";
 import type { Preview } from "@storybook/react";
 import { match } from "ts-pattern";
 
-import { Container } from "../src/shared/ui";
+import { Container } from "@/shared/ui";
 import nextIntl from "./next-intl";
 import "./tailwind.css";
 

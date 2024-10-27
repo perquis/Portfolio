@@ -6,7 +6,7 @@ import { createPortal } from "react-dom";
 import ReactFocusLock, { type ReactFocusLockProps } from "react-focus-lock";
 import { match } from "ts-pattern";
 
-import type { Alignment } from "@/interfaces/variants";
+import type { Alignment } from "@/interfaces/variants.interface";
 import { useHideBodyScrollbar, useKey, useOutsideOnClick } from "@/shared/hooks";
 import { IconButton, Section } from "@/shared/ui";
 

@@ -1,4 +1,4 @@
-import en from "../../src/translations/en.json";
+import en from "@/translations/en.json";
 
 describe("<ContactForm />", () => {
   it("tests whether the user can send the emails when the data are correct", () => {

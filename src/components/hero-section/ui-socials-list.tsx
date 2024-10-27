@@ -4,9 +4,9 @@ import Link from "next/link";
 
 import { ScheduleMeeting } from "@/components";
 import { socials } from "@/data";
-import { usePathname } from "@/next/navigation";
 import * as icons from "@/shared/icons/design";
 import { Section } from "@/shared/ui";
+import { usePathname } from "@/third-party/next-intl";
 
 export const SocialsList = () => {
   const pathname = usePathname();

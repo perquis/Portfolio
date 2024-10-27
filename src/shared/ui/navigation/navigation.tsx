@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import type { ComponentProps, FC } from "react";
 
 import { links } from "@/data";
-import type { IsLock } from "@/interfaces/variants";
+import type { IsLock } from "@/interfaces/variants.interface";
 import { useScrollDirection } from "@/shared/hooks";
 import type { Breadcrumbs } from "@/shared/ui";
 import { Container, HamburgerMenu, Logo, Section, Tab, Transition } from "@/shared/ui";

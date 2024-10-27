@@ -2,9 +2,9 @@
 
 import { type FC, useState } from "react";
 
-import { useRouter } from "@/next/navigation";
-import { usePlatform } from "@/providers/device/device.provider";
+import { usePlatform } from "@/providers/device.provider";
 import { Chip, Paragraph, Regular, Section, Title } from "@/shared/ui";
+import { useRouter } from "@/third-party/next-intl";
 
 interface Chip {
   label: string;

@@ -1,5 +1,5 @@
-import en from "../src/translations/en.json";
-import pl from "../src/translations/pl.json";
+import en from "@/translations/en.json";
+import pl from "@/translations/pl.json";
 
 const messages: Record<string, any> = {
   en,

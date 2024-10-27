@@ -1,9 +1,8 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 
 import { NextMDXRemote } from "@/components/next-mdx-remote/feature-next-mdx-remote";
+import type { Locale } from "@/interfaces/i18n.interface";
 import { docs } from "@/server/functions";
-
-import type { Locale } from "../../../../interfaces/i18n";
 
 export async function generateMetadata({ params }: { params: { locale: string; slug: string } }) {
   const items = await docs.getItemsWithMetadata("projects");
