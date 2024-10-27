@@ -3,7 +3,7 @@ import { unstable_setRequestLocale } from "next-intl/server";
 import { NextMDXRemote } from "@/components/next-mdx-remote/feature-next-mdx-remote";
 import { docs } from "@/server/functions";
 
-import type { Locale } from "../../../../../@types/i18n";
+import type { Locale } from "../../../../interfaces/i18n";
 
 export async function generateMetadata({ params }: { params: { locale: string; slug: string } }) {
   const items = await docs.getItemsWithMetadata("projects");

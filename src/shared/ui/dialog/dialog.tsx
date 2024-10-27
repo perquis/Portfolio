@@ -3,10 +3,10 @@
 import clsx from "clsx";
 import { type ReactNode, useRef } from "react";
 import { createPortal } from "react-dom";
-import ReactFocusLock from "react-focus-lock";
-import type { ReactFocusLockProps } from "react-focus-lock/interfaces";
+import ReactFocusLock, { type ReactFocusLockProps } from "react-focus-lock";
 import { match } from "ts-pattern";
 
+import type { Alignment } from "@/interfaces/variants";
 import { useHideBodyScrollbar, useKey, useOutsideOnClick } from "@/shared/hooks";
 import { IconButton, Section } from "@/shared/ui";
 

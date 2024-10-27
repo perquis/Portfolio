@@ -2,17 +2,15 @@
 
 import { type MotionProps, motion } from "framer-motion";
 import type { ComponentProps } from "react";
+import React from "react";
 
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
-type MotionElement = keyof typeof motion;
-
-export default function Transition<T extends MotionElement>({
+export default function Transition<T extends keyof JSX.IntrinsicElements | React.JSXElementConstructor<any>>({
   children,
-  as = "div",
+  element = "div" as T,
   ...props
-}: MotionProps & ComponentProps<T> & { as?: MotionElement }) {
-  const Tag = motion[as];
-  // @ts-expect-error
+}: MotionProps & ComponentProps<T> & { element?: T }) {
+  const Tag = motion[element as keyof typeof motion] as React.ElementType;
   return <Tag {...props}>{children}</Tag>;
 }

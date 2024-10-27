@@ -4,13 +4,14 @@ import clsx from "clsx";
 import { type ComponentProps, useEffect, useRef } from "react";
 import { match } from "ts-pattern";
 
+import type { Alignment } from "@/interfaces/variants";
 import { useOpen } from "@/shared/hooks";
 import { Transition } from "@/shared/ui";
 
 type TTooltip = {
   label: string;
   disabled?: boolean;
-  alignment?: Exclude<Alignment, "bottom-left" | "bottom-right" | "top-left" | "top-right" | "center">;
+  alignment?: Extract<Alignment, "bottom" | "left" | "right" | "top">;
 } & ComponentProps<"div">;
 
 export default function Tooltip({ children, label, disabled, className, alignment = "top" }: TTooltip) {

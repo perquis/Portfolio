@@ -42,7 +42,7 @@ export default function Slider({ slides }: ISlider) {
           <Section className="w-full !flex-row items-center gap-5" ref={slideRef}>
             {slides.map((rest, index) => (
               <Transition
-                as="button"
+                element="button"
                 key={index}
                 layoutId={String(index)}
                 className={clsx(

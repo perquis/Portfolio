@@ -3,7 +3,7 @@ import path from "path";
 
 import { BASE_PATH } from "@/server/functions/docs/constants";
 
-import type { Locale } from "../../../../@types/i18n";
+import type { Locale } from "../../../interfaces/i18n";
 import type { Location } from "./types";
 
 export const createFileNameWithLocale = (slug: string, locale: Locale) => `${slug}.${locale}.mdx`;

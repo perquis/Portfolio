@@ -5,6 +5,8 @@ import { useTheme } from "next-themes";
 import Image from "next/legacy/image";
 import type { ComponentProps } from "react";
 
+import type { Resolution } from "@/interfaces/variants";
+
 import { getAspectRatio } from "./get-aspect-ratio";
 
 type TImage = {

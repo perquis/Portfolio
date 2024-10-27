@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { match } from "ts-pattern";
 
+import type { Rounded, Size } from "@/interfaces/variants";
 import { Ratio } from "@/shared/ui";
 
 type RatioProps = React.ComponentProps<typeof Ratio>;

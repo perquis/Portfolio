@@ -1,8 +1,8 @@
-type Size = "large" | "medium" | "small" | "tiny";
-type Rounded = "default" | "full";
-type IsLock = { lock?: boolean };
+export type Size = "large" | "medium" | "small" | "tiny";
+export type Rounded = "default" | "full";
+export type IsLock = { lock?: boolean };
 
-type Alignment =
+export type Alignment =
   | "center"
   | "bottom"
   | "bottom-left"
@@ -13,7 +13,7 @@ type Alignment =
   | "left"
   | "right";
 
-type Resolution =
+export type Resolution =
   | "1:1"
   | "2:3"
   | "3:2"

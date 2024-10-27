@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { match } from "ts-pattern";
 
 import { emojis } from "@/data";
+import type { Size } from "@/interfaces/variants";
 import { useOpen } from "@/shared/hooks";
 
 type EmojiName = (typeof emojis)[number]["name"];

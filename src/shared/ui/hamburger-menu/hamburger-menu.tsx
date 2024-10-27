@@ -36,7 +36,6 @@ export default function HamburgerMenu({ links }: THamburgerMenu) {
   );
 }
 
-const Line: FC<MotionProps> = (props) => {
-  // @ts-expect-error
-  return <Transition className="absolute h-[2px] w-full rounded-sm bg-zinc-950 dark:bg-white" {...props} />;
-};
+const Line: FC<MotionProps> = (props) => (
+  <Transition className="absolute h-[2px] w-full rounded-sm bg-zinc-950 dark:bg-white" {...props} />
+);

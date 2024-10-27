@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import type { ComponentProps } from "react";
 
+import type { IsLock } from "@/interfaces/variants";
 import { Link, usePathname } from "@/next/navigation";
 
 type TTab = ComponentProps<typeof Link> & IsLock;

@@ -8,7 +8,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { METADATA_RESPONSE } from "@/server/functions/docs/constants";
 import { createFileNameWithLocale, getPathToResources, getSlugsWithoutFiles } from "@/server/functions/docs/utils";
 
-import type { Locale } from "../../../../@types/i18n";
+import type { Locale } from "../../../interfaces/i18n";
 import type { Location, TMetadata } from "./types";
 
 async function getSourcesSinceMdxFiles(rootDirectory: Location, slug: string, currentLocale: Locale) {
