@@ -3,25 +3,17 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
+import type { z } from "zod";
 
 import { ScheduleMeeting } from "@/components";
 import { useAlert } from "@/providers/alert.provider";
+import { contactFormSchema } from "@/schemas/contact-form.schema";
 import { sendMail } from "@/server/actions/sendMail";
 import { useOpen } from "@/shared/hooks";
 import { Button, Checkbox, Form, Header, Input, Regular, Section, Textarea } from "@/shared/ui";
 import { usePathname } from "@/third-party/next-intl";
 
-const schema = z.object({
-  name: z.string().min(3).max(32),
-  email: z.string().email().max(64),
-  message: z.string().min(10).max(256),
-  checked: z.boolean().refine((value) => value === true, {
-    message: "Please agree with the policy and privacy.",
-  }),
-});
-
-export type Schema = z.infer<typeof schema>;
+export type Schema = z.infer<typeof contactFormSchema>;
 
 export const ContactForm = () => {
   const t = useTranslations();
@@ -35,30 +27,23 @@ export const ContactForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<Schema>({ resolver: zodResolver(schema) });
+  } = useForm<Schema>({ resolver: zodResolver(contactFormSchema) });
 
   const onSubmit = handleSubmit((e) => {
     open();
 
     try {
-      setAlert({
-        status: "success",
-        content: t("ALERT_SUCCESSFULLY"),
-      });
+      setAlert({ status: "success", content: t("ALERT_SUCCESSFULLY") });
 
       reset();
       sendMail(e);
 
       close();
     } catch (error) {
-      // eslint-disable-next-line no-console
-      console.error(error);
-      setAlert({
-        status: "error",
-        content: t("ALERT_ERROR"),
-      });
-
+      setAlert({ status: "error", content: t("ALERT_ERROR") });
       close();
+
+      console.error(error);
     }
   });
 

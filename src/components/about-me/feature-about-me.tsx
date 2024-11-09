@@ -1,3 +1,5 @@
+"use client";
+
 import { useTranslations } from "next-intl";
 
 import { placeholders } from "@/data";
@@ -7,7 +9,7 @@ export const AboutMe = () => {
   const t = useTranslations();
 
   return (
-    <Section className="gap-5">
+    <Section className="items-start gap-5">
       <Avatar src={placeholders.images} alt="Damian Werens" rounded="full" size="large" />
       <Section>
         <Title level="h6">Damian Werens</Title>

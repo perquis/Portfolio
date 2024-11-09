@@ -2,17 +2,16 @@
 
 import type { Schema } from "@/components";
 import { transporter } from "@/services/nodemailer";
+import { capitalized } from "@/shared/utils/capitalized";
 
 export async function sendMail({ name, email, message, checked }: Schema) {
-  const formatName = name[0].toUpperCase() + name.substring(1).toLowerCase();
-
   if (!checked) {
     throw new Error("Please agree with the policy and privacy.");
   }
 
   transporter.sendMail({
     to: process.env.SMTP_GMAIL_EMAIL,
-    subject: `${formatName} sent mail for you 📧!`,
+    subject: `${capitalized(name)} sent mail for you 📧!`,
     html: /* html */ `
       <div style="max-width: 640px; margin: auto 0;">
         <h1 style="font-size: 20px">Hi Damian! 🖐️</h1>

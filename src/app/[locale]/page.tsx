@@ -1,15 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
-import {
-  ContactForm,
-  FeaturedProjectsList,
-  GithubActivity,
-  HeroSection,
-  JobsList,
-  ServicesList,
-  WorkflowsList,
-} from "@/components";
+import { ContactForm, FeaturedProjectsList, HeroSection, JobsList, ServicesList, WorkflowsList } from "@/components";
 import { Divider, Layout } from "@/shared/ui";
 
 export async function generateMetadata({
@@ -33,8 +25,6 @@ const components = [
   JobsList,
   Divider,
   WorkflowsList,
-  Divider,
-  GithubActivity,
   Divider,
   ContactForm,
 ];
