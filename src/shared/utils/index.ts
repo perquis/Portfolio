@@ -1,2 +1,2 @@
-export * from "./calculateYearsSince/calculateYearsSince";
-export * from "./providers/providers";
+export * from "./calculateYearsSince";
+export * from "./providers";

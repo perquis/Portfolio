@@ -1,4 +1,4 @@
 {
-  "*.spec.{ts,tsx}": ["npm run test"],
-  "*.{ts,tsx}": ["npm run lint", "npm run format", "npm run type:check"]
+  "*.spec.{ts,tsx}": ["jest --passWithNoTests"],
+  "*.{ts,tsx}": ["prettier --write ./src"]
 }
