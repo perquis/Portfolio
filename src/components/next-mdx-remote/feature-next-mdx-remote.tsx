@@ -34,6 +34,7 @@ const components: MDXRemoteProps["components"] = {
   Code,
   Badge,
   CodeBlock,
+  Paragraph,
   Breadcrumbs,
   Callout,
   Accordion,
