@@ -5,7 +5,7 @@ import type { Locale } from "@/interfaces/i18n.interface";
 import { docs } from "@/server/functions";
 
 export async function generateMetadata({ params }: { params: { locale: string; slug: string } }) {
-  const items = await docs.getItemsWithMetadata("projects");
+  const items = await docs.getItemsWithMetadata("posts");
   const item = items.find((item) => item.slug === params.slug)!;
 
   return {
