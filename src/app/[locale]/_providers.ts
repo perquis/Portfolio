@@ -1,6 +1,6 @@
 import { ThemeProvider } from "next-themes";
 
-import { AlertProvider, DeviceProvider, NextIntlProvider } from "@/providers";
+import { AlertProvider, DeviceProvider, KeywordsProvider, NextIntlProvider } from "@/providers";
 import { composeProviders, createProvider } from "@/shared/utils";
 
 const providers = [
@@ -11,6 +11,7 @@ const providers = [
   }),
   createProvider(AlertProvider),
   createProvider(DeviceProvider),
+  createProvider(KeywordsProvider),
 ];
 
 export const AppProvider = composeProviders(providers);

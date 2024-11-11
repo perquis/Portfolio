@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import type { FC } from "react";
 
 import type { TMetadata } from "@/server/functions/docs/types";
-import { Regular, Section, Title } from "@/shared/ui";
+import { Regular, SearchBar, Section, Title } from "@/shared/ui";
 
 import { List } from "./ui-list";
 
@@ -19,7 +19,7 @@ export const AllPostsList: FC<Record<"items", TMetadata[]>> = ({ items }) => {
         </Regular>
       </Section>
 
-      {/* <SearchBar placeholder={t("BLOG_SEARCHBAR_PLACEHOLDER")} /> */}
+      <SearchBar placeholder={t("BLOG_SEARCHBAR_PLACEHOLDER")} />
 
       <List items={items} />
     </Section>
