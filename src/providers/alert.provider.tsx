@@ -1,6 +1,14 @@
 "use client";
 
-import { type ComponentProps, type PropsWithChildren, createContext, useContext, useEffect, useState } from "react";
+import {
+  type ComponentProps,
+  type PropsWithChildren,
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { createPortal } from "react-dom";
 
 import { Alert } from "@/shared/ui";
@@ -19,8 +27,10 @@ export default function AlertProvider({ children }: PropsWithChildren) {
     return () => clearTimeout(timeout);
   }, [alert]);
 
+  const value = useMemo(() => ({ alert, setAlert }), [alert]);
+
   return (
-    <AlertContext.Provider value={{ alert, setAlert }}>
+    <AlertContext.Provider value={value}>
       {children}
       {alert && createPortal(<Alert {...alert} />, document.getElementById("alerts")!)}
     </AlertContext.Provider>

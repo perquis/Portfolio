@@ -1,6 +1,6 @@
 "use client";
 
-import { type PropsWithChildren, createContext, useContext, useEffect, useState } from "react";
+import { type PropsWithChildren, createContext, useContext, useEffect, useMemo, useState } from "react";
 
 type Platform = "mobile" | "desktop";
 type PlatformOrNull = Platform | null;
@@ -23,7 +23,9 @@ export default function DeviceProvider({ children }: PropsWithChildren) {
     setPlatform(os);
   }, []);
 
-  return <DeviceContext.Provider value={{ platform }}>{children}</DeviceContext.Provider>;
+  const value = useMemo(() => ({ platform }), [platform]);
+
+  return <DeviceContext.Provider value={value}>{children}</DeviceContext.Provider>;
 }
 
 export const usePlatform = () => useContext(DeviceContext).platform!;
