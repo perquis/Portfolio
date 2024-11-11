@@ -76,7 +76,6 @@ async function getItemsWithMetadata(rootDirectory: Location): Promise<TMetadata[
 
     return dataWithMetadataFromMdxFiles;
   } catch (error) {
-    // eslint-disable-next-line no-console
     console.error(error);
     return [];
   }
