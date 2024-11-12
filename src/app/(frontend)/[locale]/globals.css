@@ -1,8 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url(../../styles/input.css);
-@import url(../../styles/themes.css);
+@import url(../../../styles/input.css);
+@import url(../../../styles/themes.css);
 
 :root {
   --tw-white: hsl(0, 0%, 100%);

@@ -4,7 +4,7 @@ import { unstable_setRequestLocale } from "next-intl/server";
 import { Inter } from "next/font/google";
 import { Suspense } from "react";
 
-import { AppProvider } from "@/app/[locale]/_providers";
+import { AppProvider } from "@/app/(frontend)/[locale]/_providers";
 import { locales } from "@/config/i18n";
 import { PageBackground } from "@/shared/icons/design/page-background";
 import { Cursor, GlobalLayout, Navigation } from "@/shared/ui";
