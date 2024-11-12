@@ -1,10 +1,10 @@
 "use client";
 
 import clsx from "clsx";
-import debounce from "lodash.debounce";
+import debounce from "lodash/debounce";
+import { useQueryState } from "nuqs";
 import { type ChangeEvent, type ComponentProps } from "react";
 
-import { useKeywords } from "@/providers/keywords";
 import { Search } from "@/shared/icons/design";
 
 import { useFocus } from "./use-focus";
@@ -13,11 +13,11 @@ type TSearchBar = ComponentProps<"input">;
 
 export default function SearchBar({ className, ...props }: TSearchBar) {
   const { blur, focus, inputRef, isFocus } = useFocus();
-  const { setKeywords } = useKeywords();
+  const [query, setQuery] = useQueryState("q");
 
   const onChange = debounce((e: ChangeEvent<HTMLInputElement>) => {
-    if (e.target.value === "") return setKeywords(null);
-    return setKeywords(e.target.value);
+    if (e.target.value === "") return setQuery(null);
+    return setQuery(e.target.value);
   }, 500);
 
   return (
@@ -37,6 +37,7 @@ export default function SearchBar({ className, ...props }: TSearchBar) {
       <input
         className="w-full rounded-[10px] bg-transparent py-2.5 !outline-none placeholder:text-zinc-400 focus-visible:!outline-none dark:placeholder:text-zinc-600"
         type="search"
+        defaultValue={query ?? ""}
         ref={inputRef}
         tabIndex={-1}
         {...props}
