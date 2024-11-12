@@ -1,8 +1,8 @@
 import fs from "fs";
 import path from "path";
 
-import type { Locale } from "@/interfaces/i18n.interface";
-import { BASE_PATH } from "@/server/functions/docs/constants";
+import type { Locale } from "@/interfaces/i18n";
+import { BASE_PATH } from "@/shared/utils/docs/constants";
 
 import type { Location } from "./types";
 

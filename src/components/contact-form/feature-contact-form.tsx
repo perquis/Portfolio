@@ -6,12 +6,12 @@ import { useForm } from "react-hook-form";
 import type { z } from "zod";
 
 import { ScheduleMeeting } from "@/components";
-import { useAlert } from "@/providers/alert.provider";
-import { contactFormSchema } from "@/schemas/contact-form.schema";
+import { usePathname } from "@/libs/next-intl";
+import { useAlert } from "@/providers/alert";
+import { contactFormSchema } from "@/schemas/contact-form";
 import { sendMail } from "@/server/actions/sendMail";
 import { useOpen } from "@/shared/hooks";
 import { Button, Checkbox, Form, Header, Input, Regular, Section, Textarea } from "@/shared/ui";
-import { usePathname } from "@/third-party/next-intl";
 
 export type Schema = z.infer<typeof contactFormSchema>;
 

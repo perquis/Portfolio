@@ -1,8 +1,8 @@
 import clsx from "clsx";
 import type { ComponentProps } from "react";
 
+import { Link } from "@/libs/next-intl";
 import * as icons from "@/shared/icons/design";
-import { Link } from "@/third-party/next-intl";
 
 type TArrowLink = ComponentProps<typeof Link>;
 

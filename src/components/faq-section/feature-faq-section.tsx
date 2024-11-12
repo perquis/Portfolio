@@ -3,8 +3,8 @@
 import clsx from "clsx";
 import { useTranslations } from "next-intl";
 
+import { usePathname } from "@/libs/next-intl";
 import { Paragraph, Regular, Section } from "@/shared/ui";
-import { usePathname } from "@/third-party/next-intl";
 
 import { QuestionsList } from "./ui-questions-list";
 

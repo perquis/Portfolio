@@ -2,8 +2,8 @@
 
 import type { PropsWithChildren } from "react";
 
-import { RootTemplate, SlugTemplate } from "@/templates";
-import { usePathname } from "@/third-party/next-intl";
+import { RootTemplate, SlugTemplate } from "@/app/(templates)";
+import { usePathname } from "@/libs/next-intl";
 
 export default function Template({ children }: PropsWithChildren) {
   const pathname = usePathname();

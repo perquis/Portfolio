@@ -4,7 +4,7 @@ import { render } from "@react-email/components";
 
 import type { Schema } from "@/components";
 import ContactFormMessageMail from "@/emails/messages/contact-form";
-import { transporter } from "@/services/nodemailer";
+import { transporter } from "@/libs/nodemailer";
 import { capitalized } from "@/shared/utils/capitalized";
 
 export async function sendMail({ name, email, message, checked }: Schema) {

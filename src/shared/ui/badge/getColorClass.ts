@@ -1,6 +1,6 @@
 import { match } from "ts-pattern";
 
-import type { Color } from "@/interfaces/tailwindcss.interface";
+import type { Color } from "@/interfaces/tailwindcss";
 
 export const getColorClass = (color: Color) =>
   match(color)

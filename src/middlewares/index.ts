@@ -1,2 +1,2 @@
-export * from "./next-intl.middlewares";
-export * from "./x-frame-pathname.middlewares";
+export * from "./next-intl";
+export * from "./x-frame-pathname";

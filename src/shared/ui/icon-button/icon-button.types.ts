@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/consistent-type-imports */
 import type { ComponentProps } from "react";
 
-import type { Rounded, Size } from "@/interfaces/variants.interface";
+import type { Rounded, Size } from "@/interfaces/variants";
 import * as icons from "@/shared/icons/design";
 
 export type ButtonProps = ComponentProps<"button">;

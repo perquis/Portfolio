@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import type { ComponentProps } from "react";
 
-import { Link as NextLink } from "@/third-party/next-intl";
+import { Link as NextLink } from "@/libs/next-intl";
 
 type TLink = ComponentProps<typeof NextLink>;
 

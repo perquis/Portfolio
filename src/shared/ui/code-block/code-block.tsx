@@ -1,7 +1,7 @@
 import type { ComponentProps } from "react";
 
-import { highlightCode } from "@/server/functions/code/highlights";
 import type { Code, SegmentedControl } from "@/shared/ui";
+import { highlightCode } from "@/shared/utils";
 
 import CodeProvider from "./code.provider";
 import CodeWrapper from "./wrapper";

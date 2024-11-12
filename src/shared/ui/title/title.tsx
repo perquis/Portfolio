@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import type { ComponentProps } from "react";
 
-import type { Level } from "@/interfaces/html.interface";
+import type { Level } from "@/interfaces/html";
 
 type TTitle = {
   level?: Level;

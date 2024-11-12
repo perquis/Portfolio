@@ -1,7 +1,7 @@
 import type { FC } from "react";
 
-import type { TMetadata } from "@/server/functions/docs/types";
 import { Card } from "@/shared/ui";
+import type { TMetadata } from "@/shared/utils/docs/types";
 
 export const List: FC<Record<"items", TMetadata[]>> = ({ items }) => {
   return (

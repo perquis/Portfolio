@@ -4,7 +4,7 @@ import clsx from "clsx";
 import debounce from "lodash.debounce";
 import { type ChangeEvent, type ComponentProps } from "react";
 
-import { useKeywords } from "@/providers/keywords.provider";
+import { useKeywords } from "@/providers/keywords";
 import { Search } from "@/shared/icons/design";
 
 import { useFocus } from "./use-focus";

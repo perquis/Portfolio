@@ -1,19 +1,18 @@
-/* eslint-disable import/no-anonymous-default-export */
+"use server";
+
 import fs from "fs";
 import { getLocale } from "next-intl/server";
 import { serialize } from "next-mdx-remote/serialize";
 import path from "path";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
-import type { Locale } from "@/interfaces/i18n.interface";
-import { METADATA_RESPONSE } from "@/server/functions/docs/constants";
-import { createFileNameWithLocale, getPathToResources, getSlugsWithoutFiles } from "@/server/functions/docs/utils";
+import type { Locale } from "@/interfaces/i18n";
+import { METADATA_RESPONSE } from "@/shared/utils/docs/constants";
+import { createFileNameWithLocale, getPathToResources, getSlugsWithoutFiles } from "@/shared/utils/docs/utils";
 
 import type { Location, TMetadata } from "./types";
 
-async function getSourcesSinceMdxFiles(rootDirectory: Location, slug: string, currentLocale: Locale) {
-  "use server";
-
+export async function getSourcesSinceMdxFiles(rootDirectory: Location, slug: string, currentLocale: Locale) {
   const fileNameWithLocale = createFileNameWithLocale(slug, currentLocale),
     pathToDirectoryWithMdxFiles = getPathToResources(rootDirectory, slug),
     pathToSpecificFile = path.join(pathToDirectoryWithMdxFiles, fileNameWithLocale),
@@ -30,9 +29,7 @@ async function getSourcesSinceMdxFiles(rootDirectory: Location, slug: string, cu
   return { ...source, updatedAt: mtime };
 }
 
-async function getItemsWithPublishedDate(rootDirectory: Location) {
-  "use server";
-
+export async function getItemsWithPublishedDate(rootDirectory: Location) {
   const currentLocale = (await getLocale()) as Locale,
     slugsWithoutFiles = await getSlugsWithoutFiles(rootDirectory);
 
@@ -65,7 +62,7 @@ async function getItemsWithPublishedDate(rootDirectory: Location) {
   return itemsWithPublishedDate;
 }
 
-async function getItemsWithMetadata(rootDirectory: Location): Promise<TMetadata[]> {
+export async function getItemsWithMetadata(rootDirectory: Location): Promise<TMetadata[]> {
   try {
     const itemsWithPublishedDate = await getItemsWithPublishedDate(rootDirectory);
 
@@ -80,9 +77,3 @@ async function getItemsWithMetadata(rootDirectory: Location): Promise<TMetadata[
     return [];
   }
 }
-
-export default {
-  getSourcesSinceMdxFiles,
-  getSlugsWithoutFiles,
-  getItemsWithMetadata,
-};

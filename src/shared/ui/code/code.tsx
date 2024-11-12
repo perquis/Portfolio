@@ -1,5 +1,5 @@
-import { highlightCode } from "@/server/functions/code/highlights";
 import { CopyToClipboard } from "@/shared/ui";
+import { highlightCode } from "@/shared/utils";
 
 /**
  * You can visit examples here https://github.com/rehype-pretty/rehype-pretty-code/blob/master/examples/next/src/app/rsc/page.tsx.

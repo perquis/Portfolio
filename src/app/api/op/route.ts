@@ -1,6 +1,6 @@
-import type { Locale } from "@/interfaces/i18n.interface";
-import { docs } from "@/server/functions";
-import type { Location } from "@/server/functions/docs/types";
+import type { Locale } from "@/interfaces/i18n";
+import { getSourcesSinceMdxFiles } from "@/shared/utils";
+import type { Location } from "@/shared/utils/docs/types";
 
 export const GET = async (request: Request) => {
   const url = new URL(request.url);
@@ -14,7 +14,7 @@ export const GET = async (request: Request) => {
     });
   }
 
-  const { frontmatter } = await docs.getSourcesSinceMdxFiles(location, slug, locale);
+  const { frontmatter } = await getSourcesSinceMdxFiles(location, slug, locale);
 
   return new Response(JSON.stringify(frontmatter.open_graph_img), {
     headers: {
