@@ -1,16 +1,20 @@
 "use client";
 
 import clsx from "clsx";
+import { useLocale } from "next-intl";
+import { Link } from "next-view-transitions";
 import type { ComponentProps } from "react";
 
 import type { IsLock } from "@/interfaces/variants";
-import { Link, usePathname } from "@/libs/next-intl";
+import { usePathname } from "@/libs/next-intl";
 
 type TTab = ComponentProps<typeof Link> & IsLock;
 
 export default function Tab({ children, className, lock, ...props }: TTab) {
   const pathname = usePathname(),
     isActive = pathname === props.href;
+
+  const locale = useLocale();
 
   return (
     <Link
@@ -21,6 +25,7 @@ export default function Tab({ children, className, lock, ...props }: TTab) {
       )}
       tabIndex={lock ? -1 : isActive ? -1 : undefined}
       {...props}
+      href={`/${locale}${props.href}`}
     >
       {children}
     </Link>

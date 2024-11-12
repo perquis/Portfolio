@@ -1,8 +1,8 @@
 import clsx from "clsx";
 import { useLocale } from "next-intl";
-import type { ComponentProps } from "react";
+import { Link } from "next-view-transitions";
+import { type ComponentProps } from "react";
 
-import { Link } from "@/libs/next-intl";
 import { CalendarEvent } from "@/shared/icons/design";
 import { Badge, Paragraph, Ratio, Regular, Section, Title } from "@/shared/ui";
 import type { TMetadata } from "@/shared/utils/docs/types";
@@ -15,8 +15,8 @@ type TCard = {
   TMetadata;
 
 export default function Card({ title, description, className, thumbnail_img, publishedAt, slug, tags }: TCard) {
-  const redirectTo = `/blog/${slug}`;
   const locale = useLocale();
+  const redirectTo = `/${locale}/blog/${slug}`;
 
   return (
     <Section className={clsx("items-start gap-3 rounded-3xl", className)}>
