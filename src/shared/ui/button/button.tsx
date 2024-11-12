@@ -56,7 +56,7 @@ export default function Button({ children, size, variants, loading, mode, classN
   return (
     <button
       className={clsx(
-        "flex items-center border-2 border-b-0 bg-gradient-to-t font-medium shadow-md ring-2 duration-200 ease-in-out hover:opacity-90 focus-visible:opacity-90 active:scale-95 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-25",
+        "flex items-center border-2 border-b-0 bg-gradient-to-t font-medium shadow-md ring-2 transition-opacity duration-200 ease-in-out hover:opacity-90 focus-visible:opacity-90 active:scale-95 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-25",
         sizes,
         colors,
         className,
