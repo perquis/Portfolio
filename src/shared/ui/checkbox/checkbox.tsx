@@ -3,7 +3,7 @@
 import type { ComponentProps } from "react";
 import { forwardRef } from "react";
 
-import { Checkmark } from "@/shared/icons/design";
+import { Checkmark } from "@/shared/icons/generals";
 
 type TCheckBox = ComponentProps<"input">;
 

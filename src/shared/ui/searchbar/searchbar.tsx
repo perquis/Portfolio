@@ -5,7 +5,7 @@ import debounce from "lodash/debounce";
 import { useQueryState } from "nuqs";
 import { type ChangeEvent, type ComponentProps } from "react";
 
-import { Search } from "@/shared/icons/design";
+import { Search } from "@/shared/icons/generals";
 
 import { useFocus } from "./use-focus";
 

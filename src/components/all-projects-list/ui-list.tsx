@@ -6,7 +6,7 @@ import { type Dispatch, type FC, type SetStateAction, useState } from "react";
 
 import type { TMetadata } from "@/interfaces/markdown";
 import { Link } from "@/libs/next-intl";
-import { ArrowLeft } from "@/shared/icons/design";
+import { ArrowLeft } from "@/shared/icons/generals";
 import { ArrowLink, Paragraph, Ratio, Regular, Section, Title, Transition } from "@/shared/ui";
 
 export const List: FC<{ items: TMetadata[] }> = ({ items }) => {

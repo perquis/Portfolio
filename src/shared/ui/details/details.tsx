@@ -2,7 +2,7 @@ import Link from "next/link";
 import { type ComponentProps, type FC, Fragment } from "react";
 import { match } from "ts-pattern";
 
-import { LinkOut } from "@/shared/icons/design";
+import { LinkOut } from "@/shared/icons/generals";
 import { Badge, Regular, Section } from "@/shared/ui";
 
 interface IDetails {

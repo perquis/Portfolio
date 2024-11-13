@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { motion } from "framer-motion";
 import { Fragment } from "react";
 
-import * as stacks from "@/shared/icons/stacks";
+import * as stacks from "@/shared/icons/programming-languages";
 import { Section } from "@/shared/ui";
 import { useCode } from "@/shared/ui/code-block/code.provider";
 

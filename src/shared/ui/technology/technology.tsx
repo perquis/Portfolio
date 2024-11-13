@@ -1,5 +1,5 @@
-import { Grid } from "@/shared/icons/design";
-import * as stacks from "@/shared/icons/stacks";
+import { Grid } from "@/shared/icons/generals";
+import * as stacks from "@/shared/icons/programming-languages";
 import { Paragraph, Section, Title } from "@/shared/ui";
 
 type IconName = keyof typeof stacks;

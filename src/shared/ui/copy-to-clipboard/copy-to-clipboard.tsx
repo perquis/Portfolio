@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { useEffect } from "react";
 
 import { useOpen } from "@/shared/hooks";
-import { Checkmark, Clipboard } from "@/shared/icons/design";
+import { Checkmark, Clipboard } from "@/shared/icons/generals";
 import { Tooltip } from "@/shared/ui";
 
 interface ICopyToClipboard {

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ScheduleMeeting } from "@/components";
 import { socials } from "@/data";
 import { usePathname } from "@/libs/next-intl";
-import * as icons from "@/shared/icons/design";
+import * as icons from "@/shared/icons/generals";
 import { Section } from "@/shared/ui";
 
 export const SocialsList = () => {

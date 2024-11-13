@@ -2,7 +2,7 @@
 import type { ComponentProps } from "react";
 
 import type { Rounded, Size } from "@/interfaces/variants";
-import * as icons from "@/shared/icons/design";
+import * as icons from "@/shared/icons/generals";
 
 export type ButtonProps = ComponentProps<"button">;
 type ExcludedSize = Exclude<Size, "tiny">;

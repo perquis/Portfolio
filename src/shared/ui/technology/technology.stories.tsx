@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import * as stacks from "@/shared/icons/stacks";
+import * as stacks from "@/shared/icons/programming-languages";
 import { Section, Technology } from "@/shared/ui";
 
 const meta = {

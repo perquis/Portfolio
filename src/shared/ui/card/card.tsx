@@ -4,7 +4,7 @@ import { Link } from "next-view-transitions";
 import { type ComponentProps } from "react";
 
 import type { TMetadata } from "@/interfaces/markdown";
-import { CalendarEvent } from "@/shared/icons/design";
+import { CalendarEvent } from "@/shared/icons/generals";
 import { Badge, Paragraph, Ratio, Regular, Section, Title } from "@/shared/ui";
 
 type NextLinkProps = ComponentProps<typeof Link>;
