@@ -3,9 +3,9 @@ import { useLocale } from "next-intl";
 import { Link } from "next-view-transitions";
 import { type ComponentProps } from "react";
 
+import type { TMetadata } from "@/interfaces/markdown";
 import { CalendarEvent } from "@/shared/icons/design";
 import { Badge, Paragraph, Ratio, Regular, Section, Title } from "@/shared/ui";
-import type { TMetadata } from "@/shared/utils/docs/types";
 
 type NextLinkProps = ComponentProps<typeof Link>;
 

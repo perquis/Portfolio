@@ -4,12 +4,12 @@ on:
   push:
     branches:
       - main
-    paths: ["docs/**", "public/**"]
+    paths: ["(resources)/**", "public/**"]
 
   pull_request:
     branches:
       - main
-    paths: ["docs/**", "public/**"]
+    paths: ["(resources)/**", "public/**"]
 
   workflow_run:
     workflows: ["🔖 Create new release and tag with changelogs"]

@@ -1,8 +1,8 @@
 import { useTranslations } from "next-intl";
 import type { FC } from "react";
 
+import type { TMetadata } from "@/interfaces/markdown";
 import { Paragraph, Regular, Section, Title } from "@/shared/ui";
-import type { TMetadata } from "@/shared/utils/docs/types";
 
 import { List } from "./ui-list";
 

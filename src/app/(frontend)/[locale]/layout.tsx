@@ -7,8 +7,7 @@ import { Suspense } from "react";
 
 import { AppProvider } from "@/app/(frontend)/[locale]/_providers";
 import { locales } from "@/config/i18n";
-import { PageBackground } from "@/shared/icons/design/page-background";
-import { Cursor, GlobalLayout, Navigation } from "@/shared/ui";
+import { BackgroundScene, Cursor, GlobalLayout, Navigation } from "@/shared/ui";
 
 import "./globals.css";
 
@@ -35,7 +34,7 @@ export default async function AppLayout({
             <AppProvider>
               <Navigation />
               <GlobalLayout>
-                <PageBackground />
+                <BackgroundScene />
                 {children}
                 <Cursor />
               </GlobalLayout>

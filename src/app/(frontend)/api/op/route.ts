@@ -1,6 +1,6 @@
 import type { Locale } from "@/interfaces/i18n";
+import type { Location } from "@/interfaces/markdown";
 import { getSourcesSinceMdxFiles } from "@/shared/utils";
-import type { Location } from "@/shared/utils/docs/types";
 
 export const GET = async (request: Request) => {
   const url = new URL(request.url);

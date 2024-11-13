@@ -3,8 +3,8 @@
 import { useQueryState } from "nuqs";
 import type { FC } from "react";
 
+import type { TMetadata } from "@/interfaces/markdown";
 import { Card } from "@/shared/ui";
-import type { TMetadata } from "@/shared/utils/docs/types";
 
 export const List: FC<Record<"items", TMetadata[]>> = ({ items }) => {
   const [q] = useQueryState("q");

@@ -4,10 +4,10 @@ import clsx from "clsx";
 import { useTranslations } from "next-intl";
 import { type Dispatch, type FC, type SetStateAction, useState } from "react";
 
+import type { TMetadata } from "@/interfaces/markdown";
 import { Link } from "@/libs/next-intl";
 import { ArrowLeft } from "@/shared/icons/design";
 import { ArrowLink, Paragraph, Ratio, Regular, Section, Title, Transition } from "@/shared/ui";
-import type { TMetadata } from "@/shared/utils/docs/types";
 
 export const List: FC<{ items: TMetadata[] }> = ({ items }) => {
   const [selected, setSelected] = useState(items[0]?.title);

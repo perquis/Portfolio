@@ -7,10 +7,9 @@ import path from "path";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 import type { Locale } from "@/interfaces/i18n";
-import { METADATA_RESPONSE } from "@/shared/utils/docs/constants";
-import { createFileNameWithLocale, getPathToResources, getSlugsWithoutFiles } from "@/shared/utils/docs/utils";
-
-import type { Location, TMetadata } from "./types";
+import type { Location, TMetadata } from "@/interfaces/markdown";
+import { createFileNameWithLocale, getPathToResources, getSlugsWithoutFiles } from "@/shared/utils/markdown/helpers";
+import { METADATA_RESPONSE } from "@/shared/utils/markdown/settings";
 
 export async function getSourcesSinceMdxFiles(rootDirectory: Location, slug: string, currentLocale: Locale) {
   const fileNameWithLocale = createFileNameWithLocale(slug, currentLocale),

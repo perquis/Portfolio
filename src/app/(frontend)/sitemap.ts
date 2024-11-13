@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { locales } from "@/config/i18n";
-import { getSlugsWithoutFiles } from "@/shared/utils/docs/utils";
+import { getSlugsWithoutFiles } from "@/shared/utils/markdown/helpers";
 
 const pathnames = ["/", "/portfolio", "/blog", "/contact"];
 
