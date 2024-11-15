@@ -1,4 +1,3 @@
-import ESLintWebpackPlugin from "eslint-webpack-plugin";
 import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin("./src/config/i18n.ts");
@@ -52,13 +51,6 @@ const nextConfig = {
         ],
       },
     ];
-  },
-  webpack(config, { dev }) {
-    if (dev) {
-      config.plugins.push(new ESLintWebpackPlugin({ extensions: ["js", "jsx", "ts", "tsx"] }));
-    }
-
-    return config;
   },
 };
 

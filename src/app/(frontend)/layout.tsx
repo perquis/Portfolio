@@ -3,7 +3,6 @@ import type { PropsWithChildren } from "react";
 import { locales } from "@/config/i18n";
 
 export const metadata = {
-  metadataBase: new URL(process.env.VERCEL_URL!),
   alternates: {
     canonical: "/",
     languages: {
