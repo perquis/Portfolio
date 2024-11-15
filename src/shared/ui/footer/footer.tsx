@@ -7,9 +7,9 @@ export default function Footer() {
   const t = useTranslations();
 
   return (
-    <Section className="!flex-row items-start justify-between">
+    <Section className="!flex-row flex-wrap items-start justify-between gap-5">
       <Logo />
-      <Section className="z-50 items-end gap-2">
+      <Section className="z-50 items-end gap-2 max-[492px]:!items-start">
         <Regular className="!text-sm">{t("FOOTER_ALL_RIGHTS_RESERVED")}</Regular>
         <ToggleTheme />
       </Section>
