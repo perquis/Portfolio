@@ -67,7 +67,7 @@ export const ContactForm = () => {
         <Section className="gap-3">
           <Section className="gap-3 sm:!flex-row">
             <Input
-              placeholder="John Doe"
+              placeholder={t("CONTACT_FORM_PLACEHOLDER_NAME")}
               autoComplete="name"
               labelText={t("CONTACT_FORM_INPUT_NAME")}
               id="name"
@@ -77,7 +77,7 @@ export const ContactForm = () => {
             <Input
               type="email"
               autoComplete="email"
-              placeholder="jdoe@gmail.com"
+              placeholder={t("CONTACT_FORM_PLACEHOLDER_EMAIL")}
               labelText={t("CONTACT_FORM_INPUT_EMAIL")}
               id="email"
               error={errors.email?.message}
@@ -89,7 +89,7 @@ export const ContactForm = () => {
             id="message"
             error={errors.message?.message}
             {...register("message", { required: true })}
-            placeholder={t("CONTACT_FORM_TEXTAREA_MESSAGE")}
+            placeholder={t("CONTACT_FORM_PLACEHOLDER_MESSAGE")}
           />
           <label className="mt-2 flex items-start gap-3" htmlFor="checked">
             <Checkbox {...register("checked", { required: true })} required id="checked" />
