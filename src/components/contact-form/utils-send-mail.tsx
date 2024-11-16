@@ -13,5 +13,9 @@ export const sendMail = async (email: Schema) => {
   const html = await render(<ContactFormMessageMail email={email} />),
     subject = `${capitalized(email.name)} sent mail for you 📧!`;
 
-  transporter.sendMail({ to, subject, html });
+  try {
+    transporter.sendMail({ to, subject, html });
+  } catch (error) {
+    throw new Error(`Something went wrong with sending mail on the server side...`);
+  }
 };

@@ -32,7 +32,9 @@ export default function ContactFormMessageMail({ email: { name, email, message }
             I sent you a mail from your website. Please check it out as soon as possible. You can find my message below:
           </Text>
 
-          <Text className="text-zinc-700">{message}</Text>
+          <b className="text-zinc-700">
+            <i>{message}</i>
+          </b>
 
           <Text className="text-zinc-700">
             <strong>Best regards,</strong>
