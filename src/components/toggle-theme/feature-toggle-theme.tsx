@@ -8,7 +8,7 @@ import { useMounted } from "@/shared/hooks";
 import { Moon, Sun } from "@/shared/icons/generals";
 import { Section } from "@/shared/ui";
 
-export default function ToggleTheme() {
+export const ToggleTheme = () => {
   const { theme, systemTheme, setTheme } = useTheme();
   const mounted = useMounted();
 
@@ -53,4 +53,4 @@ export default function ToggleTheme() {
       />
     </Section>
   );
-}
+};

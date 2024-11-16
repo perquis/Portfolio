@@ -11,4 +11,5 @@ export * from "./selected-projects-list/feature-selected-projects-list";
 export * from "./services-list/feature-services-list";
 export * from "./social-links-list/feature-social-links-list";
 export * from "./technologies-list/feature-technologies-list";
+export * from "./toggle-theme/feature-toggle-theme";
 export * from "./workflows-list/feature-workflows-list";
