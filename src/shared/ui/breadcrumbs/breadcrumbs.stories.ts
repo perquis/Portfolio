@@ -1,3 +1,4 @@
+import { HomeIcon } from "@heroicons/react/24/outline";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Breadcrumbs } from "@/shared/ui";
@@ -30,6 +31,7 @@ export const Default: Story = {
   args: {
     links: [
       {
+        Icon: HomeIcon,
         label: "Blog",
         href: "/blog",
       },
