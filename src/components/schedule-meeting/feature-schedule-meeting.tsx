@@ -40,7 +40,7 @@ export const ScheduleMeeting = () => {
       {isOpen &&
         createPortal(
           <div className="pointer-events-auto flex h-full w-full items-center justify-center bg-zinc-950/75 backdrop-blur-lg dark:bg-white/5 sm:p-5">
-            <div className="w-full max-w-[1080px]" ref={calComRef}>
+            <div className="max-h-screen w-full max-w-[1080px] overflow-y-auto" ref={calComRef}>
               <CalComWidget
                 namespace={process.env.NEXT_PUBLIC_CALCOM_NAMESPACE!}
                 calLink={process.env.NEXT_PUBLIC_CALCOM_LINK!}
