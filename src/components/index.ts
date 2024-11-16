@@ -6,6 +6,7 @@ export * from "./faq-section/feature-faq-section";
 export * from "./github-activity/feature-github-activity";
 export * from "./hero-section/feature-hero-section";
 export * from "./jobs-list/feature-jobs-list";
+export * from "./language-switcher/feature-language-switcher";
 export * from "./schedule-meeting/feature-schedule-meeting";
 export * from "./selected-projects-list/feature-selected-projects-list";
 export * from "./services-list/feature-services-list";
