@@ -2,12 +2,14 @@
 
 import { type Dispatch, type PropsWithChildren, type SetStateAction, createContext, useContext, useState } from "react";
 
+import type { Nullable } from "@/interfaces/utility-types";
+
 type TCodeContext = {
   selected: string;
   setSelected: Dispatch<SetStateAction<string>>;
 };
 
-const CodeContext = createContext<TCodeContext | null>(null);
+const CodeContext = createContext<Nullable<TCodeContext>>(null);
 
 export default function CodeProvider({ name, children }: PropsWithChildren & { name: string }) {
   const [selected, setSelected] = useState(name);

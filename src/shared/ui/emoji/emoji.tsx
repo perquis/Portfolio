@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { match } from "ts-pattern";
 
 import { emojis } from "@/data";
+import type { Nullable } from "@/interfaces/utility-types";
 import type { Size } from "@/interfaces/variants";
 import { useOpen } from "@/shared/hooks";
 
@@ -18,7 +19,7 @@ interface IEmoji {
 }
 
 export default function Emoji({ emoji, size }: IEmoji) {
-  const [dotLottie, setDotLottie] = useState<DotLottie | null>(null);
+  const [dotLottie, setDotLottie] = useState<Nullable<DotLottie>>(null);
   const foundEmoji = emojis.find((e) => e.name === emoji);
   const [isOpen, [open, close]] = useOpen();
 

@@ -11,13 +11,14 @@ import {
 } from "react";
 import { createPortal } from "react-dom";
 
+import type { Nullable } from "@/interfaces/utility-types";
 import { Alert } from "@/shared/ui";
 
 type TAlertProvider = { alert: AlertOrNull; setAlert: (alert: AlertOrNull) => void };
-type TAlertContext = ComponentProps<typeof Alert> | null;
-type AlertOrNull = TAlertContext | null;
+type TAlertContext = Nullable<ComponentProps<typeof Alert>>;
+type AlertOrNull = Nullable<TAlertContext>;
 
-const AlertContext = createContext<TAlertProvider | null>(null);
+const AlertContext = createContext<Nullable<TAlertProvider>>(null);
 
 export default function AlertProvider({ children }: PropsWithChildren) {
   const [alert, setAlert] = useState<AlertOrNull>(null);

@@ -2,8 +2,10 @@
 
 import { type PropsWithChildren, createContext, useContext, useEffect, useMemo, useState } from "react";
 
+import type { Nullable } from "@/interfaces/utility-types";
+
 type Platform = "mobile" | "desktop";
-type PlatformOrNull = Platform | null;
+type PlatformOrNull = Nullable<Platform>;
 
 interface TDeviceContext {
   platform: PlatformOrNull;

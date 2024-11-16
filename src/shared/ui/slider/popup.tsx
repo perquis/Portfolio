@@ -2,6 +2,7 @@ import { AnimatePresence, type Variants, motion } from "framer-motion";
 import { type ComponentProps, type FC, useRef } from "react";
 import ReactFocusLock from "react-focus-lock";
 
+import type { Nullable } from "@/interfaces/utility-types";
 import { useHideBodyScrollbar, useOutsideOnClick } from "@/shared/hooks";
 import type { Ratio } from "@/shared/ui";
 import { IconButton } from "@/shared/ui";
@@ -10,7 +11,7 @@ type RatioProps = ComponentProps<typeof Ratio>;
 type Slide = Pick<RatioProps, "src" | "alt">;
 
 interface IPopup {
-  selectedId: string | null;
+  selectedId: Nullable<string>;
   slide: Slide;
   close: () => void;
 }

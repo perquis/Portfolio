@@ -4,13 +4,14 @@ import { cloneElement, useState } from "react";
 import GitHubCalendar from "react-github-calendar";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 
+import type { Nullable } from "@/interfaces/utility-types";
 import { useMounted } from "@/shared/hooks";
 import { Chip, Section } from "@/shared/ui";
 
 import { themeInput } from "./data-theme-colors";
 
 export const Calendar = () => {
-  const [selectedYear, setSelectedYear] = useState<number | null>(null),
+  const [selectedYear, setSelectedYear] = useState<Nullable<number>>(null),
     mounted = useMounted();
 
   if (!mounted) return null;
