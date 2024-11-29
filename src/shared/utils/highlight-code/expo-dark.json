@@ -1156,6 +1156,7 @@
     "button.background": "#0954a5",
     "dropdown.background": "#151718",
     "editor.background": "#151718",
+    "editor.foreground": "#ffffff",
     "editor.border": "#151718",
     "editor.selectionBackground": "#2b2f31",
     "editor.selectionHighlightBackground": "#2b2f31",

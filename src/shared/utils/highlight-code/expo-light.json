@@ -1143,6 +1143,7 @@
     "button.background": "#0081f1",
     "editor.background": "#ffffff",
     "editor.border": "#ffffff",
+    "editor.foreground": "#000000",
     "editor.selectionBackground": "#d7dbdf",
     "editor.selectionHighlightBackground": "#d7dbdf",
     "editor.wordHighlightBackground": "#d7dbdf",
