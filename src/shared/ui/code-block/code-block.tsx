@@ -15,11 +15,11 @@ type TCodeBlock = {
 };
 
 export default async function CodeBlock({ controls, snippets }: TCodeBlock) {
-  const codes = await Promise.all(snippets.map(async ({ code }) => ({ code: await highlightCode(code) })));
+  const processedCodeSnippets = await Promise.all(snippets.map(async ({ code }) => await highlightCode(code)));
 
   return (
     <CodeProvider name={controls[0].name}>
-      <CodeWrapper controls={controls} snippets={codes} />
+      <CodeWrapper controls={controls} snippets={processedCodeSnippets} />
     </CodeProvider>
   );
 }

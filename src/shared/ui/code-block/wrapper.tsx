@@ -1,40 +1,36 @@
 "use client";
 
-import { type ComponentProps } from "react";
+import clsx from "clsx";
+import { type ComponentProps, Fragment } from "react";
 
-import type { Code } from "@/shared/ui";
 import { CopyToClipboard, Section, SegmentedControl } from "@/shared/ui";
 import { useCode } from "@/shared/ui/code-block/code.provider";
+import { type IHighlightedCode, getVisibilityClass } from "@/shared/utils";
 
-type TCode = ComponentProps<typeof Code>;
 type TSegmentedControl = ComponentProps<typeof SegmentedControl>;
 
 type TCodeBlock = {
   controls: TSegmentedControl["controls"];
-  snippets: TCode[];
+  snippets: IHighlightedCode[][];
 };
 
 export default function CodeWrapper({ controls, snippets }: TCodeBlock) {
   const { selected } = useCode()!;
 
-  if (!controls || !snippets) {
-    throw new Error("Controls and snippets must be provided");
-  }
-
-  if (controls.length !== snippets.length) {
-    throw new Error("Controls and snippets length must be equal");
-  }
-
   return (
     <Section className="w-full gap-2">
       <SegmentedControl controls={controls} />
       {snippets.map(
-        ({ code }, index) =>
+        (_, index) =>
           selected === controls[index].name && (
-            <div className="relative" key={index}>
-              <Section dangerouslySetInnerHTML={{ __html: code }} />
-              <CopyToClipboard code={code} />
-            </div>
+            <Fragment key={crypto.randomUUID()}>
+              {_.map(({ __html, theme }) => (
+                <div className={clsx("relative", getVisibilityClass(theme))} key={crypto.randomUUID()}>
+                  <Section dangerouslySetInnerHTML={{ __html }} />
+                  <CopyToClipboard code={theme} />
+                </div>
+              ))}
+            </Fragment>
           ),
       )}
     </Section>
