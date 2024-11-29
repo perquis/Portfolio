@@ -48,6 +48,7 @@
     "react-hook-form": "^7.52.1",
     "react-loader-spinner": "^6.1.6",
     "react-tooltip": "^5.28.0",
+    "react-tweet": "^3.2.1",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-pretty-code": "^0.13.2",
     "rehype-stringify": "^10.0.0",
