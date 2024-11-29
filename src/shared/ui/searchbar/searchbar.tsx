@@ -35,7 +35,7 @@ export default function SearchBar({ className, ...props }: TSearchBar) {
     >
       <Search width={20} height={20} className="flex-shrink-0 text-zinc-500" />
       <input
-        className="w-full rounded-[10px] bg-transparent py-2.5 !outline-none placeholder:text-zinc-400 focus-visible:!outline-none dark:placeholder:text-zinc-600"
+        className="w-full rounded-[10px] bg-transparent py-2.5 !outline-none placeholder:text-zinc-500 focus-visible:!outline-none focus-visible:placeholder:text-zinc-600 dark:hover:placeholder:text-zinc-400 dark:focus-visible:placeholder:text-zinc-400"
         type="search"
         defaultValue={query ?? ""}
         ref={inputRef}
