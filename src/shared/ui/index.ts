@@ -19,6 +19,7 @@ export { default as Cursor } from "./cursor/cursor";
 export { default as Details } from "./details/details";
 export { default as Dialog } from "./dialog/dialog";
 export { default as Divider } from "./divider/divider";
+export { default as DynamicImage } from "./dynamic-image/dynamic-image";
 export { default as Emoji } from "./emoji/emoji";
 export { default as Feedback } from "./feedback/feedback";
 export { default as Footer } from "./footer/footer";
