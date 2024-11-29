@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 
 import { useHideBodyScrollbar, useKey, useOpen, useOutsideOnClick } from "@/shared/hooks";
-import { Button } from "@/shared/ui";
+import { RainbowButton } from "@/shared/ui";
 
 export const ScheduleMeeting = () => {
   const [isOpen, [open, close]] = useOpen();
@@ -34,9 +34,9 @@ export const ScheduleMeeting = () => {
 
   return (
     <>
-      <Button mode="simple" size="small" variants="black" onClick={open} data-test-id="schedule-meeting">
+      <RainbowButton onClick={open} data-test-id="schedule-meeting" className="!rounded-lg !px-4 !py-2 text-xs">
         {t("HOME_HERO_BUTTON_MEETING")}
-      </Button>
+      </RainbowButton>
       {isOpen &&
         createPortal(
           <div className="pointer-events-auto flex h-full w-full items-center justify-center bg-zinc-950/75 backdrop-blur-lg dark:bg-white/5 sm:p-5">
