@@ -10,9 +10,10 @@ import { Tooltip } from "@/shared/ui";
 
 interface ICopyToClipboard {
   code: string;
+  className?: string;
 }
 
-export default function CopyToClipboard({ code }: ICopyToClipboard) {
+export default function CopyToClipboard({ code, className }: ICopyToClipboard) {
   const [isCopied, [copied, clear]] = useOpen();
   const Icon = isCopied ? Checkmark : Clipboard;
   const t = useTranslations();
@@ -39,7 +40,7 @@ export default function CopyToClipboard({ code }: ICopyToClipboard) {
   return (
     <Tooltip
       label={isCopied ? t("COPY_TO_CLIPBOARD_SUCCESSFULLY") : t("COPY_TO_CLIPBOARD_IDDLE")}
-      className="!absolute right-2 top-2 hidden md:flex"
+      className={clsx("!absolute right-2 top-2 hidden md:flex", className)}
     >
       <button
         className={clsx(
@@ -47,6 +48,7 @@ export default function CopyToClipboard({ code }: ICopyToClipboard) {
           isCopied && "!text-emerald-500",
           "disabled:cursor-not-allowed",
           "relative",
+          className,
         )}
         onClick={copy}
         disabled={isCopied}
