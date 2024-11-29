@@ -14,3 +14,6 @@ cypress
 public
 
 node_modules
+
+*.mdx
+*.md
