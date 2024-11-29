@@ -7,7 +7,7 @@ import { Suspense } from "react";
 
 import { AppProvider } from "@/app/(frontend)/[locale]/_providers";
 import { locales } from "@/config/i18n";
-import { BackgroundScene, Cursor, GlobalLayout, Navigation } from "@/shared/ui";
+import { BackgroundScene, GlobalLayout, Navigation } from "@/shared/ui";
 
 import "./globals.css";
 
@@ -36,7 +36,6 @@ export default async function AppLayout({
               <GlobalLayout>
                 <BackgroundScene />
                 {children}
-                <Cursor />
               </GlobalLayout>
             </AppProvider>
           </Suspense>
