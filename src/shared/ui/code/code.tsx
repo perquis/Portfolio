@@ -15,7 +15,7 @@ export default async function Code({ code, className }: { code: string; classNam
       {renderedCodeHtml.map(({ __html, theme }, i) => (
         <Fragment key={i}>
           <div
-            className={clsx("w-full", getVisibilityClass(theme), className)}
+            className={clsx("w-full text-sm", getVisibilityClass(theme), className)}
             dangerouslySetInnerHTML={{
               __html,
             }}

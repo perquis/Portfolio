@@ -25,7 +25,7 @@ export default function CodeWrapper({ controls, snippets }: TCodeBlock) {
           selected === controls[index].name && (
             <Fragment key={crypto.randomUUID()}>
               {_.map(({ __html, theme }) => (
-                <div className={clsx("relative", getVisibilityClass(theme))} key={crypto.randomUUID()}>
+                <div className={clsx("relative text-sm", getVisibilityClass(theme))} key={crypto.randomUUID()}>
                   <Section dangerouslySetInnerHTML={{ __html }} />
                   <CopyToClipboard code={__html} />
                 </div>
