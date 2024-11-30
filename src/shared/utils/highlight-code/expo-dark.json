@@ -1155,7 +1155,7 @@
     "breadcrumb.background": "#1a1d1e",
     "button.background": "#0954a5",
     "dropdown.background": "#151718",
-    "editor.background": "#151718",
+    "editor.background": "#09090b",
     "editor.foreground": "#ffffff",
     "editor.border": "#151718",
     "editor.selectionBackground": "#2b2f31",
