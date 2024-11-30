@@ -43,6 +43,7 @@ export { default as Logo } from "./logo/logo";
 export { default as MotionPicture } from "./motion-picture/motion-picture";
 export { default as Navigation } from "./navigation/navigation";
 export { default as Page } from "./page/page";
+export { default as Pagination } from "./pagination/pagination";
 export { default as Paragraph } from "./paragraph/paragraph";
 export { default as RainbowButton } from "./rainbow-button/rainbow-button";
 export { default as Ratio } from "./ratio/ratio";
