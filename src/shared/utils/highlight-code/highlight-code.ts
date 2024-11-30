@@ -5,11 +5,7 @@ import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 
 import type { Theme } from "@/interfaces/theme";
-
-import expoDark from "./expo-dark.json";
-import expoLight from "./expo-light.json";
-
-const parseToTheme = (theme: unknown) => JSON.parse(JSON.stringify(theme));
+import { theme as themes } from "@/shared/themes/theme";
 
 export interface IHighlightedCode {
   __html: string;
@@ -27,8 +23,8 @@ export async function highlightCode(code: string) {
           .use(remarkRehype)
           .use(rehypePrettyCode, {
             filterMetaString: (string) => string.replace(/filename="[^"]*"/, ""),
-            theme: theme === "light" ? parseToTheme(expoLight) : parseToTheme(expoDark),
-            keepBackground: true,
+            theme: theme === "light" ? themes.light : themes.dark,
+            keepBackground: false,
             tokensMap: {
               fn: "entity.name.function",
             },

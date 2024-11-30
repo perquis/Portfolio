@@ -4,6 +4,8 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { codeToHtml } from "shiki";
 
+import { theme } from "@/shared/themes/theme";
+
 interface CodeComparisonProps {
   beforeCode: string;
   afterCode: string;
@@ -13,13 +15,16 @@ interface CodeComparisonProps {
   darkTheme: string;
 }
 
+const lightColorScheme = theme.light;
+const darkColorScheme = theme.dark;
+
 export default function CodeComparison({
   beforeCode,
   afterCode,
   language,
   filename,
-  lightTheme = "light-plus", // "light-plus" | "slack-ochin" | "snazzy-light"
-  darkTheme = "laserwave", // "laserwave" | "houston"
+  lightTheme = lightColorScheme, // "light-plus" | "slack-ochin" | "snazzy-light"
+  darkTheme = darkColorScheme, // "laserwave" | "houston"
 }: CodeComparisonProps) {
   const { theme, systemTheme } = useTheme();
   const [highlightedBefore, setHighlightedBefore] = useState("");
