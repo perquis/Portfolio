@@ -27,6 +27,7 @@ export { default as DotPattern } from "./dot-pattern/dot-pattern";
 export { default as DynamicImage } from "./dynamic-image/dynamic-image";
 export { default as Emoji } from "./emoji/emoji";
 export { default as Feedback } from "./feedback/feedback";
+export { default as FileTree } from "./file-tree/file-tree";
 export { default as Footer } from "./footer/footer";
 export { default as FormField } from "./form-field/form-field";
 export { default as Form } from "./form/form";

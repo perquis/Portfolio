@@ -18,7 +18,7 @@ export default function Navigation() {
       element="nav"
       transition={{ damping: 30, stiffness: 250 }}
       animate={direction === "up" ? { translateY: 0 } : { translateY: "-100%" }}
-      className="fixed left-0 top-0 z-[99999] w-full border-b border-zinc-200/50 bg-white/95 py-2 backdrop-blur-xl dark:border-zinc-800/50 dark:bg-zinc-950/95"
+      className="fixed left-0 top-0 z-50 w-full border-b border-zinc-200/50 bg-white/95 py-2 backdrop-blur-xl dark:border-zinc-800/50 dark:bg-zinc-950/95"
     >
       <Container>
         <Section className="!flex-row items-center justify-between">
