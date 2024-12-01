@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { useTranslations } from "next-intl";
 import { Link as NextViewTransitionLink } from "next-view-transitions";
 import type { ComponentProps } from "react";
 
@@ -14,13 +15,15 @@ type IPagination = {
 };
 
 export default function Pagination({ next, prev }: IPagination) {
+  const t = useTranslations();
+
   if (!next && !prev) return null;
 
   if (next && !prev) {
     return (
       <Section className="!flex-row justify-end text-zinc-800 dark:text-zinc-200">
         <Section className="max-w-[50%] !flex-row items-end gap-2">
-          <PageLink {...next}>Next</PageLink>
+          <PageLink {...next}>{t("NEXT")}</PageLink>
           <ArrowRight className="flex-shrink-0" width={20} height={20} />
         </Section>
       </Section>
@@ -32,7 +35,7 @@ export default function Pagination({ next, prev }: IPagination) {
       <Section className="!flex-row justify-start text-zinc-800 dark:text-zinc-200">
         <Section className="max-w-[50%] !flex-row items-end gap-2">
           <ArrowLeft className="flex-shrink-0" width={20} height={20} />
-          <PageLink {...prev}>Prev</PageLink>
+          <PageLink {...prev}>{t("PREV")}</PageLink>
         </Section>
       </Section>
     );
@@ -42,10 +45,10 @@ export default function Pagination({ next, prev }: IPagination) {
     <Section className="!flex-row justify-between gap-5 text-zinc-800 dark:text-zinc-200">
       <Section className="flex-grow !flex-row items-end gap-2">
         <ArrowLeft className="flex-shrink-0" width={20} height={20} />
-        <PageLink {...prev!}>Prev</PageLink>
+        <PageLink {...prev!}>{t("PREV")}</PageLink>
       </Section>
       <Section className="flex-grow !flex-row items-end gap-2">
-        <PageLink {...next!}>Next</PageLink>
+        <PageLink {...next!}>{t("NEXT")}</PageLink>
         <ArrowRight className="flex-shrink-0" width={20} height={20} />
       </Section>
     </Section>
