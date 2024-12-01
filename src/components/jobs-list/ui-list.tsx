@@ -18,9 +18,9 @@ export const List: FC<IExperiencesList> = ({ items }) => {
     <>
       {items.map(({ name, position, years, image }, index) => (
         <Section className="w-full !flex-row justify-between gap-10" key={index}>
-          <Section className="!flex-row gap-4">
-            <Avatar className="flex-shrink-0" innerShadow size="medium" rounded="full" {...image} />
-            <Section className="gap-1">
+          <Section className="!flex-row items-center gap-4">
+            <Avatar className="!h-10 !w-10 flex-shrink-0" innerShadow size="medium" rounded="full" {...image} />
+            <Section>
               <Title level="b">{name}</Title>
               <Regular>{position}</Regular>
             </Section>
