@@ -28,6 +28,7 @@
   "CONTACT_SOCIALS_TITLE": "Media społecznościowe",
   "COPY_TO_CLIPBOARD_IDDLE": "Skopiuj do schowka",
   "COPY_TO_CLIPBOARD_SUCCESSFULLY": "Skopiowano do schowka! 📋",
+  "DARK_MODE": "Tryb ciemny",
   "DETAILS": "Szczegóły",
   "FOOTER_ALL_RIGHTS_RESERVED": "Wszelkie prawa zastrzeżone © 2024",
   "GITHUB_ACTIVITY_DESCRIPTION": "Podczas wykonywania zadania cenię sobie systematyczność, wydajność i terminowość, które prezentuje poniższy wykres, przedstawiający ilość kodu napisanego podczas kilku ostatnich lat mojej pracy.",
@@ -78,6 +79,7 @@
   "HOME_SERVICE_ITEM_TITLE_9": "Aplikacja",
   "HOME_SKILLS_DESCRIPTION": "Podczas pracy korzystam z technologii, które pozwalają na tworzenie wydajnych i wysoce skalowalnych rozwiązań.",
   "HOME_SKILLS_TITLE": "Umiejętności",
+  "LIGHT_MODE": "Tryb jasny",
   "MY_GITHUB_ACTIVITY": "Moja aktywność",
   "NAVIGATION_ABOUT": "O mnie",
   "NAVIGATION_BLOG": "Blog",
@@ -86,7 +88,11 @@
   "NOT_FOUND_BUTTON": "Powrót",
   "NOT_FOUND_DESCRIPTION": "Jak w ogóle się zgubiłeś? Nie wiem... ale spokojnie, pomogę Ci wrócić na stronę główną.",
   "NOT_FOUND_TITLE": "Przykro mi, ale ta strona nie istnieje... 🚀",
+  "NO_RESULTS": "Nic nie znaleziono.",
   "PORTFOLIO_META_DESCRIPTION": "Odkryj projekty programisty specjalizującego się w projektowaniu UI/UX. Odkryj innowacyjne aplikacje, intuicyjne interfejsy i wyjątkowe doświadczenia użytkownika, które doskonale łączą estetykę z funkcjonalnością.",
   "PORTFOLIO_META_TITLE": "Damian Werens - Projekty designu i programowania",
-  "PRESENT": "Teraz"
+  "PRESENT": "Teraz",
+  "SETTINGS": "Ustawienia",
+  "SUGGESTIONS": "Sugestie",
+  "SYSTEM_MODE": "Tryb systemowy"
 }

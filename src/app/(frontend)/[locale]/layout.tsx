@@ -6,6 +6,7 @@ import { Inter } from "next/font/google";
 import { Suspense } from "react";
 
 import { AppProvider } from "@/app/(frontend)/[locale]/_providers";
+import { CommandMenu } from "@/components";
 import { locales } from "@/config/i18n";
 import { BackgroundScene, GlobalLayout, Navigation } from "@/shared/ui";
 
@@ -36,6 +37,7 @@ export default async function AppLayout({
               <GlobalLayout>
                 <BackgroundScene />
                 {children}
+                <CommandMenu />
               </GlobalLayout>
             </AppProvider>
           </Suspense>
