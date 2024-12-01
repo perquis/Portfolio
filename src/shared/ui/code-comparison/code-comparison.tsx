@@ -81,7 +81,7 @@ export default function CodeComparison({
     <div className="mx-auto w-full">
       <div className="relative w-full overflow-hidden rounded-xl border border-border shadow">
         <div className="relative grid md:grid-cols-2 md:divide-x md:divide-border">
-          <div>
+          <div className="grid grid-flow-row auto-rows-max md:block">
             <div className="flex items-center bg-accent px-4 py-2 text-sm text-foreground">
               <div className="flex items-center gap-2">
                 <Icon width={20} height={20} />
@@ -91,7 +91,7 @@ export default function CodeComparison({
             </div>
             {renderCode(beforeCode, highlightedBefore)}
           </div>
-          <div>
+          <div className="grid grid-flow-row auto-rows-max md:block">
             <div className="flex items-center bg-accent px-4 py-2 text-sm text-foreground">
               <div className="flex items-center gap-2">
                 <Icon width={20} height={20} />
