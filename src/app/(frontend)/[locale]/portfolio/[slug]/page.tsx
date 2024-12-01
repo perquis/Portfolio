@@ -1,4 +1,5 @@
 import { unstable_setRequestLocale } from "next-intl/server";
+import { notFound } from "next/navigation";
 
 import { NextMDXRemote } from "@/components/next-mdx-remote/feature-next-mdx-remote";
 import type { Locale } from "@/interfaces/i18n";
@@ -7,7 +8,9 @@ import { getSlugsWithoutFiles } from "@/shared/utils/markdown/helpers";
 
 export async function generateMetadata({ params }: { params: { locale: string; slug: string } }) {
   const items = await getItemsWithMetadata("projects");
-  const item = items.find((item) => item.slug === params.slug)!;
+  const item = items.find((item) => item.slug === params.slug);
+
+  if (!item) notFound();
 
   return {
     title: item.title,
