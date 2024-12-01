@@ -48,7 +48,7 @@ export default function SearchBar({ className, ...props }: TSearchBar) {
         tabIndex={-1}
         {...props}
       />
-      <KeyBind>
+      <KeyBind className={clsx(!specialKey && "hidden")}>
         <span>{specialKey}</span> K
       </KeyBind>
     </div>
