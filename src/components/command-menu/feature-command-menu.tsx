@@ -1,11 +1,12 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 import { useEffect } from "react";
 
+import { locales } from "@/config/i18n";
 import { links } from "@/data";
-import { useRouter } from "@/libs/next-intl";
+import { usePathname, useRouter } from "@/libs/next-intl";
 import { useOpen } from "@/shared/hooks";
 import {
   CommandDialog,
@@ -16,14 +17,17 @@ import {
   CommandList,
   CommandSeparator,
 } from "@/shared/ui/command/command";
+import { getLanguageNames } from "@/shared/utils/get-language-names";
 
 import { settings } from "./data-settings";
 
 export function CommandMenu() {
+  const { setTheme } = useTheme();
+  const pathname = usePathname();
+  const locale = useLocale();
+  const { push } = useRouter();
   const [isOpen, [, , toggle]] = useOpen();
   const t = useTranslations();
-
-  const { setTheme } = useTheme();
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -37,11 +41,11 @@ export function CommandMenu() {
     return () => document.removeEventListener("keydown", down);
   }, [toggle]);
 
-  const { push } = useRouter();
+  const changeLanguage = (locale: string) => push(pathname, { locale });
 
   return (
     <CommandDialog open={isOpen} onOpenChange={toggle}>
-      <CommandInput placeholder={t("BLOG_SEARCHBAR_PLACEHOLDER")} />
+      <CommandInput placeholder={t("COMMAND_SEARCH_PLACEHOLDER")} />
       <CommandList className="py-1">
         <CommandEmpty>{t("NO_RESULTS")}</CommandEmpty>
         <CommandGroup heading={t("SUGGESTIONS")}>
@@ -56,7 +60,7 @@ export function CommandMenu() {
           ))}
         </CommandGroup>
         <CommandSeparator />
-        <CommandGroup heading={t("SETTINGS")}>
+        <CommandGroup heading={t("THEMES")}>
           {settings.map(({ Icon, label, selectValue }) => (
             <CommandItem onSelect={() => setTheme(selectValue)} key={label} asChild>
               <button className="flex w-full items-center gap-4">
@@ -64,6 +68,16 @@ export function CommandMenu() {
                 {/* @ts-expect-error */}
                 {t(label)}
               </button>
+            </CommandItem>
+          ))}
+        </CommandGroup>
+        <CommandSeparator />
+        <CommandGroup heading={t("LANGUAGES")}>
+          {getLanguageNames(locales, locale).map(({ code, fullName }) => (
+            <CommandItem key={fullName} asChild onSelect={() => changeLanguage(code)}>
+              <span className="capitalize">
+                {fullName} ({code.toUpperCase()})
+              </span>
             </CommandItem>
           ))}
         </CommandGroup>

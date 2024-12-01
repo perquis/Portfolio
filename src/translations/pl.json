@@ -5,6 +5,7 @@
   "BLOG_META_TITLE": "Damian Werens - Spostrzeżenia na temat projektowania UI/UX i programowania.",
   "BLOG_REGULAR_PRESENT": "Teraz",
   "BLOG_SEARCHBAR_PLACEHOLDER": "Wyszukaj artykuły po tytule",
+  "COMMAND_SEARCH_PLACEHOLDER": "Wyszukaj po sugestiach, motywach, językach, itp.",
   "CONTACT_FAQ_DESCRIPTION": "Zanim zadasz mi pytanie zobacz czy nie znajduje się ono na liście najczęściej zadawanych pytań. Jeżeli nadal masz wątpliwości to zapraszam do kontaktu.",
   "CONTACT_FAQ_ITEM_ANSWER_1": "Biorąc pod uwagę małe i średnie projekty, będzie to w przedziale 2-6 miesięcy. Duże projekty naturalnie zajmą więcej czasu.",
   "CONTACT_FAQ_ITEM_ANSWER_2": "Nie podejme się projektów e-commerce.",
@@ -28,7 +29,7 @@
   "CONTACT_SOCIALS_TITLE": "Media społecznościowe",
   "COPY_TO_CLIPBOARD_IDDLE": "Skopiuj do schowka",
   "COPY_TO_CLIPBOARD_SUCCESSFULLY": "Skopiowano do schowka! 📋",
-  "DARK_MODE": "Tryb ciemny",
+  "DARK_MODE": "Ciemny",
   "DETAILS": "Szczegóły",
   "FOOTER_ALL_RIGHTS_RESERVED": "Wszelkie prawa zastrzeżone © 2024",
   "GITHUB_ACTIVITY_DESCRIPTION": "Podczas wykonywania zadania cenię sobie systematyczność, wydajność i terminowość, które prezentuje poniższy wykres, przedstawiający ilość kodu napisanego podczas kilku ostatnich lat mojej pracy.",
@@ -79,7 +80,8 @@
   "HOME_SERVICE_ITEM_TITLE_9": "Aplikacja",
   "HOME_SKILLS_DESCRIPTION": "Podczas pracy korzystam z technologii, które pozwalają na tworzenie wydajnych i wysoce skalowalnych rozwiązań.",
   "HOME_SKILLS_TITLE": "Umiejętności",
-  "LIGHT_MODE": "Tryb jasny",
+  "LANGUAGES": "Języki",
+  "LIGHT_MODE": "Jasny",
   "MY_GITHUB_ACTIVITY": "Moja aktywność",
   "NAVIGATION_ABOUT": "O mnie",
   "NAVIGATION_BLOG": "Blog",
@@ -96,5 +98,6 @@
   "PREVIOUS": "Poprzedni",
   "SETTINGS": "Ustawienia",
   "SUGGESTIONS": "Sugestie",
-  "SYSTEM_MODE": "Tryb systemowy"
+  "SYSTEM_MODE": "Systemowy",
+  "THEMES": "Motywy"
 }
