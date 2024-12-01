@@ -108,7 +108,8 @@ figure {
 
 pre,
 code,
-figure {
+figure,
+div[role="dialog"] * {
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
 }

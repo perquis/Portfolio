@@ -69,6 +69,7 @@ const config: Config = {
         "shiny-text": "shiny-text 8s infinite",
         shine: "shine var(--duration) infinite linear",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
+        "background-position-spin": "background-position-spin 3000ms infinite alternate",
       },
       keyframes: {
         rainbow: {
@@ -106,6 +107,14 @@ const config: Config = {
         "border-beam": {
           "100%": {
             "offset-distance": "100%",
+          },
+        },
+        "background-position-spin": {
+          "0%": {
+            backgroundPosition: "top center",
+          },
+          "100%": {
+            backgroundPosition: "bottom center",
           },
         },
       },
