@@ -1,32 +1,43 @@
-import { useState } from "react";
+"use client";
 
-function getCurrentOS() {
-  const userAgent = window.navigator.userAgent,
-    platform = window.navigator.platform,
-    macosPlatforms = ["Macintosh", "MacIntel", "MacPPC", "Mac68K"],
-    windowsPlatforms = ["Win32", "Win64", "Windows", "WinCE"],
-    iosPlatforms = ["iPhone", "iPad", "iPod"];
+import { useEffect, useState } from "react";
 
-  let os = null;
+import type { Nullable } from "@/interfaces/utility-types";
 
-  if (macosPlatforms.indexOf(platform) !== -1) {
-    os = "Mac OS" as const;
-  } else if (iosPlatforms.indexOf(platform) !== -1) {
-    os = "iOS" as const;
-  } else if (windowsPlatforms.indexOf(platform) !== -1) {
-    os = "Windows" as const;
-  } else if (/Android/.test(userAgent)) {
-    os = "Android" as const;
-  } else if (!os && /Linux/.test(platform)) {
-    os = "Linux" as const;
-  }
-
-  return os;
-}
+type TOS = "Mac OS" | "iOS" | "Windows" | "Android" | "Linux";
 
 const usePlatform = () => {
-  const [platform] = useState<ReturnType<typeof getCurrentOS>>(getCurrentOS());
-  return platform;
+  const [platform, setPlatform] = useState<Nullable<TOS>>(null);
+
+  useEffect(() => {
+    function getOS() {
+      const userAgent = window.navigator.userAgent,
+        platform = window.navigator.platform,
+        macosPlatforms = ["Macintosh", "MacIntel", "MacPPC", "Mac68K"],
+        windowsPlatforms = ["Win32", "Win64", "Windows", "WinCE"],
+        iosPlatforms = ["iPhone", "iPad", "iPod"];
+
+      let os = null;
+
+      if (macosPlatforms.indexOf(platform) !== -1) {
+        os = "Mac OS" as const;
+      } else if (iosPlatforms.indexOf(platform) !== -1) {
+        os = "iOS" as const;
+      } else if (windowsPlatforms.indexOf(platform) !== -1) {
+        os = "Windows" as const;
+      } else if (/Android/.test(userAgent)) {
+        os = "Android" as const;
+      } else if (!os && /Linux/.test(platform)) {
+        os = "Linux" as const;
+      }
+
+      return os;
+    }
+
+    setPlatform(getOS());
+  }, []);
+
+  return { platform };
 };
 
 export default usePlatform;

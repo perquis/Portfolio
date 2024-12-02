@@ -22,7 +22,7 @@ export default function SearchBar({ className, ...props }: TSearchBar) {
     return setQuery(e.target.value);
   }, 500);
 
-  const platform = usePlatform();
+  const { platform } = usePlatform();
   const specialKey = platform === "Mac OS" ? "⌘" : platform === "Windows" ? "Ctrl" : null;
 
   return (

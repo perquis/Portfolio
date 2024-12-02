@@ -1,7 +1,7 @@
 import { ThemeProvider } from "next-themes";
 import { NuqsAdapter } from "nuqs/adapters/next";
 
-import { AlertProvider, DeviceProvider, NextIntlProvider } from "@/providers";
+import { AlertProvider, NextIntlProvider } from "@/providers";
 import { composeProviders, createProvider } from "@/shared/utils";
 
 const providers = [
@@ -11,7 +11,6 @@ const providers = [
     disableTransitionOnChange: true,
   }),
   createProvider(AlertProvider),
-  createProvider(DeviceProvider),
   createProvider(NuqsAdapter),
 ];
 
