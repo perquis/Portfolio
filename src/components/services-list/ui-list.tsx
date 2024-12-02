@@ -3,7 +3,7 @@
 import { type FC, useState } from "react";
 
 import { useRouter } from "@/libs/next-intl";
-import { usePlatform } from "@/providers/device";
+import { useIsMobile } from "@/shared/hooks";
 import { Chip, Paragraph, Regular, Section, Title } from "@/shared/ui";
 
 interface Chip {
@@ -22,7 +22,7 @@ type TList = {
 
 export const List: FC<TList> = ({ items }) => {
   const [selected, setSelected] = useState<Chip>(items?.[0]?.chips?.[0]);
-  const platform = usePlatform();
+  const { isMobile } = useIsMobile();
   const { push } = useRouter();
 
   return (
@@ -38,7 +38,7 @@ export const List: FC<TList> = ({ items }) => {
                 <Chip
                   key={index}
                   onClick={() => {
-                    if (platform === "mobile") push("#description");
+                    if (isMobile) push("#description");
                     setSelected({ label, ...rest });
                   }}
                   isActive={isActive}
