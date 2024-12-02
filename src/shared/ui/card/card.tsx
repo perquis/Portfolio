@@ -1,11 +1,14 @@
+"use client";
+
 import clsx from "clsx";
 import { useLocale } from "next-intl";
 import { Link } from "next-view-transitions";
 import { type ComponentProps } from "react";
 
 import type { TMetadata } from "@/interfaces/markdown";
+import { useOpen } from "@/shared/hooks";
 import { CalendarEvent } from "@/shared/icons/generals";
-import { Badge, Paragraph, Ratio, Regular, Section, Title } from "@/shared/ui";
+import { Badge, BorderBeam, Paragraph, Ratio, Regular, Section, Title } from "@/shared/ui";
 
 type NextLinkProps = ComponentProps<typeof Link>;
 
@@ -18,19 +21,33 @@ export default function Card({ title, description, className, thumbnail_img, pub
   const locale = useLocale();
   const redirectTo = `/${locale}/blog/${slug}`;
 
+  const [isOpen, [open, close]] = useOpen();
+
   return (
     <Section className={clsx("items-start gap-3 rounded-3xl", className)}>
-      <Link href={redirectTo} className="w-full rounded-xl">
+      <Link
+        href={redirectTo}
+        className="relative w-full rounded-lg !outline-0 focus:!outline-none"
+        onMouseEnter={open}
+        onMouseLeave={close}
+        onFocus={open}
+        onBlur={close}
+      >
         <Ratio
           resolution="16:9"
           className="overflow-hidden rounded-lg border border-zinc-200/50 dark:border-zinc-800/50"
           src={thumbnail_img}
           alt={title}
         />
+        <BorderBeam
+          className={clsx("opacity-0 duration-200 ease-in-out", isOpen && "!opacity-100")}
+          colorFrom="#4f46e5"
+          colorTo="#818cf8"
+        />
       </Link>
 
       <Section className="mt-2 items-start">
-        <Link href={redirectTo} className="hover:underline focus-visible:underline">
+        <Link href={redirectTo} className="!outline-0 hover:underline focus:!outline-none focus-visible:underline">
           <Title level="b" className="text-lg">
             {title}
           </Title>
