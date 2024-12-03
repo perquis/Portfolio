@@ -1,3 +1,4 @@
+import "@next/env";
 import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin("./src/config/i18n.ts");
@@ -10,17 +11,22 @@ const nextConfig = {
     return [
       {
         source: "/in",
-        destination: "https://www.linkedin.com/in/damian-werens",
+        destination: process.env.LINKEDIN_PROFILE_URL,
         permanent: true,
       },
       {
         source: "/gh",
-        destination: "https://github.com/perquis",
+        destination: process.env.GITHUB_PROFILE_URL,
         permanent: true,
       },
       {
         source: "/x",
-        destination: "https://x.com/_perquis",
+        destination: process.env.TWITTER_PROFILE_URL,
+        permanent: true,
+      },
+      {
+        source: "/onboarding",
+        destination: process.env.GOOGLE_FORM_URL,
         permanent: true,
       },
     ];
@@ -33,20 +39,19 @@ const nextConfig = {
           {
             key: "Content-Security-Policy",
             value: `
-    default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline' app.cal.com;
-    img-src 'self' blob: data: media.istockphoto.com *.unsplash.com;
-    frame-src 'self' www.youtube.com cal.com app.cal.com *.codesandbox.io;
-    style-src 'self' 'unsafe-inline';
-    font-src 'self';
-    connect-src 'self' cdn.jsdelivr.net unpkg.com lottie.host github-contributions-api.jogruber.de;
-    object-src 'none';
-    base-uri 'self';
-    form-action 'self';
-    frame-ancestors 'self';
-    upgrade-insecure-requests;
-    block-all-mixed-content;
-`.replace(/\n/g, ""),
+              default-src 'self';
+              script-src 'self' 'unsafe-eval' 'unsafe-inline' app.cal.com;
+              img-src *;
+              frame-src 'self' www.youtube.com cal.com app.cal.com *.codesandbox.io;
+              style-src 'self' 'unsafe-inline';
+              font-src 'self';
+              connect-src 'self' cdn.jsdelivr.net unpkg.com lottie.host github-contributions-api.jogruber.de;
+              object-src 'none';
+              base-uri 'self';
+              form-action 'self';
+              frame-ancestors 'self';
+              upgrade-insecure-requests;
+              block-all-mixed-content;`.replace(/\n/g, ""),
           },
         ],
       },

@@ -5,7 +5,11 @@ declare global {
       | "SMTP_GMAIL_PASSWORD"
       | "VERCEL_URL"
       | "NEXT_PUBLIC_CALCOM_LINK"
-      | "NEXT_PUBLIC_CALCOM_NAMESPACE";
+      | "NEXT_PUBLIC_CALCOM_NAMESPACE"
+      | "GOOGLE_FORM_URL"
+      | "GITHUB_PROFILE_URL"
+      | "LINKEDIN_PROFILE_URL"
+      | "TWITTER_PROFILE_URL";
 
     type MappedEnv = {
       [K in Env]?: string;

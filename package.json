@@ -26,6 +26,7 @@
     "@heroicons/react": "^2.1.5",
     "@hookform/resolvers": "^3.9.0",
     "@lottiefiles/dotlottie-react": "^0.7.2",
+    "@next/env": "^15.0.3",
     "@nimpl/middleware-chain": "^0.2.0",
     "@radix-ui/react-accordion": "^1.2.1",
     "@radix-ui/react-dialog": "^1.1.2",

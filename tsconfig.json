@@ -30,7 +30,8 @@
     ".next/types/**/*.ts",
     "./@types/**/*.d.ts",
     "jest.setup.ts",
-    "./.storybook/**/*"
+    "./.storybook/**/*",
+    "next.config.mjs"
   ],
   "exclude": ["node_modules", "jest.config.ts"]
 }
