@@ -19,10 +19,10 @@ export default function Callout({ title, content, variants = "info" }: ICallout)
     .exhaustive();
 
   const titleColor = match(variants)
-    .with("info", () => "!text-indigo-600 dark:!text-indigo-500")
-    .with("warning", () => "!text-yellow-600 dark:!text-yellow-500")
-    .with("error", () => "!text-red-600 dark:!text-red-500")
-    .with("success", () => "!text-green-600 dark:!text-green-500")
+    .with("info", () => "!text-indigo-600 dark:!text-indigo-400")
+    .with("warning", () => "!text-yellow-600 dark:!text-yellow-400")
+    .with("error", () => "!text-red-600 dark:!text-red-400")
+    .with("success", () => "!text-green-600 dark:!text-green-400")
     .exhaustive();
 
   const foundIcon = statusActions.find((icon) => icon.name === variants)!;
