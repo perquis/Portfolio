@@ -1,16 +1,16 @@
 import clsx from "clsx";
+import type { PropsWithChildren } from "react";
 import { match } from "ts-pattern";
 
 import { statusActions } from "@/data";
-import { Paragraph, Section, Title } from "@/shared/ui";
+import { Section, Title } from "@/shared/ui";
 
-interface ICallout {
+interface ICallout extends PropsWithChildren {
   title: string;
-  content: string;
   variants?: "info" | "warning" | "error" | "success";
 }
 
-export default function Callout({ title, content, variants = "info" }: ICallout) {
+export default function Callout({ title, children, variants = "info" }: ICallout) {
   const classes = match(variants)
     .with("info", () => "bg-indigo-50 border-indigo-200/50 dark:bg-indigo-950 dark:border-indigo-800/50")
     .with("warning", () => "bg-yellow-50 border-yellow-200/50 dark:bg-yellow-950 dark:border-yellow-800/50")
@@ -34,7 +34,7 @@ export default function Callout({ title, content, variants = "info" }: ICallout)
         <Title className={titleColor} level="b">
           {title}
         </Title>
-        <Paragraph className="text-sm">{content}</Paragraph>
+        {children}
       </Section>
     </Section>
   );
