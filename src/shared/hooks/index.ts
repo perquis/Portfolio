@@ -1,3 +1,4 @@
+export { default as useDebounce } from "./use-debounce/use-debounce";
 export { default as useEventCallback } from "./use-event-callback/use-event-callback";
 export { default as useHideBodyScrollbar } from "./use-hide-body-scrollbar/use-hide-body-scrollbar";
 export { default as useInput } from "./use-input/use-input";
