@@ -7,7 +7,7 @@ export interface SafariProps extends SVGProps<SVGSVGElement> {
   height?: number;
 }
 
-export default function Safari({ src, url, width = 1280, height = 720, ...props }: SafariProps) {
+export default function Safari({ src, url, width = 1203, height = 753, ...props }: SafariProps) {
   return (
     <svg
       width={width}
@@ -15,6 +15,7 @@ export default function Safari({ src, url, width = 1280, height = 720, ...props 
       viewBox={`0 0 ${width} ${height}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="size-full"
       {...props}
     >
       <g clipPath="url(#path0)">
