@@ -47,7 +47,7 @@ export default async function AppLayout({
             id="cal-com-widget"
           />
           <div className="pointer-events-none fixed right-5 top-0 z-50" id="alerts" />
-          <div className="pointer-events-none fixed bottom-0 left-0 z-50 h-16 w-full bg-gradient-to-t from-white to-white/0 dark:from-zinc-950 dark:to-zinc-950/0" />
+          <div className="pointer-events-none fixed bottom-0 left-0 z-50 hidden h-16 w-full bg-gradient-to-t from-white to-white/0 dark:block dark:from-zinc-950 dark:to-zinc-950/0" />
         </body>
       </html>
     </ViewTransitions>
