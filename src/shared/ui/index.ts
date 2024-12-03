@@ -3,6 +3,7 @@ export { default as Alert } from "./alert/alert";
 export { default as AnimatedBeam } from "./animated-beam/animated-beam";
 export { default as AnimatedGradientText } from "./animated-gradient-text/animated-gradient-text";
 export { default as AnimatedShinyText } from "./animated-shiny-text/animated-shiny-text";
+export { default as AppleNavbarLayout } from "./apple-navbar-layout/apple-navbar-layout";
 export { default as ArrowLink } from "./arrow-link/arrow-link";
 export { default as Avatar } from "./avatar/avatar";
 export { default as BackgroundScene } from "./background-scene/background-scene";
