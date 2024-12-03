@@ -2,10 +2,12 @@
 
 import { MDXRemote, type MDXRemoteProps } from "next-mdx-remote";
 import type { ComponentProps, FC } from "react";
+import Zoom from "react-medium-image-zoom";
 
 import * as components from "@/shared/ui";
 
 const mdxComponents: MDXRemoteProps["components"] = {
+  Zoom,
   ...components,
   p: (props) => <components.Paragraph {...props} />,
 };
