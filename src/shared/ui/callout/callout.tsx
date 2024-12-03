@@ -7,15 +7,15 @@ import { Paragraph, Section, Title } from "@/shared/ui";
 interface ICallout {
   title: string;
   content: string;
-  variants: "info" | "warning" | "error" | "success";
+  variants?: "info" | "warning" | "error" | "success";
 }
 
-export default function Callout({ title, content, variants }: ICallout) {
+export default function Callout({ title, content, variants = "info" }: ICallout) {
   const classes = match(variants)
-    .with("info", () => "bg-indigo-50 border-indigo-200 dark:bg-indigo-950 dark:border-indigo-800")
-    .with("warning", () => "bg-yellow-50 border-yellow-200 dark:bg-yellow-950 dark:border-yellow-800")
-    .with("error", () => "bg-red-50 border-red-200 dark:bg-red-950 dark:border-red-800")
-    .with("success", () => "bg-green-50 border-green-200 dark:bg-green-950 dark:border-green-800")
+    .with("info", () => "bg-indigo-50 border-indigo-200/50 dark:bg-indigo-950 dark:border-indigo-800/50")
+    .with("warning", () => "bg-yellow-50 border-yellow-200/50 dark:bg-yellow-950 dark:border-yellow-800/50")
+    .with("error", () => "bg-red-50 border-red-200/50 dark:bg-red-950 dark:border-red-800/50")
+    .with("success", () => "bg-green-50 border-green-200/50 dark:bg-green-950 dark:border-green-800/50")
     .exhaustive();
 
   const titleColor = match(variants)
@@ -29,7 +29,7 @@ export default function Callout({ title, content, variants }: ICallout) {
 
   return (
     <Section className={clsx("!flex-row gap-3 rounded-lg border px-5 py-4", classes)}>
-      <foundIcon.Icon className={titleColor} width={24} height={24} />
+      <foundIcon.Icon className={clsx(titleColor, "flex-shrink-0")} width={24} height={24} />
       <Section className="gap-1">
         <Title className={titleColor} level="b">
           {title}
