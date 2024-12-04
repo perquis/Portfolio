@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const useDebounce = (delayedFn: () => void, time = 500) => {
+const useDebounce = async (delayedFn: () => void, time = 500) => {
   useEffect(() => {
     const timeoutId = setTimeout(delayedFn, time);
     return () => clearTimeout(timeoutId);

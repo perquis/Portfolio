@@ -19,19 +19,12 @@ export const GET = withErrorHandling(async (request: Request) => {
     items.filter((item) => item.title.toLowerCase().startsWith(query!.toLowerCase()));
 
   if (query) {
-    return new Response(
-      JSON.stringify({
-        success: true,
-        posts: searchItemsByQuery(filteredPosts),
-        projects: searchItemsByQuery(filteredProjects),
-      }),
-      {
-        headers,
-      },
-    );
+    return Response.json({
+      success: true,
+      posts: searchItemsByQuery(filteredPosts),
+      projects: searchItemsByQuery(filteredProjects),
+    });
   }
 
-  return new Response(JSON.stringify({ success: true, posts: filteredPosts, projects: filteredProjects }), {
-    headers,
-  });
+  return Response.json({ success: true, posts: filteredPosts, projects: filteredProjects });
 });
