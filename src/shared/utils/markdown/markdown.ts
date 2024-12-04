@@ -1,8 +1,8 @@
 "use server";
 
 import fs from "fs";
-import { getLocale } from "next-intl/server";
 import { serialize } from "next-mdx-remote/serialize";
+import { cookies } from "next/headers";
 import path from "path";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
@@ -10,6 +10,10 @@ import type { Locale } from "@/interfaces/i18n";
 import type { Location, TMetadata } from "@/interfaces/markdown";
 import { createFileNameWithLocale, getPathToResources, getSlugsWithoutFiles } from "@/shared/utils/markdown/helpers";
 import { METADATA_RESPONSE } from "@/shared/utils/markdown/settings";
+
+type SortedByDateTimeParameter = Record<"metadata", TMetadata>;
+const sortedByDateTime = (a: SortedByDateTimeParameter, b: SortedByDateTimeParameter) =>
+  b.metadata.publishedAt.getTime() - a.metadata.publishedAt.getTime();
 
 export async function getSourcesSinceMdxFiles(rootDirectory: Location, slug: string, currentLocale: Locale) {
   const fileNameWithLocale = createFileNameWithLocale(slug, currentLocale),
@@ -29,7 +33,12 @@ export async function getSourcesSinceMdxFiles(rootDirectory: Location, slug: str
 }
 
 export async function getItemsWithPublishedDate(rootDirectory: Location) {
-  const currentLocale = (await getLocale()) as Locale,
+  const cookie = cookies();
+
+  const NEXT_LOCALE = cookie.get("NEXT_LOCALE");
+  if (!NEXT_LOCALE) throw new Error("NEXT_LOCALE cookie is not set");
+
+  const currentLocale = NEXT_LOCALE.value as unknown as Locale,
     slugsWithoutFiles = await getSlugsWithoutFiles(rootDirectory);
 
   const itemsWithMetadata = await Promise.all(
@@ -53,9 +62,7 @@ export async function getItemsWithPublishedDate(rootDirectory: Location) {
     }),
   );
 
-  const sortedItemsByPublishedDate = itemsWithMetadata.sort(
-    (a, b) => b.metadata.publishedAt.getTime() - a.metadata.publishedAt.getTime(),
-  );
+  const sortedItemsByPublishedDate = itemsWithMetadata.sort(sortedByDateTime);
   const itemsWithPublishedDate = sortedItemsByPublishedDate.filter(({ metadata }) => metadata.isPublished);
 
   return itemsWithPublishedDate;
