@@ -73,12 +73,6 @@ I provide the helpful **accordion with the video or link** that will show you ho
 
 Project is: _finished_ but I will continue to improve it, add new features and posts in the future 🔥.
 
-## New features
-
-- [ ] Newsletter (https://react.email/),
-- [ ] Poll for enterprises (Google Forms or on my website),
-- [ ] CMS (optional),
-
 ## Contact
 
 To contact me, you can visit my website that it's linked in this repository that you read. You can also send me an email there. I will be happy to answer you. 📱
