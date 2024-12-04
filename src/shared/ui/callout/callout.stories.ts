@@ -31,7 +31,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     title: "The title of the callout",
-    content: "The description provides key information that's appropriate for the severity of the alert.",
+    children: "The description provides key information that's appropriate for the severity of the alert.",
     variants: "info",
   },
 };
