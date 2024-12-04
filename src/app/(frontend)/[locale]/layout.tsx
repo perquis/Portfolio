@@ -6,9 +6,10 @@ import { Inter } from "next/font/google";
 import { Suspense } from "react";
 
 import { AppProvider } from "@/app/(frontend)/[locale]/_providers";
-import { CommandMenu } from "@/components";
+import { CommandMenu, CommandMenuProvider } from "@/components";
 import { locales } from "@/config/i18n";
 import { BackgroundScene, GlobalLayout, Navigation } from "@/shared/ui";
+import { getItemsWithMetadata } from "@/shared/utils";
 
 import "./globals.css";
 
@@ -26,6 +27,7 @@ export default async function AppLayout({
   params: { locale: string };
 }>) {
   unstable_setRequestLocale(locale);
+  const data = await Promise.all([getItemsWithMetadata("posts"), getItemsWithMetadata("projects")]);
 
   return (
     <ViewTransitions>
@@ -37,7 +39,9 @@ export default async function AppLayout({
               <GlobalLayout>
                 <BackgroundScene />
                 {children}
-                <CommandMenu />
+                <CommandMenuProvider>
+                  <CommandMenu data={data} />
+                </CommandMenuProvider>
               </GlobalLayout>
             </AppProvider>
           </Suspense>

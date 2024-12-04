@@ -1,36 +1,26 @@
-import { useLocale } from "next-intl";
-import { useEffect, useState } from "react";
+import { useCallback, useMemo } from "react";
 
-import type { TMetadata } from "@/interfaces/markdown";
-import { getArticles } from "@/server/actions/get-articles";
-import { useDebounce } from "@/shared/hooks";
+import { useCommandMenu } from "@/components/command-menu/context-command-menu-provider";
+import type { Article, ICommandMenu } from "@/components/command-menu/feature-command-menu";
 
-type Article = Pick<TMetadata, "title" | "slug">;
-
-export const useSearchByQuery = () => {
-  const locale = useLocale();
-  const [posts, setPosts] = useState<Article[]>([]);
-  const [projects, setProjects] = useState<Article[]>([]);
-
-  const [searchQuery, setSearchQuery] = useState("");
+export const useSearchByQuery = (data: ICommandMenu["data"]) => {
+  const { searchQuery, setSearchQuery } = useCommandMenu();
+  const [posts, projects] = data;
 
   const onValueChange = (search: string) => setSearchQuery(search);
 
-  useEffect(() => {
-    if (searchQuery.length > 0) return;
+  const filteringItems = useCallback(
+    (items: Article[]) => {
+      if (!searchQuery) return [];
+      const filteredItems = items.filter(({ title }) => title.toLowerCase().startsWith(searchQuery.toLowerCase()));
 
-    setPosts([]);
-    setProjects([]);
-  }, [searchQuery]);
+      return filteredItems;
+    },
+    [searchQuery],
+  );
 
-  useDebounce(async () => {
-    if (searchQuery.length === 0) return;
+  const filteredPosts = useMemo(() => filteringItems(posts), [posts, filteringItems]);
+  const filteredProjects = useMemo(() => filteringItems(projects), [projects, filteringItems]);
 
-    const data = await getArticles(locale, searchQuery);
-
-    setPosts(data.posts);
-    setProjects(data.projects);
-  }, 500);
-
-  return { onValueChange, posts, projects };
+  return [[filteredPosts, filteredProjects], onValueChange] as const;
 };

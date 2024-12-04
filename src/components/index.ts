@@ -1,6 +1,7 @@
 export * from "./about-me/feature-about-me";
 export * from "./all-posts-list/feature-all-posts-list";
 export * from "./all-projects-list/feature-all-projects-list";
+export * from "./command-menu/context-command-menu-provider";
 export * from "./command-menu/feature-command-menu";
 export * from "./contact-form/feature-contact-form";
 export * from "./faq-section/feature-faq-section";

@@ -7,6 +7,7 @@ import { useHotkeys } from "@/components/command-menu/utils-use-hotkeys";
 import { useSearchByQuery } from "@/components/command-menu/utils-use-search-by-query";
 import { locales } from "@/config/i18n";
 import { links } from "@/data";
+import type { Frontmatter } from "@/interfaces/markdown";
 import { useRouter } from "@/libs/next-intl";
 import { useChangeLocale } from "@/shared/hooks";
 import {
@@ -23,15 +24,19 @@ import { getLanguageNames } from "@/shared/utils/get-language-names";
 
 import { settings } from "./data-settings";
 
-export function CommandMenu() {
-  const { setTheme } = useTheme();
+export type Article = Pick<Frontmatter, "title" | "slug" | "tags">;
+export type ICommandMenu = Record<"data", [posts: Article[], projects: Article[]]>;
+
+export function CommandMenu({ data }: ICommandMenu) {
   const locale = useLocale();
-  const { push } = useRouter();
   const t = useTranslations();
+
+  const { push } = useRouter();
+  const { setTheme } = useTheme();
 
   const { isOpen, toggle } = useHotkeys();
   const { changeLanguage } = useChangeLocale();
-  const { onValueChange, posts, projects } = useSearchByQuery();
+  const [[filteredPosts, filteredProjects], onValueChange] = useSearchByQuery(data);
 
   return (
     <CommandDialog open={isOpen} onOpenChange={toggle}>
@@ -71,18 +76,18 @@ export function CommandMenu() {
             </CommandItem>
           ))}
         </CommandGroup>
-        {!isEmptyArray(posts) && (
+        {!isEmptyArray(filteredPosts) && (
           <CommandGroup heading={t("POSTS")}>
-            {posts.map(({ title, slug }) => (
+            {filteredPosts.map(({ title, slug }) => (
               <CommandItem key={title} onSelect={() => push(`/blog/${slug}`)}>
                 {title}
               </CommandItem>
             ))}
           </CommandGroup>
         )}
-        {!isEmptyArray(projects) && (
+        {!isEmptyArray(filteredProjects) && (
           <CommandGroup heading={t("PROJECTS")}>
-            {projects.map(({ title, slug }) => (
+            {filteredProjects.map(({ title, slug }) => (
               <CommandItem key={title} onSelect={() => push(`/portfolio/${slug}`)}>
                 {title}
               </CommandItem>
