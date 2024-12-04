@@ -2,14 +2,13 @@
 
 import { useLocale, useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
+import { useHotkeys } from "@/components/command-menu/utils-use-hotkeys";
+import { useSearchByQuery } from "@/components/command-menu/utils-use-search-by-query";
 import { locales } from "@/config/i18n";
 import { links } from "@/data";
-import type { TMetadata } from "@/interfaces/markdown";
-import { usePathname, useRouter } from "@/libs/next-intl";
-import { getArticles } from "@/server/actions/get-articles";
-import { useDebounce, useEventCallback, useOpen } from "@/shared/hooks";
+import { useRouter } from "@/libs/next-intl";
+import { useChangeLocale } from "@/shared/hooks";
 import {
   CommandDialog,
   CommandEmpty,
@@ -24,48 +23,15 @@ import { getLanguageNames } from "@/shared/utils/get-language-names";
 
 import { settings } from "./data-settings";
 
-type Article = Pick<TMetadata, "title" | "slug">;
-
 export function CommandMenu() {
   const { setTheme } = useTheme();
-  const pathname = usePathname();
   const locale = useLocale();
   const { push } = useRouter();
-  const [isOpen, [, , toggle]] = useOpen();
   const t = useTranslations();
 
-  const [posts, setPosts] = useState<Article[]>([]);
-  const [projects, setProjects] = useState<Article[]>([]);
-
-  const [searchQuery, setSearchQuery] = useState("");
-
-  const down = (e: KeyboardEvent) => {
-    if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
-      e.preventDefault();
-      toggle();
-    }
-  };
-
-  const changeLanguage = (locale: string) => push(pathname, { locale });
-  const onValueChange = (search: string) => setSearchQuery(search);
-
-  useEffect(() => {
-    if (searchQuery.length > 0) return;
-
-    setPosts([]);
-    setProjects([]);
-  }, [searchQuery]);
-
-  useDebounce(async () => {
-    if (searchQuery.length === 0) return;
-
-    const data = await getArticles(locale, searchQuery);
-
-    setPosts(data.posts);
-    setProjects(data.projects);
-  }, 500);
-
-  useEventCallback({ eventName: "keydown", callback: down });
+  const { isOpen, toggle } = useHotkeys();
+  const { changeLanguage } = useChangeLocale();
+  const { onValueChange, posts, projects } = useSearchByQuery();
 
   return (
     <CommandDialog open={isOpen} onOpenChange={toggle}>

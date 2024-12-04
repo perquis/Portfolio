@@ -1,3 +1,4 @@
+export { default as useChangeLocale } from "./use-change-locale/use-change-locale";
 export { default as useDebounce } from "./use-debounce/use-debounce";
 export { default as useEventCallback } from "./use-event-callback/use-event-callback";
 export { default as useHideBodyScrollbar } from "./use-hide-body-scrollbar/use-hide-body-scrollbar";
