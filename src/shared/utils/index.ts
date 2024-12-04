@@ -3,6 +3,7 @@ export * from "./capitalized";
 export * from "./get-query-params";
 export * from "./get-visibility-class";
 export * from "./highlight-code/highlight-code";
+export * from "./is-empty-array";
 export * from "./markdown/markdown";
 export * from "./omit";
 export * from "./pick";
