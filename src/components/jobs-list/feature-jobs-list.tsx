@@ -1,11 +1,12 @@
 import { socials } from "@/data";
 import { Header, Section } from "@/shared/ui";
 
-import { items } from "./data-items";
 import { List } from "./ui-list";
+import { useItems } from "./use-items";
 
 export const JobsList = () => {
   const link = socials.find((social) => social.name === "LinkedIn")!;
+  const items = useItems();
 
   return (
     <Section className="gap-5">
