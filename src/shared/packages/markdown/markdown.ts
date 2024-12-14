@@ -8,8 +8,9 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 import type { Locale } from "@/interfaces/i18n";
 import type { Location, TMetadata } from "@/interfaces/markdown";
-import { createFileNameWithLocale, getPathToResources, getSlugsWithoutFiles } from "@/shared/utils/markdown/helpers";
-import { METADATA_RESPONSE } from "@/shared/utils/markdown/settings";
+
+import { createFileNameWithLocale, getPathToResources, getSlugsWithoutFiles } from "./helpers";
+import { METADATA_RESPONSE } from "./settings";
 
 type SortedByDateTimeParameter = Record<"metadata", TMetadata>;
 const sortedByDateTime = (a: SortedByDateTimeParameter, b: SortedByDateTimeParameter) =>

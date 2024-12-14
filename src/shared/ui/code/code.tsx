@@ -1,8 +1,9 @@
 import clsx from "clsx";
 import { Fragment } from "react";
 
+import { highlightCode } from "@/shared/packages";
 import { CopyToClipboard } from "@/shared/ui";
-import { getVisibilityClass, highlightCode } from "@/shared/utils";
+import { getVisibilityClass } from "@/shared/utils";
 
 /**
  * You can visit examples here https://github.com/rehype-pretty/rehype-pretty-code/blob/master/examples/next/src/app/rsc/page.tsx.

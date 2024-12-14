@@ -8,8 +8,8 @@ import { Suspense } from "react";
 import { AppProvider } from "@/app/(frontend)/[locale]/_providers";
 import { CommandMenu, CommandMenuProvider } from "@/components";
 import { locales } from "@/config/i18n";
+import { getItemsWithMetadata } from "@/shared/packages";
 import { BackgroundScene, GlobalLayout, Navigation } from "@/shared/ui";
-import { getItemsWithMetadata } from "@/shared/utils";
 
 import "./globals.css";
 

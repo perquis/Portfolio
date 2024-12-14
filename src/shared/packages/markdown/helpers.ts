@@ -3,7 +3,8 @@ import path from "path";
 
 import type { Locale } from "@/interfaces/i18n";
 import type { Location } from "@/interfaces/markdown";
-import { BASE_PATH } from "@/shared/utils/markdown/settings";
+
+import { BASE_PATH } from "./settings";
 
 export const createFileNameWithLocale = (slug: string, locale: Locale) => `${slug}.${locale}.mdx`;
 export const getPathToResources = (rootDirectory: Location, slug = "") => path.join(BASE_PATH, rootDirectory, slug);

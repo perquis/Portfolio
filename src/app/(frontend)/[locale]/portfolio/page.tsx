@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 import { AllProjectsList, ContactForm, HeroSection, WorkflowsList } from "@/components";
+import { getItemsWithMetadata } from "@/shared/packages";
 import { Divider } from "@/shared/ui";
-import { getItemsWithMetadata } from "@/shared/utils";
 
 export async function generateMetadata({
   params: { locale },
