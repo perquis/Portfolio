@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 import { ContactForm, FeaturedProjectsList, HeroSection, JobsList, ServicesList, WorkflowsList } from "@/components";
-import { Divider, Layout } from "@/shared/ui";
+import { Layout } from "@/shared/ui";
+import { withDividers } from "@/shared/utils";
 
 export async function generateMetadata({
   params: { locale },
@@ -15,22 +16,10 @@ export async function generateMetadata({
   };
 }
 
-const components = [
-  HeroSection,
-  Divider,
-  FeaturedProjectsList,
-  Divider,
-  ServicesList,
-  Divider,
-  JobsList,
-  Divider,
-  WorkflowsList,
-  Divider,
-  ContactForm,
-];
+const components = [HeroSection, FeaturedProjectsList, ServicesList, JobsList, WorkflowsList, ContactForm];
 
 export default function Home({ params: { locale } }: Readonly<{ params: { locale: string } }>) {
   unstable_setRequestLocale(locale);
 
-  return <Layout components={components} />;
+  return <Layout components={withDividers(components)} />;
 }

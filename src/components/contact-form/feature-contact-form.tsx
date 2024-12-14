@@ -47,6 +47,8 @@ export const ContactForm = () => {
     }
   });
 
+  if (process.env.NEXT_PUBLIC_DISABLE_CONTACT_FORM === "true") return null;
+
   return (
     <Section className="gap-10">
       <Section className="items-start gap-5">

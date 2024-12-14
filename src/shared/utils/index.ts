@@ -8,3 +8,4 @@ export * from "./markdown/markdown";
 export * from "./omit";
 export * from "./pick";
 export * from "./providers";
+export * from "./with-dividers";
