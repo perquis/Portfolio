@@ -6,12 +6,13 @@ import { useForm } from "react-hook-form";
 import type { z } from "zod";
 
 import { ScheduleMeeting } from "@/components";
-import { sendMail } from "@/components/contact-form/utils-send-mail";
 import { usePathname } from "@/libs/next-intl";
 import { useAlert } from "@/providers/alert";
-import { contactFormSchema } from "@/schemas/contact-form";
 import { useOpen } from "@/shared/hooks";
 import { Button, Checkbox, Form, Header, Input, Regular, Section, Textarea } from "@/shared/ui";
+
+import { contactFormSchema } from "./schema-contact-form";
+import { sendMail } from "./utils-send-mail";
 
 export type Schema = z.infer<typeof contactFormSchema>;
 
