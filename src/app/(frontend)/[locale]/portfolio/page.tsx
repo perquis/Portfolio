@@ -3,7 +3,7 @@ import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 import { AllProjectsList, ContactForm, HeroSection, WorkflowsList } from "@/components";
 import { getItemsWithMetadata } from "@/shared/packages";
-import { Divider } from "@/shared/ui";
+import { Layout } from "@/shared/ui";
 
 export async function generateMetadata({
   params: { locale },
@@ -22,14 +22,11 @@ export default async function Portfolio({ params: { locale } }: Readonly<{ param
   const items = await getItemsWithMetadata("projects");
 
   return (
-    <>
+    <Layout>
       <HeroSection withoutCodeBlock />
-      <Divider />
       <AllProjectsList items={items} />
-      <Divider />
       <WorkflowsList />
-      <Divider />
       <ContactForm />
-    </>
+    </Layout>
   );
 }

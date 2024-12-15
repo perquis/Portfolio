@@ -3,7 +3,7 @@ import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 import { AllPostsList, HeroSection, JobsList, SocialLinksList } from "@/components";
 import { getItemsWithMetadata } from "@/shared/packages";
-import { Divider } from "@/shared/ui";
+import { Layout } from "@/shared/ui";
 
 export async function generateMetadata({
   params: { locale },
@@ -21,14 +21,11 @@ export default async function Blog({ params: { locale } }: Readonly<{ params: { 
   const items = await getItemsWithMetadata("posts");
 
   return (
-    <>
+    <Layout>
       <HeroSection withoutCodeBlock />
-      <Divider />
       <AllPostsList items={items} />
-      <Divider />
       <JobsList />
-      <Divider />
       <SocialLinksList />
-    </>
+    </Layout>
   );
 }

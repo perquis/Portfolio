@@ -1,32 +1,38 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import type { ComponentType } from "react";
-import { Fragment } from "react";
+import type { PropsWithChildren } from "react";
+import { Children, Fragment, isValidElement } from "react";
 
-type ComponentOrComponentWithProps<T = {}> = ComponentType<T> | [Component: ComponentType<T>, props: T];
+import { Container, Divider, Footer, Section } from "@/shared/ui";
+import { snake_case } from "@/shared/utils";
 
-type LayoutProps<T> = {
-  components: ComponentOrComponentWithProps<T>[];
-};
+export default function Layout({ children }: PropsWithChildren) {
+  const extractedChildren = Children.toArray(children);
+  const pageComponents = [
+    ...extractedChildren,
+    <Container key={crypto.randomUUID()}>
+      <Footer />
+    </Container>,
+  ];
 
-export default function Layout<T extends {}>({ components }: LayoutProps<T>) {
   return (
-    <>
-      {components.map((component, index) => {
-        let Component: ComponentType<any>;
-        let props = {};
+    <Section className="gap-10">
+      {pageComponents
+        .filter((Child) => {
+          const Component = Child as { type: { name: string } };
+          const sharedComponentIdentifier = snake_case(Component.type.name);
+          const runtimeEnvKey =
+            process.env[sharedComponentIdentifier?.toUpperCase()] ??
+            process.env[`NEXT_PUBLIC_${sharedComponentIdentifier?.toUpperCase()}`];
 
-        if (Array.isArray(component)) {
-          [Component, props] = component;
-        } else {
-          Component = component;
-        }
-
-        return (
-          <Fragment key={index}>
-            <Component {...props} />
-          </Fragment>
-        );
-      })}
-    </>
+          return runtimeEnvKey !== "true";
+        })
+        .map((Child) => {
+          return (
+            <Fragment key={crypto.randomUUID()}>
+              {isValidElement(Child) && Child}
+              {Child !== pageComponents.at(-1) ? <Divider /> : null}
+            </Fragment>
+          );
+        })}
+    </Section>
   );
 }

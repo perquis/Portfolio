@@ -6,4 +6,4 @@ export * from "./is-empty-array";
 export * from "./omit";
 export * from "./pick";
 export * from "./providers";
-export * from "./with-dividers";
+export * from "./snake-case";

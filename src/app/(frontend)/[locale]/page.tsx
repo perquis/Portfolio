@@ -3,7 +3,6 @@ import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 import { ContactForm, FeaturedProjectsList, HeroSection, JobsList, ServicesList, WorkflowsList } from "@/components";
 import { Layout } from "@/shared/ui";
-import { withDividers } from "@/shared/utils";
 
 export async function generateMetadata({
   params: { locale },
@@ -16,10 +15,17 @@ export async function generateMetadata({
   };
 }
 
-const components = [HeroSection, FeaturedProjectsList, ServicesList, JobsList, WorkflowsList, ContactForm];
-
 export default function Home({ params: { locale } }: Readonly<{ params: { locale: string } }>) {
   unstable_setRequestLocale(locale);
 
-  return <Layout components={withDividers(components)} />;
+  return (
+    <Layout>
+      <HeroSection />
+      <FeaturedProjectsList />
+      <ServicesList />
+      <JobsList />
+      <WorkflowsList />
+      <ContactForm />
+    </Layout>
+  );
 }
