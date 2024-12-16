@@ -3,9 +3,10 @@
 import clsx from "clsx";
 import { type ComponentProps, Fragment } from "react";
 
+import type { IHighlightedCode } from "@/shared/packages";
 import { CopyToClipboard, Section, SegmentedControl } from "@/shared/ui";
 import { useCode } from "@/shared/ui/code-block/code.provider";
-import { type IHighlightedCode, getVisibilityClass } from "@/shared/utils";
+import { getVisibilityClass } from "@/shared/utils";
 
 type TSegmentedControl = ComponentProps<typeof SegmentedControl>;
 

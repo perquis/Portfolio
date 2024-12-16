@@ -1,7 +1,7 @@
 import type { Locale } from "@/interfaces/i18n";
 import type { Location } from "@/interfaces/markdown";
 import { headers, withErrorHandling } from "@/libs/api";
-import { getSourcesSinceMdxFiles } from "@/shared/utils";
+import { getSourcesSinceMdxFiles } from "@/shared/packages";
 
 export const GET = withErrorHandling(async (request: Request) => {
   const url = new URL(request.url);
