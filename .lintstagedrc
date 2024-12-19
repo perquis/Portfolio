@@ -1,4 +1,4 @@
 {
   "*.spec.{ts,tsx}": ["jest --passWithNoTests"],
-  "*.{ts,tsx}": ["prettier --write ./src"]
+  "*.{ts,tsx}": ["prettier --write ./src", "tsc --noEmit"]
 }
