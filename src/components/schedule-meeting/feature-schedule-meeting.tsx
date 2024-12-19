@@ -32,6 +32,8 @@ export const ScheduleMeeting = () => {
   useHideBodyScrollbar(isOpen);
   useOutsideOnClick(calComRef, close);
 
+  if (process.env.NEXT_PUBLIC_CONTACT_FORM === "true") return null;
+
   return (
     <>
       <RainbowButton onClick={open} data-test-id="schedule-meeting" className="!rounded-lg !px-4 !py-2 text-xs">

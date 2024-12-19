@@ -9,7 +9,9 @@ declare global {
       | "GOOGLE_FORM_URL"
       | "GITHUB_PROFILE_URL"
       | "LINKEDIN_PROFILE_URL"
-      | "TWITTER_PROFILE_URL";
+      | "TWITTER_PROFILE_URL"
+      | "CONTACT_FORM"
+      | "NEXT_PUBLIC_CONTACT_FORM";
 
     type MappedEnv = {
       [K in Env]?: string;
