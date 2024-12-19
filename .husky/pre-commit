@@ -1,2 +1,5 @@
+npm run test
+npm run type:check
+
 npx lint-staged
 git update-index --again
