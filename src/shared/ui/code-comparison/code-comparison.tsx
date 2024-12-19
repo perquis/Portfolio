@@ -79,7 +79,7 @@ export default function CodeComparison({
 
   return (
     <div className="mx-auto w-full">
-      <div className="relative w-full overflow-hidden rounded-xl border border-border shadow">
+      <div className="relative w-full overflow-hidden rounded-lg border border-border shadow">
         <div className="relative grid md:grid-cols-2 md:divide-x md:divide-border">
           <div className="grid grid-flow-row auto-rows-max md:block">
             <div className="flex items-center bg-accent px-4 py-2 text-sm text-foreground">
