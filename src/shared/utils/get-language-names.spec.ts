@@ -1,5 +1,5 @@
 import { getLanguageNames } from "@/shared/utils/get-language-names";
-import { expect } from "@jest/globals";
+import { expect, describe, it } from "@jest/globals";
 
 describe("getLanguageNames", () => {
   it("should return language names", () => {
