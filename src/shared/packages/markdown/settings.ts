@@ -9,7 +9,7 @@ export const METADATA_RESPONSE = {
     title: "",
     description: "",
     thumbnail_img: "",
-    tags: [],
+    tags: [] as string[],
     year: 2100,
     open_graph_img: "",
     updatedAt: DEFAULT_DATE,
