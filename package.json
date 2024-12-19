@@ -10,7 +10,7 @@
     "dev:email": "email dev --dir ./src/emails --port 4000",
     "cy:open": "cypress open",
     "test": "jest",
-    "test:watch": "jest --watchAll --verbose --coverege",
+    "test:watch": "jest --watchAll --verbose --coverage",
     "type:check": "tsc --noEmit",
     "semantic-release": "semantic-release",
     "storybook": "storybook dev -p 6006",
