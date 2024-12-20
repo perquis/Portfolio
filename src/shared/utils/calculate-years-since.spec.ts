@@ -1,5 +1,6 @@
-import { calculateYearsSince } from "@/shared/utils";
 import { describe, expect, it } from "@jest/globals";
+
+import { calculateYearsSince } from "@/shared/utils";
 
 describe("calculateYearsSince", () => {
   it("should return 4 year", () => {

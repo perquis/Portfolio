@@ -1,4 +1,4 @@
-export * from "./calculateYearsSince";
+export * from "./calculate-years-since";
 export * from "./capitalized";
 export * from "./get-query-params";
 export * from "./get-visibility-class";
