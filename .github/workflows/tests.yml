@@ -4,6 +4,12 @@ on:
   push:
     paths: ["**.ts", "**.tsx"]
 
+env:
+  LINKEDIN_PROFILE_URL: /in/your-linkedin-profile
+  GITHUB_PROFILE_URL: /your-github-profile
+  TWITTER_PROFILE_URL: /your-twitter-profile
+  GOOGLE_FORM_URL: /your-google-form-url
+
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
