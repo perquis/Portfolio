@@ -1,0 +1,24 @@
+name: 🧪 Run unit tests from jest
+
+on:
+  push:
+    paths: ["**.ts", "**.tsx"]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+      pull-requests: read
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+      - run: npm i
+      - run: npm run test
+      - run: npm run type:check
+      - run: npm run build
