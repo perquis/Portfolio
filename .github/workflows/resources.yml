@@ -1,0 +1,25 @@
+name: 📒 Release new version when articles are pushed
+
+on:
+  push:
+    branches:
+      - main
+    paths: ["(resources)/**", "public/**"]
+
+  pull_request:
+    branches:
+      - main
+    paths: ["(resources)/**", "public/**"]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+      - run: npm i
+      - run: npm run semantic-release
