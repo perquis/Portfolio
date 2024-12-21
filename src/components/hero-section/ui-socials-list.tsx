@@ -12,6 +12,7 @@ export const SocialsList = () => {
   const pathname = usePathname();
 
   if (pathname === "/blog") return null;
+  if (pathname === "/contact") return null;
 
   return (
     <Section className="!flex-row flex-wrap gap-3">

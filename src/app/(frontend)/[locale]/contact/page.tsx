@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
-import { ContactForm, FAQSection, ServicesList, SocialLinksList } from "@/components";
+import { ContactForm, FAQSection, HeroSection, ServicesList, SocialLinksList } from "@/components";
 import { Layout } from "@/shared/ui";
 
 export async function generateMetadata({
@@ -20,6 +20,7 @@ export default async function Contact({ params: { locale } }: Readonly<{ params:
 
   return (
     <Layout>
+      <HeroSection withoutCodeBlock />
       <FAQSection />
       <ServicesList />
       <ContactForm />
