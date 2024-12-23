@@ -7,7 +7,7 @@ import { type Dispatch, type FC, type SetStateAction, useState } from "react";
 import type { TMetadata } from "@/interfaces/markdown";
 import { Link } from "@/libs/next-intl";
 import { ArrowLeft } from "@/shared/icons/generals";
-import { ArrowLink, Paragraph, Ratio, Regular, Section, Title, Transition } from "@/shared/ui";
+import { ArrowLink, DynamicImage, Paragraph, Regular, Section, Title, Transition } from "@/shared/ui";
 
 export const List: FC<{ items: TMetadata[] }> = ({ items }) => {
   const [selected, setSelected] = useState(items[0]?.title);
@@ -26,7 +26,8 @@ export const List: FC<{ items: TMetadata[] }> = ({ items }) => {
 const Item: FC<TMetadata & { selected: string; setSelected: Dispatch<SetStateAction<string>> }> = ({
   title,
   year,
-  thumbnail_img,
+  light_img,
+  dark_img,
   tags,
   slug,
   description,
@@ -60,8 +61,9 @@ const Item: FC<TMetadata & { selected: string; setSelected: Dispatch<SetStateAct
       >
         <Section className="gap-5">
           <Link href={redirectTo} className="rounded-lg">
-            <Ratio
-              src={thumbnail_img}
+            <DynamicImage
+              lightUrl={light_img}
+              darkUrl={dark_img}
               alt={title}
               className="overflow-hidden rounded-lg border dark:border-zinc-800/50"
               resolution="16:9"

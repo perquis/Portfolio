@@ -15,7 +15,8 @@ export interface Frontmatter {
   slug: string;
   title: string;
   description: string;
-  thumbnail_img: string;
+  light_img: string;
+  dark_img: string;
   tags: string[];
   publishedAt: string;
   isPublished: boolean;

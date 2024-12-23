@@ -36,7 +36,8 @@ export const Default: Story = {
   args: {
     title: "Card Title",
     description: "This is a description of the card. It can be used to provide more information about the card.",
-    thumbnail_img: placeholders.images,
+    light_img: placeholders.images,
+    dark_img: placeholders.images,
     publishedAt: new Date(),
     slug: "card-slug",
     tags: ["tag1", "tag2"],

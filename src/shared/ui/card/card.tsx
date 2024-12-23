@@ -5,7 +5,7 @@ import { type ComponentProps } from "react";
 
 import type { TMetadata } from "@/interfaces/markdown";
 import { CalendarEvent } from "@/shared/icons/generals";
-import { Badge, Paragraph, Ratio, Regular, Section, Title } from "@/shared/ui";
+import { Badge, DynamicImage, Paragraph, Regular, Section, Title } from "@/shared/ui";
 
 type NextLinkProps = ComponentProps<typeof Link>;
 
@@ -14,17 +14,18 @@ type TCard = {
 } & Omit<NextLinkProps, "href"> &
   TMetadata;
 
-export default function Card({ title, description, className, thumbnail_img, publishedAt, slug, tags }: TCard) {
+export default function Card({ title, description, className, light_img, dark_img, publishedAt, slug, tags }: TCard) {
   const locale = useLocale();
   const redirectTo = `/${locale}/blog/${slug}`;
 
   return (
     <Section className={clsx("items-start gap-3 rounded-3xl", className)}>
       <Link href={redirectTo} className="relative w-full rounded-lg">
-        <Ratio
+        <DynamicImage
           resolution="16:9"
           className="overflow-hidden rounded-lg border border-zinc-200/50 dark:border-zinc-800/50"
-          src={thumbnail_img}
+          lightUrl={light_img}
+          darkUrl={dark_img}
           alt={title}
         />
       </Link>

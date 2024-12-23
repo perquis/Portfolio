@@ -36,7 +36,8 @@ When you want to **write a new post or project**, you should follow the below st
 ---
 title: // Title of the project or post
 description: // Description of the project or post
-thumbnail_img: // path to the thumbnail image in the public folder, remember to create root directory and add two folders: light and dark to there.
+light_url: // path to the thumbnail image in the public folder, remember to create root directory and add two folders: light and dark to there.
+dark_url: // path to the thumbnail image in the public folder, remember to create root directory and add two folders: light and dark to there.
 open_graph_img: // path to the opengraph image in the public folder. This the image should be in 1200x630px size.
 tags: // Tags in array string format
 publishedAt: // Date publication
@@ -61,4 +62,7 @@ To use the custom components in your markdown files, you need to only use the **
 
 ### **3.1. Which the components you can use?**
 
-In the project, we have created **a lot of custom components** that you can use in your markdown files. You can see all components in the **storybook** pages and they were marked as **Markdown**.
+In the project, we have created **a lot of custom components** that you can use in your markdown files. You can see all components in the **storybook** pages and they were marked as **Markdown**.import Grid from "../ui/grid/grid.tsx";
+import Ratio from "../ui/ratio/ratio.tsx";
+import VideoPlayer from "../ui/video-player/video-player.tsx";
+
