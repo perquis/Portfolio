@@ -19,12 +19,14 @@ export default async function Contact({ params: { locale } }: Readonly<{ params:
   unstable_setRequestLocale(locale);
 
   return (
-    <Layout>
-      <HeroSection withoutCodeBlock />
-      <FAQSection />
-      <ServicesList />
-      <ContactForm />
-      <SocialLinksList />
-    </Layout>
+    <div>
+      <Layout>
+        <HeroSection withoutCodeBlock />
+        <FAQSection />
+        <ServicesList />
+        <ContactForm />
+        <SocialLinksList />
+      </Layout>
+    </div>
   );
 }
