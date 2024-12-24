@@ -9,19 +9,21 @@ export default function Footer() {
   const locale = useLocale();
 
   return (
-    <Section className="!flex-row flex-wrap items-start justify-between gap-5">
-      <Logo />
-      <Section
-        className={clsx(
-          "z-50 items-end gap-2",
-          locale === "en" && "max-[424px]:!items-start",
-          locale === "pl" && "max-[492px]:!items-start",
-        )}
-      >
-        <Regular className="!text-sm">{t("FOOTER_ALL_RIGHTS_RESERVED")}</Regular>
-        <LanguageSwitcher />
-        <ToggleTheme />
+    <footer className="mx-auto w-full max-w-screen-sm">
+      <Section className="!flex-row flex-wrap items-start justify-between gap-5">
+        <Logo />
+        <Section
+          className={clsx(
+            "z-50 items-end gap-2",
+            locale === "en" && "max-[424px]:!items-start",
+            locale === "pl" && "max-[492px]:!items-start",
+          )}
+        >
+          <Regular className="!text-sm">{t("FOOTER_ALL_RIGHTS_RESERVED")}</Regular>
+          <LanguageSwitcher />
+          <ToggleTheme />
+        </Section>
       </Section>
-    </Section>
+    </footer>
   );
 }
