@@ -1,11 +1,11 @@
 "use client";
 
-import { AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import type { ComponentProps } from "react";
 
 import { useOpen } from "@/shared/hooks";
 import { ArrowLeft } from "@/shared/icons/generals";
-import { Paragraph, Section, Title, Transition } from "@/shared/ui";
+import { Paragraph } from "@/shared/ui";
 
 type TAccordion = {
   question: string;
@@ -14,34 +14,42 @@ type TAccordion = {
 
 export default function Accordion({ question, answer }: TAccordion) {
   const [isOpen, [, , toggle]] = useOpen();
+  const layoutId = question.replaceAll(" ", "-");
 
   return (
-    <Transition element="button" onClick={toggle} className="w-full rounded-3xl bg-zinc-100 p-4 pl-5 dark:bg-zinc-900">
-      <Section>
-        <Section className="relative !flex-row items-center text-zinc-800 dark:text-zinc-200">
-          <Title level="b" className="text-sm font-medium !text-zinc-800 dark:!text-zinc-200">
-            {question}
-          </Title>
-          <Transition
-            className="absolute right-0 top-0 flex items-center"
-            animate={isOpen ? { rotate: -90 } : { rotate: 0 }}
-          >
-            <ArrowLeft width={20} height={20} />
-          </Transition>
-        </Section>
-        <AnimatePresence mode="sync">
-          {isOpen && (
-            <Transition
-              className="origin-top overflow-hidden"
-              initial={{ opacity: 0, height: 0, paddingTop: 0 }}
-              animate={{ opacity: 1, height: "auto", paddingTop: 8 }}
-              exit={{ opacity: 0, height: 0, paddingTop: 0 }}
-            >
-              <Paragraph className="text-sm !text-zinc-500">{answer}</Paragraph>
-            </Transition>
-          )}
-        </AnimatePresence>
-      </Section>
-    </Transition>
+    <motion.button
+      onClick={toggle}
+      layoutId={layoutId}
+      className="w-full overflow-hidden rounded-3xl border border-zinc-100 bg-white dark:border-zinc-900 dark:bg-zinc-950"
+    >
+      <motion.div
+        layout="preserve-aspect"
+        className="flex w-full items-center bg-zinc-100 p-4 pl-5 text-zinc-800 dark:bg-zinc-900 dark:text-zinc-200"
+      >
+        <motion.b
+          layout="preserve-aspect"
+          className="select-none text-sm font-medium !text-zinc-800 dark:!text-zinc-200"
+        >
+          {question}
+        </motion.b>
+        <motion.div
+          layout="preserve-aspect"
+          className="ml-auto flex items-center"
+          animate={isOpen ? { rotate: -90 } : { rotate: 0 }}
+        >
+          <ArrowLeft width={20} height={20} />
+        </motion.div>
+      </motion.div>
+      {isOpen && (
+        <motion.div
+          layout="position"
+          className="!origin-top p-4 pl-5"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
+          <Paragraph className="text-sm !text-zinc-500">{answer}</Paragraph>
+        </motion.div>
+      )}
+    </motion.button>
   );
 }

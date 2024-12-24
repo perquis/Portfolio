@@ -9,15 +9,11 @@ export default function Template({ children }: PropsWithChildren) {
   const pathname = usePathname();
   const [, slug] = pathname.split("/").filter(Boolean);
 
-  const Component = slug ? (
-    <Layout>
-      <Page>{children}</Page>
-    </Layout>
-  ) : (
-    <Container>
-      <Page>{children}</Page>
-    </Container>
-  );
+  const Component = slug ? Layout : Container;
 
-  return Component;
+  return (
+    <Component>
+      <Page>{children}</Page>
+    </Component>
+  );
 }
