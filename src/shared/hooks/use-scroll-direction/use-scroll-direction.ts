@@ -1,7 +1,8 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
+import { usePathname } from "@/libs/next-intl";
 import { useEventCallback } from "@/shared/hooks";
 
 type Position = "x" | "y";
@@ -10,6 +11,7 @@ export default function useScrollDirection(position: Position = "y") {
   const [direction, setDirection] = useState(position === "y" ? "up" : "left");
   const [lastScroll, setLastScroll] = useState(0);
   const [currentPos, setCurrentPos] = useState(0);
+  const pathname = usePathname();
 
   const handleScroll = useCallback(() => {
     setCurrentPos(window[position === "y" ? "scrollY" : "scrollX"]);
@@ -22,6 +24,11 @@ export default function useScrollDirection(position: Position = "y") {
 
     setLastScroll(currentPos <= 0 ? 0 : currentPos);
   }, [currentPos, lastScroll, position]);
+
+  useEffect(() => {
+    setDirection(position === "y" ? "up" : "left");
+    window.scrollTo(0, 0);
+  }, [position, pathname]);
 
   useEventCallback({
     callback: handleScroll,
