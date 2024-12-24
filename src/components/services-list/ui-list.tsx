@@ -1,12 +1,12 @@
 "use client";
 
-import { type FC, useState } from "react";
+import { type FC, Fragment, useState } from "react";
 
-import { useRouter } from "@/libs/next-intl";
-import { useIsMobile } from "@/shared/hooks";
-import { Chip, Paragraph, Regular, Section, Title } from "@/shared/ui";
+import { DetailsBox } from "@/components/services-list/ui-details-box";
+import { Link } from "@/libs/next-intl";
+import { Chip, Regular, Section } from "@/shared/ui";
 
-interface Chip {
+export interface Chip {
   label: string;
   description: string;
 }
@@ -22,8 +22,6 @@ type TList = {
 
 export const List: FC<TList> = ({ items }) => {
   const [selected, setSelected] = useState<Chip>(items?.[0]?.chips?.[0]);
-  const { isMobile } = useIsMobile();
-  const { push } = useRouter();
 
   return (
     <>
@@ -31,38 +29,32 @@ export const List: FC<TList> = ({ items }) => {
         <Section key={index} className="gap-2">
           <Regular className="!text-zinc-950 dark:!text-white">{title}</Regular>
           <Section className="!flex-row flex-wrap gap-3">
-            {chips.map(({ label, ...rest }, index) => {
+            {chips.map(({ label, ...rest }) => {
               const isActive = selected.label === label;
 
               return (
-                <Chip
-                  key={index}
-                  onClick={() => {
-                    if (isMobile) push("#description");
-                    setSelected({ label, ...rest });
-                  }}
-                  isActive={isActive}
-                  disabled={isActive}
-                >
-                  {label}
-                </Chip>
+                <Fragment key={crypto.randomUUID()}>
+                  <Chip
+                    className="hidden lg:block"
+                    onClick={() => setSelected({ label, ...rest })}
+                    isActive={isActive}
+                    disabled={isActive}
+                  >
+                    {label}
+                  </Chip>
+                  <Link href="#description" className="lg:hidden">
+                    <Chip onClick={() => setSelected({ label, ...rest })} isActive={isActive} disabled={isActive}>
+                      {label}
+                    </Chip>
+                  </Link>
+                </Fragment>
               );
             })}
           </Section>
         </Section>
       ))}
 
-      <Section
-        className="mt-5 gap-1 rounded-[20px] border border-zinc-200 bg-white p-1 shadow dark:border-zinc-800 dark:bg-zinc-950"
-        id="description"
-      >
-        <Section className="gap-1 rounded-2xl bg-zinc-100 p-6 dark:bg-zinc-900">
-          <Title level="b" className="text-sm">
-            {selected.label}
-          </Title>
-          <Paragraph className="text-sm">{selected.description}</Paragraph>
-        </Section>
-      </Section>
+      <DetailsBox selected={selected} />
     </>
   );
 };

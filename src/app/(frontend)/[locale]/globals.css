@@ -33,7 +33,7 @@ a {
 }
 
 html {
-  /* scroll-behavior: smooth !important; */
+  scroll-behavior: smooth !important;
   scroll-padding-top: 64px;
 }
 
