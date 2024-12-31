@@ -27,7 +27,7 @@ export default function CodeWrapper({ controls, snippets }: TCodeBlock) {
             <Fragment key={crypto.randomUUID()}>
               {_.map(({ __html, theme }) => (
                 <div className={clsx("relative text-sm", getVisibilityClass(theme))} key={crypto.randomUUID()}>
-                  <Section dangerouslySetInnerHTML={{ __html }} />
+                  <Section layout={undefined} dangerouslySetInnerHTML={{ __html }} />
                   <CopyToClipboard code={__html} />
                 </div>
               ))}
