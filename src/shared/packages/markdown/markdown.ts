@@ -9,12 +9,8 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import type { Locale } from "@/interfaces/i18n";
 import type { Location, TMetadata } from "@/interfaces/markdown";
 
-import { createFileNameWithLocale, getPathToResources, getSlugsWithoutFiles } from "./helpers";
+import { createFileNameWithLocale, getPathToResources, getSlugsWithoutFiles, sortedByDateTime } from "./helpers";
 import { METADATA_RESPONSE } from "./settings";
-
-type SortedByDateTimeParameter = Record<"metadata", TMetadata>;
-const sortedByDateTime = (a: SortedByDateTimeParameter, b: SortedByDateTimeParameter) =>
-  b.metadata.publishedAt.getTime() - a.metadata.publishedAt.getTime();
 
 export async function getSourcesSinceMdxFiles(rootDirectory: Location, slug: string, currentLocale: Locale) {
   const fileNameWithLocale = createFileNameWithLocale(slug, currentLocale),
@@ -45,7 +41,7 @@ export async function getItemsWithPublishedDate(rootDirectory: Location) {
   const itemsWithMetadata = await Promise.all(
     slugsWithoutFiles.map(async ({ slug }) => {
       const { frontmatter, updatedAt } = await getSourcesSinceMdxFiles(rootDirectory, slug, currentLocale);
-      const publishedAt = new Date(`${frontmatter.publishedAt}`) || METADATA_RESPONSE.metadata.publishedAt;
+      const publishedAt = new Date(`${frontmatter?.publishedAt}`) || METADATA_RESPONSE.metadata.publishedAt;
 
       const metadata = {
         ...METADATA_RESPONSE.metadata,
@@ -70,17 +66,12 @@ export async function getItemsWithPublishedDate(rootDirectory: Location) {
 }
 
 export async function getItemsWithMetadata(rootDirectory: Location): Promise<TMetadata[]> {
-  try {
-    const itemsWithPublishedDate = await getItemsWithPublishedDate(rootDirectory);
+  const itemsWithPublishedDate = await getItemsWithPublishedDate(rootDirectory);
 
-    const dataWithMetadataFromMdxFiles = itemsWithPublishedDate.map(({ metadata }) => ({
-      ...metadata,
-      year: metadata.publishedAt.getFullYear(),
-    }));
+  const dataWithMetadataFromMdxFiles = itemsWithPublishedDate.map(({ metadata }) => ({
+    ...metadata,
+    year: metadata.publishedAt.getFullYear(),
+  }));
 
-    return dataWithMetadataFromMdxFiles;
-  } catch (error) {
-    console.error(error);
-    return [];
-  }
+  return dataWithMetadataFromMdxFiles;
 }

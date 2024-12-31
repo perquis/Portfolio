@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 
 import type { Locale } from "@/interfaces/i18n";
-import type { Location } from "@/interfaces/markdown";
+import type { Location, TMetadata } from "@/interfaces/markdown";
 
 import { BASE_PATH } from "./settings";
 
@@ -19,3 +19,8 @@ export async function getSlugsWithoutFiles(rootDirectory: Location) {
   const slugsWithoutFiles = slugs.filter(({ slug }) => !slug.includes("."));
   return slugsWithoutFiles;
 }
+
+export type SortedByDateTimeParameter = Record<"metadata", TMetadata>;
+
+export const sortedByDateTime = (a: SortedByDateTimeParameter, b: SortedByDateTimeParameter) =>
+  b.metadata.publishedAt.getTime() - a.metadata.publishedAt.getTime();

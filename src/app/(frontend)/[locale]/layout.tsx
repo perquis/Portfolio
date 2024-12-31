@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { GeistMono } from "geist/font/mono";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { getMessages, unstable_setRequestLocale } from "next-intl/server";
 import { ViewTransitions } from "next-view-transitions";
 import { Inter } from "next/font/google";
 import { Suspense } from "react";
@@ -8,6 +8,7 @@ import { Suspense } from "react";
 import { AppProvider } from "@/app/(frontend)/[locale]/_providers";
 import { CommandMenu, CommandMenuProvider } from "@/components";
 import { locales } from "@/config/i18n";
+import { NextIntlProvider } from "@/providers";
 import { getItemsWithMetadata } from "@/shared/packages";
 import { BackgroundScene, GlobalLayout, Navigation } from "@/shared/ui";
 
@@ -27,23 +28,29 @@ export default async function AppLayout({
   params: { locale: string };
 }>) {
   unstable_setRequestLocale(locale);
-  const data = await Promise.all([getItemsWithMetadata("posts"), getItemsWithMetadata("projects")]);
+  const [posts, projects, messages] = await Promise.all([
+    getItemsWithMetadata("posts"),
+    getItemsWithMetadata("projects"),
+    getMessages(),
+  ]);
 
   return (
     <ViewTransitions>
       <html lang={locale} suppressHydrationWarning>
         <body className={clsx(inter.className, GeistMono.variable, "bg-white dark:bg-zinc-950")}>
           <Suspense>
-            <AppProvider>
-              <Navigation />
-              <GlobalLayout>
-                <BackgroundScene />
-                {children}
-                <CommandMenuProvider>
-                  <CommandMenu data={data} />
-                </CommandMenuProvider>
-              </GlobalLayout>
-            </AppProvider>
+            <NextIntlProvider messages={messages}>
+              <AppProvider>
+                <Navigation />
+                <GlobalLayout>
+                  <BackgroundScene />
+                  {children}
+                  <CommandMenuProvider>
+                    <CommandMenu data={[posts, projects]} />
+                  </CommandMenuProvider>
+                </GlobalLayout>
+              </AppProvider>
+            </NextIntlProvider>
           </Suspense>
 
           <div

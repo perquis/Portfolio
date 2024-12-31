@@ -4,10 +4,25 @@ import path from "path";
 
 import type { Locale } from "@/interfaces/i18n";
 import type { Location } from "@/interfaces/markdown";
-import { createFileNameWithLocale, getPathToResources, getSlugsWithoutFiles } from "@/shared/packages/markdown/helpers";
+import {
+  type SortedByDateTimeParameter,
+  createFileNameWithLocale,
+  getPathToResources,
+  getSlugsWithoutFiles,
+  sortedByDateTime,
+} from "@/shared/packages/markdown/helpers";
 import { BASE_PATH } from "@/shared/packages/markdown/settings";
 
 describe("packages/markdown/helpers", () => {
+  it("sortedByDateTime", () => {
+    const a = { metadata: { publishedAt: new Date("2021-10-10T10:10:10.000Z") } } as SortedByDateTimeParameter,
+      b = { metadata: { publishedAt: new Date("2024-10-10T10:10:10.000Z") } } as SortedByDateTimeParameter;
+
+    const result = sortedByDateTime(a, b);
+
+    expect(result).toBeGreaterThan(0);
+  });
+
   it("should return filename based on slug and locale parameters", async () => {
     const slug = "slug";
     const locale: Locale = "en";

@@ -1,8 +1,11 @@
+import type { IntlProvider } from "next-intl";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import type { ComponentProps } from "react";
 
-export default async function NextIntlProvider({ children }: React.PropsWithChildren<{}>) {
-  const messages = await getMessages();
+type Props = Omit<ComponentProps<typeof IntlProvider>, "locale"> & {
+  locale?: string;
+};
 
-  return <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>;
+export default function NextIntlProvider({ children, ...rest }: Props) {
+  return <NextIntlClientProvider {...rest}>{children}</NextIntlClientProvider>;
 }
