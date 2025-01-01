@@ -23,3 +23,5 @@ jobs:
           node-version: 20.x
       - run: npm i
       - run: npm run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
