@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { AppleNavbarLayout } from "@/shared/ui";
 import type { SafariProps } from "@/shared/ui/safari/safari";
 

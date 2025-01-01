@@ -1,5 +1,6 @@
 npm run test
 npm run type:check
+npm run lint
 
 npx lint-staged
 git update-index --again
