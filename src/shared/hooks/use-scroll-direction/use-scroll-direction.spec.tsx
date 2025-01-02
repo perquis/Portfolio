@@ -32,6 +32,7 @@ jest.mock("next-intl/navigation", () => ({
 describe("use-scroll-direction", () => {
   it("should return up when window scroll x and y are set to 0 points", () => {
     const scrollYMock = jest.fn(() => 0);
+    Object.defineProperty(window, "scrollTo", { value: jest.fn(), writable: true });
     Object.defineProperty(window, "scrollY", { value: scrollYMock, writable: true });
 
     const { result } = renderHook(() => useScrollDirection("y"));

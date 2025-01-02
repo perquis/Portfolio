@@ -1,4 +1,4 @@
-name: 📒 Rebuild by article changes
+name: 👷‍♂️ Rebuild by article changes
 
 on:
   push:
@@ -21,7 +21,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20.x
-      - run: npm i
-      - run: npm run semantic-release
+      - name: Install dependencies
+        run: npm i
+      - name: Release new version
+        run: npm run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and deploy
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel --prod --token $VERCEL_TOKEN
