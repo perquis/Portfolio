@@ -1,4 +1,4 @@
-name: 🔖 Create new release and tag with changelogs
+name: 🔖 Deploy to Vercel
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     paths: ["**.ts", "**.tsx"]
 
 jobs:
-  build-and-test:
+  release:
     runs-on: ubuntu-latest
     permissions:
       contents: write

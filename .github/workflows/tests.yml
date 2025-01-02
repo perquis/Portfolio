@@ -1,17 +1,17 @@
-name: 🧪 Run unit tests from jest
+name: 🧪 Run unit tests
 
 on:
   push:
     paths: ["**.ts", "**.tsx"]
 
 env:
-  LINKEDIN_PROFILE_URL: /in/your-linkedin-profile
+  LINKEDIN_PROFILE_URL: /your-linkedin-profile
   GITHUB_PROFILE_URL: /your-github-profile
   TWITTER_PROFILE_URL: /your-twitter-profile
   GOOGLE_FORM_URL: /your-google-form-url
 
 jobs:
-  build-and-test:
+  tests:
     runs-on: ubuntu-latest
     permissions:
       contents: read

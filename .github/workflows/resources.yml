@@ -1,4 +1,4 @@
-name: 📒 Release new version when articles are pushed
+name: 📒 Rebuild by article changes
 
 on:
   push:
@@ -12,7 +12,7 @@ on:
     paths: ["(resources)/**", "public/**"]
 
 jobs:
-  deploy:
+  release-by-resources:
     runs-on: ubuntu-latest
 
     steps:
