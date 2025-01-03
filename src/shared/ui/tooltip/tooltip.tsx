@@ -6,7 +6,7 @@ import { match } from "ts-pattern";
 
 import type { Alignment } from "@/interfaces/variants";
 import { useOpen } from "@/shared/hooks";
-import { Transition } from "@/shared/ui";
+import { Motion } from "@/shared/ui";
 
 type TTooltip = {
   label: string;
@@ -46,7 +46,7 @@ export default function Tooltip({ children, label, disabled, className, alignmen
         {children}
       </div>
       {isOpen && !disabled && (
-        <Transition
+        <Motion
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className={clsx(
@@ -55,7 +55,7 @@ export default function Tooltip({ children, label, disabled, className, alignmen
           )}
         >
           {label}
-        </Transition>
+        </Motion>
       )}
     </div>
   );

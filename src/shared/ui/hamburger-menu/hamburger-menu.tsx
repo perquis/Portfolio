@@ -7,7 +7,7 @@ import ReactFocusLock from "react-focus-lock";
 
 import { useHideBodyScrollbar, useKey, useOpen, useOutsideOnClick } from "@/shared/hooks";
 import type { Breadcrumbs } from "@/shared/ui";
-import { Section, Tab, Transition } from "@/shared/ui";
+import { Motion, Section, Tab } from "@/shared/ui";
 
 import { rotation } from "./anime-rotation";
 
@@ -48,5 +48,5 @@ export default function HamburgerMenu({ links }: THamburgerMenu) {
 }
 
 const Line: FC<MotionProps> = (props) => (
-  <Transition className="absolute h-[2px] w-full rounded-sm bg-zinc-950 dark:bg-white" {...props} />
+  <Motion className="absolute h-[2px] w-full rounded-sm bg-zinc-950 dark:bg-white" {...props} />
 );

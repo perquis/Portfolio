@@ -3,7 +3,7 @@
 import { AnimatePresence } from "framer-motion";
 
 import { emojis } from "@/data";
-import { Emoji, IconButton, Paragraph, Section, Title, Transition } from "@/shared/ui";
+import { Emoji, IconButton, Motion, Paragraph, Section, Title } from "@/shared/ui";
 
 interface IFeedback {
   title: string;
@@ -17,7 +17,7 @@ export default function Feedback({ isOpen, close, title, description }: IFeedbac
     <div className="pointer-events-none fixed left-0 top-0 flex h-screen w-full items-end justify-center overflow-hidden pb-16">
       <AnimatePresence>
         {isOpen && (
-          <Transition
+          <Motion
             initial={{
               scale: 0,
               opacity: 0,
@@ -55,7 +55,7 @@ export default function Feedback({ isOpen, close, title, description }: IFeedbac
                 />
               </Section>
             </Section>
-          </Transition>
+          </Motion>
         )}
       </AnimatePresence>
     </div>

@@ -7,7 +7,7 @@ import { type Dispatch, type FC, type SetStateAction, useState } from "react";
 import type { TMetadata } from "@/interfaces/markdown";
 import { Link } from "@/libs/next-intl";
 import { ArrowLeft } from "@/shared/icons/generals";
-import { ArrowLink, DynamicImage, Paragraph, Regular, Section, Title, Transition } from "@/shared/ui";
+import { ArrowLink, DynamicImage, Motion, Paragraph, Regular, Section, Title } from "@/shared/ui";
 
 export const List: FC<{ items: TMetadata[] }> = ({ items }) => {
   const [selected, setSelected] = useState(items[0]?.title);
@@ -48,13 +48,13 @@ const Item: FC<TMetadata & { selected: string; setSelected: Dispatch<SetStateAct
 
         <Section className="relative !flex-row items-center text-zinc-800 dark:text-zinc-200">
           <Regular className="mr-8 !text-base">{year}</Regular>
-          <Transition className="absolute right-0" animate={isActive ? { rotate: -90 } : { rotate: 0 }}>
+          <Motion className="absolute right-0" animate={isActive ? { rotate: -90 } : { rotate: 0 }}>
             <ArrowLeft width={24} height={24} />
-          </Transition>
+          </Motion>
         </Section>
       </button>
 
-      <Transition
+      <Motion
         animate={isActive ? { height: "auto" } : { height: 0 }}
         transition={{ duration: 0.5 }}
         className={clsx("overflow-hidden", isActive ? "h-auto" : "h-0")}
@@ -77,7 +77,7 @@ const Item: FC<TMetadata & { selected: string; setSelected: Dispatch<SetStateAct
             </Section>
           </Section>
         </Section>
-      </Transition>
+      </Motion>
     </Section>
   );
 };

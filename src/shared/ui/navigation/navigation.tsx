@@ -7,15 +7,15 @@ import { links } from "@/data";
 import type { IsLock } from "@/interfaces/variants";
 import { useScrollDirection } from "@/shared/hooks";
 import type { Breadcrumbs } from "@/shared/ui";
-import { Container, HamburgerMenu, Logo, Section, Tab, Transition } from "@/shared/ui";
+import { Container, HamburgerMenu, Logo, Motion, Section, Tab } from "@/shared/ui";
 
 export default function Navigation() {
   const direction = useScrollDirection("y");
   const lock = direction === "down";
 
   return (
-    <Transition
-      element="nav"
+    <Motion
+      asChild="nav"
       transition={{ damping: 30, stiffness: 250 }}
       animate={direction === "up" ? { translateY: 0 } : { translateY: "-100%" }}
       className="fixed left-0 top-0 z-50 w-full border-b border-zinc-200/50 bg-white/95 py-2 backdrop-blur-xl dark:border-zinc-800/50 dark:bg-zinc-950/95"
@@ -27,7 +27,7 @@ export default function Navigation() {
           <HamburgerMenu links={links} />
         </Section>
       </Container>
-    </Transition>
+    </Motion>
   );
 }
 

@@ -1,16 +1,19 @@
 "use client";
 
-import { type MotionProps, motion } from "framer-motion";
-import type { ComponentProps } from "react";
-import React from "react";
+import { type MotionValue, motion } from "framer-motion";
+import { type ComponentProps, type ElementType, type ReactNode, createElement } from "react";
 
-/* eslint-disable @typescript-eslint/ban-ts-comment */
+type MotionElement<T extends keyof typeof motion> = ComponentProps<(typeof motion)[T]> & {
+  asChild?: T;
+  children?: ReactNode | MotionValue<number> | MotionValue<string>;
+  className?: string;
+};
 
-export default function Transition<T extends keyof JSX.IntrinsicElements | React.JSXElementConstructor<any>>({
+export default function Motion<T extends keyof typeof motion = "div">({
   children,
-  element = "div" as T,
+  asChild,
   ...props
-}: MotionProps & ComponentProps<T> & { element?: T }) {
-  const Tag = motion[element as keyof typeof motion] as React.ElementType;
-  return <Tag {...props}>{children}</Tag>;
+}: MotionElement<T>) {
+  const Tag = motion[asChild || "div"] as ElementType;
+  return createElement(Tag, props, children as ReactNode);
 }

@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { match } from "ts-pattern";
 
-import Transition from "@/shared/ui/transition/transition";
+import Motion from "@/shared/ui/transition/transition";
 
 interface IStatusDot {
   status: "online" | "offline";
@@ -15,7 +15,7 @@ export default function StatusDot({ status }: IStatusDot) {
 
   return (
     <div className={clsx("relative block h-2 w-2 rounded-full", color)}>
-      <Transition
+      <Motion
         initial={{ opacity: 0.5, scale: 1 }}
         animate={{ opacity: 0, scale: 2.5 }}
         exit={{ opacity: 0.5, scale: 1 }}

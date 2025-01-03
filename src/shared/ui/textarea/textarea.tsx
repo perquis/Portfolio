@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { type ComponentProps, forwardRef } from "react";
 
-import { Section, Transition } from "@/shared/ui";
+import { Motion, Section } from "@/shared/ui";
 
 type ErrorValidation = { error?: string };
 type TTextarea = ComponentProps<"textarea"> & ErrorValidation & { labelText?: string };
@@ -11,7 +11,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TTextarea>(function Textarea(
   ref,
 ) {
   return (
-    <Transition
+    <Motion
       animate={error ? { rotate: [-1, 1.3, 0], translateX: [-1, 1.3, 0] } : { rotate: 0, translateX: 0 }}
       transition={{ duration: 0.2 }}
       className="w-full"
@@ -33,7 +33,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TTextarea>(function Textarea(
         />
         {error && <span className="text-sm text-rose-500">{error}</span>}
       </Section>
-    </Transition>
+    </Motion>
   );
 });
 

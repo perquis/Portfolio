@@ -1,14 +1,14 @@
 import clsx from "clsx";
 import { type ComponentProps, forwardRef } from "react";
 
-import { Section, Transition } from "@/shared/ui";
+import { Motion, Section } from "@/shared/ui";
 
 type ErrorValidation = { error?: string };
 type TInput = ComponentProps<"input"> & ErrorValidation & { labelText?: string };
 
 const Input = forwardRef<HTMLInputElement, TInput>(function Input({ className, error, id, labelText, ...props }, ref) {
   return (
-    <Transition
+    <Motion
       animate={error ? { rotate: [-1, 1.3, 0], translateX: [-1, 1.3, 0] } : { rotate: 0, translateX: 0 }}
       transition={{ duration: 0.2 }}
       className="w-full"
@@ -30,7 +30,7 @@ const Input = forwardRef<HTMLInputElement, TInput>(function Input({ className, e
         />
         {error && <span className="text-sm text-rose-500">{error}</span>}
       </Section>
-    </Transition>
+    </Motion>
   );
 });
 

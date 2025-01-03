@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { type ComponentProps } from "react";
 
 import { useKey } from "@/shared/hooks";
-import { Container, IconButton, Ratio, Regular, Section, Transition } from "@/shared/ui";
+import { Container, IconButton, Motion, Ratio, Regular, Section } from "@/shared/ui";
 
 import { Page } from "./page";
 import { Popup } from "./popup";
@@ -38,11 +38,11 @@ export default function Slider({ slides }: ISlider) {
       <Popup {...popup} />
 
       <Container className="relative !px-0">
-        <Transition animate={{ translateX: diff * -page }} transition={transition} className="w-full">
+        <Motion animate={{ translateX: diff * -page }} transition={transition} className="w-full">
           <Section className="w-full !flex-row items-center gap-5" ref={slideRef}>
             {slides.map((rest, index) => (
-              <Transition
-                element="button"
+              <Motion
+                asChild="button"
                 key={index}
                 layoutId={String(index)}
                 className={clsx(
@@ -54,7 +54,7 @@ export default function Slider({ slides }: ISlider) {
                 disabled={page !== index}
               >
                 <div className="rounded-xl bg-white dark:bg-zinc-950">
-                  <Transition style={showSlide(index)} animate={showSlide(index)}>
+                  <Motion style={showSlide(index)} animate={showSlide(index)}>
                     <Ratio
                       key={index}
                       className={clsx(
@@ -63,12 +63,12 @@ export default function Slider({ slides }: ISlider) {
                       resolution="5:4"
                       {...rest}
                     />
-                  </Transition>
+                  </Motion>
                 </div>
-              </Transition>
+              </Motion>
             ))}
           </Section>
-        </Transition>
+        </Motion>
         <Section className="absolute bottom-5 left-1/2 -translate-x-1/2 !flex-row gap-3">
           {slides.map((_, index) => (
             <Page key={index} isActive={index === page} />
@@ -77,14 +77,9 @@ export default function Slider({ slides }: ISlider) {
       </Container>
       <Section className="h-5 gap-1 overflow-hidden">
         {slides.map(({ alt }, index) => (
-          <Transition
-            key={index}
-            animate={{ translateY: page * -24 }}
-            transition={transition}
-            className="h-5 text-center"
-          >
+          <Motion key={index} animate={{ translateY: page * -24 }} transition={transition} className="h-5 text-center">
             <Regular className="text-center !text-sm">{alt}</Regular>
-          </Transition>
+          </Motion>
         ))}
       </Section>
       <Section className="absolute -bottom-2 right-0 !flex-row gap-2">
