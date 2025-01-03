@@ -7,8 +7,8 @@ import { Regular, SearchBar, Section, Title } from "@/shared/ui";
 import { List } from "./ui-list";
 
 export const AllPostsList: FC<Record<"items", TMetadata[]>> = ({ items }) => {
+  const fullYear = new Date("2024-07-01").getFullYear();
   const t = useTranslations();
-  const fullYear = new Date().getFullYear();
 
   return (
     <Section className="gap-5">
