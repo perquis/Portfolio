@@ -4,29 +4,43 @@ on:
   push:
     branches:
       - main
-    paths: ["(resources)/**", "public/**"]
+    paths: ["(resources)/**", "public/**", "!*.ts", "!*.js"]
 
   pull_request:
     branches:
       - main
-    paths: ["(resources)/**", "public/**"]
+    paths: ["(resources)/**", "public/**", "!*.ts", "!*.js"]
 
 jobs:
-  release-by-resources:
+  rebuild:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+      pull-requests: write
 
     steps:
+      - name: Set GITHUB_MESSAGE
+        run: echo "GITHUB_MESSAGE=${{ github.event.head_commit.message }}" >> $GITHUB_ENV
+
+      - name: Check if the commit message contains 'skip ci'
+        if: ${{ !contains(env.GITHUB_MESSAGE, 'skip ci') }}
+        run: echo "This commit does not contain 'skip ci', proceeding with the workflow."
+
       - uses: actions/checkout@v4
       - name: Use Node.js 20.x
         uses: actions/setup-node@v4
         with:
           node-version: 20.x
+
       - name: Install dependencies
         run: npm i
+
       - name: Release new version
         run: npm run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Build and deploy
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
