@@ -31,6 +31,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     status: "info",
+    close: () => {},
     content: "This message was sent successfully and will be delivered shortly.",
   },
 };

@@ -4,6 +4,7 @@ import {
   type ComponentProps,
   type PropsWithChildren,
   createContext,
+  useCallback,
   useContext,
   useEffect,
   useMemo,
@@ -22,18 +23,19 @@ const AlertContext = createContext<Nullable<TAlertProvider>>(null);
 
 export default function AlertProvider({ children }: PropsWithChildren) {
   const [alert, setAlert] = useState<AlertOrNull>(null);
+  const clearAlert = useCallback(() => setAlert(null), []);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setAlert(null), 10000);
+    const timeout = setTimeout(clearAlert, 10000);
     return () => clearTimeout(timeout);
-  }, [alert]);
+  }, [alert, clearAlert]);
 
   const value = useMemo(() => ({ alert, setAlert }), [alert]);
 
   return (
     <AlertContext.Provider value={value}>
       {children}
-      {alert && createPortal(<Alert {...alert} />, document.getElementById("alerts")!)}
+      {alert && createPortal(<Alert {...alert} close={close} />, document.getElementById("alerts")!)}
     </AlertContext.Provider>
   );
 }
