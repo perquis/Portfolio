@@ -32,7 +32,7 @@ export default function Divider({ className, ...props }: TDivider) {
   ));
 
   return (
-    <motion.div layout="position" className={clsx("flex gap-2", className)} {...props}>
+    <motion.div layout="position" className={clsx("mx-auto flex w-full max-w-screen-sm gap-2", className)} {...props}>
       {dots}
     </motion.div>
   );
