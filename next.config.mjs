@@ -6,6 +6,7 @@ const withNextIntl = createNextIntlPlugin("./src/config/i18n.ts");
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  poweredByHeader: false,
   compiler: {
     removeConsole: {
       exclude: ["error", "warn", "log"],
