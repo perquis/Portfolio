@@ -10,9 +10,9 @@ export const useItems = (): ComponentProps<typeof List>["items"] => {
     {
       image: {
         src: "/static/jobs/beesafe-logo.jpg",
-        alt: "Beesafe Sp. z o.o.",
+        alt: "BeeSafe Sp. z o.o.",
       },
-      name: "Beesafe Sp. z o.o.",
+      name: "BeeSafe Sp. z o.o.",
       position: "Mid Full Stack Developer",
       years: t("PRESENT", { year: 2024 }),
     },
