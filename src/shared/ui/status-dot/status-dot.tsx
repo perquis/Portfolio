@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { match } from "ts-pattern";
 
-import Motion from "@/shared/ui/transition/transition";
+import Motion from "@/shared/ui/motion/motion";
 
 interface IStatusDot {
   status: "online" | "offline";
