@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumbs renders correctly 1`] = `
+<section>
+  <a>
+    About
+  </a>
+  <span
+    className="block w-5 text-center text-zinc-500"
+  >
+    /
+  </span>
+  <a>
+    Portfolio
+  </a>
+  <span
+    className="block w-5 text-center text-zinc-500"
+  >
+    /
+  </span>
+  <a>
+    Blog
+  </a>
+  <span
+    className="block w-5 text-center text-zinc-500"
+  >
+    /
+  </span>
+  <a>
+    Contact
+  </a>
+</section>
+`;
+
+exports[`Breadcrumbs renders with no links 1`] = `<section />`;

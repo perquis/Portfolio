@@ -7,10 +7,14 @@ import { match } from "ts-pattern";
 
 import type { Size } from "@/interfaces/variants";
 
+export type ButtonVariant = "black" | "white" | "indigo";
+export type ButtonMode = "simple" | "gradient";
+export type ExcludedTinySize = Exclude<Size, "tiny">;
+
 type TButton = {
-  size: Exclude<Size, "tiny">;
-  variants: "black" | "white" | "indigo";
-  mode: "simple" | "gradient";
+  size: ExcludedTinySize;
+  variants: ButtonVariant;
+  mode: ButtonMode;
   loading?: boolean;
 } & ComponentProps<"button">;
 

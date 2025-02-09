@@ -5,7 +5,7 @@ import { match } from "ts-pattern";
 import { statusActions } from "@/data";
 import { Section, Title } from "@/shared/ui";
 
-interface ICallout extends PropsWithChildren {
+export interface ICallout extends PropsWithChildren {
   title: string;
   variants?: "info" | "warning" | "error" | "success";
 }

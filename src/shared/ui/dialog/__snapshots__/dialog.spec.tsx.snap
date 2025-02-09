@@ -1,0 +1,478 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dialog render with alignment: bottom 1`] = `
+<div
+  className="fixed left-0 top-0 z-50 flex h-screen w-full bg-zinc-950/75 backdrop-blur-lg dark:bg-white/10 sm:p-5 justify-center items-end"
+>
+  <div
+    data-focus-guard={true}
+    style={
+      {
+        "height": "0px",
+        "left": "1px",
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "fixed",
+        "top": "1px",
+        "width": "1px",
+      }
+    }
+    tabIndex={0}
+  />
+  <div
+    data-focus-lock-disabled={false}
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <div
+      className="relative h-screen max-w-screen-sm border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-950 sm:h-auto sm:rounded-2xl sm:shadow"
+    >
+      <button
+        className="absolute right-3 top-3"
+        icon="Close"
+        onClick={[MockFunction]}
+        size="medium"
+      />
+    </div>
+  </div>
+  <div
+    data-focus-guard={true}
+    style={
+      {
+        "height": "0px",
+        "left": "1px",
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "fixed",
+        "top": "1px",
+        "width": "1px",
+      }
+    }
+    tabIndex={0}
+  />
+</div>
+`;
+
+exports[`Dialog render with alignment: bottom-left 1`] = `
+<div
+  className="fixed left-0 top-0 z-50 flex h-screen w-full bg-zinc-950/75 backdrop-blur-lg dark:bg-white/10 sm:p-5 justify-start items-end"
+>
+  <div
+    data-focus-guard={true}
+    style={
+      {
+        "height": "0px",
+        "left": "1px",
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "fixed",
+        "top": "1px",
+        "width": "1px",
+      }
+    }
+    tabIndex={0}
+  />
+  <div
+    data-focus-lock-disabled={false}
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <div
+      className="relative h-screen max-w-screen-sm border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-950 sm:h-auto sm:rounded-2xl sm:shadow"
+    >
+      <button
+        className="absolute right-3 top-3"
+        icon="Close"
+        onClick={[MockFunction]}
+        size="medium"
+      />
+    </div>
+  </div>
+  <div
+    data-focus-guard={true}
+    style={
+      {
+        "height": "0px",
+        "left": "1px",
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "fixed",
+        "top": "1px",
+        "width": "1px",
+      }
+    }
+    tabIndex={0}
+  />
+</div>
+`;
+
+exports[`Dialog render with alignment: bottom-right 1`] = `
+<div
+  className="fixed left-0 top-0 z-50 flex h-screen w-full bg-zinc-950/75 backdrop-blur-lg dark:bg-white/10 sm:p-5 justify-end items-end"
+>
+  <div
+    data-focus-guard={true}
+    style={
+      {
+        "height": "0px",
+        "left": "1px",
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "fixed",
+        "top": "1px",
+        "width": "1px",
+      }
+    }
+    tabIndex={0}
+  />
+  <div
+    data-focus-lock-disabled={false}
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <div
+      className="relative h-screen max-w-screen-sm border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-950 sm:h-auto sm:rounded-2xl sm:shadow"
+    >
+      <button
+        className="absolute right-3 top-3"
+        icon="Close"
+        onClick={[MockFunction]}
+        size="medium"
+      />
+    </div>
+  </div>
+  <div
+    data-focus-guard={true}
+    style={
+      {
+        "height": "0px",
+        "left": "1px",
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "fixed",
+        "top": "1px",
+        "width": "1px",
+      }
+    }
+    tabIndex={0}
+  />
+</div>
+`;
+
+exports[`Dialog render with alignment: center 1`] = `
+<div
+  className="fixed left-0 top-0 z-50 flex h-screen w-full bg-zinc-950/75 backdrop-blur-lg dark:bg-white/10 sm:p-5 justify-center items-center"
+>
+  <div
+    data-focus-guard={true}
+    style={
+      {
+        "height": "0px",
+        "left": "1px",
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "fixed",
+        "top": "1px",
+        "width": "1px",
+      }
+    }
+    tabIndex={0}
+  />
+  <div
+    data-focus-lock-disabled={false}
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <div
+      className="relative h-screen max-w-screen-sm border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-950 sm:h-auto sm:rounded-2xl sm:shadow"
+    >
+      <button
+        className="absolute right-3 top-3"
+        icon="Close"
+        onClick={[MockFunction]}
+        size="medium"
+      />
+    </div>
+  </div>
+  <div
+    data-focus-guard={true}
+    style={
+      {
+        "height": "0px",
+        "left": "1px",
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "fixed",
+        "top": "1px",
+        "width": "1px",
+      }
+    }
+    tabIndex={0}
+  />
+</div>
+`;
+
+exports[`Dialog render with alignment: left 1`] = `
+<div
+  className="fixed left-0 top-0 z-50 flex h-screen w-full bg-zinc-950/75 backdrop-blur-lg dark:bg-white/10 sm:p-5 justify-start items-center"
+>
+  <div
+    data-focus-guard={true}
+    style={
+      {
+        "height": "0px",
+        "left": "1px",
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "fixed",
+        "top": "1px",
+        "width": "1px",
+      }
+    }
+    tabIndex={0}
+  />
+  <div
+    data-focus-lock-disabled={false}
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <div
+      className="relative h-screen max-w-screen-sm border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-950 sm:h-auto sm:rounded-2xl sm:shadow"
+    >
+      <button
+        className="absolute right-3 top-3"
+        icon="Close"
+        onClick={[MockFunction]}
+        size="medium"
+      />
+    </div>
+  </div>
+  <div
+    data-focus-guard={true}
+    style={
+      {
+        "height": "0px",
+        "left": "1px",
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "fixed",
+        "top": "1px",
+        "width": "1px",
+      }
+    }
+    tabIndex={0}
+  />
+</div>
+`;
+
+exports[`Dialog render with alignment: right 1`] = `
+<div
+  className="fixed left-0 top-0 z-50 flex h-screen w-full bg-zinc-950/75 backdrop-blur-lg dark:bg-white/10 sm:p-5 justify-end items-center"
+>
+  <div
+    data-focus-guard={true}
+    style={
+      {
+        "height": "0px",
+        "left": "1px",
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "fixed",
+        "top": "1px",
+        "width": "1px",
+      }
+    }
+    tabIndex={0}
+  />
+  <div
+    data-focus-lock-disabled={false}
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <div
+      className="relative h-screen max-w-screen-sm border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-950 sm:h-auto sm:rounded-2xl sm:shadow"
+    >
+      <button
+        className="absolute right-3 top-3"
+        icon="Close"
+        onClick={[MockFunction]}
+        size="medium"
+      />
+    </div>
+  </div>
+  <div
+    data-focus-guard={true}
+    style={
+      {
+        "height": "0px",
+        "left": "1px",
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "fixed",
+        "top": "1px",
+        "width": "1px",
+      }
+    }
+    tabIndex={0}
+  />
+</div>
+`;
+
+exports[`Dialog render with alignment: top 1`] = `
+<div
+  className="fixed left-0 top-0 z-50 flex h-screen w-full bg-zinc-950/75 backdrop-blur-lg dark:bg-white/10 sm:p-5 justify-center items-start"
+>
+  <div
+    data-focus-guard={true}
+    style={
+      {
+        "height": "0px",
+        "left": "1px",
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "fixed",
+        "top": "1px",
+        "width": "1px",
+      }
+    }
+    tabIndex={0}
+  />
+  <div
+    data-focus-lock-disabled={false}
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <div
+      className="relative h-screen max-w-screen-sm border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-950 sm:h-auto sm:rounded-2xl sm:shadow"
+    >
+      <button
+        className="absolute right-3 top-3"
+        icon="Close"
+        onClick={[MockFunction]}
+        size="medium"
+      />
+    </div>
+  </div>
+  <div
+    data-focus-guard={true}
+    style={
+      {
+        "height": "0px",
+        "left": "1px",
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "fixed",
+        "top": "1px",
+        "width": "1px",
+      }
+    }
+    tabIndex={0}
+  />
+</div>
+`;
+
+exports[`Dialog render with alignment: top-left 1`] = `
+<div
+  className="fixed left-0 top-0 z-50 flex h-screen w-full bg-zinc-950/75 backdrop-blur-lg dark:bg-white/10 sm:p-5 justify-start items-start"
+>
+  <div
+    data-focus-guard={true}
+    style={
+      {
+        "height": "0px",
+        "left": "1px",
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "fixed",
+        "top": "1px",
+        "width": "1px",
+      }
+    }
+    tabIndex={0}
+  />
+  <div
+    data-focus-lock-disabled={false}
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <div
+      className="relative h-screen max-w-screen-sm border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-950 sm:h-auto sm:rounded-2xl sm:shadow"
+    >
+      <button
+        className="absolute right-3 top-3"
+        icon="Close"
+        onClick={[MockFunction]}
+        size="medium"
+      />
+    </div>
+  </div>
+  <div
+    data-focus-guard={true}
+    style={
+      {
+        "height": "0px",
+        "left": "1px",
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "fixed",
+        "top": "1px",
+        "width": "1px",
+      }
+    }
+    tabIndex={0}
+  />
+</div>
+`;
+
+exports[`Dialog render with alignment: top-right 1`] = `
+<div
+  className="fixed left-0 top-0 z-50 flex h-screen w-full bg-zinc-950/75 backdrop-blur-lg dark:bg-white/10 sm:p-5 justify-end items-start"
+>
+  <div
+    data-focus-guard={true}
+    style={
+      {
+        "height": "0px",
+        "left": "1px",
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "fixed",
+        "top": "1px",
+        "width": "1px",
+      }
+    }
+    tabIndex={0}
+  />
+  <div
+    data-focus-lock-disabled={false}
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <div
+      className="relative h-screen max-w-screen-sm border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-950 sm:h-auto sm:rounded-2xl sm:shadow"
+    >
+      <button
+        className="absolute right-3 top-3"
+        icon="Close"
+        onClick={[MockFunction]}
+        size="medium"
+      />
+    </div>
+  </div>
+  <div
+    data-focus-guard={true}
+    style={
+      {
+        "height": "0px",
+        "left": "1px",
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "fixed",
+        "top": "1px",
+        "width": "1px",
+      }
+    }
+    tabIndex={0}
+  />
+</div>
+`;

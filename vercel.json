@@ -4,5 +4,8 @@
       "develop": false,
       "main": false
     }
+  },
+  "github": {
+    "enabled": false
   }
 }

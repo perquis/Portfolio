@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container renders correctly 1`] = `
+<div
+  className="mx-auto w-full max-w-screen-sm px-5 text-zinc-950 dark:text-white lg:px-0"
+/>
+`;

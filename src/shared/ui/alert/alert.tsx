@@ -4,10 +4,10 @@ import { match } from "ts-pattern";
 import { statusActions } from "@/data";
 import { IconButton, Motion, Paragraph, Section } from "@/shared/ui";
 
-type AlertStataus = (typeof statusActions)[number]["name"];
+export type AlertStatus = (typeof statusActions)[number]["name"];
 
 interface IAlert {
-  status: AlertStataus;
+  status: AlertStatus;
   content: string;
   close?: () => void;
 }
