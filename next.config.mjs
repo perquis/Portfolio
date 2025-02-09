@@ -17,17 +17,17 @@ const nextConfig = {
     return [
       {
         source: "/in",
-        destination: process.env.LINKEDIN_PROFILE_URL,
+        destination: process.env.NEXT_PUBLIC_LINKEDIN_PROFILE_URL,
         permanent: true,
       },
       {
         source: "/gh",
-        destination: process.env.GITHUB_PROFILE_URL,
+        destination: process.env.NEXT_PUBLIC_GITHUB_PROFILE_URL,
         permanent: true,
       },
       {
         source: "/x",
-        destination: process.env.TWITTER_PROFILE_URL,
+        destination: process.env.NEXT_PUBLIC_TWITTER_PROFILE_URL,
         permanent: true,
       },
       {

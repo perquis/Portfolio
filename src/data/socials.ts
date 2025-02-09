@@ -1,15 +1,15 @@
 const socials = [
   {
     name: "GitHub",
-    url: "https://github.com/perquis",
+    url: process.env.NEXT_PUBLIC_GITHUB_PROFILE_URL!,
   },
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/damian-werens",
+    url: process.env.NEXT_PUBLIC_LINKEDIN_PROFILE_URL!,
   },
   {
     name: "X",
-    url: "https://x.com/_perquis",
+    url: process.env.NEXT_PUBLIC_TWITTER_PROFILE_URL!,
   },
 ] as const;
 

@@ -5,9 +5,9 @@ on:
     paths: ["**.ts", "**.tsx"]
 
 env:
-  LINKEDIN_PROFILE_URL: /your-linkedin-profile
-  GITHUB_PROFILE_URL: /your-github-profile
-  TWITTER_PROFILE_URL: /your-twitter-profile
+  NEXT_PUBLIC_LINKEDIN_PROFILE_URL: /your-linkedin-profile
+  NEXT_PUBLIC_GITHUB_PROFILE_URL: /your-github-profile
+  NEXT_PUBLIC_TWITTER_PROFILE_URL: /your-twitter-profile
   GOOGLE_FORM_URL: /your-google-form-url
 
 jobs:
