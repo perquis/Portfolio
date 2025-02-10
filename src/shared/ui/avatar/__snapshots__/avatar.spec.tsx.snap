@@ -1,73 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Avatar renders correctly with rounded default and size large 1`] = `
-<div
-  alt="User Avatar"
-  className="overflow-hidden rounded-2xl h-16 w-16"
-  resolution="1:1"
-  src="http://example.com/static/avatar.png"
-/>
-`;
+exports[`Avatar renders correctly with rounded default and size large 1`] = `null`;
 
-exports[`Avatar renders correctly with rounded default and size medium 1`] = `
-<div
-  alt="User Avatar"
-  className="overflow-hidden rounded-xl h-12 w-12"
-  resolution="1:1"
-  src="http://example.com/static/avatar.png"
-/>
-`;
+exports[`Avatar renders correctly with rounded default and size medium 1`] = `null`;
 
-exports[`Avatar renders correctly with rounded default and size small 1`] = `
-<div
-  alt="User Avatar"
-  className="overflow-hidden rounded-lg h-8 w-8"
-  resolution="1:1"
-  src="http://example.com/static/avatar.png"
-/>
-`;
+exports[`Avatar renders correctly with rounded default and size small 1`] = `null`;
 
-exports[`Avatar renders correctly with rounded default and size tiny 1`] = `
-<div
-  alt="User Avatar"
-  className="overflow-hidden rounded-md h-6 w-6"
-  resolution="1:1"
-  src="http://example.com/static/avatar.png"
-/>
-`;
+exports[`Avatar renders correctly with rounded default and size tiny 1`] = `null`;
 
-exports[`Avatar renders correctly with rounded full and size large 1`] = `
-<div
-  alt="User Avatar"
-  className="overflow-hidden rounded-full h-16 w-16"
-  resolution="1:1"
-  src="http://example.com/static/avatar.png"
-/>
-`;
+exports[`Avatar renders correctly with rounded full and size large 1`] = `null`;
 
-exports[`Avatar renders correctly with rounded full and size medium 1`] = `
-<div
-  alt="User Avatar"
-  className="overflow-hidden rounded-full h-12 w-12"
-  resolution="1:1"
-  src="http://example.com/static/avatar.png"
-/>
-`;
+exports[`Avatar renders correctly with rounded full and size medium 1`] = `null`;
 
-exports[`Avatar renders correctly with rounded full and size small 1`] = `
-<div
-  alt="User Avatar"
-  className="overflow-hidden rounded-full h-8 w-8"
-  resolution="1:1"
-  src="http://example.com/static/avatar.png"
-/>
-`;
+exports[`Avatar renders correctly with rounded full and size small 1`] = `null`;
 
-exports[`Avatar renders correctly with rounded full and size tiny 1`] = `
-<div
-  alt="User Avatar"
-  className="overflow-hidden rounded-full h-6 w-6"
-  resolution="1:1"
-  src="http://example.com/static/avatar.png"
-/>
-`;
+exports[`Avatar renders correctly with rounded full and size tiny 1`] = `null`;

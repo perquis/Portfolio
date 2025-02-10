@@ -1,9 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-
 /* eslint-disable array-callback-return */
-
 /* eslint-disable jsx-a11y/alt-text */
-
 /* eslint-disable @next/next/no-img-element */
 import { Suspense } from "react";
 import { type EnrichedTweet, type TweetProps, type TwitterComponents, enrichTweet } from "react-tweet";

@@ -9,8 +9,7 @@ import { cn } from "@/libs/utils";
 import { Button } from "./button";
 import { ScrollArea } from "./scroll-area";
 
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps, @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-object-type */
 
 export type TreeViewElement = {
   id: string;

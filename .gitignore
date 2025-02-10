@@ -25,6 +25,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# ide
+.idea/
+.vscode/
+
 # local env files
 .env*.local
 
@@ -43,3 +47,5 @@ yarn.lock
 pnpm-lock.yaml
 bun.lockb
 bun.lock
+
+*.tgz

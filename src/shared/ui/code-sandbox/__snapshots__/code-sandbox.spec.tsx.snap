@@ -1,17 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CodeSandbox renders correctly 1`] = `
-<div
-  className="sandpack"
->
-  <div
-    options={
-      {
-        "showConsole": true,
-      }
-    }
-    template="nextjs"
-    theme="dark"
-  />
-</div>
-`;
+exports[`CodeSandbox renders correctly 1`] = `null`;

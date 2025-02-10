@@ -16,7 +16,8 @@ export const sendMail = async (email: Schema) => {
 
   try {
     transporter.sendMail({ to, subject, html });
-  } catch (error) {
+  } catch (error: unknown) {
+    console.error(error);
     throw new Error(`Something went wrong with sending mail on the server side...`);
   }
 };

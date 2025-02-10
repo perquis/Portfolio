@@ -1,9 +1,8 @@
 "use client";
 
 import clsx from "clsx";
-import crypto from "crypto";
 import { type MotionProps, motion } from "framer-motion";
-import { useState } from "react";
+import { useId, useState } from "react";
 
 import { useEventCallback } from "@/shared/hooks";
 
@@ -11,6 +10,7 @@ type TDivider = MotionProps & { className?: string };
 
 export default function Divider({ className, ...props }: TDivider) {
   const [innerWidth, setInnerWidth] = useState(0);
+  const id = useId();
 
   const handleResize = () => {
     const width = window.innerWidth;
@@ -23,7 +23,7 @@ export default function Divider({ className, ...props }: TDivider) {
 
   const dots = Array.from({ length: 32 }, (_, index) => (
     <div
-      key={crypto.randomUUID()}
+      key={id + index}
       className={clsx(
         "h-[1px] flex-grow rounded-sm bg-zinc-300 dark:bg-zinc-700",
         innerWidth >= 400 && innerWidth < 640 && index > 20 && "hidden sm:block",

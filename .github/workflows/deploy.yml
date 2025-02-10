@@ -23,13 +23,13 @@ jobs:
         run: echo "This commit does not contain 'skip ci', proceeding with the workflow."
 
       - uses: actions/checkout@v4
-      - name: Use Node.js 20.x
+      - name: Use Node.js 22.x
         uses: actions/setup-node@v4
         with:
-          node-version: 20.x
+          node-version: 22.x
 
       - name: Install dependencies
-        run: npm i
+        run: npm i --legacy-peer-deps
 
       - name: Release new version
         run: npm run semantic-release

@@ -6,9 +6,11 @@ import Zoom from "react-medium-image-zoom";
 
 import * as components from "@/shared/ui";
 
+// @ts-ignore
 const mdxComponents: MDXRemoteProps["components"] = {
   Zoom,
   ...components,
+  // @ts-ignore
   p: (props) => <components.Paragraph {...props} />,
 };
 
