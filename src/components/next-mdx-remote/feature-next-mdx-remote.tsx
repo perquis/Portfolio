@@ -17,5 +17,5 @@ const mdxComponents: MDXRemoteProps["components"] = {
 type TNextMDXRemote = ComponentProps<typeof MDXRemote>;
 
 export const NextMDXRemote: FC<TNextMDXRemote> = (props) => {
-  return <MDXRemote {...props} components={mdxComponents} />;
+  return <MDXRemote {...props} components={mdxComponents} lazy />;
 };
