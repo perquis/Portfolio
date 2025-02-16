@@ -1,5 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Breadcrumbs renders correctly 1`] = `null`;
+exports[`Breadcrumbs renders correctly 1`] = `
+<DocumentFragment>
+  <section>
+    <a>
+      About
+    </a>
+    <span
+      class="block w-5 text-center text-zinc-500"
+    >
+      /
+    </span>
+    <a>
+      Portfolio
+    </a>
+    <span
+      class="block w-5 text-center text-zinc-500"
+    >
+      /
+    </span>
+    <a>
+      Blog
+    </a>
+    <span
+      class="block w-5 text-center text-zinc-500"
+    >
+      /
+    </span>
+    <a>
+      Contact
+    </a>
+  </section>
+</DocumentFragment>
+`;
 
-exports[`Breadcrumbs renders with no links 1`] = `null`;
+exports[`Breadcrumbs renders with no links 1`] = `
+<DocumentFragment>
+  <section />
+</DocumentFragment>
+`;

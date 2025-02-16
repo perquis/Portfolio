@@ -1,3 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AnimatedBeam renders correctly 1`] = `null`;
+exports[`AnimatedBeam renders correctly 1`] = `
+<DocumentFragment>
+  <svg
+    class="pointer-events-none absolute left-0 top-0 transform-gpu stroke-2"
+    fill="none"
+    height="0"
+    viewBox="0 0 0 0"
+    width="0"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d=""
+      stroke="gray"
+      stroke-linecap="round"
+      stroke-opacity="0.2"
+      stroke-width="2"
+    />
+    <path
+      d=""
+      stroke="url(#:r0:)"
+      stroke-linecap="round"
+      stroke-opacity="1"
+      stroke-width="2"
+    />
+    <defs>
+      <lineargradient
+        class="transform-gpu"
+        gradientUnits="userSpaceOnUse"
+        id=":r0:"
+        x1="0%"
+        x2="0%"
+        y1="0%"
+        y2="0%"
+      >
+        <stop
+          stop-color="#ffaa40"
+          stop-opacity="0"
+        />
+        <stop
+          stop-color="#ffaa40"
+        />
+        <stop
+          offset="32.5%"
+          stop-color="#9c40ff"
+        />
+        <stop
+          offset="100%"
+          stop-color="#9c40ff"
+          stop-opacity="0"
+        />
+      </lineargradient>
+    </defs>
+  </svg>
+</DocumentFragment>
+`;

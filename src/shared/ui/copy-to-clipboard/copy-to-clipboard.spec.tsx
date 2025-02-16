@@ -1,5 +1,5 @@
 import { expect, it } from "@jest/globals";
-import renderer from "react-test-renderer";
+import { render } from "@testing-library/react";
 
 import CopyToClipboard from "./copy-to-clipboard";
 
@@ -17,7 +17,7 @@ jest.mock("../../ui", () => ({
 
 describe("CopyToClipboard", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<CopyToClipboard code="let isActive;" />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<CopyToClipboard code="let isActive;" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

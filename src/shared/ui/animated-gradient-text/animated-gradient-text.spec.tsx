@@ -1,11 +1,11 @@
 import { expect, it } from "@jest/globals";
-import renderer from "react-test-renderer";
+import { render } from "@testing-library/react";
 
 import AnimatedGradientText from "./animated-gradient-text";
 
 describe("AnimatedGradientText", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<AnimatedGradientText>children</AnimatedGradientText>).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<AnimatedGradientText>children</AnimatedGradientText>);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

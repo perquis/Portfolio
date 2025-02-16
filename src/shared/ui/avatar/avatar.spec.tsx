@@ -1,6 +1,6 @@
 import { expect, it } from "@jest/globals";
+import { render } from "@testing-library/react";
 import type { ComponentProps } from "react";
-import renderer from "react-test-renderer";
 
 import type { Rounded, Size } from "@/interfaces/variants";
 
@@ -32,10 +32,10 @@ describe("Avatar", () => {
     { rounded: "full", size: "medium" },
     { rounded: "full", size: "large" },
   ] as AvatarTestInput[])("renders correctly with rounded $rounded and size $size", ({ rounded, size }) => {
-    const tree = renderer
-      .create(<Avatar src="http://example.com/static/avatar.png" alt="User Avatar" rounded={rounded} size={size} />)
-      .toJSON();
+    const { asFragment } = render(
+      <Avatar src="http://example.com/static/avatar.png" alt="User Avatar" rounded={rounded} size={size} />,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

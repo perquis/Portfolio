@@ -11,7 +11,7 @@ type TCodeContext = {
 
 const CodeContext = createContext<Nullable<TCodeContext>>(null);
 
-export default function CodeProvider({ name, children }: PropsWithChildren & { name: string }) {
+export function CodeBlockProvider({ name, children }: PropsWithChildren & { name: string }) {
   const [selected, setSelected] = useState(name);
 
   return <CodeContext.Provider value={{ selected, setSelected }}>{children}</CodeContext.Provider>;

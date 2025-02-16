@@ -1,5 +1,5 @@
 import { expect, it } from "@jest/globals";
-import renderer from "react-test-renderer";
+import { render } from "@testing-library/react";
 
 import Divider from "./divider";
 
@@ -9,7 +9,7 @@ jest.mock("../../hooks", () => ({
 
 describe("Divider", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<Divider />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<Divider />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

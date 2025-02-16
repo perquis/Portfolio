@@ -1,5 +1,5 @@
 // https://gist.github.com/phatnguyenuit/68122170e317d13e7148c7563be021b6
-import React from "react";
+import React, { type JSX } from "react";
 
 interface Provider<TProps> {
   Component: React.ComponentType<React.PropsWithChildren<TProps>>;

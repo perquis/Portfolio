@@ -1,6 +1,6 @@
 import { expect, it } from "@jest/globals";
+import { render } from "@testing-library/react";
 import type { PropsWithChildren } from "react";
-import renderer from "react-test-renderer";
 
 import links from "../../../data/links";
 import Breadcrumbs from "./breadcrumbs";
@@ -12,14 +12,14 @@ jest.mock("../../ui", () => ({
 
 describe("Breadcrumbs", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<Breadcrumbs links={links} />).toJSON();
+    const { asFragment } = render(<Breadcrumbs links={links} />);
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("renders with no links", () => {
-    const tree = renderer.create(<Breadcrumbs links={[]} />).toJSON();
+    const { asFragment } = render(<Breadcrumbs links={[]} />);
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

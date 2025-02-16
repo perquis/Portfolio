@@ -3,8 +3,8 @@ import type { ComponentProps } from "react";
 import { highlightCode } from "@/shared/packages";
 import type { Code, SegmentedControl } from "@/shared/ui";
 
-import CodeProvider from "./code.provider";
-import CodeWrapper from "./wrapper";
+import { CodeBlockProvider } from "./provider-code-block";
+import { CodeWrapper } from "./ui-code-wrapper";
 
 type TCode = ComponentProps<typeof Code>;
 type TSegmentedControl = ComponentProps<typeof SegmentedControl>;
@@ -18,8 +18,8 @@ export default async function CodeBlock({ controls, snippets }: TCodeBlock) {
   const processedCodeSnippets = await Promise.all(snippets.map(async ({ code }) => await highlightCode(code)));
 
   return (
-    <CodeProvider name={controls[0].name}>
+    <CodeBlockProvider name={controls[0].name}>
       <CodeWrapper controls={controls} snippets={processedCodeSnippets} />
-    </CodeProvider>
+    </CodeBlockProvider>
   );
 }

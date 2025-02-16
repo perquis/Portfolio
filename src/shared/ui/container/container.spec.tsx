@@ -1,11 +1,11 @@
 import { expect, it } from "@jest/globals";
-import renderer from "react-test-renderer";
+import { render } from "@testing-library/react";
 
 import Container from "./container";
 
 describe("Container", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<Container />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<Container />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

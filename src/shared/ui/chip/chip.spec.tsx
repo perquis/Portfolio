@@ -1,16 +1,16 @@
 import { expect, it } from "@jest/globals";
-import renderer from "react-test-renderer";
+import { render } from "@testing-library/react";
 
 import Chip from "./chip";
 
 describe("Chip", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<Chip />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<Chip />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("renders correctly with isActive set to true", () => {
-    const tree = renderer.create(<Chip isActive />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<Chip isActive />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

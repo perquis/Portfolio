@@ -1,5 +1,5 @@
 import { LayoutGroup } from "framer-motion";
-import type { PropsWithChildren } from "react";
+import type { JSX, PropsWithChildren } from "react";
 import { Children, Fragment, isValidElement } from "react";
 
 import { Divider, Footer, Section } from "@/shared/ui";

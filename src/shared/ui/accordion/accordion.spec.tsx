@@ -1,5 +1,5 @@
 import { expect } from "@jest/globals";
-import renderer from "react-test-renderer";
+import { render } from "@testing-library/react";
 
 import Accordion from "./accordion";
 
@@ -17,8 +17,7 @@ jest.mock("../../ui", () => ({
 
 describe("Accordion", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<Accordion question="Question" answer="Answer" />).toJSON();
-
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<Accordion question="Question" answer="Answer" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

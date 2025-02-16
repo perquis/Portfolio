@@ -5,8 +5,9 @@ import { type ComponentProps, Fragment } from "react";
 
 import type { IHighlightedCode } from "@/shared/packages";
 import { CopyToClipboard, Section, SegmentedControl } from "@/shared/ui";
-import { useCode } from "@/shared/ui/code-block/code.provider";
 import { getVisibilityClass } from "@/shared/utils";
+
+import { useCode } from "./provider-code-block";
 
 type TSegmentedControl = ComponentProps<typeof SegmentedControl>;
 
@@ -15,7 +16,7 @@ type TCodeBlock = {
   snippets: IHighlightedCode[][];
 };
 
-export default function CodeWrapper({ controls, snippets }: TCodeBlock) {
+export function CodeWrapper({ controls, snippets }: TCodeBlock) {
   const { selected } = useCode()!;
 
   return (

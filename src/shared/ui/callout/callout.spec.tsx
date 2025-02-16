@@ -1,6 +1,6 @@
 import { expect, it } from "@jest/globals";
+import { render } from "@testing-library/react";
 import type { PropsWithChildren } from "react";
-import renderer from "react-test-renderer";
 
 import Callout, { type ICallout } from "./callout";
 
@@ -28,7 +28,7 @@ describe("Callout", () => {
       variants: "success",
     },
   ] as ICallout[])("should match snapshot", (props) => {
-    const tree = renderer.create(<Callout {...props} />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<Callout {...props} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

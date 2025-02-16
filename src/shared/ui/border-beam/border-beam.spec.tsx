@@ -1,11 +1,11 @@
 import { expect, it } from "@jest/globals";
-import renderer from "react-test-renderer";
+import { render } from "@testing-library/react";
 
 import BorderBeam from "./border-beam";
 
 describe("BorderBeam", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<BorderBeam />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BorderBeam />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

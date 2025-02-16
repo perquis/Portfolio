@@ -1,3 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Accordion renders correctly 1`] = `null`;
+exports[`Accordion renders correctly 1`] = `
+<DocumentFragment>
+  <button
+    class="w-full overflow-hidden rounded-3xl border border-zinc-100 bg-white dark:border-zinc-900 dark:bg-zinc-950"
+  >
+    <div
+      class="flex w-full items-center bg-zinc-100 p-4 pl-5 text-zinc-800 dark:bg-zinc-900 dark:text-zinc-200"
+    >
+      <b
+        class="select-none text-sm font-medium !text-zinc-800 dark:!text-zinc-200"
+      >
+        Question
+      </b>
+      <div
+        class="ml-auto flex items-center"
+      >
+        <div>
+          ArrowLeft
+        </div>
+      </div>
+    </div>
+  </button>
+</DocumentFragment>
+`;

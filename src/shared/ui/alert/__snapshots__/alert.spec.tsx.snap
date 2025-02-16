@@ -1,9 +1,81 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Alert renders alert component with error status correctly 1`] = `null`;
+exports[`Alert renders alert component with error status correctly 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      <div
+        class="rounded-full p-1 text-white bg-rose-500"
+      >
+        <div>
+          Error
+        </div>
+      </div>
+      <div>
+        This is an alert message!
+      </div>
+      <div />
+    </div>
+  </div>
+</DocumentFragment>
+`;
 
-exports[`Alert renders alert component with info status correctly 1`] = `null`;
+exports[`Alert renders alert component with info status correctly 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      <div
+        class="rounded-full p-1 text-white bg-blue-500"
+      >
+        <div>
+          Info
+        </div>
+      </div>
+      <div>
+        This is an alert message!
+      </div>
+      <div />
+    </div>
+  </div>
+</DocumentFragment>
+`;
 
-exports[`Alert renders alert component with success status correctly 1`] = `null`;
+exports[`Alert renders alert component with success status correctly 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      <div
+        class="rounded-full p-1 text-white bg-green-500"
+      >
+        <div>
+          Success
+        </div>
+      </div>
+      <div>
+        This is an alert message!
+      </div>
+      <div />
+    </div>
+  </div>
+</DocumentFragment>
+`;
 
-exports[`Alert renders alert component with warning status correctly 1`] = `null`;
+exports[`Alert renders alert component with warning status correctly 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      <div
+        class="rounded-full p-1 text-white bg-yellow-500"
+      >
+        <div>
+          Warning
+        </div>
+      </div>
+      <div>
+        This is an alert message!
+      </div>
+      <div />
+    </div>
+  </div>
+</DocumentFragment>
+`;

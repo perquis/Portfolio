@@ -1,6 +1,6 @@
 import { expect, it } from "@jest/globals";
+import { render } from "@testing-library/react";
 import type { ComponentProps } from "react";
-import renderer from "react-test-renderer";
 
 import CodeSandbox from "./code-sandbox";
 
@@ -14,7 +14,7 @@ jest.mock("@codesandbox/sandpack-react", () => ({
 
 describe("CodeSandbox", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<CodeSandbox />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<CodeSandbox />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

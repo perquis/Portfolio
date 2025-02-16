@@ -6,7 +6,7 @@ import { Fragment } from "react";
 
 import * as stacks from "@/shared/icons/programming-languages";
 import { Section } from "@/shared/ui";
-import { useCode } from "@/shared/ui/code-block/code.provider";
+import { useCode } from "@/shared/ui/code-block/provider-code-block";
 
 type IconName = keyof typeof stacks;
 

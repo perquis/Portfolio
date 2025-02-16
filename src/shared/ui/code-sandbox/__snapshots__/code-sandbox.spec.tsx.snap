@@ -1,3 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CodeSandbox renders correctly 1`] = `null`;
+exports[`CodeSandbox renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sandpack"
+  >
+    <div
+      options="[object Object]"
+      template="nextjs"
+      theme="dark"
+    />
+  </div>
+</DocumentFragment>
+`;

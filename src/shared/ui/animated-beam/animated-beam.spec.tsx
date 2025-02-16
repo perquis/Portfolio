@@ -1,7 +1,6 @@
 import { expect, it } from "@jest/globals";
-import { renderHook } from "@testing-library/react";
+import { render, renderHook } from "@testing-library/react";
 import { useRef } from "react";
-import renderer from "react-test-renderer";
 
 import AnimatedBeam from "./animated-beam";
 
@@ -11,7 +10,15 @@ describe("AnimatedBeam", () => {
       fromRef = renderHook(() => useRef<HTMLDivElement | null>(null)).result.current,
       toRef = renderHook(() => useRef<HTMLDivElement | null>(null)).result.current;
 
-    const tree = renderer.create(<AnimatedBeam containerRef={containerRef} fromRef={fromRef} toRef={toRef} />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const ResizeObserverMock = jest.fn(() => ({
+      observe: jest.fn(),
+      unobserve: jest.fn(),
+      disconnect: jest.fn(),
+    }));
+
+    window.ResizeObserver = ResizeObserverMock;
+
+    const { asFragment } = render(<AnimatedBeam containerRef={containerRef} fromRef={fromRef} toRef={toRef} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

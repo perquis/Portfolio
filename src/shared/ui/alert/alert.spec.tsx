@@ -1,5 +1,5 @@
 import { expect, it } from "@jest/globals";
-import renderer from "react-test-renderer";
+import { render } from "@testing-library/react";
 
 import Alert, { type AlertStatus } from "./alert";
 
@@ -23,9 +23,8 @@ describe("Alert", () => {
   it.each(["info", "success", "warning", "error"] as AlertStatus[])(
     "renders alert component with %s status correctly",
     (status) => {
-      const tree = renderer.create(<Alert status={status} content="This is an alert message!" />).toJSON();
-
-      expect(tree).toMatchSnapshot();
+      const { asFragment } = render(<Alert status={status} content="This is an alert message!" />);
+      expect(asFragment()).toMatchSnapshot();
     },
   );
 });

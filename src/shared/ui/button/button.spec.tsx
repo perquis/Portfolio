@@ -1,5 +1,5 @@
 import { describe, expect, it } from "@jest/globals";
-import renderer from "react-test-renderer";
+import { render } from "@testing-library/react";
 
 import Button, { type ButtonMode, type ButtonVariant, type ExcludedTinySize } from "./button";
 
@@ -104,15 +104,13 @@ describe("Button", () => {
   ] as ButtonTestInput[])(
     "renders button with $size size, $variants variants, and $mode mode",
     ({ mode, size, variants }) => {
-      const tree = renderer
-        .create(
-          <Button size={size} variants={variants} mode={mode}>
-            Button
-          </Button>,
-        )
-        .toJSON();
+      const { asFragment } = render(
+        <Button size={size} variants={variants} mode={mode}>
+          Button
+        </Button>,
+      );
 
-      expect(tree).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     },
   );
 });

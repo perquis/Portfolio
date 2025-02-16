@@ -1,3 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BackgroundScene renders correctly 1`] = `null`;
+exports[`BackgroundScene renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="pointer-events-none absolute left-0 top-0 -z-50 flex h-screen w-full justify-between"
+  >
+    <div
+      class="absolute left-0 top-0 flex h-full w-full flex-col justify-between"
+    >
+      <svg
+        id="dot-pattern"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

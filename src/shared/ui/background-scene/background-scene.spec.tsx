@@ -1,5 +1,5 @@
 import { expect, it } from "@jest/globals";
-import renderer from "react-test-renderer";
+import { render } from "@testing-library/react";
 
 import BackgroundScene from "./background-scene";
 
@@ -9,8 +9,7 @@ jest.mock("../../ui", () => ({
 
 describe("BackgroundScene", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<BackgroundScene />).toJSON();
-
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BackgroundScene />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

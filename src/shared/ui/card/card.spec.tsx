@@ -1,6 +1,6 @@
 import { expect, it } from "@jest/globals";
+import { render } from "@testing-library/react";
 import type { ComponentProps } from "react";
-import renderer from "react-test-renderer";
 
 import Card from "./card";
 
@@ -27,22 +27,20 @@ describe("Card", () => {
     const baseUrl = "http://example.com/static";
     const getStaticImg = (name: string) => `${baseUrl}/${name}.png`;
 
-    const tree = renderer
-      .create(
-        <Card
-          title="test title"
-          slug="test"
-          dark_img={getStaticImg("dark")}
-          light_img={getStaticImg("light")}
-          description="Sample description"
-          open_graph_img={getStaticImg("open_graph")}
-          publishedAt={now}
-          updatedAt={now}
-          tags={["javascript", "nodejs"]}
-          year={2024}
-        />,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <Card
+        title="test title"
+        slug="test"
+        dark_img={getStaticImg("dark")}
+        light_img={getStaticImg("light")}
+        description="Sample description"
+        open_graph_img={getStaticImg("open_graph")}
+        publishedAt={now}
+        updatedAt={now}
+        tags={["javascript", "nodejs"]}
+        year={2024}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });
