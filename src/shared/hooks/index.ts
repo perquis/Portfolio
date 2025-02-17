@@ -10,3 +10,4 @@ export { default as useOpen } from "./use-open/use-open";
 export { default as useOutsideOnClick } from "./use-outside-onclick/use-outside-onclick";
 export { default as usePlatform } from "./use-platform/use-platform";
 export { default as useScrollDirection } from "./use-scroll-direction/use-scroll-direction";
+export { default as useInteractiveActions } from "./use-interactive-actions/use-interactive-actions";

@@ -5,6 +5,8 @@
   "BLOG_META_TITLE": "Damian Werens - Insights on UI/UX Design and Programming",
   "BLOG_REGULAR_PRESENT": "Present",
   "BLOG_SEARCHBAR_PLACEHOLDER": "Search for the articles",
+  "CODE_COMPARISON_AFTER": "after",
+  "CODE_COMPARISON_BEFORE": "before",
   "COMMAND_SEARCH_PLACEHOLDER": "Search for the suggestions, themes and languages etc.",
   "CONTACT_FAQ_DESCRIPTION": "Before you ask me a question, check if it is not on the FAQ list below. If you still have questions feel free to contact me.",
   "CONTACT_FAQ_ITEM_ANSWER_1": "The completion of small and medium-sized projects is estimated at around two to six months. Please note that larger projects will require a greater time investment.",

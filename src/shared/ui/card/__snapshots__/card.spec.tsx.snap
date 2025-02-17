@@ -101,7 +101,7 @@ exports[`Card renders correctly 1`] = `
       <p
         class="!text-xs"
       >
-        February 16, 2025
+        February 22, 2025
       </p>
     </section>
     <section
